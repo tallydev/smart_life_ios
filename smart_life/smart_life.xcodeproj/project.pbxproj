@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D301D0E5D8A0017638B /* AppDelegate.swift */; };
-		D4F55D331D0E5D8A0017638B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D321D0E5D8A0017638B /* FirstViewController.swift */; };
-		D4F55D351D0E5D8A0017638B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D341D0E5D8A0017638B /* SecondViewController.swift */; };
+		D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D321D0E5D8A0017638B /* HomeViewController.swift */; };
+		D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D341D0E5D8A0017638B /* HeartBitViewController.swift */; };
 		D4F55D381D0E5D8A0017638B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F55D361D0E5D8A0017638B /* Main.storyboard */; };
 		D4F55D3A1D0E5D8A0017638B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F55D391D0E5D8A0017638B /* Assets.xcassets */; };
 		D4F55D3D1D0E5D8A0017638B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F55D3B1D0E5D8A0017638B /* LaunchScreen.storyboard */; };
+		D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D441D0E93C70017638B /* MainViewController.swift */; };
+		D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D4B1D0E97AD0017638B /* GroupViewController.swift */; };
+		D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D4D1D0E97CF0017638B /* ProfileViewController.swift */; };
+		D4F55D531D0EA0430017638B /* MainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D521D0EA0430017638B /* MainItem.swift */; };
+		D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D541D0EE5040017638B /* CirCleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D4F55D2D1D0E5D8A0017638B /* smart_life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smart_life.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F55D301D0E5D8A0017638B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4F55D321D0E5D8A0017638B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		D4F55D341D0E5D8A0017638B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D4F55D321D0E5D8A0017638B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D4F55D341D0E5D8A0017638B /* HeartBitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartBitViewController.swift; sourceTree = "<group>"; };
 		D4F55D371D0E5D8A0017638B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4F55D391D0E5D8A0017638B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4F55D3C1D0E5D8A0017638B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4F55D3E1D0E5D8A0017638B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F55D441D0E93C70017638B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D4F55D4B1D0E97AD0017638B /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		D4F55D4D1D0E97CF0017638B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D4F55D521D0EA0430017638B /* MainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainItem.swift; sourceTree = "<group>"; };
+		D4F55D541D0EE5040017638B /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,84 @@
 		D4F55D2F1D0E5D8A0017638B /* smart_life */ = {
 			isa = PBXGroup;
 			children = (
+				D4F55D511D0E98250017638B /* Mode(模型) */,
+				D4F55D501D0E97FC0017638B /* ViewMode(视图模型) */,
+				D4F55D4F1D0E97DA0017638B /* View(控制器和视图) */,
 				D4F55D301D0E5D8A0017638B /* AppDelegate.swift */,
-				D4F55D321D0E5D8A0017638B /* FirstViewController.swift */,
-				D4F55D341D0E5D8A0017638B /* SecondViewController.swift */,
 				D4F55D361D0E5D8A0017638B /* Main.storyboard */,
 				D4F55D391D0E5D8A0017638B /* Assets.xcassets */,
 				D4F55D3B1D0E5D8A0017638B /* LaunchScreen.storyboard */,
 				D4F55D3E1D0E5D8A0017638B /* Info.plist */,
 			);
 			path = smart_life;
+			sourceTree = "<group>";
+		};
+		D4F55D461D0E93D90017638B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D4F55D441D0E93C70017638B /* MainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		D4F55D471D0E941F0017638B /* HeartBit */ = {
+			isa = PBXGroup;
+			children = (
+				D4F55D341D0E5D8A0017638B /* HeartBitViewController.swift */,
+			);
+			name = HeartBit;
+			sourceTree = "<group>";
+		};
+		D4F55D481D0E95650017638B /* Group */ = {
+			isa = PBXGroup;
+			children = (
+				D4F55D4B1D0E97AD0017638B /* GroupViewController.swift */,
+			);
+			name = Group;
+			sourceTree = "<group>";
+		};
+		D4F55D491D0E957F0017638B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D4F55D4D1D0E97CF0017638B /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		D4F55D4A1D0E97210017638B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D4F55D321D0E5D8A0017638B /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		D4F55D4F1D0E97DA0017638B /* View(控制器和视图) */ = {
+			isa = PBXGroup;
+			children = (
+				D4F55D4A1D0E97210017638B /* Home */,
+				D4F55D491D0E957F0017638B /* Profile */,
+				D4F55D481D0E95650017638B /* Group */,
+				D4F55D471D0E941F0017638B /* HeartBit */,
+				D4F55D461D0E93D90017638B /* Main */,
+			);
+			name = "View(控制器和视图)";
+			sourceTree = "<group>";
+		};
+		D4F55D501D0E97FC0017638B /* ViewMode(视图模型) */ = {
+			isa = PBXGroup;
+			children = (
+				D4F55D521D0EA0430017638B /* MainItem.swift */,
+				D4F55D541D0EE5040017638B /* CirCleView.swift */,
+			);
+			name = "ViewMode(视图模型)";
+			sourceTree = "<group>";
+		};
+		D4F55D511D0E98250017638B /* Mode(模型) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Mode(模型)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +217,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4F55D351D0E5D8A0017638B /* SecondViewController.swift in Sources */,
+				D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */,
+				D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */,
+				D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */,
 				D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */,
-				D4F55D331D0E5D8A0017638B /* FirstViewController.swift in Sources */,
+				D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */,
+				D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */,
+				D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */,
+				D4F55D531D0EA0430017638B /* MainItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
