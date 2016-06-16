@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "购物车.png",
+      "filename" : "购物车.pdf",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "购物车@2x.pdf",
       "scale" : "2x"
     },
     {

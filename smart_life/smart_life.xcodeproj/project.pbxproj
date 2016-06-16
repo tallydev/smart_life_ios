@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4C128341D10EF5100561CB3 /* Home_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128331D10EF5100561CB3 /* Home_Cell.swift */; };
+		D4C128381D113CCC00561CB3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C128371D113CCC00561CB3 /* CoreMotion.framework */; };
+		D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */; };
 		D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D301D0E5D8A0017638B /* AppDelegate.swift */; };
 		D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D321D0E5D8A0017638B /* HomeViewController.swift */; };
 		D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D341D0E5D8A0017638B /* HeartBitViewController.swift */; };
@@ -21,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4C128331D10EF5100561CB3 /* Home_Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home_Cell.swift; sourceTree = "<group>"; };
+		D4C128371D113CCC00561CB3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		D4C128391D113D5E00561CB3 /* Header_bradge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header_bradge.h; sourceTree = "<group>"; };
+		D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		D4F55D2D1D0E5D8A0017638B /* smart_life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smart_life.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F55D301D0E5D8A0017638B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4F55D321D0E5D8A0017638B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -41,15 +48,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C128381D113CCC00561CB3 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4C1283A1D1183B300561CB3 /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */,
+			);
+			name = ShoppingCart;
+			sourceTree = "<group>";
+		};
 		D4F55D241D0E5D8A0017638B = {
 			isa = PBXGroup;
 			children = (
+				D4C128391D113D5E00561CB3 /* Header_bradge.h */,
+				D4C128371D113CCC00561CB3 /* CoreMotion.framework */,
 				D4F55D2F1D0E5D8A0017638B /* smart_life */,
 				D4F55D2E1D0E5D8A0017638B /* Products */,
 			);
@@ -121,6 +139,7 @@
 		D4F55D4F1D0E97DA0017638B /* View(控制器和视图) */ = {
 			isa = PBXGroup;
 			children = (
+				D4C1283A1D1183B300561CB3 /* ShoppingCart */,
 				D4F55D4A1D0E97210017638B /* Home */,
 				D4F55D491D0E957F0017638B /* Profile */,
 				D4F55D481D0E95650017638B /* Group */,
@@ -135,6 +154,7 @@
 			children = (
 				D4F55D521D0EA0430017638B /* MainItem.swift */,
 				D4F55D541D0EE5040017638B /* CirCleView.swift */,
+				D4C128331D10EF5100561CB3 /* Home_Cell.swift */,
 			);
 			name = "ViewMode(视图模型)";
 			sourceTree = "<group>";
@@ -178,6 +198,7 @@
 				TargetAttributes = {
 					D4F55D2C1D0E5D8A0017638B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 94947R3XUQ;
 					};
 				};
 			};
@@ -221,7 +242,9 @@
 				D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */,
 				D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */,
 				D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */,
+				D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */,
 				D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */,
+				D4C128341D10EF5100561CB3 /* Home_Cell.swift in Sources */,
 				D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */,
 				D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */,
 				D4F55D531D0EA0430017638B /* MainItem.swift in Sources */,
@@ -337,11 +360,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = smart_life/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.dtby.smart-life";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -349,11 +375,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = smart_life/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.dtby.smart-life";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -376,6 +405,7 @@
 				D4F55D431D0E5D8A0017638B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

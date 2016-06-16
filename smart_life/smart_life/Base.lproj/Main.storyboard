@@ -16,24 +16,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxe-py-dvz">
-                                <rect key="frame" x="0.0" y="220" width="600" height="331"/>
-                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fG2-Dw-JsE">
+                                <rect key="frame" x="0.0" y="240" width="600" height="311"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="diF-Ug-bCa">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ME6-aT-KZH" customClass="Home_Cell" customModule="smart_life" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vxe-py-dvz" secondAttribute="trailing" id="AEe-sA-4ee"/>
-                            <constraint firstAttribute="trailing" secondItem="vxe-py-dvz" secondAttribute="trailing" id="MVI-Vg-3wm"/>
-                            <constraint firstItem="vxe-py-dvz" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="200" id="Zcy-WY-frf"/>
-                            <constraint firstItem="vxe-py-dvz" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="heB-vR-O18"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="vxe-py-dvz" secondAttribute="bottom" id="j5a-e2-Q1c"/>
-                            <constraint firstItem="vxe-py-dvz" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="kdd-kr-2Dg"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="vxe-py-dvz" secondAttribute="bottom" id="lu8-fo-qdl"/>
+                            <constraint firstAttribute="trailing" secondItem="fG2-Dw-JsE" secondAttribute="trailing" id="28j-Hh-cWO"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="fG2-Dw-JsE" secondAttribute="bottom" id="8EK-JY-K1A"/>
+                            <constraint firstItem="fG2-Dw-JsE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Vi2-EL-jov"/>
+                            <constraint firstItem="fG2-Dw-JsE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="220" id="ne4-An-F61"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="个人中心-11" id="acW-dT-cKf">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="collectionView" destination="fG2-Dw-JsE" id="E1H-Kj-yQj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,8 +151,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fourth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qDl-x9-3D4">
-                                <rect key="frame" x="204" y="279" width="192" height="42"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fifth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qDl-x9-3D4">
+                                <rect key="frame" x="221" y="279" width="158" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXD-aZ-754" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="754" y="1794"/>
+            <point key="canvasLocation" x="0.0" y="1076"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -175,6 +193,7 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="Xvo-qe-QFb" kind="relationship" relationship="viewControllers" id="x4s-IV-USw"/>
+                        <segue destination="US9-DV-zyg" kind="relationship" relationship="viewControllers" id="MgA-Lc-Po4"/>
                         <segue destination="yLU-b2-0ep" kind="relationship" relationship="viewControllers" id="0ze-Yh-fcl"/>
                     </connections>
                 </tabBarController>
@@ -182,11 +201,46 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Shopping Cart View Controller-->
+        <scene sceneID="wa1-eE-gag">
+            <objects>
+                <viewController id="US9-DV-zyg" customClass="ShoppingCartViewController" customModule="smart_life" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7N2-fh-SjK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xe1-qP-POo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MEo-yK-4qf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fourth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="kb3-35-71e">
+                                <rect key="frame" x="204" y="279" width="192" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kb3-35-71e" firstAttribute="centerY" secondItem="MEo-yK-4qf" secondAttribute="centerY" id="Z3k-Wr-CFj"/>
+                            <constraint firstItem="kb3-35-71e" firstAttribute="centerX" secondItem="MEo-yK-4qf" secondAttribute="centerX" id="tId-G6-3wV"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="购物车" id="0cK-WA-tUR" customClass="MainItem" customModule="smart_life">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sxz-qB-8Fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-768" y="1076"/>
+        </scene>
     </scenes>
     <resources>
         <image name="个人中心-11" width="32" height="30"/>
         <image name="个人中心-12" width="31" height="27"/>
         <image name="个人中心-13" width="38" height="30"/>
         <image name="个人中心-14" width="30" height="29"/>
+        <image name="购物车" width="35" height="29"/>
     </resources>
 </document>

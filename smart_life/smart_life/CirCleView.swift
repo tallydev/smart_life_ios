@@ -102,24 +102,24 @@ class CirCleView: UIView, UIScrollViewDelegate {
         self.addSubview(contentScrollView)
         
         self.currentImageView = UIImageView()
-        currentImageView.frame = CGRectMake(self.frame.size.width, 0, self.frame.size.width, 200)
+        currentImageView.frame = CGRectMake(self.frame.size.width, 0, self.frame.size.width, 220)
         currentImageView.userInteractionEnabled = true
         currentImageView.contentMode = UIViewContentMode.ScaleAspectFill
         currentImageView.clipsToBounds = true
         contentScrollView.addSubview(currentImageView)
         
         //添加点击事件
-        let imageTap = UITapGestureRecognizer(target: self, action: Selector("imageTapAction:"))
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(CirCleView.imageTapAction(_:)))
         currentImageView.addGestureRecognizer(imageTap)
         
         self.lastImageView = UIImageView()
-        lastImageView.frame = CGRectMake(0, 0, self.frame.size.width, 200)
+        lastImageView.frame = CGRectMake(0, 0, self.frame.size.width, 220)
         lastImageView.contentMode = UIViewContentMode.ScaleAspectFill
         lastImageView.clipsToBounds = true
         contentScrollView.addSubview(lastImageView)
         
         self.nextImageView = UIImageView()
-        nextImageView.frame = CGRectMake(self.frame.size.width * 2, 0, self.frame.size.width, 200)
+        nextImageView.frame = CGRectMake(self.frame.size.width * 2, 0, self.frame.size.width, 220)
         nextImageView.contentMode = UIViewContentMode.ScaleAspectFill
         nextImageView.clipsToBounds = true
         contentScrollView.addSubview(nextImageView)
@@ -135,7 +135,7 @@ class CirCleView: UIView, UIScrollViewDelegate {
         self.addSubview(pageIndicator)
         
         //设置计时器
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(TimeInterval, target: self, selector: "timerAction", userInfo: nil, repeats: true)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(TimeInterval, target: self, selector: #selector(CirCleView.timerAction), userInfo: nil, repeats: true)
     }
     
     //MARK: 设置图片
@@ -164,7 +164,7 @@ class CirCleView: UIView, UIScrollViewDelegate {
     
     //事件触发方法
     func timerAction() {
-        print("timer", terminator: "")
+//        print("timer", terminator: "")
         contentScrollView.setContentOffset(CGPointMake(self.frame.size.width*2, 0), animated: true)
     }
     
@@ -207,13 +207,13 @@ class CirCleView: UIView, UIScrollViewDelegate {
         
         //重置计时器
         if timer == nil {
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(TimeInterval, target: self, selector: "timerAction", userInfo: nil, repeats: true)
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(TimeInterval, target: self, selector: #selector(CirCleView.timerAction), userInfo: nil, repeats: true)
         }
     }
     
     //时间触发器 设置滑动时动画true，会触发的方法
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        print("animator", terminator: "")
+//        print("animator", terminator: "")
         self.scrollViewDidEndDecelerating(contentScrollView)
     }
     
