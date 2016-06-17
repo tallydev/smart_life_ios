@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		306646CA6EB2B1749D360B82 /* Pods_smart_life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C4FB042CD31E153FBEC1B7 /* Pods_smart_life.framework */; };
 		D4C128341D10EF5100561CB3 /* Home_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128331D10EF5100561CB3 /* Home_Cell.swift */; };
 		D4C128381D113CCC00561CB3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C128371D113CCC00561CB3 /* CoreMotion.framework */; };
 		D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */; };
@@ -24,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23E2D602F7284D3BAFD02378 /* Pods-smart_life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smart_life.release.xcconfig"; path = "Pods/Target Support Files/Pods-smart_life/Pods-smart_life.release.xcconfig"; sourceTree = "<group>"; };
+		37C4FB042CD31E153FBEC1B7 /* Pods_smart_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smart_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9886A503F36A9D70E0E98C37 /* Pods-smart_life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smart_life.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smart_life/Pods-smart_life.debug.xcconfig"; sourceTree = "<group>"; };
 		D4C128331D10EF5100561CB3 /* Home_Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home_Cell.swift; sourceTree = "<group>"; };
 		D4C128371D113CCC00561CB3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D4C128391D113D5E00561CB3 /* Header_bradge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header_bradge.h; sourceTree = "<group>"; };
@@ -49,12 +53,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4C128381D113CCC00561CB3 /* CoreMotion.framework in Frameworks */,
+				306646CA6EB2B1749D360B82 /* Pods_smart_life.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73A1EB48E9D9027EDF00166B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37C4FB042CD31E153FBEC1B7 /* Pods_smart_life.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1A7882AF93847A3C350DB5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9886A503F36A9D70E0E98C37 /* Pods-smart_life.debug.xcconfig */,
+				23E2D602F7284D3BAFD02378 /* Pods-smart_life.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D4C1283A1D1183B300561CB3 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +92,8 @@
 				D4C128371D113CCC00561CB3 /* CoreMotion.framework */,
 				D4F55D2F1D0E5D8A0017638B /* smart_life */,
 				D4F55D2E1D0E5D8A0017638B /* Products */,
+				C1A7882AF93847A3C350DB5F /* Pods */,
+				73A1EB48E9D9027EDF00166B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4F55D411D0E5D8A0017638B /* Build configuration list for PBXNativeTarget "smart_life" */;
 			buildPhases = (
+				AB5A584DAA968840D808A5F0 /* [CP] Check Pods Manifest.lock */,
 				D4F55D291D0E5D8A0017638B /* Sources */,
 				D4F55D2A1D0E5D8A0017638B /* Frameworks */,
 				D4F55D2B1D0E5D8A0017638B /* Resources */,
+				10BB84705D47AA8B8027CA81 /* [CP] Embed Pods Frameworks */,
+				56B677C06A851B589AA24945 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,6 +259,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10BB84705D47AA8B8027CA81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smart_life/Pods-smart_life-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56B677C06A851B589AA24945 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smart_life/Pods-smart_life-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB5A584DAA968840D808A5F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D4F55D291D0E5D8A0017638B /* Sources */ = {
@@ -358,6 +433,7 @@
 		};
 		D4F55D421D0E5D8A0017638B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9886A503F36A9D70E0E98C37 /* Pods-smart_life.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -368,11 +444,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.dtby.smart-life";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Header_bradge.h;
 			};
 			name = Debug;
 		};
 		D4F55D431D0E5D8A0017638B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23E2D602F7284D3BAFD02378 /* Pods-smart_life.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -383,6 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.dtby.smart-life";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Header_bradge.h;
 			};
 			name = Release;
 		};

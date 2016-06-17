@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fG2-Dw-JsE">
-                                <rect key="frame" x="0.0" y="240" width="600" height="311"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="diF-Ug-bCa">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -43,7 +43,7 @@
                             <constraint firstAttribute="trailing" secondItem="fG2-Dw-JsE" secondAttribute="trailing" id="28j-Hh-cWO"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="fG2-Dw-JsE" secondAttribute="bottom" id="8EK-JY-K1A"/>
                             <constraint firstItem="fG2-Dw-JsE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Vi2-EL-jov"/>
-                            <constraint firstItem="fG2-Dw-JsE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="220" id="ne4-An-F61"/>
+                            <constraint firstItem="fG2-Dw-JsE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="ne4-An-F61"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="个人中心-11" id="acW-dT-cKf">

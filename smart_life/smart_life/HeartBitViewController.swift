@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+import MBProgressHUD
 
 //定义个全局变量  如果不是全局变量会报错
 let pedonmeter:CMPedometer = CMPedometer()
@@ -16,7 +17,7 @@ class HeartBitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        MBProgressHUD .showHUDAddedTo(self.view, animated: true)
         //判断该设备是否支持计步功能
         if CMPedometer.isStepCountingAvailable(){
             

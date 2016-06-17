@@ -7,3 +7,4 @@
 //
 
 #import <CoreMotion/CoreMotion.h>
+#import <MBProgressHUD/MBProgressHUD.h>

@@ -19,7 +19,26 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
     
     let colletionCell :Int=2//几列
     
-    var hArr : [CGFloat] = [250,200,200,300,200,250,320,220]//数组存储不同高度
+    var hArr : [CGFloat] = [250,200,200,300,200,250,320,220,250,200,200,300,200,250,320,220]//数组存储不同高度
+    
+    let courses = [
+        ["name":"— 智慧健康 —","pic":"banner2.png"],
+        ["name":"— 健身达人 —","pic":"banner3.png"],
+        ["name":"— 社区活动 —","pic":"banner4.png"],
+        ["name":"— 市政大厅 —","pic":"banner2.png"],
+        ["name":"— 智慧家居 —","pic":"banner3.png"],
+        ["name":"— 社区IT —","pic":"banner4.png"],
+        ["name":"— 新品上市 —","pic":"banner2.png"],
+        ["name":"— 限量销售 —","pic":"banner3.png"],
+        ["name":"— 智慧健康 —","pic":"banner2.png"],
+        ["name":"— 健身达人 —","pic":"banner3.png"],
+        ["name":"— 社区活动 —","pic":"banner4.png"],
+        ["name":"— 市政大厅 —","pic":"banner2.png"],
+        ["name":"— 智慧家居 —","pic":"banner3.png"],
+        ["name":"— 社区IT —","pic":"banner4.png"],
+        ["name":"— 新品上市 —","pic":"banner2.png"],
+        ["name":"— 限量销售 —","pic":"banner3.png"]
+    ]
     
     /********************************** System Methods *****************************************/
     //MARK:- System Methods
@@ -44,7 +63,7 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
         
         circleView.delegate = self
         
-        self.view.addSubview(circleView)
+        self.collectionView.addSubview(circleView)
     }
     
     
@@ -77,7 +96,7 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
         
-        cell.backgroundColor=UIColor.blueColor()
+        cell.backgroundColor=UIColor.whiteColor()
         
         let remainder :Int = indexPath.row%colletionCell
         
@@ -87,7 +106,7 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
         
         let positonX = CGFloat( (Int(wd)/colletionCell-8) * remainder + 5*(remainder+1) )
         
-        var positionY = CGFloat((currentRow+1)*5)
+        var positionY = CGFloat((currentRow+1)*5) + 220
         
         for i in 0..<currentRow{
             
@@ -108,6 +127,21 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
 //        cell.titleLabel!.text = model.short_name
 //        cell.priceLabel!.text = "￥"+model.p_price
 //        cell.readLabel!.text = "💗"+model.like_count
+        
+        //先清空内部原有的元素
+        for subview in cell.subviews {
+            subview.removeFromSuperview()
+        }
+        // 添加图片
+        let img = UIImageView(image: UIImage(named: courses[indexPath.item]["pic"]!))
+        img.frame = cell.bounds
+        img.contentMode = .ScaleAspectFit
+        // 图片上面显示课程名称，居中显示
+        let lbl = UILabel(frame:CGRectMake(0,5,cell.bounds.size.width,20))
+        lbl.textAlignment = NSTextAlignment.Center
+        lbl.text = courses[indexPath.item]["name"]
+        cell.addSubview(img)
+        cell.addSubview(lbl)
         
         return cell
       
@@ -130,9 +164,8 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
     }
     
     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAtIndexPath indexPath:NSIndexPath) ->CGSize{
-    
-//        let rheight :CGFloat=CGFloat(80)
-//    
+//        随机改变cell大小的高度
+//        let rheight :CGFloat=CGFloat(80+ (arc4random() %150))
 //        hArr.append(rheight)
     
         return CGSizeMake(wd/CGFloat(colletionCell) - 8, hArr[indexPath.row])
@@ -141,7 +174,7 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
     
     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, insetForSectionAtIndex section:Int) ->UIEdgeInsets{
     
-        return UIEdgeInsetsMake(0,0,10,1)
+        return UIEdgeInsetsMake(0,0,65,1)
     
     }
 
