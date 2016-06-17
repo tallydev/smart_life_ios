@@ -19,25 +19,17 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
     
     let colletionCell :Int=2//几列
     
-    var hArr : [CGFloat] = [250,200,200,300,200,250,320,220,250,200,200,300,200,250,320,220]//数组存储不同高度
+    var hArr : [CGFloat] = [250,200,200,300,200,250,320,220]//数组存储不同高度
     
     let courses = [
         ["name":"— 智慧健康 —","pic":"banner2.png"],
         ["name":"— 健身达人 —","pic":"banner3.png"],
         ["name":"— 社区活动 —","pic":"banner4.png"],
-        ["name":"— 市政大厅 —","pic":"banner2.png"],
-        ["name":"— 智慧家居 —","pic":"banner3.png"],
-        ["name":"— 社区IT —","pic":"banner4.png"],
-        ["name":"— 新品上市 —","pic":"banner2.png"],
-        ["name":"— 限量销售 —","pic":"banner3.png"],
-        ["name":"— 智慧健康 —","pic":"banner2.png"],
-        ["name":"— 健身达人 —","pic":"banner3.png"],
-        ["name":"— 社区活动 —","pic":"banner4.png"],
-        ["name":"— 市政大厅 —","pic":"banner2.png"],
-        ["name":"— 智慧家居 —","pic":"banner3.png"],
-        ["name":"— 社区IT —","pic":"banner4.png"],
-        ["name":"— 新品上市 —","pic":"banner2.png"],
-        ["name":"— 限量销售 —","pic":"banner3.png"]
+        ["name":"— 市政大厅 —","pic":"banner5.png"],
+        ["name":"— 智慧家居 —","pic":"banner6.png"],
+        ["name":"— 社区IT —","pic":"banner7.png"],
+        ["name":"— 新品上市 —","pic":"banner8.png"],
+        ["name":"— 限量销售 —","pic":"banner9.png"]
     ]
     
     /********************************** System Methods *****************************************/
@@ -50,6 +42,10 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
         collectionView.dataSource = self
         
         collectionView.showsVerticalScrollIndicator = false
+        
+        //创建一个重用的单元格
+        collectionView.registerNib(UINib(nibName:"HomeTabCollectionViewCell", bundle:nil),
+                                    forCellWithReuseIdentifier:"cell")
         
         self.view.addSubview(collectionView)
 
@@ -94,7 +90,7 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell{
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! HomeTabCollectionViewCell
         
         cell.backgroundColor=UIColor.whiteColor()
         
@@ -118,30 +114,24 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
         
         cell.frame=CGRectMake(positonX, positionY,CGFloat(Int(wd)/colletionCell-8),currentHeight) //重新定义cell位置、宽高
         
-//        var model = GoodsModel()
-//        model = dataArr[indexPath.row] as! GoodsModel
-//        let url : NSURL = NSURL(string: model.image_url as String)!
-//        cell.imgView!.hnk_setImageFromURL(url)
-//        cell.layer.borderWidth = 0.3;
-//        cell.layer.borderColor = UIColor.lightGrayColor().CGColor
-//        cell.titleLabel!.text = model.short_name
-//        cell.priceLabel!.text = "￥"+model.p_price
-//        cell.readLabel!.text = "💗"+model.like_count
-        
         //先清空内部原有的元素
-        for subview in cell.subviews {
-            subview.removeFromSuperview()
-        }
-        // 添加图片
-        let img = UIImageView(image: UIImage(named: courses[indexPath.item]["pic"]!))
-        img.frame = cell.bounds
-        img.contentMode = .ScaleAspectFit
-        // 图片上面显示课程名称，居中显示
-        let lbl = UILabel(frame:CGRectMake(0,5,cell.bounds.size.width,20))
-        lbl.textAlignment = NSTextAlignment.Center
-        lbl.text = courses[indexPath.item]["name"]
-        cell.addSubview(img)
-        cell.addSubview(lbl)
+//        for subview in cell.subviews {
+//            subview.removeFromSuperview()
+//        }
+
+        
+        let item = courses[indexPath.row]
+        cell.homeTabLabel.text = item["name"]
+        cell.homeTabImage.image = UIImage(named:item["pic"]!)
+        
+        //选中背景修改成绿色
+//        cell.selectedBackgroundView = UIView()
+//        cell.selectedBackgroundView?.backgroundColor =
+//            UIColor(red: 135/255, green: 191/255, blue: 49/255, alpha: 1)
+        
+        //默认文字颜色是黑色，选中项文字是白色
+//        cell.homeTabLabel.textColor = UIColor.blackColor()
+//        cell.homeTabLabel.highlightedTextColor = UIColor.whiteColor()
         
         return cell
       
@@ -168,15 +158,16 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
 //        let rheight :CGFloat=CGFloat(80+ (arc4random() %150))
 //        hArr.append(rheight)
     
-        return CGSizeMake(wd/CGFloat(colletionCell) - 8, hArr[indexPath.row])
+        return CGSizeMake(wd/CGFloat(colletionCell) - 10, hArr[indexPath.row])
     
     }
     
     func collectionView(collectionView:UICollectionView, layout collectionViewLayout:UICollectionViewLayout, insetForSectionAtIndex section:Int) ->UIEdgeInsets{
     
-        return UIEdgeInsetsMake(0,0,65,1)
+        return UIEdgeInsetsMake(210,0,-145,1)
     
     }
+    
 
        /***************************** End & ReceiveMe Methods ************************************/
     //MARK:- End Methods

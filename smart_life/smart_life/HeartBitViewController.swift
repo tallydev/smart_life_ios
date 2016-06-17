@@ -14,10 +14,24 @@ import MBProgressHUD
 let pedonmeter:CMPedometer = CMPedometer()
 
 class HeartBitViewController: UIViewController {
-
+    
+    var timer:NSTimer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(5,target:self,selector:#selector(HeartBitViewController.getStepsNumber),userInfo:nil,repeats:true)
+        
         MBProgressHUD .showHUDAddedTo(self.view, animated: true)
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func getStepsNumber() {
         //判断该设备是否支持计步功能
         if CMPedometer.isStepCountingAvailable(){
             
@@ -25,21 +39,6 @@ class HeartBitViewController: UIViewController {
             let startTime = getStartTime()
             //结束时间
             let endTime = getEndTime()
-            
-            //第一种
-            
-            //获取一个时间范围内的数据最大7天   参数 开始时间,结束时间, 一个闭包
-//            pedonmeter.queryPedometerDataFromDate(startTime, toDate:endTime, withHandler: { (pedometerData:CMPedometerData?, error:NSError?) -> Void in
-//                if error != nil{
-//                    print("error:\(error)")
-//                }
-//                else{
-//                    print("开始时间:\(startTime)")
-//                    print("结束时间:\(endTime)")
-//                    print("步数===\(pedometerData!.numberOfSteps)")
-//                    print("距离===\(pedometerData!.distance)")
-//                }
-//            })
             
             //第二种
             
@@ -55,15 +54,10 @@ class HeartBitViewController: UIViewController {
                     print("距离===\(pedometerData!.distance)")
                 }
             })
-
+            
         } else {
             print("there has something with CMPedometer")
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
         /**

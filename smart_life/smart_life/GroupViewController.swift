@@ -14,11 +14,24 @@ class GroupViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //发送通知消息
+        scheduleNotification();
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func scheduleNotification(){
+        //清除所有本地推送
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        
+        //创建UILocalNotification来进行本地消息通知
+        let localNotification = UILocalNotification()
+        //设置应用程序右上角的提醒个数
+        localNotification.applicationIconBadgeNumber = 78;
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
 
