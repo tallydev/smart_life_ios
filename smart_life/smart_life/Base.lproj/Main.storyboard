@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jVh-Qm-zXJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fG2-Dw-JsE">
-                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="diF-Ug-bCa">
                                     <size key="itemSize" width="50" height="50"/>
@@ -43,7 +43,7 @@
                             <constraint firstAttribute="trailing" secondItem="fG2-Dw-JsE" secondAttribute="trailing" id="28j-Hh-cWO"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="fG2-Dw-JsE" secondAttribute="bottom" id="8EK-JY-K1A"/>
                             <constraint firstItem="fG2-Dw-JsE" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Vi2-EL-jov"/>
-                            <constraint firstItem="fG2-Dw-JsE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="ne4-An-F61"/>
+                            <constraint firstItem="fG2-Dw-JsE" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="-20" id="ne4-An-F61"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="个人中心-11" id="acW-dT-cKf">
@@ -56,6 +56,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--限量销售-->
+        <scene sceneID="yDF-IL-01F">
+            <objects>
+                <viewController id="M3H-GW-gTk" customClass="GoodsListTableViewController" customModule="smart_life" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gcy-2x-OL1"/>
+                        <viewControllerLayoutGuide type="bottom" id="4mI-8I-drN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7cJ-DL-D8p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="限量销售" id="JXY-Js-f5r">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="8Fb-Az-OEi"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yuh-zf-qZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2779" y="-320"/>
         </scene>
         <!--Heart Bit View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -70,14 +91,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="209.5" height="41.5"/>
+                                <rect key="frame" x="195" y="279" width="210" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="215.5" height="17"/>
+                                <rect key="frame" x="193" y="329" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -161,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXD-aZ-754" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="1076"/>
+            <point key="canvasLocation" x="-8" y="1013"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -183,47 +204,52 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="Xvo-qe-QFb" kind="relationship" relationship="viewControllers" id="x4s-IV-USw"/>
-                        <segue destination="US9-DV-zyg" kind="relationship" relationship="viewControllers" id="MgA-Lc-Po4"/>
                         <segue destination="yLU-b2-0ep" kind="relationship" relationship="viewControllers" id="0ze-Yh-fcl"/>
+                        <segue destination="LdO-H7-htd" kind="relationship" relationship="viewControllers" id="qdS-fu-ZRm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Shopping Cart View Controller-->
-        <scene sceneID="wa1-eE-gag">
+        <!--View Controller-->
+        <scene sceneID="iK9-Jb-vd5">
             <objects>
-                <viewController id="US9-DV-zyg" customClass="ShoppingCartViewController" customModule="smart_life" sceneMemberID="viewController">
+                <viewController id="LdO-H7-htd" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7N2-fh-SjK"/>
-                        <viewControllerLayoutGuide type="bottom" id="Xe1-qP-POo"/>
+                        <viewControllerLayoutGuide type="top" id="ayT-Xe-to1"/>
+                        <viewControllerLayoutGuide type="bottom" id="h3F-E1-krr"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MEo-yK-4qf">
+                    <view key="view" contentMode="scaleToFill" id="f2Z-lc-PqI" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fourth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="kb3-35-71e">
-                                <rect key="frame" x="204" y="279" width="192" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="kb3-35-71e" firstAttribute="centerY" secondItem="MEo-yK-4qf" secondAttribute="centerY" id="Z3k-Wr-CFj"/>
-                            <constraint firstItem="kb3-35-71e" firstAttribute="centerX" secondItem="MEo-yK-4qf" secondAttribute="centerX" id="tId-G6-3wV"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="购物车" id="0cK-WA-tUR" customClass="MainItem" customModule="smart_life">
+                    <tabBarItem key="tabBarItem" title="" image="购物车" id="scT-2L-nSV" customClass="MainItem" customModule="smart_life">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sxz-qB-8Fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGZ-5U-LBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-768" y="1076"/>
+            <point key="canvasLocation" x="-766" y="1013"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EHA-at-5nB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jVh-Qm-zXJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gVx-Hg-SpC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="M3H-GW-gTk" kind="relationship" relationship="rootViewController" id="lZR-J5-Dd1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LNL-wx-DW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1967" y="-320"/>
         </scene>
     </scenes>
     <resources>

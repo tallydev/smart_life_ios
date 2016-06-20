@@ -21,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound, UIUserNotificationType.Alert,UIUserNotificationType.Badge], categories: nil))
         application.registerUserNotificationSettings(settings)
         
+        //设置status bar背景色半透明
+        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
+        view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
+        self.window!.rootViewController!.view.addSubview(view)
+        
         return true
     }
 

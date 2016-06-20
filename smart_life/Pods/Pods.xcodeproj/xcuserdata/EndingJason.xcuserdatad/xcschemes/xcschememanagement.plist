@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Spring.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,22 +37,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>19D3D84034D6DEA50942464D18BB379A</key>
+		<key>209B769B24DB6BAC27C63A566669DE9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3DDE6F8E056750DADB4A81271F894BAF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>47FB16EBFA31DC396B5257C2BC28B233</key>
+		<key>37752DFEFE697314D2C59A257F981BE7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9CE0D84B30C91AEEC776FEC5823C5B1D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E59360FE33885CC6CD5CEA9AF92014D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

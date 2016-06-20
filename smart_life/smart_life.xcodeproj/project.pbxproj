@@ -15,6 +15,11 @@
 		D4C128461D13E1C800561CB3 /* HomeTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C128441D13E1C800561CB3 /* HomeTabCollectionViewCell.xib */; };
 		D4C128491D14021400561CB3 /* HomeTabBtnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128471D14021400561CB3 /* HomeTabBtnCollectionViewCell.swift */; };
 		D4C1284A1D14021400561CB3 /* HomeTabBtnCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C128481D14021400561CB3 /* HomeTabBtnCollectionViewCell.xib */; };
+		D4C1284C1D150B9100561CB3 /* HomeTabBtnCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1284B1D150B9100561CB3 /* HomeTabBtnCollectionView.swift */; };
+		D4C1284E1D15A4B100561CB3 /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1284D1D15A4B100561CB3 /* ShoppingCartCell.swift */; };
+		D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1284F1D178C1D00561CB3 /* GoodModel.swift */; };
+		D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */; };
+		D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128551D1794A100561CB3 /* GoodListCell.swift */; };
 		D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D301D0E5D8A0017638B /* AppDelegate.swift */; };
 		D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D321D0E5D8A0017638B /* HomeViewController.swift */; };
 		D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D341D0E5D8A0017638B /* HeartBitViewController.swift */; };
@@ -40,6 +45,11 @@
 		D4C128441D13E1C800561CB3 /* HomeTabCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell.xib; sourceTree = "<group>"; };
 		D4C128471D14021400561CB3 /* HomeTabBtnCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBtnCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4C128481D14021400561CB3 /* HomeTabBtnCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabBtnCollectionViewCell.xib; sourceTree = "<group>"; };
+		D4C1284B1D150B9100561CB3 /* HomeTabBtnCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBtnCollectionView.swift; sourceTree = "<group>"; };
+		D4C1284D1D15A4B100561CB3 /* ShoppingCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartCell.swift; sourceTree = "<group>"; };
+		D4C1284F1D178C1D00561CB3 /* GoodModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodModel.swift; sourceTree = "<group>"; };
+		D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsListTableViewController.swift; sourceTree = "<group>"; };
+		D4C128551D1794A100561CB3 /* GoodListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListCell.swift; sourceTree = "<group>"; };
 		D4F55D2D1D0E5D8A0017638B /* smart_life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smart_life.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F55D301D0E5D8A0017638B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4F55D321D0E5D8A0017638B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */,
+				D4C1284D1D15A4B100561CB3 /* ShoppingCartCell.swift */,
 			);
 			name = ShoppingCart;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F55D321D0E5D8A0017638B /* HomeViewController.swift */,
+				D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -191,6 +203,8 @@
 				D4C128441D13E1C800561CB3 /* HomeTabCollectionViewCell.xib */,
 				D4C128471D14021400561CB3 /* HomeTabBtnCollectionViewCell.swift */,
 				D4C128481D14021400561CB3 /* HomeTabBtnCollectionViewCell.xib */,
+				D4C1284B1D150B9100561CB3 /* HomeTabBtnCollectionView.swift */,
+				D4C128551D1794A100561CB3 /* GoodListCell.swift */,
 			);
 			name = "ViewMode(视图模型)";
 			sourceTree = "<group>";
@@ -198,6 +212,7 @@
 		D4F55D511D0E98250017638B /* Mode(模型) */ = {
 			isa = PBXGroup;
 			children = (
+				D4C1284F1D178C1D00561CB3 /* GoodModel.swift */,
 			);
 			name = "Mode(模型)";
 			sourceTree = "<group>";
@@ -330,15 +345,20 @@
 				D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */,
 				D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */,
 				D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */,
+				D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */,
 				D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */,
 				D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */,
 				D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */,
 				D4C128341D10EF5100561CB3 /* Home_Cell.swift in Sources */,
 				D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */,
 				D4C128491D14021400561CB3 /* HomeTabBtnCollectionViewCell.swift in Sources */,
+				D4C1284C1D150B9100561CB3 /* HomeTabBtnCollectionView.swift in Sources */,
+				D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */,
 				D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */,
+				D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */,
 				D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */,
 				D4F55D531D0EA0430017638B /* MainItem.swift in Sources */,
+				D4C1284E1D15A4B100561CB3 /* ShoppingCartCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

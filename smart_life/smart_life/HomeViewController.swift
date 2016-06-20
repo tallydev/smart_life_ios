@@ -168,6 +168,8 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
     
     }
     
+    
+    
 
        /***************************** End & ReceiveMe Methods ************************************/
     //MARK:- End Methods
