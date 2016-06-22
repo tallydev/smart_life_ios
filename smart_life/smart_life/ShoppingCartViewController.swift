@@ -24,6 +24,9 @@ class ShoppingCartViewController: UIViewController {
     /// 商品列表cell的重用标识符
     private let shoppingCarCellIdentifier = "shoppingCarCell"
     
+    /// 商品列表header的重用标识符
+    private let headerCellIdentifier = "headerCell"
+    
     // MARK: - view生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +59,7 @@ class ShoppingCartViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "left"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ShoppingCartViewController.didTappedBackButton))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.orangeColor()
         // view背景颜色
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.grayColor()
         
         // cell行高
         tableView.rowHeight = 80
@@ -91,12 +94,12 @@ class ShoppingCartViewController: UIViewController {
         // 约束子控件
         tableView.snp_makeConstraints { (make) -> Void in
             make.left.top.right.equalTo(0)
-            make.bottom.equalTo(-49)
+            make.bottom.equalTo(-98)
         }
         
         bottomView.snp_makeConstraints { (make) -> Void in
             make.left.right.equalTo(0)
-            make.bottom.equalTo(-50)
+            make.bottom.equalTo(-49)
             make.height.equalTo(49)
         }
         settleAccountsBottomView.snp_makeConstraints { (make) -> Void in
@@ -110,7 +113,8 @@ class ShoppingCartViewController: UIViewController {
         }
         
         totalPriceLabel.snp_makeConstraints { (make) -> Void in
-            make.center.equalTo(bottomView.snp_center)
+            make.right.equalTo(-12)
+            make.centerY.equalTo(bottomView.snp_centerY)
         }
         
         buyButton.snp_makeConstraints { (make) -> Void in
@@ -126,7 +130,6 @@ class ShoppingCartViewController: UIViewController {
     /// tableView
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        
         // 指定数据源和代理
         tableView.dataSource = self
         tableView.delegate = self
@@ -151,7 +154,7 @@ class ShoppingCartViewController: UIViewController {
         let selectButton = UIButton(type: UIButtonType.Custom)
         selectButton.setImage(UIImage(named: "check_n"), forState: UIControlState.Normal)
         selectButton.setImage(UIImage(named: "check_y"), forState: UIControlState.Selected)
-        selectButton.setTitle("多选\\反选", forState: UIControlState.Normal)
+        selectButton.setTitle("  多选\\反选", forState: UIControlState.Normal)
         selectButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
         selectButton.titleLabel?.font = UIFont.systemFontOfSize(12)
         selectButton.addTarget(self, action: #selector(ShoppingCartViewController.didTappedSelectButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
@@ -163,9 +166,9 @@ class ShoppingCartViewController: UIViewController {
     /// 底部总价Label
     lazy var totalPriceLabel: UILabel = {
         let totalPriceLabel = UILabel()
-        let attributeText = NSMutableAttributedString(string: "总共价格：\(self.price)0")
+        let attributeText = NSMutableAttributedString(string: "合计：¥  \(self.price)0")
         attributeText.setAttributes([NSForegroundColorAttributeName : UIColor.orangeColor()], range: NSMakeRange(5, attributeText.length - 5))
-        
+        totalPriceLabel.textColor = UIColor.orangeColor()
         totalPriceLabel.attributedText = attributeText
         totalPriceLabel.sizeToFit()
         return totalPriceLabel
@@ -182,8 +185,71 @@ class ShoppingCartViewController: UIViewController {
     
 }
 
+
 // MARK: - UITableViewDataSource, UITableViewDelegate数据、代理
 extension ShoppingCartViewController: UITableViewDataSource, UITableViewDelegate {
+    /**
+     布局UI
+     */
+    private func layoutHeaderUI(vw:UIView ,location_icon:UIImageView,name_label:UILabel,go_right:UIButton) {
+        
+        // 约束子控件
+        print("i am in layoutHeaderUI")
+        
+        location_icon.snp_makeConstraints { (make) -> Void in
+            make.left.equalTo(12)
+            make.centerY.equalTo(vw.snp_centerY)
+        }
+        
+        name_label.snp_makeConstraints { (make) -> Void in
+            make.left.equalTo(36)
+            make.centerY.equalTo(vw.snp_centerY)
+        }
+        
+        go_right.snp_makeConstraints { (make) -> Void in
+            make.right.equalTo(-12)
+            make.height.equalTo(30)
+            make.width.equalTo(20)
+            make.centerY.equalTo(vw.snp_centerY)
+        }
+        
+    }
+    
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Section \(section)"
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 80
+    }
+
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let vw = UIView()
+        let location_icon = UIImageView()
+        let name_label = UILabel()
+        let go_right = UIButton(type: UIButtonType.Custom)
+
+        vw.backgroundColor = UIColor.whiteColor()
+        vw.addSubview(location_icon)
+        vw.addSubview(name_label)
+        vw.addSubview(go_right)
+        
+        name_label.addBorderLayer(UIColor.greenColor(), size: 1, boderType: BorderType.right);
+        
+        location_icon.image = UIImage(named: "location_icon")
+        
+        name_label.text = "上海市松江区新南路1088弄丽水华庭"
+        
+        go_right.setImage(UIImage(named: "right_icon"), forState: UIControlState.Normal)
+
+        go_right.addTarget(self, action: #selector(ShoppingCartViewController.goHomeButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        go_right.layer.masksToBounds = true
+        
+        layoutHeaderUI(vw,location_icon: location_icon, name_label: name_label, go_right: go_right)
+        
+        return vw
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return addGoodArray?.count ?? 0
@@ -213,6 +279,19 @@ extension ShoppingCartViewController: UITableViewDataSource, UITableViewDelegate
 
 // MARK: - view上的一些事件处理
 extension ShoppingCartViewController {
+        
+    /**
+     当点击了购物车触发，modal到购物车控制器
+         
+     - parameter button: 购物车按钮
+    */
+    @objc private func goHomeButton(button: UIButton) {
+            
+        let shoppingCartVc = AddressTableViewController()
+        
+        // 模态出一个购物车控制器
+        navigationController?.pushViewController(shoppingCartVc, animated: true);
+    }
     
     /**
      返回按钮
@@ -236,8 +315,8 @@ extension ShoppingCartViewController {
         }
         
         // 赋值价格
-        let attributeText = NSMutableAttributedString(string: "总共价格：\(self.price)0")
-        attributeText.setAttributes([NSForegroundColorAttributeName : UIColor.redColor()], range: NSMakeRange(5, attributeText.length - 5))
+        let attributeText = NSMutableAttributedString(string: "合计: ¥  \(self.price)0")
+        attributeText.setAttributes([NSForegroundColorAttributeName : UIColor.orangeColor()], range: NSMakeRange(5, attributeText.length - 5))
         totalPriceLabel.attributedText = attributeText
         
         // 清空price

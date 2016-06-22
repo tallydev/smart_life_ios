@@ -37,13 +37,13 @@ class GoodsListTableViewController: UIViewController {
         // 提醒：这个方法中一般用于初始化控制器中的一些数据、添加子控件等。但是这个方法获取的frame并不一定准确，所以不建议在这个方法约束子控件
         
         // 初始化模型数组，也就是搞点假数据。这里整10个模型
-        for i in 1..<10 {
+        for i in 1..<15 {
             var dict = [String : AnyObject]()
             dict["iconName"] = "banner\(i)"
             dict["title"] = "商品名称\(i + 1)"
             dict["desc"] = "这是第\(i + 1)个商品描述"
-            dict["newPrice"] = "10000\(i)"
-            dict["oldPrice"] = "2000\(i)"
+            dict["newPrice"] = "66\(i)"
+            dict["oldPrice"] = "200\(i)"
             
             // 字典转模型并将模型添加到模型数组中
             goodArray.append(GoodModel(dict: dict))
@@ -96,8 +96,8 @@ class GoodsListTableViewController: UIViewController {
         }
         
         addCountLabel.snp_makeConstraints { (make) -> Void in
-            make.right.equalTo(-14)
-            make.top.equalTo(10.5)
+            make.right.equalTo(-12)
+            make.top.equalTo(9)
             make.width.equalTo(15)
             make.height.equalTo(15)
         }
@@ -118,7 +118,7 @@ class GoodsListTableViewController: UIViewController {
     /// cartButton顶部购物车按钮
     lazy var cartButton: UIButton = {
         let carButton = UIButton(type: UIButtonType.Custom)
-        carButton.setImage(UIImage(named: "button_cart"), forState: UIControlState.Normal)
+        carButton.setImage(UIImage(named: "cart"), forState: UIControlState.Normal)
         carButton.addTarget(self, action: #selector(GoodsListTableViewController.didTappedCarButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         carButton.sizeToFit()
         return carButton

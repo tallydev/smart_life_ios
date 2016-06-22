@@ -10,6 +10,8 @@ import UIKit
 
 class HomeTabBtnCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var btnIcon: UIImageView!
+    @IBOutlet weak var btnName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -140,13 +140,11 @@ class GoodListCell: UITableViewCell {
     
     /// 添加按钮
     private lazy var addCartButton: UIButton = {
-        let addCartButton = UIButton(type: UIButtonType.Custom)
+        let addCartButton = UIButton()
         
-        
+        addCartButton.tintColor = UIColor.blackColor()
         addCartButton.layer.backgroundColor = UIColor.init(red: 255, green: 121, blue: 40, alpha: 1.00).CGColor
         addCartButton.setTitle("查看详情", forState: UIControlState.Normal)
-        print(addCartButton)
-        print("i am in addCartButton")
         
         // 添加按钮点击事件
         addCartButton.addTarget(self, action: #selector(GoodListCell.didTappedAddCartButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)

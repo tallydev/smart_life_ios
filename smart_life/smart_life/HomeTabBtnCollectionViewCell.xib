@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeTabBtnCollectionViewCell" customModule="smart_life" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeTabBtnCollectionViewCell" id="gTV-IL-0wX" customClass="HomeTabBtnCollectionViewCell" customModule="smart_life">
             <rect key="frame" x="0.0" y="0.0" width="337" height="95"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -25,6 +25,10 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <size key="customSize" width="337" height="95"/>
+            <connections>
+                <outlet property="btnIcon" destination="2QR-Zw-WUE" id="nX3-LQ-xLd"/>
+                <outlet property="btnName" destination="vFS-Pc-s2L" id="jzg-5D-wfw"/>
+            </connections>
             <point key="canvasLocation" x="322.5" y="217.5"/>
         </collectionViewCell>
     </objects>

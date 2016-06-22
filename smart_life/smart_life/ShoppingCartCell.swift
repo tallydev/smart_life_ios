@@ -28,7 +28,7 @@ class ShoppingCartCell: UITableViewCell {
             }
             
             if let newPrice = goodModel?.newPrice {
-                newPriceLabel.text = newPrice
+                newPriceLabel.text = "¥ " + newPrice
             }
             
 //            if let oldPrice = goodModel?.oldPrice {
@@ -79,7 +79,7 @@ class ShoppingCartCell: UITableViewCell {
         }
         
         iconView.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(42)
+            make.left.equalTo(50)
             make.top.equalTo(10)
             make.width.equalTo(60)
             make.height.equalTo(60)
@@ -91,7 +91,7 @@ class ShoppingCartCell: UITableViewCell {
         }
         
         newPriceLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(titleLabel.snp_top).offset(5)
+            make.centerY.equalTo(contentView.snp_centerY)
             make.right.equalTo(-12)
         }
         
@@ -169,7 +169,7 @@ class ShoppingCartCell: UITableViewCell {
     /// 商品图片
     private lazy var iconView: UIImageView = {
         let iconView = UIImageView()
-        iconView.layer.cornerRadius = 30
+//        iconView.layer.cornerRadius = 30
         iconView.layer.masksToBounds = true
         return iconView
     }()
@@ -183,7 +183,7 @@ class ShoppingCartCell: UITableViewCell {
     /// 新价格标签
     private lazy var newPriceLabel: UILabel = {
         let newPriceLabel = UILabel()
-        newPriceLabel.textColor = UIColor.redColor()
+        newPriceLabel.textColor = UIColor.orangeColor()
         return newPriceLabel
     }()
     

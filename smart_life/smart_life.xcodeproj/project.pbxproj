@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		306646CA6EB2B1749D360B82 /* Pods_smart_life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C4FB042CD31E153FBEC1B7 /* Pods_smart_life.framework */; };
-		D4C128341D10EF5100561CB3 /* Home_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128331D10EF5100561CB3 /* Home_Cell.swift */; };
+		D44135DE1D1927DB00072099 /* listTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135DD1D1927DB00072099 /* listTableViewController.swift */; };
+		D44135E31D1A3A5400072099 /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E21D1A3A5400072099 /* AddressCell.swift */; };
+		D44135E51D1A5C4500072099 /* UIView+BHBFreeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E41D1A5C4500072099 /* UIView+BHBFreeBorder.swift */; };
+		D44135E71D1A749400072099 /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E61D1A749400072099 /* AddressTableViewController.swift */; };
+		D44135E91D1A758700072099 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E81D1A758700072099 /* AddressModel.swift */; };
 		D4C128381D113CCC00561CB3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C128371D113CCC00561CB3 /* CoreMotion.framework */; };
 		D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */; };
 		D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128431D13E1C800561CB3 /* HomeTabCollectionViewCell.swift */; };
@@ -29,7 +33,6 @@
 		D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D441D0E93C70017638B /* MainViewController.swift */; };
 		D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D4B1D0E97AD0017638B /* GroupViewController.swift */; };
 		D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D4D1D0E97CF0017638B /* ProfileViewController.swift */; };
-		D4F55D531D0EA0430017638B /* MainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D521D0EA0430017638B /* MainItem.swift */; };
 		D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D541D0EE5040017638B /* CirCleView.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +40,11 @@
 		23E2D602F7284D3BAFD02378 /* Pods-smart_life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smart_life.release.xcconfig"; path = "Pods/Target Support Files/Pods-smart_life/Pods-smart_life.release.xcconfig"; sourceTree = "<group>"; };
 		37C4FB042CD31E153FBEC1B7 /* Pods_smart_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smart_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9886A503F36A9D70E0E98C37 /* Pods-smart_life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smart_life.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smart_life/Pods-smart_life.debug.xcconfig"; sourceTree = "<group>"; };
-		D4C128331D10EF5100561CB3 /* Home_Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home_Cell.swift; sourceTree = "<group>"; };
+		D44135DD1D1927DB00072099 /* listTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listTableViewController.swift; sourceTree = "<group>"; };
+		D44135E21D1A3A5400072099 /* AddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
+		D44135E41D1A5C4500072099 /* UIView+BHBFreeBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BHBFreeBorder.swift"; sourceTree = "<group>"; };
+		D44135E61D1A749400072099 /* AddressTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
+		D44135E81D1A758700072099 /* AddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		D4C128371D113CCC00561CB3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D4C128391D113D5E00561CB3 /* Header_bradge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header_bradge.h; sourceTree = "<group>"; };
 		D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +68,6 @@
 		D4F55D441D0E93C70017638B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D4F55D4B1D0E97AD0017638B /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		D4F55D4D1D0E97CF0017638B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		D4F55D521D0EA0430017638B /* MainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainItem.swift; sourceTree = "<group>"; };
 		D4F55D541D0EE5040017638B /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +99,44 @@
 				23E2D602F7284D3BAFD02378 /* Pods-smart_life.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D44135DA1D19245A00072099 /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */,
+				D44135DD1D1927DB00072099 /* listTableViewController.swift */,
+			);
+			name = Shopping;
+			sourceTree = "<group>";
+		};
+		D44135DB1D1924DF00072099 /* HomeViewMode */ = {
+			isa = PBXGroup;
+			children = (
+				D4C128431D13E1C800561CB3 /* HomeTabCollectionViewCell.swift */,
+				D4C128441D13E1C800561CB3 /* HomeTabCollectionViewCell.xib */,
+				D4C128471D14021400561CB3 /* HomeTabBtnCollectionViewCell.swift */,
+				D4C128481D14021400561CB3 /* HomeTabBtnCollectionViewCell.xib */,
+				D4C1284B1D150B9100561CB3 /* HomeTabBtnCollectionView.swift */,
+			);
+			name = HomeViewMode;
+			sourceTree = "<group>";
+		};
+		D44135DC1D19250400072099 /* ShoppingMode */ = {
+			isa = PBXGroup;
+			children = (
+				D4C128551D1794A100561CB3 /* GoodListCell.swift */,
+			);
+			name = ShoppingMode;
+			sourceTree = "<group>";
+		};
+		D44135E11D1A39FB00072099 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				D44135E21D1A3A5400072099 /* AddressCell.swift */,
+				D44135E61D1A749400072099 /* AddressTableViewController.swift */,
+			);
+			name = Address;
 			sourceTree = "<group>";
 		};
 		D4C1283A1D1183B300561CB3 /* ShoppingCart */ = {
@@ -174,8 +218,8 @@
 		D4F55D4A1D0E97210017638B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D44135DA1D19245A00072099 /* Shopping */,
 				D4F55D321D0E5D8A0017638B /* HomeViewController.swift */,
-				D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -183,6 +227,7 @@
 		D4F55D4F1D0E97DA0017638B /* View(控制器和视图) */ = {
 			isa = PBXGroup;
 			children = (
+				D44135E11D1A39FB00072099 /* Address */,
 				D4C1283A1D1183B300561CB3 /* ShoppingCart */,
 				D4F55D4A1D0E97210017638B /* Home */,
 				D4F55D491D0E957F0017638B /* Profile */,
@@ -196,15 +241,10 @@
 		D4F55D501D0E97FC0017638B /* ViewMode(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
-				D4F55D521D0EA0430017638B /* MainItem.swift */,
+				D44135DC1D19250400072099 /* ShoppingMode */,
+				D44135DB1D1924DF00072099 /* HomeViewMode */,
 				D4F55D541D0EE5040017638B /* CirCleView.swift */,
-				D4C128331D10EF5100561CB3 /* Home_Cell.swift */,
-				D4C128431D13E1C800561CB3 /* HomeTabCollectionViewCell.swift */,
-				D4C128441D13E1C800561CB3 /* HomeTabCollectionViewCell.xib */,
-				D4C128471D14021400561CB3 /* HomeTabBtnCollectionViewCell.swift */,
-				D4C128481D14021400561CB3 /* HomeTabBtnCollectionViewCell.xib */,
-				D4C1284B1D150B9100561CB3 /* HomeTabBtnCollectionView.swift */,
-				D4C128551D1794A100561CB3 /* GoodListCell.swift */,
+				D44135E41D1A5C4500072099 /* UIView+BHBFreeBorder.swift */,
 			);
 			name = "ViewMode(视图模型)";
 			sourceTree = "<group>";
@@ -213,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C1284F1D178C1D00561CB3 /* GoodModel.swift */,
+				D44135E81D1A758700072099 /* AddressModel.swift */,
 			);
 			name = "Mode(模型)";
 			sourceTree = "<group>";
@@ -342,22 +383,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44135E71D1A749400072099 /* AddressTableViewController.swift in Sources */,
 				D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */,
 				D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */,
 				D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */,
+				D44135E91D1A758700072099 /* AddressModel.swift in Sources */,
 				D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */,
 				D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */,
 				D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */,
 				D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */,
-				D4C128341D10EF5100561CB3 /* Home_Cell.swift in Sources */,
+				D44135E51D1A5C4500072099 /* UIView+BHBFreeBorder.swift in Sources */,
 				D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */,
 				D4C128491D14021400561CB3 /* HomeTabBtnCollectionViewCell.swift in Sources */,
 				D4C1284C1D150B9100561CB3 /* HomeTabBtnCollectionView.swift in Sources */,
 				D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */,
+				D44135DE1D1927DB00072099 /* listTableViewController.swift in Sources */,
 				D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */,
 				D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */,
 				D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */,
-				D4F55D531D0EA0430017638B /* MainItem.swift in Sources */,
+				D44135E31D1A3A5400072099 /* AddressCell.swift in Sources */,
 				D4C1284E1D15A4B100561CB3 /* ShoppingCartCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

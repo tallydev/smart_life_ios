@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jVh-Qm-zXJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -20,17 +20,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.83921568629999999" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="diF-Ug-bCa">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="189" height="170"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ME6-aT-KZH" customClass="Home_Cell" customModule="smart_life" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="189" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="189" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -76,7 +76,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yuh-zf-qZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2779" y="-320"/>
+            <point key="canvasLocation" x="2678" y="-320"/>
+        </scene>
+        <!--商品列表-->
+        <scene sceneID="lRc-yS-SAW">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTl-ly-a0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="fRL-PD-zS9" customClass="ListTableViewController" customModule="smart_life" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Am5-Mu-8HW"/>
+                        <viewControllerLayoutGuide type="bottom" id="VMH-9f-uv5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QdE-It-xE1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="商品列表" id="wvP-pf-gMu"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3220" y="396"/>
         </scene>
         <!--Heart Bit View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -225,7 +244,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="购物车" id="scT-2L-nSV" customClass="MainItem" customModule="smart_life">
+                    <tabBarItem key="tabBarItem" title="" image="购物车" badgeValue="3" id="scT-2L-nSV" customClass="MainItem" customModule="smart_life">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                 </viewController>
@@ -250,6 +269,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNL-wx-DW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1967" y="-320"/>
+        </scene>
+        <!--Address Table View Controller-->
+        <scene sceneID="0kW-hA-hbI">
+            <objects>
+                <viewController id="2QM-lZ-9aw" customClass="AddressTableViewController" customModule="smart_life" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w6X-aX-MFa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nxa-md-ptJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k3g-Hy-YUk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Icf-VS-KBw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802" y="979"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="STE-jx-SWP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WSG-Me-YOc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ObQ-pA-w0G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fRL-PD-zS9" kind="relationship" relationship="rootViewController" id="PZ5-IQ-A95"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NiA-ZU-jmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2521" y="396"/>
         </scene>
     </scenes>
     <resources>
