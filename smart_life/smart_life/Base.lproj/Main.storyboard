@@ -81,7 +81,6 @@
         <!--商品列表-->
         <scene sceneID="lRc-yS-SAW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OTl-ly-a0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="fRL-PD-zS9" customClass="ListTableViewController" customModule="smart_life" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Am5-Mu-8HW"/>
@@ -94,6 +93,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="商品列表" id="wvP-pf-gMu"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTl-ly-a0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3220" y="396"/>
         </scene>

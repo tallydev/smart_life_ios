@@ -161,7 +161,7 @@ let btns = [
         let item = courses[indexPath.row]
         cell.homeTabLabel.text = item["name"]
         cell.homeTabImage.image = UIImage(named:item["pic"]!)
-        cell.homeTabCollection = HomeTabBtnCollectionView(btn:btns[indexPath.row])
+//        cell.homeTabCollection = HomeTabBtnCollectionView(btn:btns[indexPath.row])
         
         //选中背景修改成绿色
 //        cell.selectedBackgroundView = UIView()
