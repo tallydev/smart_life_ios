@@ -178,6 +178,7 @@ class ShoppingCartViewController: UIViewController {
     lazy var buyButton: UIButton = {
         let buyButton = UIButton(type: UIButtonType.Custom)
         buyButton.setTitle("结算", forState: UIControlState.Normal)
+        buyButton.addTarget(self, action: #selector(ShoppingCartViewController.goCheckCart(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         buyButton.backgroundColor = UIColor.orangeColor()
         buyButton.layer.masksToBounds = true
         return buyButton
@@ -281,9 +282,7 @@ extension ShoppingCartViewController: UITableViewDataSource, UITableViewDelegate
 extension ShoppingCartViewController {
         
     /**
-     当点击了购物车触发，modal到购物车控制器
-         
-     - parameter button: 购物车按钮
+     当点击了地址按钮
     */
     @objc private func goHomeButton(button: UIButton) {
             
@@ -291,6 +290,16 @@ extension ShoppingCartViewController {
         
         // 模态出一个购物车控制器
         navigationController?.pushViewController(shoppingCartVc, animated: true);
+    }
+    
+    /**
+     当点击了结算按钮
+     */
+    @objc private func goCheckCart(button: UIButton) {
+        
+        navigationItem.title = "确认订单"
+        buyButton.setTitle("提交订单", forState: UIControlState.Normal)
+        
     }
     
     /**

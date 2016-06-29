@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PNChartSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-smart_life.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>209B769B24DB6BAC27C63A566669DE9F</key>
+		<key>2573DE9B0CFF60ADD1310BDA21A2CEF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37752DFEFE697314D2C59A257F981BE7</key>
+		<key>5F24CFF5A66D2D67FBACEA4624FAD9E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6FF2742C9AD186F4E8FB6EE29F8EE088</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,12 +62,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9CE0D84B30C91AEEC776FEC5823C5B1D</key>
+		<key>92DFA347D672FB29506B3E053A80ED65</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E59360FE33885CC6CD5CEA9AF92014D2</key>
+		<key>D7D43DF323D03988729CB6B9F566A7C2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

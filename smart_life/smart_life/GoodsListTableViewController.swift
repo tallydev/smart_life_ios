@@ -58,7 +58,7 @@ class GoodsListTableViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // 提示：这个方法是在控制器view已经显示后调用，我们可以在这个方法里面做一些子控件约束操作等
-        
+        self.tabBarItem.badgeValue = String(addGoodArray.count)
         // 约束子控件
         layoutUI()
     }

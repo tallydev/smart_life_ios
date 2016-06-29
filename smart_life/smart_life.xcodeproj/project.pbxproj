@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		306646CA6EB2B1749D360B82 /* Pods_smart_life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C4FB042CD31E153FBEC1B7 /* Pods_smart_life.framework */; };
-		D44135DE1D1927DB00072099 /* listTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135DD1D1927DB00072099 /* listTableViewController.swift */; };
+		D417C4271D2108BB00955C30 /* WaterFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D417C4261D2108BB00955C30 /* WaterFlowViewController.swift */; };
+		D44135DE1D1927DB00072099 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135DD1D1927DB00072099 /* ListTableViewController.swift */; };
 		D44135E31D1A3A5400072099 /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E21D1A3A5400072099 /* AddressCell.swift */; };
 		D44135E51D1A5C4500072099 /* UIView+BHBFreeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E41D1A5C4500072099 /* UIView+BHBFreeBorder.swift */; };
 		D44135E71D1A749400072099 /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E61D1A749400072099 /* AddressTableViewController.swift */; };
@@ -40,7 +41,8 @@
 		23E2D602F7284D3BAFD02378 /* Pods-smart_life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smart_life.release.xcconfig"; path = "Pods/Target Support Files/Pods-smart_life/Pods-smart_life.release.xcconfig"; sourceTree = "<group>"; };
 		37C4FB042CD31E153FBEC1B7 /* Pods_smart_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smart_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9886A503F36A9D70E0E98C37 /* Pods-smart_life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smart_life.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smart_life/Pods-smart_life.debug.xcconfig"; sourceTree = "<group>"; };
-		D44135DD1D1927DB00072099 /* listTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listTableViewController.swift; sourceTree = "<group>"; };
+		D417C4261D2108BB00955C30 /* WaterFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFlowViewController.swift; sourceTree = "<group>"; };
+		D44135DD1D1927DB00072099 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		D44135E21D1A3A5400072099 /* AddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		D44135E41D1A5C4500072099 /* UIView+BHBFreeBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BHBFreeBorder.swift"; sourceTree = "<group>"; };
 		D44135E61D1A749400072099 /* AddressTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
@@ -101,11 +103,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D417C4281D2235E600955C30 /* HomeBtn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HomeBtn;
+			sourceTree = "<group>";
+		};
 		D44135DA1D19245A00072099 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
 				D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */,
-				D44135DD1D1927DB00072099 /* listTableViewController.swift */,
+				D44135DD1D1927DB00072099 /* ListTableViewController.swift */,
 			);
 			name = Shopping;
 			sourceTree = "<group>";
@@ -195,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F55D341D0E5D8A0017638B /* HeartBitViewController.swift */,
+				D417C4261D2108BB00955C30 /* WaterFlowViewController.swift */,
 			);
 			name = HeartBit;
 			sourceTree = "<group>";
@@ -241,6 +251,7 @@
 		D4F55D501D0E97FC0017638B /* ViewMode(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
+				D417C4281D2235E600955C30 /* HomeBtn */,
 				D44135DC1D19250400072099 /* ShoppingMode */,
 				D44135DB1D1924DF00072099 /* HomeViewMode */,
 				D4F55D541D0EE5040017638B /* CirCleView.swift */,
@@ -386,6 +397,7 @@
 				D44135E71D1A749400072099 /* AddressTableViewController.swift in Sources */,
 				D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */,
 				D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */,
+				D417C4271D2108BB00955C30 /* WaterFlowViewController.swift in Sources */,
 				D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */,
 				D44135E91D1A758700072099 /* AddressModel.swift in Sources */,
 				D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */,
@@ -397,7 +409,7 @@
 				D4C128491D14021400561CB3 /* HomeTabBtnCollectionViewCell.swift in Sources */,
 				D4C1284C1D150B9100561CB3 /* HomeTabBtnCollectionView.swift in Sources */,
 				D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */,
-				D44135DE1D1927DB00072099 /* listTableViewController.swift in Sources */,
+				D44135DE1D1927DB00072099 /* ListTableViewController.swift in Sources */,
 				D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */,
 				D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */,
 				D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */,

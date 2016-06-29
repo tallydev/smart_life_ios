@@ -17,6 +17,8 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
     
     let wd = UIScreen.mainScreen().bounds.size.width //屏幕宽度
     
+    
+    
     let colletionCell :Int=2//几列
     
     var hArr : [CGFloat] = [250,200,200,300,200,250,320,220]//数组存储不同高度
@@ -68,7 +70,8 @@ let btns = [
         ["name":"更多臻品","pic":"banner2.png"]
     ]
 ]
-
+    
+    
     
     /********************************** System Methods *****************************************/
     //MARK:- System Methods
@@ -110,7 +113,6 @@ let btns = [
     
     
     
-    
     /********************************** Delegate Methods ***************************************/
     //MARK:- Delegate Methods
     //MARK: CirCleViewDelegate Methods
@@ -121,9 +123,14 @@ let btns = [
     
     
     override func viewWillAppear(animated:Bool) {
-    
+        // 布局UI
+        layoutUI()
         collectionView.reloadData()
     
+    }
+    
+    func getView() -> UIView {
+        return NSBundle.mainBundle().loadNibNamed("homeTabBtnCollectionViewCell", owner: nil, options: nil)[0] as! UIView
     }
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell{
@@ -156,17 +163,32 @@ let btns = [
 //        for subview in cell.subviews {
 //            subview.removeFromSuperview()
 //        }
-
-        
-        let item = courses[indexPath.row]
-        cell.homeTabLabel.text = item["name"]
-        cell.homeTabImage.image = UIImage(named:item["pic"]!)
-//        cell.homeTabCollection = HomeTabBtnCollectionView(btn:btns[indexPath.row])
+        if indexPath.row == 1 {
+            let item = courses[indexPath.row]
+            cell.homeTabLabel.text = item["name"]
+            cell.homeTabImage.image = UIImage(named:item["pic"]!)
+            
+            bottomView.addSubview(label)
+            bottomView.addSubview(imageIcon)
+            cell.homeTabCollection.addSubview(bottomView)
+            imageIcon.image = UIImage(named:"home-6")
+            label.text = "sdjvjdifjai"
+        }else{
+            let item = courses[indexPath.row]
+            cell.homeTabLabel.text = item["name"]
+            cell.homeTabImage.image = UIImage(named:item["pic"]!)
+            
+            bottomView.addSubview(label)
+            bottomView.addSubview(imageIcon)
+            cell.homeTabCollection.addSubview(bottomView)
+            imageIcon.image = UIImage(named:"home-6")
+            label.text = "ccccc"
+        }
         
         //选中背景修改成绿色
 //        cell.selectedBackgroundView = UIView()
 //        cell.selectedBackgroundView?.backgroundColor =
-//            UIColor(red: 135/255, green: 191/255, blue: 49/255, alpha: 1)
+//        UIColor(red: 135/255, green: 191/255, blue: 49/255, alpha: 1)
         
         //默认文字颜色是黑色，选中项文字是白色
 //        cell.homeTabLabel.textColor = UIColor.blackColor()
@@ -175,6 +197,9 @@ let btns = [
         return cell
       
     }
+    
+    
+    
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) ->Int{
     
@@ -207,6 +232,39 @@ let btns = [
     
     }
     
+    /**
+     准备UI
+     */
+//    private func prepareUI() {
+//        // 添加子控件
+//        view.addSubview(tableView)
+//        view.addSubview(bottomView)
+//        view.addSubview(settleAccountsBottomView)
+//    }
+    
+    /**
+     布局UI
+     */
+    private func layoutUI() {
+        
+        // 约束子控件
+        bottomView.snp_makeConstraints { (make) -> Void in
+            make.left.top.right.equalTo(0)
+            make.height.equalTo(25)
+        }
+        
+        imageIcon.snp_makeConstraints { (make) -> Void in
+            make.left.equalTo(10)
+            make.centerY.equalTo(bottomView.snp_centerY)
+            make.width.height.equalTo(20)
+        }
+        label.snp_makeConstraints { (make) -> Void in
+            make.top.bottom.right.equalTo(0)
+            make.left.equalTo(40)
+        }
+    }
+
+    
     
     
 
@@ -216,5 +274,23 @@ let btns = [
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-}
+    
+    lazy var bottomView: UIView = {
+        let bottomView = UIView()
+//        bottomView.backgroundColor = UIColor.blackColor()
+        return bottomView
+    }()
+    
+    lazy var imageIcon: UIImageView = {
+        let imageIcon = UIImageView()
+        return imageIcon
+    }()
+    
+    lazy var label: UILabel = {
+        let label = UILabel()
+        label.text = "预约体检"
+        return label
+    }()
 
+    
+}

@@ -12,7 +12,6 @@ class HomeTabCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var homeTabLabel: UILabel!
     @IBOutlet weak var homeTabImage: UIImageView!
     @IBOutlet weak var homeTabView: UIView!
-    @IBOutlet weak var homeTabCollection: HomeTabBtnCollectionView!
-    
+    @IBOutlet weak var homeTabCollection: UIView!
     
 }
