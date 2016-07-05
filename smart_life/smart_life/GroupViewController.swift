@@ -7,16 +7,42 @@
 //
 
 import UIKit
+import CountdownLabel
 
-class GroupViewController: UIViewController {
+class GroupViewController: UIViewController, CountdownLabelDelegate, LTMorphingLabelDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        let btn:UIButton = UIButton(type:.System)
+//        let fromDate   = NSDate().dateByAddingTimeInterval(0)
+//        let targetDate = fromDate.dateByAddingTimeInterval(50)
+//        let countdownLabel = CountdownLabel(frame: CGRectMake(140, 140, 300, 100), fromDate: fromDate, targetDate: targetDate)
+//        
+//        self.view.addSubview(countdownLabel)
+//        self.view.addSubview(btn)
+//        
+//        countdownLabel.textColor = UIColor.orangeColor()
+//        countdownLabel.font = UIFont(name: "Courier", size: 30)
+//        countdownLabel.animationType = .Sparkle
+//        countdownLabel.delegate = self
+//        countdownLabel.start()
+//        
+//        btn.frame = CGRectMake(40, 440, 100, 50)
+//        btn.tintColor = UIColor.whiteColor()
+//        btn.backgroundColor = UIColor.orangeColor()
+//        btn.setTitle("buy", forState:UIControlState.Normal)
+//        
+//        countdownLabel.then(1) { [unowned self] in
+//            countdownLabel.textColor = .greenColor()
+//            btn.enabled = false
+//        }
+        
         // Do any additional setup after loading the view.
         //发送通知消息
         scheduleNotification();
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

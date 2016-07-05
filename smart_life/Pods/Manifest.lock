@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (3.4.1)
+  - CountdownLabel (1.1.2):
+    - LTMorphingLabel (~> 0.1.1)
+  - LTMorphingLabel (0.1.1)
   - MBProgressHUD (0.9.2)
   - PNChartSwift (0.0.2)
   - SnapKit (0.15.0)
@@ -8,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
+  - CountdownLabel
   - MBProgressHUD (~> 0.9.2)
   - PNChartSwift (from `https://github.com/kevinzhow/PNChart-Swift.git`)
   - SnapKit (~> 0.15.0)
@@ -31,12 +35,14 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  CountdownLabel: 06f96abd1f6e3a2dc6795ffb321c742ab5959b74
+  LTMorphingLabel: dfc40f43a0dcf81867b1f29431f34e861a5f1b35
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   PNChartSwift: bcdfbffd65920072463eff42d0dfb46189bf4495
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: fab6aa858c858dec64f6195d97c05baaebfb067f
+PODFILE CHECKSUM: 1c7f2164c87991642071c1e8432824ea9288e236
 
 COCOAPODS: 1.0.1

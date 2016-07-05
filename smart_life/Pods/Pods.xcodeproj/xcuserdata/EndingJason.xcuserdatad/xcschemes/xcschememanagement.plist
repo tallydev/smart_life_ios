@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CountdownLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LTMorphingLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +52,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2573DE9B0CFF60ADD1310BDA21A2CEF1</key>
+		<key>315623CB345F887D3C7A8B1E44D8C934</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5F24CFF5A66D2D67FBACEA4624FAD9E7</key>
+		<key>3B98525B57597A119546005A86AB5E7B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>422F8CD229ECEA3115CA76D2A2F0514A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,22 +72,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>77A66A71AA1C54326DFEDF02A149202A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92DFA347D672FB29506B3E053A80ED65</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D7D43DF323D03988729CB6B9F566A7C2</key>
+		<key>BA13CB6306514784A94430897ACD1721</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB3A0B403FB6FEDB3DD880D939CB8D56</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,3 +8,4 @@
 
 #import <CoreMotion/CoreMotion.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <LTMorphingLabel/LTMorphingLabel.h>

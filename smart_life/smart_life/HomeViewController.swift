@@ -12,6 +12,8 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
     
     var circleView: CirCleView!
     
+    let model = generateRandomData()
+    var storedOffsets = [Int: CGFloat]()
 
     @IBOutlet var collectionView: UICollectionView!
     
@@ -21,7 +23,7 @@ class HomeViewController: UIViewController, CirCleViewDelegate, UICollectionView
     
     let colletionCell :Int=2//几列
     
-    var hArr : [CGFloat] = [250,200,200,300,200,250,320,220]//数组存储不同高度
+    var hArr : [CGFloat] = [230,180,180,280,180,230,300,200]//数组存储不同高度
     
     let courses = [
         ["name":"— 智慧健康 —","pic":"banner2.png"],
@@ -71,7 +73,8 @@ let btns = [
     ]
 ]
     
-    
+//    let controller = SportTabViewController(nibName:"SportTabViewController", bundle:nil)
+//    var stepview = NSBundle.mainBundle().loadNibNamed("SportTabViewController", owner: nil, options: nil)[0]
     
     /********************************** System Methods *****************************************/
     //MARK:- System Methods
@@ -124,7 +127,7 @@ let btns = [
     
     override func viewWillAppear(animated:Bool) {
         // 布局UI
-        layoutUI()
+//        layoutUI()
         collectionView.reloadData()
     
     }
@@ -135,70 +138,35 @@ let btns = [
     
     func collectionView(collectionView:UICollectionView, cellForItemAtIndexPath indexPath:NSIndexPath) -> UICollectionViewCell{
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! HomeTabCollectionViewCell
-        
-        cell.backgroundColor=UIColor.whiteColor()
-        
-        let remainder :Int = indexPath.row%colletionCell
-        
-        let currentRow :Int = indexPath.row/colletionCell
-        
-        let currentHeight :CGFloat=hArr[indexPath.row]
-        
-        let positonX = CGFloat( (Int(wd)/colletionCell-8) * remainder + 5*(remainder+1) )
-        
-        var positionY = CGFloat((currentRow+1)*5) + 220
-        
-        for i in 0..<currentRow{
+       
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! HomeTabCollectionViewCell
             
-            let position = remainder + i*colletionCell
+            let remainder :Int = indexPath.row%colletionCell
             
-            positionY += hArr[position]
+            let currentRow :Int = indexPath.row/colletionCell
             
-        }
-        
-        cell.frame=CGRectMake(positonX, positionY,CGFloat(Int(wd)/colletionCell-8),currentHeight) //重新定义cell位置、宽高
-        
-        //先清空内部原有的元素
-//        for subview in cell.subviews {
-//            subview.removeFromSuperview()
-//        }
-        if indexPath.row == 1 {
+            let currentHeight :CGFloat=hArr[indexPath.row]
+            
+            let positonX = CGFloat( (Int(wd)/colletionCell-8) * remainder + 5*(remainder+1) )
+            
+            var positionY = CGFloat((currentRow+1)*5) + 220
+            
+            for i in 0..<currentRow{
+                
+                let position = remainder + i*colletionCell
+                
+                positionY += hArr[position]
+                
+            }
+            
+            cell.backgroundColor=UIColor.whiteColor()
+            cell.frame=CGRectMake(positonX, positionY,CGFloat(Int(wd)/colletionCell-8),currentHeight) //重新定义cell位置、宽高
             let item = courses[indexPath.row]
             cell.homeTabLabel.text = item["name"]
             cell.homeTabImage.image = UIImage(named:item["pic"]!)
-            
-            bottomView.addSubview(label)
-            bottomView.addSubview(imageIcon)
-            cell.homeTabCollection.addSubview(bottomView)
-            imageIcon.image = UIImage(named:"home-6")
-            label.text = "sdjvjdifjai"
-        }else{
-            let item = courses[indexPath.row]
-            cell.homeTabLabel.text = item["name"]
-            cell.homeTabImage.image = UIImage(named:item["pic"]!)
-            
-            bottomView.addSubview(label)
-            bottomView.addSubview(imageIcon)
-            cell.homeTabCollection.addSubview(bottomView)
-            imageIcon.image = UIImage(named:"home-6")
-            label.text = "ccccc"
-        }
-        
-        //选中背景修改成绿色
-//        cell.selectedBackgroundView = UIView()
-//        cell.selectedBackgroundView?.backgroundColor =
-//        UIColor(red: 135/255, green: 191/255, blue: 49/255, alpha: 1)
-        
-        //默认文字颜色是黑色，选中项文字是白色
-//        cell.homeTabLabel.textColor = UIColor.blackColor()
-//        cell.homeTabLabel.highlightedTextColor = UIColor.whiteColor()
-        
-        return cell
       
+            return cell
     }
-    
-    
     
     
     func numberOfSectionsInCollectionView(collectionView:UICollectionView) ->Int{
@@ -232,65 +200,6 @@ let btns = [
     
     }
     
-    /**
-     准备UI
-     */
-//    private func prepareUI() {
-//        // 添加子控件
-//        view.addSubview(tableView)
-//        view.addSubview(bottomView)
-//        view.addSubview(settleAccountsBottomView)
-//    }
-    
-    /**
-     布局UI
-     */
-    private func layoutUI() {
-        
-        // 约束子控件
-        bottomView.snp_makeConstraints { (make) -> Void in
-            make.left.top.right.equalTo(0)
-            make.height.equalTo(25)
-        }
-        
-        imageIcon.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(10)
-            make.centerY.equalTo(bottomView.snp_centerY)
-            make.width.height.equalTo(20)
-        }
-        label.snp_makeConstraints { (make) -> Void in
-            make.top.bottom.right.equalTo(0)
-            make.left.equalTo(40)
-        }
-    }
-
-    
-    
-    
-
-       /***************************** End & ReceiveMe Methods ************************************/
+          /***************************** End & ReceiveMe Methods ************************************/
     //MARK:- End Methods
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    lazy var bottomView: UIView = {
-        let bottomView = UIView()
-//        bottomView.backgroundColor = UIColor.blackColor()
-        return bottomView
-    }()
-    
-    lazy var imageIcon: UIImageView = {
-        let imageIcon = UIImageView()
-        return imageIcon
-    }()
-    
-    lazy var label: UILabel = {
-        let label = UILabel()
-        label.text = "预约体检"
-        return label
-    }()
-
-    
 }
