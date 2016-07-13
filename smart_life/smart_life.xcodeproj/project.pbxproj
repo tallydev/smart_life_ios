@@ -29,7 +29,15 @@
 		D46DBB2E1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB2C1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift */; };
 		D46DBB2F1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB2D1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib */; };
 		D46DBB371D2BA0C7009519A0 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB361D2BA0C7009519A0 /* HomeCollectionViewController.swift */; };
+		D4748B211D30A103002B9179 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4748B201D30A103002B9179 /* HomeController.swift */; };
 		D49CEADB1D240C59003D2737 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49CEADA1D240C59003D2737 /* Helpers.swift */; };
+		D4B43AB41D35D6E60023887E /* HealthPart1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AB31D35D6E60023887E /* HealthPart1ViewController.swift */; };
+		D4B43AB61D35D6F80023887E /* HealthPart2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AB51D35D6F80023887E /* HealthPart2ViewController.swift */; };
+		D4B43AB81D35D7090023887E /* HealthPart3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AB71D35D7090023887E /* HealthPart3ViewController.swift */; };
+		D4B43ABA1D3615B70023887E /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AB91D3615B70023887E /* CommunityViewController.swift */; };
+		D4B43ABD1D3645490023887E /* HealthPart2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43ABC1D3645490023887E /* HealthPart2TableViewCell.swift */; };
+		D4B43ABF1D368B760023887E /* HealthPart3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43ABE1D368B760023887E /* HealthPart3TableViewCell.swift */; };
+		D4B43AC11D3695C20023887E /* FitnessTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AC01D3695C20023887E /* FitnessTableViewController.swift */; };
 		D4C128381D113CCC00561CB3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C128371D113CCC00561CB3 /* CoreMotion.framework */; };
 		D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */; };
 		D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128431D13E1C800561CB3 /* HomeTabCollectionViewCell.swift */; };
@@ -75,7 +83,15 @@
 		D46DBB2C1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell8.swift; sourceTree = "<group>"; };
 		D46DBB2D1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell8.xib; sourceTree = "<group>"; };
 		D46DBB361D2BA0C7009519A0 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		D4748B201D30A103002B9179 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		D49CEADA1D240C59003D2737 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		D4B43AB31D35D6E60023887E /* HealthPart1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart1ViewController.swift; sourceTree = "<group>"; };
+		D4B43AB51D35D6F80023887E /* HealthPart2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart2ViewController.swift; sourceTree = "<group>"; };
+		D4B43AB71D35D7090023887E /* HealthPart3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart3ViewController.swift; sourceTree = "<group>"; };
+		D4B43AB91D3615B70023887E /* CommunityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		D4B43ABC1D3645490023887E /* HealthPart2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart2TableViewCell.swift; sourceTree = "<group>"; };
+		D4B43ABE1D368B760023887E /* HealthPart3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart3TableViewCell.swift; sourceTree = "<group>"; };
+		D4B43AC01D3695C20023887E /* FitnessTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessTableViewController.swift; sourceTree = "<group>"; };
 		D4C128371D113CCC00561CB3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D4C128391D113D5E00561CB3 /* Header_bradge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header_bradge.h; sourceTree = "<group>"; };
 		D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +201,69 @@
 			name = Address;
 			sourceTree = "<group>";
 		};
+		D4B43AAC1D35D5480023887E /* NewProduct */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NewProduct;
+			sourceTree = "<group>";
+		};
+		D4B43AAD1D35D55B0023887E /* IT */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = IT;
+			sourceTree = "<group>";
+		};
+		D4B43AAE1D35D56F0023887E /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				D4B43AB31D35D6E60023887E /* HealthPart1ViewController.swift */,
+				D4B43AB51D35D6F80023887E /* HealthPart2ViewController.swift */,
+				D4B43AB71D35D7090023887E /* HealthPart3ViewController.swift */,
+			);
+			name = Health;
+			sourceTree = "<group>";
+		};
+		D4B43AAF1D35D5770023887E /* Fitness */ = {
+			isa = PBXGroup;
+			children = (
+				D4B43AC01D3695C20023887E /* FitnessTableViewController.swift */,
+			);
+			name = Fitness;
+			sourceTree = "<group>";
+		};
+		D4B43AB01D35D5A80023887E /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				D4B43AB91D3615B70023887E /* CommunityViewController.swift */,
+			);
+			name = Community;
+			sourceTree = "<group>";
+		};
+		D4B43AB11D35D5D60023887E /* MunicipalAdministration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MunicipalAdministration;
+			sourceTree = "<group>";
+		};
+		D4B43AB21D35D60D0023887E /* HomeFurnishing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HomeFurnishing;
+			sourceTree = "<group>";
+		};
+		D4B43ABB1D3645170023887E /* CellModel */ = {
+			isa = PBXGroup;
+			children = (
+				D4B43ABC1D3645490023887E /* HealthPart2TableViewCell.swift */,
+				D4B43ABE1D368B760023887E /* HealthPart3TableViewCell.swift */,
+			);
+			name = CellModel;
+			sourceTree = "<group>";
+		};
 		D4C1283A1D1183B300561CB3 /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +296,7 @@
 		D4F55D2F1D0E5D8A0017638B /* smart_life */ = {
 			isa = PBXGroup;
 			children = (
+				D4B43ABB1D3645170023887E /* CellModel */,
 				D4F55D511D0E98250017638B /* Mode(模型) */,
 				D4F55D501D0E97FC0017638B /* ViewMode(视图模型) */,
 				D4F55D4F1D0E97DA0017638B /* View(控制器和视图) */,
@@ -265,9 +345,17 @@
 		D4F55D4A1D0E97210017638B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D4B43AB21D35D60D0023887E /* HomeFurnishing */,
+				D4B43AB11D35D5D60023887E /* MunicipalAdministration */,
+				D4B43AB01D35D5A80023887E /* Community */,
+				D4B43AAF1D35D5770023887E /* Fitness */,
+				D4B43AAE1D35D56F0023887E /* Health */,
+				D4B43AAD1D35D55B0023887E /* IT */,
+				D4B43AAC1D35D5480023887E /* NewProduct */,
 				D44135DA1D19245A00072099 /* Shopping */,
 				D4F55D321D0E5D8A0017638B /* HomeViewController.swift */,
 				D46DBB361D2BA0C7009519A0 /* HomeCollectionViewController.swift */,
+				D4748B201D30A103002B9179 /* HomeController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -439,28 +527,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4B43AB61D35D6F80023887E /* HealthPart2ViewController.swift in Sources */,
 				D46DBB0E1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift in Sources */,
+				D4B43AB41D35D6E60023887E /* HealthPart1ViewController.swift in Sources */,
 				D44135E71D1A749400072099 /* AddressTableViewController.swift in Sources */,
 				D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */,
+				D4748B211D30A103002B9179 /* HomeController.swift in Sources */,
 				D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */,
 				D417C4271D2108BB00955C30 /* WaterFlowViewController.swift in Sources */,
 				D49CEADB1D240C59003D2737 /* Helpers.swift in Sources */,
+				D4B43ABD1D3645490023887E /* HealthPart2TableViewCell.swift in Sources */,
 				D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */,
 				D44135E91D1A758700072099 /* AddressModel.swift in Sources */,
 				D46DBB241D2B81C7009519A0 /* HomeTabCollectionViewCell7.swift in Sources */,
+				D4B43ABF1D368B760023887E /* HealthPart3TableViewCell.swift in Sources */,
 				D46DBB2A1D2B8274009519A0 /* HomeTabCollectionViewCell6.swift in Sources */,
 				D46DBB1E1D2B81AB009519A0 /* HomeTabCollectionViewCell5.swift in Sources */,
+				D4B43AC11D3695C20023887E /* FitnessTableViewController.swift in Sources */,
 				D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */,
 				D46DBB2E1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift in Sources */,
 				D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */,
 				D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */,
 				D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */,
 				D46DBB1A1D2B819C009519A0 /* HomeTabCollectionViewCell4.swift in Sources */,
+				D4B43ABA1D3615B70023887E /* CommunityViewController.swift in Sources */,
 				D44135E51D1A5C4500072099 /* UIView+BHBFreeBorder.swift in Sources */,
 				D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */,
 				D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */,
 				D44135DE1D1927DB00072099 /* ListTableViewController.swift in Sources */,
 				D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */,
+				D4B43AB81D35D7090023887E /* HealthPart3ViewController.swift in Sources */,
 				D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */,
 				D46DBB141D2B8174009519A0 /* HomeTabCollectionViewCell3.swift in Sources */,
 				D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */,

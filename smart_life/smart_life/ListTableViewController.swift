@@ -12,6 +12,9 @@ import Alamofire
 class ListTableViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
     
+    @IBAction func BackView(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
