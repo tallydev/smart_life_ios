@@ -172,8 +172,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="s2f-Mi-mOF"/>
                                 <exclude reference="kcg-K7-cTp"/>
+                                <exclude reference="s2f-Mi-mOF"/>
                             </mask>
                         </variation>
                     </view>

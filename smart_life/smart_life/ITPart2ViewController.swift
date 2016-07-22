@@ -1,15 +1,15 @@
 //
-//  HealthPart1ViewController.swift
+//  ITPart2ViewController.swift
 //  smart_life
 //
-//  Created by 张留刚 on 16/7/13.
+//  Created by 张留刚 on 16/7/14.
 //  Copyright © 2016年 张留刚. All rights reserved.
 //
 
 import UIKit
 
-class HealthPart1ViewController: UIViewController {
-    
+class ITPart2ViewController: UIViewController {
+
     @IBAction func backBtn(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -32,15 +32,13 @@ class HealthPart1ViewController: UIViewController {
         alertView.removeFromSuperview()
         
     }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let view1 = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
-        view1.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
-        self.navigationController?.view.addSubview(view1)
+        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
+        view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
+        self.navigationController?.view.addSubview(view)
 
         // Do any additional setup after loading the view.
     }

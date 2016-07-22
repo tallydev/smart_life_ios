@@ -66,16 +66,16 @@ class GoodListCell: UITableViewCell {
         
         // 添加子控件
         contentView.addSubview(iconView)
+        contentView.addSubview(addCartButton)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descLabel)
-        contentView.addSubview(addCartButton)
         
         // 约束子控件
         iconView.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(12)
+            make.left.equalTo(20)
             make.top.equalTo(10)
             make.width.equalTo(100)
-            make.height.equalTo(60)
+            make.height.equalTo(100)
         }
         
         titleLabel.snp_makeConstraints { (make) -> Void in
@@ -89,9 +89,9 @@ class GoodListCell: UITableViewCell {
         }
         
         addCartButton.snp_makeConstraints { (make) -> Void in
-            make.right.equalTo(12)
-            make.top.equalTo(25)
-            make.width.equalTo(60)
+            make.right.equalTo(-20)
+            make.bottom.equalTo(-15)
+            make.width.equalTo(90)
             make.height.equalTo(30)
         }
         
@@ -109,7 +109,7 @@ class GoodListCell: UITableViewCell {
         goodModel!.alreadyAddShoppingCart = true
         
         // 已经点击的就禁用
-        button.enabled = !goodModel!.alreadyAddShoppingCart
+//        button.enabled = !goodModel!.alreadyAddShoppingCart
         
         // 通知代理对象，去处理后续操作
         delegate?.goodListCell(self, iconView: iconView)
@@ -127,23 +127,22 @@ class GoodListCell: UITableViewCell {
     /// 商品标题
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
-        print(titleLabel)
         return titleLabel
     }()
     
     /// 商品描述
     private lazy var descLabel: UILabel = {
         let descLabel = UILabel()
-        descLabel.textColor = UIColor.grayColor()
+        descLabel.textColor = UIColor.orangeColor()
         return descLabel
     }()
     
     /// 添加按钮
     private lazy var addCartButton: UIButton = {
-        let addCartButton = UIButton()
-        
-        addCartButton.tintColor = UIColor.blackColor()
-        addCartButton.layer.backgroundColor = UIColor.init(red: 255, green: 121, blue: 40, alpha: 1.00).CGColor
+        let addCartButton = UIButton(type:.System)
+        addCartButton.backgroundColor = UIColor.orangeColor()
+        addCartButton.layer.cornerRadius = 8
+        addCartButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         addCartButton.setTitle("查看详情", forState: UIControlState.Normal)
         
         // 添加按钮点击事件

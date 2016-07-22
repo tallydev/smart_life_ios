@@ -7,10 +7,14 @@
 //
 
 import UIKit
-import CountdownLabel
 
-class GroupViewController: UIViewController, CountdownLabelDelegate, LTMorphingLabelDelegate {
+class GroupViewController: UIViewController {
 
+    @IBAction func groupbtn(sender: AnyObject) {
+        var sb = UIStoryboard(name: "Main", bundle:nil)
+        var vc = sb.instantiateViewControllerWithIdentifier("NAV-group")
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,7 +22,7 @@ class GroupViewController: UIViewController, CountdownLabelDelegate, LTMorphingL
 //        let fromDate   = NSDate().dateByAddingTimeInterval(0)
 //        let targetDate = fromDate.dateByAddingTimeInterval(50)
 //        let countdownLabel = CountdownLabel(frame: CGRectMake(140, 140, 300, 100), fromDate: fromDate, targetDate: targetDate)
-//        
+//
 //        self.view.addSubview(countdownLabel)
 //        self.view.addSubview(btn)
 //        

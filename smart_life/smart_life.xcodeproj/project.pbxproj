@@ -8,12 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		306646CA6EB2B1749D360B82 /* Pods_smart_life.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C4FB042CD31E153FBEC1B7 /* Pods_smart_life.framework */; };
+		D404DDD51D4263E9003586C4 /* IndentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDD41D4263E9003586C4 /* IndentViewController.swift */; };
+		D404DDD71D4268BD003586C4 /* IndentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDD61D4268BD003586C4 /* IndentCell.swift */; };
+		D404DDDC1D427CAF003586C4 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDDB1D427CAF003586C4 /* PayViewController.swift */; };
+		D406F4821D3F1B9B00236EA6 /* OrderBtnTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F4811D3F1B9B00236EA6 /* OrderBtnTwo.swift */; };
+		D406F4841D3F1BFC00236EA6 /* OrderBtnTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406F4831D3F1BFC00236EA6 /* OrderBtnTwo.xib */; };
+		D406F4871D3F22AD00236EA6 /* alertFrame.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406F4861D3F22AD00236EA6 /* alertFrame.xib */; };
+		D406F4891D3F22C500236EA6 /* alertFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F4881D3F22C500236EA6 /* alertFrame.swift */; };
 		D417C4271D2108BB00955C30 /* WaterFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D417C4261D2108BB00955C30 /* WaterFlowViewController.swift */; };
+		D41ADD9D1D38145000534E6A /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41ADD9C1D38145000534E6A /* MyCell.swift */; };
+		D41ADD9F1D38146600534E6A /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41ADD9E1D38146600534E6A /* MyCell.xib */; };
 		D44135DE1D1927DB00072099 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135DD1D1927DB00072099 /* ListTableViewController.swift */; };
 		D44135E31D1A3A5400072099 /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E21D1A3A5400072099 /* AddressCell.swift */; };
 		D44135E51D1A5C4500072099 /* UIView+BHBFreeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E41D1A5C4500072099 /* UIView+BHBFreeBorder.swift */; };
 		D44135E71D1A749400072099 /* AddressTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E61D1A749400072099 /* AddressTableViewController.swift */; };
 		D44135E91D1A758700072099 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135E81D1A758700072099 /* AddressModel.swift */; };
+		D4486ECB1D38965500BB8984 /* MyOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ECA1D38965500BB8984 /* MyOrderTableViewController.swift */; };
+		D4486ECE1D3899FF00BB8984 /* MyOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ECD1D3899FF00BB8984 /* MyOrderTableViewCell.swift */; };
+		D4486ED01D389D4D00BB8984 /* MyIndentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ECF1D389D4D00BB8984 /* MyIndentTableViewController.swift */; };
+		D4486ED31D389D6900BB8984 /* MyIndentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ED21D389D6900BB8984 /* MyIndentTableViewCell.swift */; };
 		D46DBB0E1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB0C1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift */; };
 		D46DBB0F1D2B8135009519A0 /* HomeTabCollectionViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB0D1D2B8135009519A0 /* HomeTabCollectionViewCell2.xib */; };
 		D46DBB141D2B8174009519A0 /* HomeTabCollectionViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB121D2B8174009519A0 /* HomeTabCollectionViewCell3.swift */; };
@@ -30,6 +43,8 @@
 		D46DBB2F1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB2D1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib */; };
 		D46DBB371D2BA0C7009519A0 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB361D2BA0C7009519A0 /* HomeCollectionViewController.swift */; };
 		D4748B211D30A103002B9179 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4748B201D30A103002B9179 /* HomeController.swift */; };
+		D48B2BFF1D405D34003208DB /* WaresDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B2BFE1D405D34003208DB /* WaresDetailViewController.swift */; };
+		D491F1D51D3C6AE100D7FA11 /* MyDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */; };
 		D49CEADB1D240C59003D2737 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49CEADA1D240C59003D2737 /* Helpers.swift */; };
 		D4B43AB41D35D6E60023887E /* HealthPart1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AB31D35D6E60023887E /* HealthPart1ViewController.swift */; };
 		D4B43AB61D35D6F80023887E /* HealthPart2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AB51D35D6F80023887E /* HealthPart2ViewController.swift */; };
@@ -38,6 +53,13 @@
 		D4B43ABD1D3645490023887E /* HealthPart2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43ABC1D3645490023887E /* HealthPart2TableViewCell.swift */; };
 		D4B43ABF1D368B760023887E /* HealthPart3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43ABE1D368B760023887E /* HealthPart3TableViewCell.swift */; };
 		D4B43AC11D3695C20023887E /* FitnessTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AC01D3695C20023887E /* FitnessTableViewController.swift */; };
+		D4B43ACC1D3724910023887E /* OrderBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43ACB1D3724910023887E /* OrderBtn.swift */; };
+		D4B43AD01D3725450023887E /* OrderBtn.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B43ACF1D3725450023887E /* OrderBtn.xib */; };
+		D4B43AD31D372BEC0023887E /* NibDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AD21D372BEC0023887E /* NibDesignable.swift */; };
+		D4B43AD51D373BD00023887E /* FitnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AD41D373BD00023887E /* FitnessTableViewCell.swift */; };
+		D4B43AD71D374D090023887E /* ITPart1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AD61D374D090023887E /* ITPart1ViewController.swift */; };
+		D4B43AD91D374D900023887E /* ITPart2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AD81D374D900023887E /* ITPart2ViewController.swift */; };
+		D4B43ADB1D374DA00023887E /* ITPart3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43ADA1D374DA00023887E /* ITPart3ViewController.swift */; };
 		D4C128381D113CCC00561CB3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C128371D113CCC00561CB3 /* CoreMotion.framework */; };
 		D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */; };
 		D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128431D13E1C800561CB3 /* HomeTabCollectionViewCell.swift */; };
@@ -46,6 +68,7 @@
 		D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1284F1D178C1D00561CB3 /* GoodModel.swift */; };
 		D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */; };
 		D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128551D1794A100561CB3 /* GoodListCell.swift */; };
+		D4EC0CA91D3DC6BB00E2464F /* UserAvatraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC0CA81D3DC6BB00E2464F /* UserAvatraTableViewCell.swift */; };
 		D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D301D0E5D8A0017638B /* AppDelegate.swift */; };
 		D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D321D0E5D8A0017638B /* HomeViewController.swift */; };
 		D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D341D0E5D8A0017638B /* HeartBitViewController.swift */; };
@@ -56,18 +79,38 @@
 		D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D4B1D0E97AD0017638B /* GroupViewController.swift */; };
 		D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D4D1D0E97CF0017638B /* ProfileViewController.swift */; };
 		D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D541D0EE5040017638B /* CirCleView.swift */; };
+		D4F8520C1D37975D003888A4 /* HomeFurnishingPart1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F8520B1D37975D003888A4 /* HomeFurnishingPart1ViewController.swift */; };
+		D4F8520E1D379779003888A4 /* HomeFurnishingPart2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F8520D1D379779003888A4 /* HomeFurnishingPart2ViewController.swift */; };
+		D4F852101D379B34003888A4 /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F8520F1D379B34003888A4 /* NewProductViewController.swift */; };
+		D4F852131D37EA65003888A4 /* IconBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F852121D37EA65003888A4 /* IconBtn.swift */; };
+		D4F852151D37EA81003888A4 /* IconBtn.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4F852141D37EA81003888A4 /* IconBtn.xib */; };
+		D4F852171D380184003888A4 /* HomeServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F852161D380184003888A4 /* HomeServerViewController.swift */; };
+		D4F852191D3802EF003888A4 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F852181D3802EF003888A4 /* MyInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		23E2D602F7284D3BAFD02378 /* Pods-smart_life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smart_life.release.xcconfig"; path = "Pods/Target Support Files/Pods-smart_life/Pods-smart_life.release.xcconfig"; sourceTree = "<group>"; };
 		37C4FB042CD31E153FBEC1B7 /* Pods_smart_life.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smart_life.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9886A503F36A9D70E0E98C37 /* Pods-smart_life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smart_life.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smart_life/Pods-smart_life.debug.xcconfig"; sourceTree = "<group>"; };
+		D404DDD41D4263E9003586C4 /* IndentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentViewController.swift; sourceTree = "<group>"; };
+		D404DDD61D4268BD003586C4 /* IndentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentCell.swift; sourceTree = "<group>"; };
+		D404DDDB1D427CAF003586C4 /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		D406F4811D3F1B9B00236EA6 /* OrderBtnTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBtnTwo.swift; sourceTree = "<group>"; };
+		D406F4831D3F1BFC00236EA6 /* OrderBtnTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderBtnTwo.xib; sourceTree = "<group>"; };
+		D406F4861D3F22AD00236EA6 /* alertFrame.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = alertFrame.xib; sourceTree = "<group>"; };
+		D406F4881D3F22C500236EA6 /* alertFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alertFrame.swift; sourceTree = "<group>"; };
 		D417C4261D2108BB00955C30 /* WaterFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFlowViewController.swift; sourceTree = "<group>"; };
+		D41ADD9C1D38145000534E6A /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		D41ADD9E1D38146600534E6A /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		D44135DD1D1927DB00072099 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		D44135E21D1A3A5400072099 /* AddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		D44135E41D1A5C4500072099 /* UIView+BHBFreeBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+BHBFreeBorder.swift"; sourceTree = "<group>"; };
 		D44135E61D1A749400072099 /* AddressTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewController.swift; sourceTree = "<group>"; };
 		D44135E81D1A758700072099 /* AddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
+		D4486ECA1D38965500BB8984 /* MyOrderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderTableViewController.swift; sourceTree = "<group>"; };
+		D4486ECD1D3899FF00BB8984 /* MyOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderTableViewCell.swift; sourceTree = "<group>"; };
+		D4486ECF1D389D4D00BB8984 /* MyIndentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyIndentTableViewController.swift; sourceTree = "<group>"; };
+		D4486ED21D389D6900BB8984 /* MyIndentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyIndentTableViewCell.swift; sourceTree = "<group>"; };
 		D46DBB0C1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell2.swift; sourceTree = "<group>"; };
 		D46DBB0D1D2B8135009519A0 /* HomeTabCollectionViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell2.xib; sourceTree = "<group>"; };
 		D46DBB121D2B8174009519A0 /* HomeTabCollectionViewCell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell3.swift; sourceTree = "<group>"; };
@@ -84,6 +127,8 @@
 		D46DBB2D1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell8.xib; sourceTree = "<group>"; };
 		D46DBB361D2BA0C7009519A0 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		D4748B201D30A103002B9179 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		D48B2BFE1D405D34003208DB /* WaresDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaresDetailViewController.swift; sourceTree = "<group>"; };
+		D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDataTableViewController.swift; sourceTree = "<group>"; };
 		D49CEADA1D240C59003D2737 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D4B43AB31D35D6E60023887E /* HealthPart1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart1ViewController.swift; sourceTree = "<group>"; };
 		D4B43AB51D35D6F80023887E /* HealthPart2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart2ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +137,13 @@
 		D4B43ABC1D3645490023887E /* HealthPart2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart2TableViewCell.swift; sourceTree = "<group>"; };
 		D4B43ABE1D368B760023887E /* HealthPart3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart3TableViewCell.swift; sourceTree = "<group>"; };
 		D4B43AC01D3695C20023887E /* FitnessTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessTableViewController.swift; sourceTree = "<group>"; };
+		D4B43ACB1D3724910023887E /* OrderBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBtn.swift; sourceTree = "<group>"; };
+		D4B43ACF1D3725450023887E /* OrderBtn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderBtn.xib; sourceTree = "<group>"; };
+		D4B43AD21D372BEC0023887E /* NibDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibDesignable.swift; sourceTree = "<group>"; };
+		D4B43AD41D373BD00023887E /* FitnessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessTableViewCell.swift; sourceTree = "<group>"; };
+		D4B43AD61D374D090023887E /* ITPart1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITPart1ViewController.swift; sourceTree = "<group>"; };
+		D4B43AD81D374D900023887E /* ITPart2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITPart2ViewController.swift; sourceTree = "<group>"; };
+		D4B43ADA1D374DA00023887E /* ITPart3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITPart3ViewController.swift; sourceTree = "<group>"; };
 		D4C128371D113CCC00561CB3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D4C128391D113D5E00561CB3 /* Header_bradge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header_bradge.h; sourceTree = "<group>"; };
 		D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +153,7 @@
 		D4C1284F1D178C1D00561CB3 /* GoodModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodModel.swift; sourceTree = "<group>"; };
 		D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsListTableViewController.swift; sourceTree = "<group>"; };
 		D4C128551D1794A100561CB3 /* GoodListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListCell.swift; sourceTree = "<group>"; };
+		D4EC0CA81D3DC6BB00E2464F /* UserAvatraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAvatraTableViewCell.swift; sourceTree = "<group>"; };
 		D4F55D2D1D0E5D8A0017638B /* smart_life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smart_life.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F55D301D0E5D8A0017638B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4F55D321D0E5D8A0017638B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +166,13 @@
 		D4F55D4B1D0E97AD0017638B /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		D4F55D4D1D0E97CF0017638B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4F55D541D0EE5040017638B /* CirCleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirCleView.swift; sourceTree = "<group>"; };
+		D4F8520B1D37975D003888A4 /* HomeFurnishingPart1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFurnishingPart1ViewController.swift; sourceTree = "<group>"; };
+		D4F8520D1D379779003888A4 /* HomeFurnishingPart2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFurnishingPart2ViewController.swift; sourceTree = "<group>"; };
+		D4F8520F1D379B34003888A4 /* NewProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
+		D4F852121D37EA65003888A4 /* IconBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconBtn.swift; sourceTree = "<group>"; };
+		D4F852141D37EA81003888A4 /* IconBtn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconBtn.xib; sourceTree = "<group>"; };
+		D4F852161D380184003888A4 /* HomeServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeServerViewController.swift; sourceTree = "<group>"; };
+		D4F852181D3802EF003888A4 /* MyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +205,46 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D404DDD31D4263B5003586C4 /* Indent */ = {
+			isa = PBXGroup;
+			children = (
+				D404DDD41D4263E9003586C4 /* IndentViewController.swift */,
+				D404DDD61D4268BD003586C4 /* IndentCell.swift */,
+			);
+			name = Indent;
+			sourceTree = "<group>";
+		};
+		D404DDD81D426B5B003586C4 /* AddressCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AddressCell;
+			sourceTree = "<group>";
+		};
+		D404DDD91D426B75003586C4 /* IndentCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = IndentCell;
+			sourceTree = "<group>";
+		};
+		D404DDDA1D427C96003586C4 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				D404DDDB1D427CAF003586C4 /* PayViewController.swift */,
+			);
+			name = Pay;
+			sourceTree = "<group>";
+		};
+		D406F4851D3F225F00236EA6 /* AlertFrame */ = {
+			isa = PBXGroup;
+			children = (
+				D406F4861D3F22AD00236EA6 /* alertFrame.xib */,
+				D406F4881D3F22C500236EA6 /* alertFrame.swift */,
+			);
+			name = AlertFrame;
+			sourceTree = "<group>";
+		};
 		D417C4281D2235E600955C30 /* HomeBtn */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,11 +252,21 @@
 			name = HomeBtn;
 			sourceTree = "<group>";
 		};
+		D41ADD9B1D3813C600534E6A /* MyCellStyle */ = {
+			isa = PBXGroup;
+			children = (
+				D41ADD9C1D38145000534E6A /* MyCell.swift */,
+				D41ADD9E1D38146600534E6A /* MyCell.xib */,
+			);
+			name = MyCellStyle;
+			sourceTree = "<group>";
+		};
 		D44135DA1D19245A00072099 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
 				D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */,
 				D44135DD1D1927DB00072099 /* ListTableViewController.swift */,
+				D48B2BFE1D405D34003208DB /* WaresDetailViewController.swift */,
 			);
 			name = Shopping;
 			sourceTree = "<group>";
@@ -201,9 +311,26 @@
 			name = Address;
 			sourceTree = "<group>";
 		};
+		D4486ECC1D38998E00BB8984 /* MyOrderCell */ = {
+			isa = PBXGroup;
+			children = (
+				D4486ECD1D3899FF00BB8984 /* MyOrderTableViewCell.swift */,
+			);
+			name = MyOrderCell;
+			sourceTree = "<group>";
+		};
+		D4486ED11D389D5700BB8984 /* MyIndented */ = {
+			isa = PBXGroup;
+			children = (
+				D4486ED21D389D6900BB8984 /* MyIndentTableViewCell.swift */,
+			);
+			name = MyIndented;
+			sourceTree = "<group>";
+		};
 		D4B43AAC1D35D5480023887E /* NewProduct */ = {
 			isa = PBXGroup;
 			children = (
+				D4F8520F1D379B34003888A4 /* NewProductViewController.swift */,
 			);
 			name = NewProduct;
 			sourceTree = "<group>";
@@ -211,6 +338,9 @@
 		D4B43AAD1D35D55B0023887E /* IT */ = {
 			isa = PBXGroup;
 			children = (
+				D4B43AD61D374D090023887E /* ITPart1ViewController.swift */,
+				D4B43AD81D374D900023887E /* ITPart2ViewController.swift */,
+				D4B43ADA1D374DA00023887E /* ITPart3ViewController.swift */,
 			);
 			name = IT;
 			sourceTree = "<group>";
@@ -251,6 +381,8 @@
 		D4B43AB21D35D60D0023887E /* HomeFurnishing */ = {
 			isa = PBXGroup;
 			children = (
+				D4F8520B1D37975D003888A4 /* HomeFurnishingPart1ViewController.swift */,
+				D4F8520D1D379779003888A4 /* HomeFurnishingPart2ViewController.swift */,
 			);
 			name = HomeFurnishing;
 			sourceTree = "<group>";
@@ -260,8 +392,28 @@
 			children = (
 				D4B43ABC1D3645490023887E /* HealthPart2TableViewCell.swift */,
 				D4B43ABE1D368B760023887E /* HealthPart3TableViewCell.swift */,
+				D4B43AD41D373BD00023887E /* FitnessTableViewCell.swift */,
 			);
 			name = CellModel;
+			sourceTree = "<group>";
+		};
+		D4B43AC21D3721670023887E /* OrderBtn */ = {
+			isa = PBXGroup;
+			children = (
+				D4B43ACB1D3724910023887E /* OrderBtn.swift */,
+				D4B43ACF1D3725450023887E /* OrderBtn.xib */,
+				D406F4811D3F1B9B00236EA6 /* OrderBtnTwo.swift */,
+				D406F4831D3F1BFC00236EA6 /* OrderBtnTwo.xib */,
+			);
+			name = OrderBtn;
+			sourceTree = "<group>";
+		};
+		D4B43AD11D372BC40023887E /* NibDesignable */ = {
+			isa = PBXGroup;
+			children = (
+				D4B43AD21D372BEC0023887E /* NibDesignable.swift */,
+			);
+			name = NibDesignable;
 			sourceTree = "<group>";
 		};
 		D4C1283A1D1183B300561CB3 /* ShoppingCart */ = {
@@ -271,6 +423,14 @@
 				D4C1284D1D15A4B100561CB3 /* ShoppingCartCell.swift */,
 			);
 			name = ShoppingCart;
+			sourceTree = "<group>";
+		};
+		D4EC0CA71D3DC68800E2464F /* UserAvatra */ = {
+			isa = PBXGroup;
+			children = (
+				D4EC0CA81D3DC6BB00E2464F /* UserAvatraTableViewCell.swift */,
+			);
+			name = UserAvatra;
 			sourceTree = "<group>";
 		};
 		D4F55D241D0E5D8A0017638B = {
@@ -296,7 +456,7 @@
 		D4F55D2F1D0E5D8A0017638B /* smart_life */ = {
 			isa = PBXGroup;
 			children = (
-				D4B43ABB1D3645170023887E /* CellModel */,
+				D4B43AD11D372BC40023887E /* NibDesignable */,
 				D4F55D511D0E98250017638B /* Mode(模型) */,
 				D4F55D501D0E97FC0017638B /* ViewMode(视图模型) */,
 				D4F55D4F1D0E97DA0017638B /* View(控制器和视图) */,
@@ -330,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				D4F55D4B1D0E97AD0017638B /* GroupViewController.swift */,
+				D4F852161D380184003888A4 /* HomeServerViewController.swift */,
 			);
 			name = Group;
 			sourceTree = "<group>";
@@ -338,6 +499,10 @@
 			isa = PBXGroup;
 			children = (
 				D4F55D4D1D0E97CF0017638B /* ProfileViewController.swift */,
+				D4F852181D3802EF003888A4 /* MyInfoViewController.swift */,
+				D4486ECA1D38965500BB8984 /* MyOrderTableViewController.swift */,
+				D4486ECF1D389D4D00BB8984 /* MyIndentTableViewController.swift */,
+				D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -363,6 +528,8 @@
 		D4F55D4F1D0E97DA0017638B /* View(控制器和视图) */ = {
 			isa = PBXGroup;
 			children = (
+				D404DDDA1D427C96003586C4 /* Pay */,
+				D404DDD31D4263B5003586C4 /* Indent */,
 				D44135E11D1A39FB00072099 /* Address */,
 				D4C1283A1D1183B300561CB3 /* ShoppingCart */,
 				D4F55D4A1D0E97210017638B /* Home */,
@@ -377,6 +544,16 @@
 		D4F55D501D0E97FC0017638B /* ViewMode(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
+				D404DDD91D426B75003586C4 /* IndentCell */,
+				D404DDD81D426B5B003586C4 /* AddressCell */,
+				D406F4851D3F225F00236EA6 /* AlertFrame */,
+				D4EC0CA71D3DC68800E2464F /* UserAvatra */,
+				D4486ED11D389D5700BB8984 /* MyIndented */,
+				D4486ECC1D38998E00BB8984 /* MyOrderCell */,
+				D41ADD9B1D3813C600534E6A /* MyCellStyle */,
+				D4F852111D37EA11003888A4 /* iconbtn */,
+				D4B43ABB1D3645170023887E /* CellModel */,
+				D4B43AC21D3721670023887E /* OrderBtn */,
 				D417C4281D2235E600955C30 /* HomeBtn */,
 				D44135DC1D19250400072099 /* ShoppingMode */,
 				D44135DB1D1924DF00072099 /* HomeViewMode */,
@@ -394,6 +571,15 @@
 				D49CEADA1D240C59003D2737 /* Helpers.swift */,
 			);
 			name = "Mode(模型)";
+			sourceTree = "<group>";
+		};
+		D4F852111D37EA11003888A4 /* iconbtn */ = {
+			isa = PBXGroup;
+			children = (
+				D4F852121D37EA65003888A4 /* IconBtn.swift */,
+				D4F852141D37EA81003888A4 /* IconBtn.xib */,
+			);
+			name = iconbtn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,13 +646,18 @@
 			files = (
 				D46DBB1B1D2B819C009519A0 /* HomeTabCollectionViewCell4.xib in Resources */,
 				D4F55D3D1D0E5D8A0017638B /* LaunchScreen.storyboard in Resources */,
+				D406F4871D3F22AD00236EA6 /* alertFrame.xib in Resources */,
 				D46DBB151D2B8174009519A0 /* HomeTabCollectionViewCell3.xib in Resources */,
 				D46DBB1F1D2B81AB009519A0 /* HomeTabCollectionViewCell5.xib in Resources */,
 				D46DBB2B1D2B8274009519A0 /* HomeTabCollectionViewCell6.xib in Resources */,
+				D4B43AD01D3725450023887E /* OrderBtn.xib in Resources */,
 				D46DBB0F1D2B8135009519A0 /* HomeTabCollectionViewCell2.xib in Resources */,
 				D46DBB251D2B81C7009519A0 /* HomeTabCollectionViewCell7.xib in Resources */,
 				D46DBB2F1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib in Resources */,
+				D406F4841D3F1BFC00236EA6 /* OrderBtnTwo.xib in Resources */,
 				D4C128461D13E1C800561CB3 /* HomeTabCollectionViewCell.xib in Resources */,
+				D4F852151D37EA81003888A4 /* IconBtn.xib in Resources */,
+				D41ADD9F1D38146600534E6A /* MyCell.xib in Resources */,
 				D4F55D3A1D0E5D8A0017638B /* Assets.xcassets in Resources */,
 				D4F55D381D0E5D8A0017638B /* Main.storyboard in Resources */,
 			);
@@ -527,36 +718,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F852171D380184003888A4 /* HomeServerViewController.swift in Sources */,
 				D4B43AB61D35D6F80023887E /* HealthPart2ViewController.swift in Sources */,
 				D46DBB0E1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift in Sources */,
+				D4F852191D3802EF003888A4 /* MyInfoViewController.swift in Sources */,
+				D404DDDC1D427CAF003586C4 /* PayViewController.swift in Sources */,
+				D4486ECB1D38965500BB8984 /* MyOrderTableViewController.swift in Sources */,
+				D4B43AD71D374D090023887E /* ITPart1ViewController.swift in Sources */,
+				D4F852101D379B34003888A4 /* NewProductViewController.swift in Sources */,
 				D4B43AB41D35D6E60023887E /* HealthPart1ViewController.swift in Sources */,
 				D44135E71D1A749400072099 /* AddressTableViewController.swift in Sources */,
 				D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */,
+				D4B43ACC1D3724910023887E /* OrderBtn.swift in Sources */,
 				D4748B211D30A103002B9179 /* HomeController.swift in Sources */,
 				D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */,
 				D417C4271D2108BB00955C30 /* WaterFlowViewController.swift in Sources */,
 				D49CEADB1D240C59003D2737 /* Helpers.swift in Sources */,
 				D4B43ABD1D3645490023887E /* HealthPart2TableViewCell.swift in Sources */,
+				D4486ECE1D3899FF00BB8984 /* MyOrderTableViewCell.swift in Sources */,
+				D406F4891D3F22C500236EA6 /* alertFrame.swift in Sources */,
+				D4B43AD51D373BD00023887E /* FitnessTableViewCell.swift in Sources */,
 				D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */,
+				D404DDD51D4263E9003586C4 /* IndentViewController.swift in Sources */,
+				D4EC0CA91D3DC6BB00E2464F /* UserAvatraTableViewCell.swift in Sources */,
 				D44135E91D1A758700072099 /* AddressModel.swift in Sources */,
+				D41ADD9D1D38145000534E6A /* MyCell.swift in Sources */,
+				D4F8520C1D37975D003888A4 /* HomeFurnishingPart1ViewController.swift in Sources */,
 				D46DBB241D2B81C7009519A0 /* HomeTabCollectionViewCell7.swift in Sources */,
+				D4486ED31D389D6900BB8984 /* MyIndentTableViewCell.swift in Sources */,
 				D4B43ABF1D368B760023887E /* HealthPart3TableViewCell.swift in Sources */,
 				D46DBB2A1D2B8274009519A0 /* HomeTabCollectionViewCell6.swift in Sources */,
 				D46DBB1E1D2B81AB009519A0 /* HomeTabCollectionViewCell5.swift in Sources */,
+				D4B43AD91D374D900023887E /* ITPart2ViewController.swift in Sources */,
+				D48B2BFF1D405D34003208DB /* WaresDetailViewController.swift in Sources */,
 				D4B43AC11D3695C20023887E /* FitnessTableViewController.swift in Sources */,
 				D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */,
 				D46DBB2E1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift in Sources */,
 				D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */,
 				D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */,
 				D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */,
+				D4486ED01D389D4D00BB8984 /* MyIndentTableViewController.swift in Sources */,
 				D46DBB1A1D2B819C009519A0 /* HomeTabCollectionViewCell4.swift in Sources */,
 				D4B43ABA1D3615B70023887E /* CommunityViewController.swift in Sources */,
+				D406F4821D3F1B9B00236EA6 /* OrderBtnTwo.swift in Sources */,
+				D4B43ADB1D374DA00023887E /* ITPart3ViewController.swift in Sources */,
+				D4B43AD31D372BEC0023887E /* NibDesignable.swift in Sources */,
 				D44135E51D1A5C4500072099 /* UIView+BHBFreeBorder.swift in Sources */,
+				D4F8520E1D379779003888A4 /* HomeFurnishingPart2ViewController.swift in Sources */,
+				D491F1D51D3C6AE100D7FA11 /* MyDataTableViewController.swift in Sources */,
 				D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */,
 				D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */,
+				D404DDD71D4268BD003586C4 /* IndentCell.swift in Sources */,
 				D44135DE1D1927DB00072099 /* ListTableViewController.swift in Sources */,
 				D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */,
 				D4B43AB81D35D7090023887E /* HealthPart3ViewController.swift in Sources */,
+				D4F852131D37EA65003888A4 /* IconBtn.swift in Sources */,
 				D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */,
 				D46DBB141D2B8174009519A0 /* HomeTabCollectionViewCell3.swift in Sources */,
 				D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */,
@@ -676,7 +892,7 @@
 			baseConfigurationReference = 9886A503F36A9D70E0E98C37 /* Pods-smart_life.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = smart_life/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -693,7 +909,7 @@
 			baseConfigurationReference = 23E2D602F7284D3BAFD02378 /* Pods-smart_life.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = smart_life/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

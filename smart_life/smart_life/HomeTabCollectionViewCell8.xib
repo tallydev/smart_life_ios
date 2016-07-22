@@ -172,8 +172,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="oWr-dm-Ane"/>
                                 <exclude reference="kj6-3j-WmM"/>
+                                <exclude reference="oWr-dm-Ane"/>
                             </mask>
                         </variation>
                     </view>

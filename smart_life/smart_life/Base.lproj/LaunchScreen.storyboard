@@ -36,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="welcome" width="1243" height="2155"/>
+        <image name="welcome" width="620" height="1075"/>
     </resources>
 </document>

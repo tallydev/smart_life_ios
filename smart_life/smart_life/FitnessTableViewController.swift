@@ -24,12 +24,20 @@ class FitnessTableViewController: UITableViewController {
     var dataArray = [0,22,390,523,812,202,950,520,345,123,712]
     var timeLine = ["","2016.4","","","","2016.5","","","","2016.6",""]
     
-    var time = ["2016.06.01","2016.05.16","2016.05.04","2016.04.21","2016.04.01","2016.03.21","2016.03.05","2016.02.21","2016.02.11","2016.02.01","2016.01.11"]
-    var value = ["22.00","26.20","22.80","14.90","19.77","18.33","24.20","18.27","19.34","18.88","19.00"]
+    var ranking = ["5","1","2","3","4","6","7","8","9","10"]
+    var username = ["Loda","Saber","Dendi","Jhon","Ending","Jason","Ema","Jacbo","May","Ken"]
+    var userimage = ["健步达人-4","健步达人-5","健步达人-6","健步达人-7","健步达人-8","健步达人-4","健步达人-5","健步达人-6","健步达人-7","健步达人-8"]
+    var step = ["9030","11000","10980","10000","9603","8900","8820","5032","4890","2000"]
+    var support = ["59","10","22","0","34","10","11","0","2","9"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
+        view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
+        self.navigationController?.view.addSubview(view)
+        
         //去除cell下划线
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         //隐藏滚动条
@@ -45,12 +53,12 @@ class FitnessTableViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return time.count
+        return ranking.count
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -59,19 +67,20 @@ class FitnessTableViewController: UITableViewController {
     }
     
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        if indexPath.row%2 == 0 {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("HealthPart31", forIndexPath: indexPath) as! HealthPart3TableViewCell
-//            cell.timeLabel.text = time[indexPath.row]
-//            cell.valueLabel.text = value[indexPath.row]
-//            return cell
-//        }else{
-//            let cell = tableView.dequeueReusableCellWithIdentifier("HealthPart32", forIndexPath: indexPath) as! HealthPart3TableViewCell
-//            cell.timeLabel.text = time[indexPath.row]
-//            cell.valueLabel.text = value[indexPath.row]
-//            return cell
-//        }
-//    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Fitness", forIndexPath: indexPath) as! FitnessTableViewCell
+        cell.rankingLabel.text = ranking[indexPath.row]
+        cell.userImage.image = UIImage(named: userimage[indexPath.row])
+        cell.userNameLabel.text = username[indexPath.row]
+        cell.stepLabel.text = step[indexPath.row]
+        if Int(support[indexPath.row]) > 0 {
+            cell.supportIcon.image = UIImage(named: "健步达人-1")
+        }else{
+            cell.supportIcon.image = UIImage(named: "健步达人-3")
+        }
+        cell.supportNumber.text = support[indexPath.row]
+        return cell
+    }
     
     
     

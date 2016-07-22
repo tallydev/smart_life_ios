@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CountdownLabel
 
-class HomeController: UIViewController, CirCleViewDelegate {
+class HomeController: UIViewController, CirCleViewDelegate , CountdownLabelDelegate, LTMorphingLabelDelegate{
     
     var circleView: CirCleView!
+    @IBOutlet weak var countdownLabel: CountdownLabel!
 
     @IBOutlet weak var HomePageScrollView: UIScrollView!
     @IBOutlet weak var View21: UIViewEffect!
@@ -26,31 +28,37 @@ class HomeController: UIViewController, CirCleViewDelegate {
     @IBOutlet weak var View55: UIViewEffect!
     @IBOutlet weak var View56: UIViewEffect!
     @IBOutlet weak var View61: UIViewEffect!
+    @IBOutlet weak var View62: UIViewEffect!
     @IBOutlet weak var View71: UIViewEffect!
     @IBOutlet weak var View72: UIViewEffect!
     @IBOutlet weak var View73: UIViewEffect!
     @IBOutlet weak var View74: UIViewEffect!
     @IBOutlet weak var View81: UIViewEffect!
-    @IBOutlet weak var View82: UIViewEffect!
-    @IBOutlet weak var View83: UIViewEffect!
-    @IBOutlet weak var View84: UIViewEffect!
-    @IBOutlet weak var View85: UIViewEffect!
-    @IBOutlet weak var View86: UIViewEffect!
-    @IBOutlet weak var View91: UIViewEffect!
     @IBOutlet weak var View92: UIViewEffect!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imageArray: [UIImage!] = [UIImage(named: "banner1.png"), UIImage(named: "banner2.png"), UIImage(named: "banner3.png")]
-        
-        self.circleView = CirCleView(frame: CGRectMake(0, 0, self.view.frame.size.width, 220), imageArray: imageArray)
-        
+        //轮播图加载
+        let imageArray: [UIImage!] = [UIImage(named: "banner1.png"), UIImage(named: "banner.png")]
+        self.circleView = CirCleView(frame: CGRectMake(0, 20, self.view.frame.size.width, 220), imageArray: imageArray)
         circleView.backgroundColor = UIColor.orangeColor()
-        
         circleView.delegate = self
-        
         self.HomePageScrollView.addSubview(circleView)
         
+        //倒计时组件设置
+        let fromDate   = NSDate().dateByAddingTimeInterval(0)
+        countdownLabel.setCountDownTime(fromDate, minutes:1440)
+
+        countdownLabel.addTime(60*60)
+        countdownLabel.textColor = UIColor.orangeColor()
+        countdownLabel.font = UIFont(name: "Courier", size: 30)
+        countdownLabel.animationType = .Sparkle
+        countdownLabel.delegate = self
+        countdownLabel.start()
+        
+        
+        //视图点击跳转页面设置
         View21.addOnClickListener(self,action:#selector(HomeController().tapSingleDid1))
         View22.addOnClickListener(self,action:#selector(HomeController().tapSingleDid2))
 //        View23.addOnClickListener(self,action:#selector(HomeController().tapSingleDid3))
@@ -65,18 +73,12 @@ class HomeController: UIViewController, CirCleViewDelegate {
 //        View55.addOnClickListener(self,action:#selector(HomeController().tapSingleDid11))
 //        View56.addOnClickListener(self,action:#selector(HomeController().tapSingleDid12))
         View61.addOnClickListener(self,action:#selector(HomeController().tapSingleDid13))
+        View62.addOnClickListener(self,action:#selector(HomeController().tapSingleDid26))
         View71.addOnClickListener(self,action:#selector(HomeController().tapSingleDid14))
         View72.addOnClickListener(self,action:#selector(HomeController().tapSingleDid15))
         View73.addOnClickListener(self,action:#selector(HomeController().tapSingleDid16))
 //        View74.addOnClickListener(self,action:#selector(HomeController().tapSingleDid17))
         View81.addOnClickListener(self,action:#selector(HomeController().tapSingleDid18))
-//        View82.addOnClickListener(self,action:#selector(HomeController().tapSingleDid19))
-//        View83.addOnClickListener(self,action:#selector(HomeController().tapSingleDid20))
-      
-//        View84.addOnClickListener(self,action:#selector(HomeController().tapSingleDid21))
-//        View85.addOnClickListener(self,action:#selector(HomeController().tapSingleDid22))
-//        View86.addOnClickListener(self,action:#selector(HomeController().tapSingleDid23))
-//        View91.addOnClickListener(self,action:#selector(HomeController().tapSingleDid24))
         View92.addOnClickListener(self,action:#selector(HomeController().tapSingleDid25))
         
         // Do any additional setup after loading the view.
@@ -89,6 +91,7 @@ class HomeController: UIViewController, CirCleViewDelegate {
         circleView.urlImageArray = ["http://pic1.nipic.com/2008-09-08/200898163242920_2.jpg"]
     }
     
+    //智慧健康
     func tapSingleDid1(){
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("NAV11")
@@ -109,16 +112,19 @@ class HomeController: UIViewController, CirCleViewDelegate {
         var vc = sb.instantiateViewControllerWithIdentifier("NAV14")
         self.presentViewController(vc, animated: true, completion: nil)
     }
+//    健身达人
     func tapSingleDid5(){
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("NAV21")
         self.presentViewController(vc, animated: true, completion: nil)
     }
+//    社区活动
     func tapSingleDid6(){
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("NAV31")
         self.presentViewController(vc, animated: true, completion: nil)
     }
+//    市政大厅
     func tapSingleDid7(){
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("NAV41")
@@ -146,14 +152,21 @@ class HomeController: UIViewController, CirCleViewDelegate {
     }
     func tapSingleDid12(){
         var sb = UIStoryboard(name: "Main", bundle:nil)
-        var vc = sb.instantiateViewControllerWithIdentifier("NAV51")
+        var vc = sb.instantiateViewControllerWithIdentifier("NAV41")
         self.presentViewController(vc, animated: true, completion: nil)
     }
+//    智慧家居
     func tapSingleDid13(){
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("NAV51")
         self.presentViewController(vc, animated: true, completion: nil)
     }
+    func tapSingleDid26(){
+        var sb = UIStoryboard(name: "Main", bundle:nil)
+        var vc = sb.instantiateViewControllerWithIdentifier("NAV52")
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+//    社区IT
     func tapSingleDid14(){
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("NAV61")
@@ -174,41 +187,13 @@ class HomeController: UIViewController, CirCleViewDelegate {
         var vc = sb.instantiateViewControllerWithIdentifier("NAV64")
         self.presentViewController(vc, animated: true, completion: nil)
     }
+//    新品上市
     func tapSingleDid18(){
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("NAV71")
         self.presentViewController(vc, animated: true, completion: nil)
     }
-    func tapSingleDid19(){
-        var sb = UIStoryboard(name: "Main", bundle:nil)
-        var vc = sb.instantiateViewControllerWithIdentifier("NAV71")
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    func tapSingleDid20(){
-        var sb = UIStoryboard(name: "Main", bundle:nil)
-        var vc = sb.instantiateViewControllerWithIdentifier("NAV71")
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    func tapSingleDid21(){
-        var sb = UIStoryboard(name: "Main", bundle:nil)
-        var vc = sb.instantiateViewControllerWithIdentifier("NAV71")
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    func tapSingleDid22(){
-        var sb = UIStoryboard(name: "Main", bundle:nil)
-        var vc = sb.instantiateViewControllerWithIdentifier("NAV71")
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    func tapSingleDid23(){
-        var sb = UIStoryboard(name: "Main", bundle:nil)
-        var vc = sb.instantiateViewControllerWithIdentifier("NAV71")
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    func tapSingleDid24(){
-        var sb = UIStoryboard(name: "Main", bundle:nil)
-        var vc = sb.instantiateViewControllerWithIdentifier("NAV81")
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
+//    限量销售
     func tapSingleDid25(){
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("NAV81")
@@ -232,7 +217,7 @@ class HomeController: UIViewController, CirCleViewDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
-        HomePageScrollView.contentSize = CGSize.init(width: self.view.frame.width, height: 1836)
+        HomePageScrollView.contentSize = CGSize.init(width: self.view.frame.width, height: 1856)
         HomePageScrollView.showsVerticalScrollIndicator = false;
         HomePageScrollView.showsHorizontalScrollIndicator = false;
         HomePageScrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
@@ -279,4 +264,52 @@ class UIViewEffect : UIView {
         })
     }
     
+}
+
+extension UIButton {
+    
+    @objc func set(image anImage: UIImage?, title: String,
+                         titlePosition: UIViewContentMode, additionalSpacing: CGFloat, state: UIControlState){
+        self.imageView?.contentMode = .Center
+        self.setImage(anImage, forState: state)
+        
+        positionLabelRespectToImage(title, position: titlePosition, spacing: additionalSpacing)
+        
+        self.titleLabel?.contentMode = .Center
+        self.setTitle(title, forState: state)
+    }
+    
+    private func positionLabelRespectToImage(title: String, position: UIViewContentMode,
+                                             spacing: CGFloat) {
+        let imageSize = self.imageRectForContentRect(self.frame)
+        let titleFont = self.titleLabel?.font!
+        let titleSize = title.sizeWithAttributes([NSFontAttributeName: titleFont!])
+        
+        var titleInsets: UIEdgeInsets
+        var imageInsets: UIEdgeInsets
+        
+        switch (position){
+        case .Top:
+            titleInsets = UIEdgeInsets(top: -(imageSize.height + titleSize.height + spacing),
+                                       left: -(imageSize.width), bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
+        case .Bottom:
+            titleInsets = UIEdgeInsets(top: (imageSize.height + titleSize.height + spacing),
+                                       left: -(imageSize.width), bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
+        case .Left:
+            titleInsets = UIEdgeInsets(top: 0, left: -(imageSize.width * 2), bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0,
+                                       right: -(titleSize.width * 2 + spacing))
+        case .Right:
+            titleInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -spacing)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        default:
+            titleInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        
+        self.titleEdgeInsets = titleInsets
+        self.imageEdgeInsets = imageInsets
+    }
 }

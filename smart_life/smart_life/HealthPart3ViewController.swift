@@ -23,6 +23,7 @@ class HealthPart3ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //去除cell下划线
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         //隐藏滚动条

@@ -31,6 +31,12 @@ class ShoppingCartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
+        view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
+        self.navigationController?.view.addSubview(view)
+        
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 10, 0, 10)
+        
         // 准备UI
         prepareUI()
     }
@@ -216,42 +222,6 @@ extension ShoppingCartViewController: UITableViewDataSource, UITableViewDelegate
         
     }
     
-    
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
-    }
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 80
-    }
-
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let vw = UIView()
-        let location_icon = UIImageView()
-        let name_label = UILabel()
-        let go_right = UIButton(type: UIButtonType.Custom)
-
-        vw.backgroundColor = UIColor.whiteColor()
-        vw.addSubview(location_icon)
-        vw.addSubview(name_label)
-        vw.addSubview(go_right)
-        
-        name_label.addBorderLayer(UIColor.greenColor(), size: 1, boderType: BorderType.right);
-        
-        location_icon.image = UIImage(named: "location_icon")
-        
-        name_label.text = "上海市松江区新南路1088弄丽水华庭"
-        
-        go_right.setImage(UIImage(named: "right_icon"), forState: UIControlState.Normal)
-
-        go_right.addTarget(self, action: #selector(ShoppingCartViewController.goHomeButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        go_right.layer.masksToBounds = true
-        
-        layoutHeaderUI(vw,location_icon: location_icon, name_label: name_label, go_right: go_right)
-        
-        return vw
-    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return addGoodArray?.count ?? 0
     }
@@ -286,10 +256,10 @@ extension ShoppingCartViewController {
     */
     @objc private func goHomeButton(button: UIButton) {
             
-        let shoppingCartVc = AddressTableViewController()
+        let AddressVc = AddressTableViewController()
         
-        // 模态出一个购物车控制器
-        navigationController?.pushViewController(shoppingCartVc, animated: true);
+        // 模态出一个地址控制器
+        navigationController?.pushViewController(AddressVc, animated: true);
     }
     
     /**
@@ -297,8 +267,10 @@ extension ShoppingCartViewController {
      */
     @objc private func goCheckCart(button: UIButton) {
         
-        navigationItem.title = "确认订单"
-        buyButton.setTitle("提交订单", forState: UIControlState.Normal)
+        let IndentVc = IndentViewController()
+        
+        // 模态出一个地址控制器
+        navigationController?.pushViewController(IndentVc, animated: true);
         
     }
     

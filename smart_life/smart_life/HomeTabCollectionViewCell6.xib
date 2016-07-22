@@ -172,8 +172,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="XhV-UE-AeZ"/>
                                 <exclude reference="QoE-Xg-ia0"/>
+                                <exclude reference="XhV-UE-AeZ"/>
                             </mask>
                         </variation>
                     </view>

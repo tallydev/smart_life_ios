@@ -14,16 +14,20 @@ let SCREEN_WIDTH = UIScreen.mainScreen().bounds.size.width
 let SCREEN_HEIGHT = UIScreen.mainScreen().bounds.size.height
 
 class GoodsListTableViewController: UIViewController {
+    
+    @IBAction func backBtn(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
     // MARK: - 属性
     /// 商品模型数组，初始化
-    private var goodArray = [GoodModel]()
+    public var goodArray = [GoodModel]()
     
     /// 商品列表cell的重用标识符
     private let goodListCellIdentifier = "goodListCell"
     
-    /// 已经添加进购物车的商品模型数组，初始化
-    private var addGoodArray = [GoodModel]()
     
+    var GoodDetialArray = [GoodModel]()
     /// 贝塞尔曲线
     private var path: UIBezierPath?
     
@@ -34,20 +38,31 @@ class GoodsListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
+        view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
+        self.navigationController?.view.addSubview(view)
+        
         // 提醒：这个方法中一般用于初始化控制器中的一些数据、添加子控件等。但是这个方法获取的frame并不一定准确，所以不建议在这个方法约束子控件
         
         // 初始化模型数组，也就是搞点假数据。这里整10个模型
-        for i in 1..<15 {
+        let name = ["限量销售-22","限量销售-21","限量销售-21"]
+        let title = ["西双版纳生态无眼凤梨","天然放养土鸡蛋","西双版纳野生蜂蜜"]
+        let desc = ["¥66.00（包邮）","¥50.00（包邮）","¥150.00（包邮）"]
+        let newPrice = ["66","50","150"]
+        let oldPrice = ["80","70","180"]
+        
+        for i in 0..<3 {
             var dict = [String : AnyObject]()
-            dict["iconName"] = "banner\(i)"
-            dict["title"] = "商品名称\(i + 1)"
-            dict["desc"] = "这是第\(i + 1)个商品描述"
-            dict["newPrice"] = "66\(i)"
-            dict["oldPrice"] = "200\(i)"
+            dict["iconName"] = name[i]
+            dict["title"] = title[i]
+            dict["desc"] = desc[i]
+            dict["newPrice"] = newPrice[i]
+            dict["oldPrice"] = oldPrice[i]
             
             // 字典转模型并将模型添加到模型数组中
             goodArray.append(GoodModel(dict: dict))
         }
+        
         
         // 准备子控件
         prepareUI()
@@ -57,8 +72,6 @@ class GoodsListTableViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // 提示：这个方法是在控制器view已经显示后调用，我们可以在这个方法里面做一些子控件约束操作等
-        self.tabBarItem.badgeValue = String(addGoodArray.count)
         // 约束子控件
         layoutUI()
     }
@@ -69,15 +82,17 @@ class GoodsListTableViewController: UIViewController {
     private func prepareUI() {
         
         // 标题
-        navigationItem.title = "商品列表"
+        navigationItem.title = "限量销售"
         
-        // 添加导航栏上的购物车按钮和已经添加的商品数量label
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: cartButton)
-        
-        // 添加购物车按钮上的label
-        navigationController?.navigationBar.addSubview(addCountLabel)
         navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
         
+        //隐藏滚动条
+        self.tableView.showsVerticalScrollIndicator = false
+        
+        self.tableView.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
+        
+        view.backgroundColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
+
         // 添加tableView到控制器的view上
         view.addSubview(tableView)
         
@@ -92,14 +107,10 @@ class GoodsListTableViewController: UIViewController {
         
         // 约束tableview，让它全屏显示。注意：这里我使用了第三方约束框架（SnapKit）。如果还不会使用，请学习
         tableView.snp_makeConstraints { (make) -> Void in
-            make.edges.equalTo(view.snp_edges)
-        }
-        
-        addCountLabel.snp_makeConstraints { (make) -> Void in
-            make.right.equalTo(-12)
-            make.top.equalTo(9)
-            make.width.equalTo(15)
-            make.height.equalTo(15)
+            make.right.equalTo(0)
+            make.left.equalTo(0)
+            make.top.equalTo(0)
+            make.bottom.equalTo(0)
         }
     }
     
@@ -107,37 +118,12 @@ class GoodsListTableViewController: UIViewController {
     /// tableView
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = 80
+        tableView.rowHeight = 120
         // 指定数据源和代理
         tableView.dataSource = self
         tableView.delegate = self
         
         return tableView
-    }()
-    
-    /// cartButton顶部购物车按钮
-    lazy var cartButton: UIButton = {
-        let carButton = UIButton(type: UIButtonType.Custom)
-        carButton.setImage(UIImage(named: "cart"), forState: UIControlState.Normal)
-        carButton.addTarget(self, action: #selector(GoodsListTableViewController.didTappedCarButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        carButton.sizeToFit()
-        return carButton
-    }()
-    
-    /// 已经添加进购物车的商品数量
-    lazy var addCountLabel: UILabel = {
-        let addCountLabel = UILabel()
-        addCountLabel.backgroundColor = UIColor.whiteColor()
-        addCountLabel.textColor = UIColor.redColor()
-        addCountLabel.font = UIFont.boldSystemFontOfSize(11)
-        addCountLabel.textAlignment = NSTextAlignment.Center
-        addCountLabel.text = "\(self.addGoodArray.count)"
-        addCountLabel.layer.cornerRadius = 7.5
-        addCountLabel.layer.masksToBounds = true
-        addCountLabel.layer.borderWidth = 1
-        addCountLabel.layer.borderColor = UIColor.redColor().CGColor
-        addCountLabel.hidden = true
-        return addCountLabel
     }()
     
 }
@@ -170,25 +156,6 @@ extension GoodsListTableViewController: UITableViewDataSource, UITableViewDelega
     }
 }
 
-// view上的一些事件处理在这个类扩展里
-extension GoodsListTableViewController {
-    
-    /**
-     当点击了购物车触发，modal到购物车控制器
-     
-     - parameter button: 购物车按钮
-     */
-    @objc private func didTappedCarButton(button: UIButton) {
-        
-        let shoppingCartVc = ShoppingCartViewController()
-        
-        // 传递商品模型数组
-        shoppingCartVc.addGoodArray = addGoodArray
-        
-        // 模态出一个购物车控制器
-        presentViewController(UINavigationController(rootViewController: shoppingCartVc), animated: true, completion: nil)
-    }
-}
 
 // MARK: - GoodListCellDelegate代理方法
 extension GoodsListTableViewController: GoodListCellDelegate {
@@ -205,119 +172,13 @@ extension GoodsListTableViewController: GoodListCellDelegate {
             return
         }
         
-        // 获取当前模型，添加到购物车模型数组
-        let model = goodArray[indexPath.row]
-        addGoodArray.append(model)
+        let WaresDetailVc = WaresDetailViewController()
         
-        // 重新计算iconView的frame，并开启动画
-        var rect = tableView .rectForRowAtIndexPath(indexPath)
-        rect.origin.y -= tableView.contentOffset.y
-        var headRect = iconView.frame
-        headRect.origin.y = rect.origin.y + headRect.origin.y - 64
-        startAnimation(headRect, iconView: iconView)
-    }
-}
-
-// MARK: - 商品图片抛入购物车的动画效果
-extension GoodsListTableViewController {
-    
-    /**
-     开始动画
-     - parameter rect:     商品图标对象的frame
-     - parameter iconView: 商品图标对象
-     */
-    private func startAnimation(rect: CGRect, iconView: UIImageView) {
-        if layer == nil {
-            layer = CALayer()
-            layer?.contents = iconView.layer.contents
-            layer?.contentsGravity = kCAGravityResizeAspectFill
-            layer?.bounds = rect
-//            layer?.cornerRadius = CGRectGetHeight(layer!.bounds) * 0.5
-            layer?.masksToBounds = true
-            layer?.position = CGPoint(x: iconView.center.x, y: CGRectGetMinY(rect) + 96)
-            UIApplication.sharedApplication().keyWindow?.layer.addSublayer(layer!)
-            
-            path = UIBezierPath()
-            path!.moveToPoint(layer!.position)
-            path!.addQuadCurveToPoint(CGPoint(x: SCREEN_WIDTH - 25, y: 35), controlPoint: CGPoint(x: SCREEN_WIDTH * 0.5, y: rect.origin.y - 80))
-        }
+        // 传递商品模型数组
+        WaresDetailVc.goodCell = [goodArray[indexPath.row]]
         
-        // 组动画
-        groupAnimation()
-    }
-    
-    /**
-     组动画，帧动画抛入购物车，并放大、缩小图层增加点动效。
-     */
-    private func groupAnimation() {
+        // 模态出一个购物车控制器
+        presentViewController(UINavigationController(rootViewController: WaresDetailVc), animated: true, completion: nil)
         
-        // 开始动画禁用tableview交互
-        tableView.userInteractionEnabled = false
-        
-        // 帧动画
-        let animation = CAKeyframeAnimation(keyPath: "position")
-        animation.path = path!.CGPath
-        animation.rotationMode = kCAAnimationRotateAuto
-        
-        // 放大动画
-        let bigAnimation = CABasicAnimation(keyPath: "transform.scale")
-        bigAnimation.duration = 0.5
-        bigAnimation.fromValue = 1
-        bigAnimation.toValue = 2
-        bigAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        
-        // 缩小动画
-        let smallAnimation = CABasicAnimation(keyPath: "transform.scale")
-        smallAnimation.beginTime = 0.5
-        smallAnimation.duration = 1.5
-        smallAnimation.fromValue = 2
-        smallAnimation.toValue = 0.3
-        smallAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        
-        // 组动画
-        let groupAnimation = CAAnimationGroup()
-        groupAnimation.animations = [animation, bigAnimation, smallAnimation]
-        groupAnimation.duration = 2
-        groupAnimation.removedOnCompletion = false
-        groupAnimation.fillMode = kCAFillModeForwards
-        groupAnimation.delegate = self
-        layer?.addAnimation(groupAnimation, forKey: "groupAnimation")
-    }
-    
-    /**
-     动画结束后做一些操作
-     */
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-        
-        // 如果动画是我们的组动画，才开始一些操作
-        if anim == layer?.animationForKey("groupAnimation") {
-            
-            // 开启交互
-            tableView.userInteractionEnabled = true
-            
-            // 隐藏图层
-            layer?.removeAllAnimations()
-            layer?.removeFromSuperlayer()
-            layer = nil
-            
-            // 如果商品数大于0，显示购物车里的商品数量
-            if self.addGoodArray.count > 0 {
-                addCountLabel.hidden = false
-            }
-            
-            // 商品数量渐出
-            let goodCountAnimation = CATransition()
-            goodCountAnimation.duration = 0.25
-            addCountLabel.text = "\(self.addGoodArray.count)"
-            addCountLabel.layer.addAnimation(goodCountAnimation, forKey: nil)
-            
-            // 购物车抖动
-            let cartAnimation = CABasicAnimation(keyPath: "transform.translation.y")
-            cartAnimation.duration = 0.25
-            cartAnimation.fromValue = -5
-            cartAnimation.toValue = 5
-            cartAnimation.autoreverses = true
-            cartButton.layer.addAnimation(cartAnimation, forKey: nil)
-        }
     }
 }
