@@ -52,6 +52,10 @@ class ShoppingCartCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        contentView.layer.borderWidth = 2
+        contentView.layer.borderColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1).CGColor
+//        addressView.backgroundColor = UIColor.whiteColor()
+        
         // 准备UI
         prepareUI()
     }
@@ -75,18 +79,20 @@ class ShoppingCartCell: UITableViewCell {
         // 约束子控件
         selectButton.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(12)
+            make.width.equalTo(20)
+            make.height.equalTo(20)
             make.centerY.equalTo(contentView.snp_centerY)
         }
         
         iconView.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(50)
-            make.top.equalTo(10)
+            make.top.equalTo(15)
             make.width.equalTo(60)
             make.height.equalTo(60)
         }
         
         titleLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView.snp_top).offset(10)
+            make.top.equalTo(contentView.snp_top).offset(15)
             make.left.equalTo(iconView.snp_right).offset(12)
         }
         
@@ -102,7 +108,7 @@ class ShoppingCartCell: UITableViewCell {
         
         addAndsubtraction.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(120)
-            make.top.equalTo(40)
+            make.top.equalTo(45)
             make.width.equalTo(100)
             make.height.equalTo(30)
         }
@@ -177,6 +183,7 @@ class ShoppingCartCell: UITableViewCell {
     /// 商品标题
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
+        titleLabel.font = UIFont(name:"Helvetica", size:14)
         return titleLabel
     }()
     

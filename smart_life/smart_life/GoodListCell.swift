@@ -55,6 +55,8 @@ class GoodListCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        contentView.layer.borderWidth = 2
+        contentView.layer.borderColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1).CGColor
         // 准备UI
         prepareUI()
     }
@@ -74,8 +76,8 @@ class GoodListCell: UITableViewCell {
         iconView.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(20)
             make.top.equalTo(10)
-            make.width.equalTo(100)
-            make.height.equalTo(100)
+            make.width.equalTo(60)
+            make.height.equalTo(60)
         }
         
         titleLabel.snp_makeConstraints { (make) -> Void in
@@ -91,8 +93,8 @@ class GoodListCell: UITableViewCell {
         addCartButton.snp_makeConstraints { (make) -> Void in
             make.right.equalTo(-20)
             make.bottom.equalTo(-15)
-            make.width.equalTo(90)
-            make.height.equalTo(30)
+            make.width.equalTo(70)
+            make.height.equalTo(25)
         }
         
     }
@@ -127,12 +129,14 @@ class GoodListCell: UITableViewCell {
     /// 商品标题
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
+        titleLabel.font = UIFont(name:"Helvetica", size:14)
         return titleLabel
     }()
     
     /// 商品描述
     private lazy var descLabel: UILabel = {
         let descLabel = UILabel()
+        descLabel.font = UIFont(name:"Helvetica", size:14)
         descLabel.textColor = UIColor.orangeColor()
         return descLabel
     }()
@@ -141,8 +145,9 @@ class GoodListCell: UITableViewCell {
     private lazy var addCartButton: UIButton = {
         let addCartButton = UIButton(type:.System)
         addCartButton.backgroundColor = UIColor.orangeColor()
-        addCartButton.layer.cornerRadius = 8
+        addCartButton.layer.cornerRadius = 6
         addCartButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        addCartButton.titleLabel!.font = UIFont(name:"Helvetica", size:14)
         addCartButton.setTitle("查看详情", forState: UIControlState.Normal)
         
         // 添加按钮点击事件

@@ -1,5 +1,5 @@
 //
-//  WaresDetailViewController.swift
+//  GoodsDetailViewController.swift
 //  smart_life
 //
 //  Created by 张留刚 on 16/7/21.
@@ -11,7 +11,7 @@ import UIKit
 /// 已经添加进购物车的商品模型数组，初始化
 var addGoodArray = [GoodModel]()
 
-class WaresDetailViewController: UIViewController, CirCleViewDelegate {
+class GoodsDetailViewController: UIViewController, CirCleViewDelegate {
     
     var circleView: CirCleView!
     
@@ -26,10 +26,10 @@ class WaresDetailViewController: UIViewController, CirCleViewDelegate {
         
         //轮播图加载
         let imageArray: [UIImage!] = [UIImage(named: "banner1.png"), UIImage(named: "banner.png")]
-        self.circleView = CirCleView(frame: CGRectMake(0, 68, self.view.frame.size.width, 220), imageArray: imageArray)
+        self.circleView = CirCleView(frame: CGRectMake(0, 0, self.view.frame.size.width, 220), imageArray: imageArray)
         circleView.backgroundColor = UIColor.orangeColor()
         circleView.delegate = self
-        self.view.addSubview(circleView)
+        cicleContentView.addSubview(circleView)
         
         print("==============================")
          print(goodCell.first?.title)
@@ -66,12 +66,12 @@ class WaresDetailViewController: UIViewController, CirCleViewDelegate {
         // 导航栏左边返回
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WaresDetailViewController.didTappedBackButton))
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "left"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WaresDetailViewController.didTappedBackButton))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "left"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(GoodsDetailViewController.didTappedBackButton))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.orangeColor()
         
         
         // 添加按钮点击事件
-        buyBtnView.orderBtn.addTarget(self, action: #selector(WaresDetailViewController.didTappedAddCartButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        buyBtnView.orderBtn.addTarget(self, action: #selector(GoodsDetailViewController.didTappedAddCartButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         // view背景颜色
         view.backgroundColor = UIColor.init(red: 0.91, green: 0.91, blue: 0.91, alpha: 1)
         titleLabel.text = goodCell.first?.title
@@ -79,6 +79,7 @@ class WaresDetailViewController: UIViewController, CirCleViewDelegate {
         
         // 添加子控件
         self.view.addSubview(detailView)
+        self.view.addSubview(cicleContentView)
         detailView.addSubview(titleLabel)
         detailView.addSubview(totalPriceLabel)
         detailView.addSubview(detailLabel)
@@ -97,6 +98,12 @@ class WaresDetailViewController: UIViewController, CirCleViewDelegate {
             make.left.equalTo(4)
             make.right.equalTo(-4)
             make.bottom.equalTo(-64)
+        }
+        
+        cicleContentView.snp_makeConstraints { (make) in
+            make.top.equalTo(68)
+            make.left.right.equalTo(0)
+            make.height.equalTo(220)
         }
         
         titleLabel.snp_makeConstraints { (make) in
@@ -120,6 +127,12 @@ class WaresDetailViewController: UIViewController, CirCleViewDelegate {
         let detailView = UIView()
         detailView.backgroundColor = UIColor.whiteColor()
         return detailView
+    }()
+    
+    lazy var cicleContentView: UIView = {
+        let cicleContentView = UIView()
+        cicleContentView.backgroundColor = UIColor.whiteColor()
+        return cicleContentView
     }()
     
     /// 标题Label
@@ -155,7 +168,7 @@ class WaresDetailViewController: UIViewController, CirCleViewDelegate {
     lazy var cartButton: UIButton = {
         let carButton = UIButton(type: UIButtonType.Custom)
         carButton.setImage(UIImage(named: "cart"), forState: UIControlState.Normal)
-        carButton.addTarget(self, action: #selector(WaresDetailViewController.didTappedCarButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        carButton.addTarget(self, action: #selector(GoodsDetailViewController.didTappedCarButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         carButton.sizeToFit()
         return carButton
     }()
@@ -178,7 +191,7 @@ class WaresDetailViewController: UIViewController, CirCleViewDelegate {
 }
 
 // MARK: - view上的一些事件处理
-extension WaresDetailViewController {
+extension GoodsDetailViewController {
     
     /**
      当点击了购物车触发，modal到购物车控制器

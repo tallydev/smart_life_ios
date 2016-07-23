@@ -69,32 +69,36 @@ class AddressCell: UITableViewCell {
         
         // 约束子控件
         selectButton.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(12)
+            make.left.equalTo(20)
+            make.width.height.equalTo(20)
             make.centerY.equalTo(contentView.snp_centerY)
         }
         
         addressView.snp_makeConstraints { (make) in
-            make.left.equalTo(50)
+            make.left.equalTo(58)
             make.top.right.bottom.equalTo(0)
             make.height.equalTo(contentView.snp_height)
         }
         
         namedLabel.snp_makeConstraints { (make) in
             make.left.equalTo(0)
-            make.top.equalTo(5)
+            make.top.equalTo(25)
+        }
+        setBtn.snp_makeConstraints { (make) in
+            make.bottom.equalTo(-15)
+            make.right.equalTo(-20)
+            make.height.equalTo(20)
+            make.width.equalTo(100)
         }
         addressLabel.snp_makeConstraints { (make) in
             make.left.equalTo(0)
-            make.bottom.equalTo(-10)
+            make.right.equalTo(-100)
+            make.top.equalTo(45)
         }
         phoneLabel.snp_makeConstraints { (make) in
-            make.right.equalTo(-12)
-            make.top.equalTo(5)
+            make.right.equalTo(-20)
+            make.top.equalTo(25)
             
-        }
-        setBtn.snp_makeConstraints { (make) in
-            make.right.equalTo(-12)
-            make.bottom.equalTo(-10)
         }
         
     }
@@ -111,8 +115,9 @@ class AddressCell: UITableViewCell {
         button.selected = !button.selected
         addressModel?.selected = button.selected
         
-        // 重新计算价格
-//        delegate?.reCalculateTotalPrice()
+//        for model in addressModel! {
+//            model.selected = selectButton.selected
+//        }
     }
     
     // MARK: - 懒加载
@@ -136,22 +141,35 @@ class AddressCell: UITableViewCell {
     /// 收货人姓名
     private lazy var namedLabel: UILabel = {
         let namedLabel = UILabel()
+        namedLabel.font = UIFont(name:"Helvetica", size:14)
         return namedLabel
     }()
     /// 收货地址
     private lazy var addressLabel: UILabel = {
         let addressLabel = UILabel()
+        addressLabel.numberOfLines = 2
+        addressLabel.font = UIFont(name:"Helvetica", size:14)
         return addressLabel
     }()
     /// 收货人电话
     private lazy var phoneLabel: UILabel = {
         let phoneLabel = UILabel()
+        phoneLabel.font = UIFont(name:"Helvetica", size:14)
         return phoneLabel
     }()
-    // 地址的view
+    // 设置默认地址按钮
     private lazy var setBtn: UIButton = {
         let setBtn = UIButton()
-        setBtn.tintColor = UIColor.orangeColor()
+
+        setBtn.layer.cornerRadius = 6
+        setBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+        setBtn.setTitleColor(UIColor.orangeColor(), forState: UIControlState.Selected)
+        setBtn.titleLabel!.font = UIFont(name:"Helvetica", size:14)
+        setBtn.setTitle("设为默认地址", forState: UIControlState.Normal)
+        setBtn.setTitle("默认地址", forState: UIControlState.Selected)
+        
+        // 添加按钮点击事件
+        setBtn.addTarget(self, action: #selector(AddressCell.didSelectedButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         return setBtn
     }()
 }

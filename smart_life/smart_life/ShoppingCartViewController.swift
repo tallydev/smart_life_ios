@@ -31,12 +31,17 @@ class ShoppingCartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
-        view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
-        self.navigationController?.view.addSubview(view)
+        let view1 = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
+        view1.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
+        self.navigationController?.view.addSubview(view1)
         
-        self.tableView.separatorInset = UIEdgeInsetsMake(0, 10, 0, 10)
-        
+        //隐藏滚动条
+        self.tableView.showsVerticalScrollIndicator = false
+
+        //去除单元格分隔线
+        tableView.separatorStyle = .None
+        tableView.backgroundColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
+        view.backgroundColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
         // 准备UI
         prepareUI()
     }
@@ -64,11 +69,9 @@ class ShoppingCartViewController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "left"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ShoppingCartViewController.didTappedBackButton))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.orangeColor()
-        // view背景颜色
-        view.backgroundColor = UIColor.grayColor()
         
         // cell行高
-        tableView.rowHeight = 80
+        tableView.rowHeight = 100
         
         // 注册cell
         tableView.registerClass(ShoppingCartCell.self, forCellReuseIdentifier: shoppingCarCellIdentifier)
@@ -78,6 +81,7 @@ class ShoppingCartViewController: UIViewController {
         view.addSubview(bottomView)
         view.addSubview(settleAccountsBottomView)
         bottomView.addSubview(selectButton)
+        bottomView.addSubview(selectLabel)
         bottomView.addSubview(totalPriceLabel)
         settleAccountsBottomView.addSubview(buyButton)
         
@@ -99,7 +103,9 @@ class ShoppingCartViewController: UIViewController {
         
         // 约束子控件
         tableView.snp_makeConstraints { (make) -> Void in
-            make.left.top.right.equalTo(0)
+            make.top.equalTo(2)
+            make.left.equalTo(2)
+            make.right.equalTo(-2)
             make.bottom.equalTo(-98)
         }
         
@@ -114,7 +120,13 @@ class ShoppingCartViewController: UIViewController {
         }
         
         selectButton.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(12)
+            make.left.equalTo(14)
+            make.width.height.equalTo(20)
+            make.centerY.equalTo(bottomView.snp_centerY)
+        }
+        
+        selectLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(44)
             make.centerY.equalTo(bottomView.snp_centerY)
         }
         
@@ -158,15 +170,23 @@ class ShoppingCartViewController: UIViewController {
     /// 底部多选、反选按钮
     lazy var selectButton: UIButton = {
         let selectButton = UIButton(type: UIButtonType.Custom)
+        
         selectButton.setImage(UIImage(named: "check_n"), forState: UIControlState.Normal)
         selectButton.setImage(UIImage(named: "check_y"), forState: UIControlState.Selected)
-        selectButton.setTitle("  多选\\反选", forState: UIControlState.Normal)
-        selectButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-        selectButton.titleLabel?.font = UIFont.systemFontOfSize(12)
+//        selectButton.setTitle("  多选\\反选", forState: UIControlState.Normal)
+//        selectButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+//        selectButton.titleLabel?.font = UIFont.systemFontOfSize(12)
         selectButton.addTarget(self, action: #selector(ShoppingCartViewController.didTappedSelectButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         selectButton.selected = true
         selectButton.sizeToFit()
         return selectButton
+    }()
+    
+    lazy var selectLabel: UILabel = {
+        let selectLabel = UILabel()
+            selectLabel.text = "全选"
+            selectLabel.textColor = UIColor.orangeColor()
+        return selectLabel
     }()
     
     /// 底部总价Label

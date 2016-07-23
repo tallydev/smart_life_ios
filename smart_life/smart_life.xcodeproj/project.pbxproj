@@ -11,6 +11,8 @@
 		D404DDD51D4263E9003586C4 /* IndentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDD41D4263E9003586C4 /* IndentViewController.swift */; };
 		D404DDD71D4268BD003586C4 /* IndentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDD61D4268BD003586C4 /* IndentCell.swift */; };
 		D404DDDC1D427CAF003586C4 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDDB1D427CAF003586C4 /* PayViewController.swift */; };
+		D404DDDE1D434FA5003586C4 /* IndentCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDDD1D434FA5003586C4 /* IndentCellModel.swift */; };
+		D404DDE11D43C89F003586C4 /* NewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDE01D43C89F003586C4 /* NewAddressViewController.swift */; };
 		D406F4821D3F1B9B00236EA6 /* OrderBtnTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F4811D3F1B9B00236EA6 /* OrderBtnTwo.swift */; };
 		D406F4841D3F1BFC00236EA6 /* OrderBtnTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406F4831D3F1BFC00236EA6 /* OrderBtnTwo.xib */; };
 		D406F4871D3F22AD00236EA6 /* alertFrame.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406F4861D3F22AD00236EA6 /* alertFrame.xib */; };
@@ -43,7 +45,7 @@
 		D46DBB2F1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB2D1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib */; };
 		D46DBB371D2BA0C7009519A0 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB361D2BA0C7009519A0 /* HomeCollectionViewController.swift */; };
 		D4748B211D30A103002B9179 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4748B201D30A103002B9179 /* HomeController.swift */; };
-		D48B2BFF1D405D34003208DB /* WaresDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B2BFE1D405D34003208DB /* WaresDetailViewController.swift */; };
+		D48B2BFF1D405D34003208DB /* GoodsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B2BFE1D405D34003208DB /* GoodsDetailViewController.swift */; };
 		D491F1D51D3C6AE100D7FA11 /* MyDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */; };
 		D49CEADB1D240C59003D2737 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49CEADA1D240C59003D2737 /* Helpers.swift */; };
 		D4B43AB41D35D6E60023887E /* HealthPart1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AB31D35D6E60023887E /* HealthPart1ViewController.swift */; };
@@ -95,6 +97,8 @@
 		D404DDD41D4263E9003586C4 /* IndentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentViewController.swift; sourceTree = "<group>"; };
 		D404DDD61D4268BD003586C4 /* IndentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentCell.swift; sourceTree = "<group>"; };
 		D404DDDB1D427CAF003586C4 /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		D404DDDD1D434FA5003586C4 /* IndentCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentCellModel.swift; sourceTree = "<group>"; };
+		D404DDE01D43C89F003586C4 /* NewAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAddressViewController.swift; sourceTree = "<group>"; };
 		D406F4811D3F1B9B00236EA6 /* OrderBtnTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBtnTwo.swift; sourceTree = "<group>"; };
 		D406F4831D3F1BFC00236EA6 /* OrderBtnTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderBtnTwo.xib; sourceTree = "<group>"; };
 		D406F4861D3F22AD00236EA6 /* alertFrame.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = alertFrame.xib; sourceTree = "<group>"; };
@@ -127,7 +131,7 @@
 		D46DBB2D1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell8.xib; sourceTree = "<group>"; };
 		D46DBB361D2BA0C7009519A0 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		D4748B201D30A103002B9179 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
-		D48B2BFE1D405D34003208DB /* WaresDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaresDetailViewController.swift; sourceTree = "<group>"; };
+		D48B2BFE1D405D34003208DB /* GoodsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsDetailViewController.swift; sourceTree = "<group>"; };
 		D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDataTableViewController.swift; sourceTree = "<group>"; };
 		D49CEADA1D240C59003D2737 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D4B43AB31D35D6E60023887E /* HealthPart1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart1ViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +240,14 @@
 			name = Pay;
 			sourceTree = "<group>";
 		};
+		D404DDDF1D43C870003586C4 /* NewAddressViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D404DDE01D43C89F003586C4 /* NewAddressViewController.swift */,
+			);
+			name = NewAddressViewController;
+			sourceTree = "<group>";
+		};
 		D406F4851D3F225F00236EA6 /* AlertFrame */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,9 +276,8 @@
 		D44135DA1D19245A00072099 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
-				D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */,
 				D44135DD1D1927DB00072099 /* ListTableViewController.swift */,
-				D48B2BFE1D405D34003208DB /* WaresDetailViewController.swift */,
+				D48B2BFE1D405D34003208DB /* GoodsDetailViewController.swift */,
 			);
 			name = Shopping;
 			sourceTree = "<group>";
@@ -297,6 +308,7 @@
 		D44135DC1D19250400072099 /* ShoppingMode */ = {
 			isa = PBXGroup;
 			children = (
+				D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */,
 				D4C128551D1794A100561CB3 /* GoodListCell.swift */,
 			);
 			name = ShoppingMode;
@@ -528,6 +540,8 @@
 		D4F55D4F1D0E97DA0017638B /* View(控制器和视图) */ = {
 			isa = PBXGroup;
 			children = (
+				D404DDDF1D43C870003586C4 /* NewAddressViewController */,
+				D44135DC1D19250400072099 /* ShoppingMode */,
 				D404DDDA1D427C96003586C4 /* Pay */,
 				D404DDD31D4263B5003586C4 /* Indent */,
 				D44135E11D1A39FB00072099 /* Address */,
@@ -555,7 +569,6 @@
 				D4B43ABB1D3645170023887E /* CellModel */,
 				D4B43AC21D3721670023887E /* OrderBtn */,
 				D417C4281D2235E600955C30 /* HomeBtn */,
-				D44135DC1D19250400072099 /* ShoppingMode */,
 				D44135DB1D1924DF00072099 /* HomeViewMode */,
 				D4F55D541D0EE5040017638B /* CirCleView.swift */,
 				D44135E41D1A5C4500072099 /* UIView+BHBFreeBorder.swift */,
@@ -569,6 +582,7 @@
 				D4C1284F1D178C1D00561CB3 /* GoodModel.swift */,
 				D44135E81D1A758700072099 /* AddressModel.swift */,
 				D49CEADA1D240C59003D2737 /* Helpers.swift */,
+				D404DDDD1D434FA5003586C4 /* IndentCellModel.swift */,
 			);
 			name = "Mode(模型)";
 			sourceTree = "<group>";
@@ -723,6 +737,7 @@
 				D46DBB0E1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift in Sources */,
 				D4F852191D3802EF003888A4 /* MyInfoViewController.swift in Sources */,
 				D404DDDC1D427CAF003586C4 /* PayViewController.swift in Sources */,
+				D404DDDE1D434FA5003586C4 /* IndentCellModel.swift in Sources */,
 				D4486ECB1D38965500BB8984 /* MyOrderTableViewController.swift in Sources */,
 				D4B43AD71D374D090023887E /* ITPart1ViewController.swift in Sources */,
 				D4F852101D379B34003888A4 /* NewProductViewController.swift in Sources */,
@@ -750,7 +765,7 @@
 				D46DBB2A1D2B8274009519A0 /* HomeTabCollectionViewCell6.swift in Sources */,
 				D46DBB1E1D2B81AB009519A0 /* HomeTabCollectionViewCell5.swift in Sources */,
 				D4B43AD91D374D900023887E /* ITPart2ViewController.swift in Sources */,
-				D48B2BFF1D405D34003208DB /* WaresDetailViewController.swift in Sources */,
+				D48B2BFF1D405D34003208DB /* GoodsDetailViewController.swift in Sources */,
 				D4B43AC11D3695C20023887E /* FitnessTableViewController.swift in Sources */,
 				D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */,
 				D46DBB2E1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift in Sources */,
@@ -768,6 +783,7 @@
 				D491F1D51D3C6AE100D7FA11 /* MyDataTableViewController.swift in Sources */,
 				D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */,
 				D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */,
+				D404DDE11D43C89F003586C4 /* NewAddressViewController.swift in Sources */,
 				D404DDD71D4268BD003586C4 /* IndentCell.swift in Sources */,
 				D44135DE1D1927DB00072099 /* ListTableViewController.swift in Sources */,
 				D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */,

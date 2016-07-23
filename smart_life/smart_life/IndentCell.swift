@@ -12,22 +12,23 @@ class IndentCell: UITableViewCell {
 
     // MARK: - 属性
     /// 商品模型
-    var addressModel: AddressModel? {
+    var indentModel: IndentCellModel? {
         didSet {
             
-            // 选中状态
-            selectButton.selected = addressModel!.selected
-            
-            if let userName = addressModel?.userName {
-                namedLabel.text = userName
+            if let indentCellPic = indentModel?.indentCellPic {
+                indentCellPicView.image = UIImage(named: indentCellPic)
             }
             
-            if let address = addressModel?.address {
-                addressLabel.text = address
+            if let indentGoodName = indentModel?.indentGoodName {
+                indentGoodNameLabel.text = indentGoodName
             }
             
-            if let phone = addressModel?.phone {
-                phoneLabel.text = phone
+            if let indentGoodPrice = indentModel?.indentGoodPrice {
+                indentGoodPriceLabel.text = indentGoodPrice
+            }
+            
+            if let indentGoodsNumber = indentModel?.indentGoodsNumber {
+                indentGoodsNumberLabel.text = indentGoodsNumber
             }
             
             // 重新布局，会更新frame
@@ -46,7 +47,9 @@ class IndentCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        contentView.layer.borderWidth = 2
+        contentView.layer.borderColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1).CGColor
+        addressView.backgroundColor = UIColor.whiteColor()
         // 准备UI
         prepareUI()
     }
@@ -57,72 +60,38 @@ class IndentCell: UITableViewCell {
     private func prepareUI() {
         
         // 添加子控件
-        contentView.addSubview(selectButton)
         contentView.addSubview(addressView)
-        addressView.addSubview(namedLabel)
-        addressView.addSubview(addressLabel)
-        addressView.addSubview(phoneLabel)
-        addressView.addSubview(setBtn)
+        addressView.addSubview(indentGoodNameLabel)
+        addressView.addSubview(indentGoodsNumberLabel)
+        addressView.addSubview(indentGoodPriceLabel)
+        addressView.addSubview(indentCellPicView)
         
         
         // 约束子控件
-        selectButton.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(12)
-            make.centerY.equalTo(contentView.snp_centerY)
-        }
-        
         addressView.snp_makeConstraints { (make) in
-            make.left.equalTo(50)
-            make.top.right.bottom.equalTo(0)
-            make.height.equalTo(contentView.snp_height)
+            make.left.top.equalTo(15)
+            make.right.bottom.equalTo(-15)
         }
         
-        namedLabel.snp_makeConstraints { (make) in
-            make.left.equalTo(0)
-            make.top.equalTo(5)
+        indentGoodNameLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(75)
+            make.top.equalTo(0)
         }
-        addressLabel.snp_makeConstraints { (make) in
-            make.left.equalTo(0)
-            make.bottom.equalTo(-10)
+        indentGoodsNumberLabel.snp_makeConstraints { (make) in
+            make.right.equalTo(0)
+            make.top.equalTo(20)
         }
-        phoneLabel.snp_makeConstraints { (make) in
-            make.right.equalTo(-12)
-            make.top.equalTo(5)
+        indentGoodPriceLabel.snp_makeConstraints { (make) in
+            make.top.right.equalTo(0)
             
         }
-        setBtn.snp_makeConstraints { (make) in
-            make.right.equalTo(-12)
-            make.bottom.equalTo(-10)
+        indentCellPicView.snp_makeConstraints { (make) in
+            make.left.top.equalTo(0)
+            make.height.equalTo(50)
+            make.width.equalTo(65)
         }
         
     }
-    
-    // MARK: - 响应事件
-    /**
-     选中了按钮后触发
-     
-     - parameter button: 被选中的按钮
-     */
-    @objc private func didSelectedButton(button: UIButton) {
-        
-        // 选中
-        button.selected = !button.selected
-        addressModel?.selected = button.selected
-        
-        // 重新计算价格
-        //        delegate?.reCalculateTotalPrice()
-    }
-    
-    // MARK: - 懒加载
-    /// 选择按钮
-    private lazy var selectButton: UIButton = {
-        let selectButton = UIButton(type: UIButtonType.Custom)
-        selectButton.setImage(UIImage(named: "check_n"), forState: UIControlState.Normal)
-        selectButton.setImage(UIImage(named: "check_y"), forState: UIControlState.Selected)
-        selectButton.addTarget(self, action: #selector(IndentCell.didSelectedButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        selectButton.sizeToFit()
-        return selectButton
-    }()
     
     // 地址的view
     private lazy var addressView: UIView = {
@@ -131,25 +100,29 @@ class IndentCell: UITableViewCell {
         return addressView
     }()
     
-    /// 收货人姓名
-    private lazy var namedLabel: UILabel = {
-        let namedLabel = UILabel()
-        return namedLabel
+    //商品图片
+    private lazy var indentCellPicView: UIImageView = {
+        let indentCellPicView = UIImageView()
+        
+        return indentCellPicView
     }()
-    /// 收货地址
-    private lazy var addressLabel: UILabel = {
-        let addressLabel = UILabel()
-        return addressLabel
+    
+    /// 商品名称
+    private lazy var indentGoodNameLabel: UILabel = {
+        let indentGoodNameLabel = UILabel()
+        indentGoodNameLabel.font = UIFont(name:"Helvetica", size:14)
+        return indentGoodNameLabel
     }()
-    /// 收货人电话
-    private lazy var phoneLabel: UILabel = {
-        let phoneLabel = UILabel()
-        return phoneLabel
+    /// 商品数量
+    private lazy var indentGoodsNumberLabel: UILabel = {
+        let indentGoodsNumberLabel = UILabel()
+        indentGoodsNumberLabel.font = UIFont(name:"Helvetica", size:14)
+        return indentGoodsNumberLabel
     }()
-    // 地址的view
-    private lazy var setBtn: UIButton = {
-        let setBtn = UIButton()
-        setBtn.tintColor = UIColor.orangeColor()
-        return setBtn
+    /// 商品单价
+    private lazy var indentGoodPriceLabel: UILabel = {
+        let indentGoodPriceLabel = UILabel()
+        indentGoodPriceLabel.font = UIFont(name:"Helvetica", size:14)
+        return indentGoodPriceLabel
     }()
 }

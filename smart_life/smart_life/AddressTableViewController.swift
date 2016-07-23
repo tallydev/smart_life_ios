@@ -25,7 +25,7 @@ class AddressTableViewController: UIViewController {
         for i in 1..<5 {
             var dict = [String : AnyObject]()
             dict["userName"] = "张三\(i + 1)"
-            dict["address"] = "上海市松江区108\(i + 1)弄"
+            dict["address"] = "上海市松江区xx街道xx（小区名称）108\(i + 1)弄xx栋xx单元xxx室"
             dict["phone"] = "1851659123\(i + 1)"
             
             // 字典转模型并将模型添加到模型数组中
@@ -54,7 +54,12 @@ class AddressTableViewController: UIViewController {
         // 导航栏左边返回
         navigationItem.leftBarButtonItem?.tintColor = UIColor.orangeColor()
         // cell行高
-        tableView.rowHeight = 80
+        tableView.rowHeight = 100
+        
+        tableView.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
+        
+        //隐藏滚动条
+        self.tableView.showsVerticalScrollIndicator = false
         
         // 注册cell
         tableView.registerClass(AddressCell.self, forCellReuseIdentifier: addressCellIdentifier)
@@ -108,14 +113,29 @@ class AddressTableViewController: UIViewController {
         return settleAccountsBottomView
     }()
     
-    /// 底部付款按钮
+    /// 底部新建收货地址按钮
     lazy var buyButton: UIButton = {
         let buyButton = UIButton(type: UIButtonType.Custom)
         buyButton.setTitle("新建收货地址", forState: UIControlState.Normal)
+        buyButton.addTarget(self, action: #selector(AddressTableViewController.didSelectedButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         buyButton.backgroundColor = UIColor.orangeColor()
         buyButton.layer.masksToBounds = true
         return buyButton
     }()
+    
+    // MARK: - 响应事件
+    /**
+     选中了按钮后触发
+     
+     - parameter button: 被选中的按钮
+     */
+    @objc private func didSelectedButton(button: UIButton) {
+        let NewAddressVc = NewAddressViewController()
+        
+        // 模态出一个地址控制器
+        navigationController?.pushViewController(NewAddressVc, animated: true);
+        
+    }
     
 }
 

@@ -89,7 +89,6 @@ class GoodsListTableViewController: UIViewController {
         //隐藏滚动条
         self.tableView.showsVerticalScrollIndicator = false
         
-        self.tableView.separatorInset = UIEdgeInsetsMake(0, 20, 0, 20)
         
         view.backgroundColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
 
@@ -98,6 +97,11 @@ class GoodsListTableViewController: UIViewController {
         
         // 注册cell
         tableView.registerClass(GoodListCell.self, forCellReuseIdentifier: goodListCellIdentifier)
+        
+        //去除单元格分隔线
+        tableView.separatorStyle = .None
+        tableView.backgroundColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
+        view.backgroundColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
     }
     
     /**
@@ -107,9 +111,9 @@ class GoodsListTableViewController: UIViewController {
         
         // 约束tableview，让它全屏显示。注意：这里我使用了第三方约束框架（SnapKit）。如果还不会使用，请学习
         tableView.snp_makeConstraints { (make) -> Void in
-            make.right.equalTo(0)
-            make.left.equalTo(0)
-            make.top.equalTo(0)
+            make.right.equalTo(-2)
+            make.left.equalTo(2)
+            make.top.equalTo(2)
             make.bottom.equalTo(0)
         }
     }
@@ -118,7 +122,7 @@ class GoodsListTableViewController: UIViewController {
     /// tableView
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = 120
+        tableView.rowHeight = 100
         // 指定数据源和代理
         tableView.dataSource = self
         tableView.delegate = self
@@ -172,13 +176,13 @@ extension GoodsListTableViewController: GoodListCellDelegate {
             return
         }
         
-        let WaresDetailVc = WaresDetailViewController()
+        let GoodsDetailVc = GoodsDetailViewController()
         
         // 传递商品模型数组
-        WaresDetailVc.goodCell = [goodArray[indexPath.row]]
+        GoodsDetailVc.goodCell = [goodArray[indexPath.row]]
         
         // 模态出一个购物车控制器
-        presentViewController(UINavigationController(rootViewController: WaresDetailVc), animated: true, completion: nil)
+        presentViewController(UINavigationController(rootViewController: GoodsDetailVc), animated: true, completion: nil)
         
     }
 }

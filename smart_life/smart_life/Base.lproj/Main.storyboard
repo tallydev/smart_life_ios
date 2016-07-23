@@ -1827,102 +1827,6 @@
             </objects>
             <point key="canvasLocation" x="2967" y="324"/>
         </scene>
-        <!--商品详情-->
-        <scene sceneID="URx-tn-xfh">
-            <objects>
-                <viewController id="ZL4-5a-z1m" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tIw-Gi-8hX"/>
-                        <viewControllerLayoutGuide type="bottom" id="pM5-0Y-ErL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YJ1-VD-U6w">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dgE-pZ-pJU">
-                                <rect key="frame" x="0.0" y="20" width="600" height="220"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="2SD-El-cWv"/>
-                                    <constraint firstAttribute="height" constant="244" id="Hmz-r9-Gye"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Hmz-r9-Gye"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pWk-7D-DjR">
-                                <rect key="frame" x="4" y="292" width="592" height="241"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西双版纳生态无眼凤梨新鲜直达每件5kg（5-6个）" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgw-LA-TBs">
-                                        <rect key="frame" x="20" y="20" width="552" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥66.00（包邮）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRf-vi-sad">
-                                        <rect key="frame" x="20" y="50" width="552" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.94901960780000005" green="0.42352941179999998" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="热带雨林气候，光照充足；版纳古朴民风，无激素和催熟；温馨提示：1、人工采摘，大小个头不一，以重量为准；2、发货时间待定，待新鲜采摘后即可发货；3、鉴于水果保质特性，请收货当日去皮食用或者冰箱冷藏72小时内请食用完毕。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gt-pn-hQV">
-                                        <rect key="frame" x="20" y="81" width="552" height="95.5"/>
-                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="aRf-vi-sad" firstAttribute="leading" secondItem="5gt-pn-hQV" secondAttribute="leading" id="9xl-pu-ONz"/>
-                                    <constraint firstItem="Pgw-LA-TBs" firstAttribute="top" secondItem="pWk-7D-DjR" secondAttribute="top" constant="20" id="JGg-ui-a1k"/>
-                                    <constraint firstItem="5gt-pn-hQV" firstAttribute="top" secondItem="aRf-vi-sad" secondAttribute="bottom" constant="10" id="McH-8h-b4k"/>
-                                    <constraint firstItem="aRf-vi-sad" firstAttribute="top" secondItem="Pgw-LA-TBs" secondAttribute="bottom" constant="10" id="Raa-Wd-rmp"/>
-                                    <constraint firstItem="aRf-vi-sad" firstAttribute="top" secondItem="Pgw-LA-TBs" secondAttribute="bottom" constant="10" id="S4g-MM-rSl"/>
-                                    <constraint firstItem="aRf-vi-sad" firstAttribute="leading" secondItem="Pgw-LA-TBs" secondAttribute="leading" id="VYD-rS-3GR"/>
-                                    <constraint firstItem="5gt-pn-hQV" firstAttribute="top" secondItem="aRf-vi-sad" secondAttribute="bottom" constant="10" id="Xu5-Y6-d7g"/>
-                                    <constraint firstItem="aRf-vi-sad" firstAttribute="trailing" secondItem="Pgw-LA-TBs" secondAttribute="trailing" id="ZtL-Bh-UuQ"/>
-                                    <constraint firstItem="aRf-vi-sad" firstAttribute="trailing" secondItem="5gt-pn-hQV" secondAttribute="trailing" id="hJl-yy-PUr"/>
-                                    <constraint firstItem="aRf-vi-sad" firstAttribute="leading" secondItem="pWk-7D-DjR" secondAttribute="leading" constant="20" id="koG-HX-AOf"/>
-                                    <constraint firstItem="aRf-vi-sad" firstAttribute="top" secondItem="pWk-7D-DjR" secondAttribute="top" constant="50" id="pA2-4j-blx"/>
-                                    <constraint firstItem="aRf-vi-sad" firstAttribute="centerX" secondItem="pWk-7D-DjR" secondAttribute="centerX" id="zlq-7H-pf7"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gty-J2-uDJ" customClass="OrderBtn" customModule="smart_life">
-                                <rect key="frame" x="0.0" y="539" width="600" height="61"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.89000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dgE-pZ-pJU" secondAttribute="trailing" id="3ys-2A-ump"/>
-                            <constraint firstItem="Gty-J2-uDJ" firstAttribute="leading" secondItem="YJ1-VD-U6w" secondAttribute="leading" id="4Qh-5S-6zy"/>
-                            <constraint firstAttribute="bottom" secondItem="Gty-J2-uDJ" secondAttribute="bottom" id="6rV-Op-hvn"/>
-                            <constraint firstItem="pWk-7D-DjR" firstAttribute="top" secondItem="dgE-pZ-pJU" secondAttribute="bottom" constant="52" id="6zW-LY-bSc"/>
-                            <constraint firstItem="pM5-0Y-ErL" firstAttribute="top" secondItem="Gty-J2-uDJ" secondAttribute="bottom" constant="-5" id="Jvd-gz-gXC"/>
-                            <constraint firstAttribute="trailing" secondItem="pWk-7D-DjR" secondAttribute="trailing" constant="4" id="Lyw-xu-veP"/>
-                            <constraint firstAttribute="trailing" secondItem="Gty-J2-uDJ" secondAttribute="trailing" id="Pcr-J3-98K"/>
-                            <constraint firstItem="Gty-J2-uDJ" firstAttribute="top" secondItem="pWk-7D-DjR" secondAttribute="bottom" constant="6" id="VB9-gv-869"/>
-                            <constraint firstItem="dgE-pZ-pJU" firstAttribute="leading" secondItem="YJ1-VD-U6w" secondAttribute="leading" id="hLJ-Jd-pzR"/>
-                            <constraint firstItem="Gty-J2-uDJ" firstAttribute="top" secondItem="pWk-7D-DjR" secondAttribute="bottom" constant="6" id="hM5-L5-xb0"/>
-                            <constraint firstItem="dgE-pZ-pJU" firstAttribute="top" secondItem="tIw-Gi-8hX" secondAttribute="bottom" constant="-44" id="k1b-gO-oNC"/>
-                            <constraint firstItem="pWk-7D-DjR" firstAttribute="leading" secondItem="YJ1-VD-U6w" secondAttribute="leading" constant="4" id="lLh-ux-ajx"/>
-                            <constraint firstAttribute="trailing" secondItem="Gty-J2-uDJ" secondAttribute="trailing" id="lsT-Xu-KFV"/>
-                            <constraint firstItem="Gty-J2-uDJ" firstAttribute="leading" secondItem="YJ1-VD-U6w" secondAttribute="leading" id="m6S-5u-ho8"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="商品详情" id="kAv-gd-lk1">
-                        <barButtonItem key="leftBarButtonItem" image="left" id="NhE-ne-SNN">
-                            <color key="tintColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Tk-hU-O3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3779" y="1717"/>
-        </scene>
         <!--Wares Detail View Controller-->
         <scene sceneID="ApH-g1-Ge7">
             <objects>
@@ -1990,6 +1894,9 @@
                                                 <mask key="constraints">
                                                     <exclude reference="OYj-DR-ZNF"/>
                                                 </mask>
+                                            </variation>
+                                            <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="303" y="17.5" width="64" height="64"/>
                                             </variation>
                                         </imageView>
                                     </subviews>
