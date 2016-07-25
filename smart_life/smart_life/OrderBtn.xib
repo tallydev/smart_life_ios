@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderBtn" customModule="smart_life">
             <connections>
                 <outlet property="numberLabel" destination="1lF-Rl-hey" id="nsp-p1-8pV"/>
+                <outlet property="numberlabelname" destination="0tK-Ed-jtk" id="Zhe-bz-LHy"/>
                 <outlet property="orderBtn" destination="fjd-vp-yNQ" id="1Ng-ZM-Tb2"/>
             </connections>
         </placeholder>

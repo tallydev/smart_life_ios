@@ -18,6 +18,8 @@ class ShoppingCartViewController: UIViewController {
         }
     }
     
+    var indentArray = [GoodModel]()
+    
     /// 总金额，默认0.00
     var price: CFloat = 0.00
     
@@ -277,7 +279,6 @@ extension ShoppingCartViewController {
     @objc private func goHomeButton(button: UIButton) {
             
         let AddressVc = AddressTableViewController()
-        
         // 模态出一个地址控制器
         navigationController?.pushViewController(AddressVc, animated: true);
     }
@@ -288,7 +289,15 @@ extension ShoppingCartViewController {
     @objc private func goCheckCart(button: UIButton) {
         
         let IndentVc = IndentViewController()
+        var array = [GoodModel]()
+        for model in addGoodArray! {
+            // 只计算选中的商品
+            if model.selected == true {
+                array.append(model)
+            }
+        }
         
+        IndentVc.setValue(array,total: (totalPriceLabel.attributedText?.string)!)
         // 模态出一个地址控制器
         navigationController?.pushViewController(IndentVc, animated: true);
         

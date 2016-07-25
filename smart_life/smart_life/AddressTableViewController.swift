@@ -11,7 +11,7 @@ class AddressTableViewController: UIViewController {
     // MARK: - 属性
     
     /// 商品模型数组，初始化
-    private var addressArray = [AddressModel]()
+    public var addressArray = [AddressModel]()
     
     /// 商品列表cell的重用标识符
     private let addressCellIdentifier = "addressCell"
@@ -27,6 +27,10 @@ class AddressTableViewController: UIViewController {
             dict["userName"] = "张三\(i + 1)"
             dict["address"] = "上海市松江区xx街道xx（小区名称）108\(i + 1)弄xx栋xx单元xxx室"
             dict["phone"] = "1851659123\(i + 1)"
+            
+            if i == 3 {
+                dict["isdefault"] = true
+            }
             
             // 字典转模型并将模型添加到模型数组中
             addressArray.append(AddressModel(dict: dict))
@@ -131,7 +135,7 @@ class AddressTableViewController: UIViewController {
      */
     @objc private func didSelectedButton(button: UIButton) {
         let NewAddressVc = NewAddressViewController()
-        
+        NewAddressVc.delegate = self
         // 模态出一个地址控制器
         navigationController?.pushViewController(NewAddressVc, animated: true);
         
@@ -159,6 +163,7 @@ extension AddressTableViewController: UITableViewDataSource, UITableViewDelegate
         // 为cell传递数据
         cell.addressModel = addressArray[indexPath.row]
         
+        print(cell.addressModel)
         // 返回创建好的cell
         return cell
     }
@@ -168,5 +173,13 @@ extension AddressTableViewController: UITableViewDataSource, UITableViewDelegate
             addressArray.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
+    }
+}
+
+extension AddressTableViewController: SendMessageDelegate {
+    
+    func sendWord(message: AddressModel) {
+        addressArray.append(message)
+        tableView.reloadData()
     }
 }

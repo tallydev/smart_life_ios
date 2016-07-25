@@ -13,6 +13,16 @@
 		D404DDDC1D427CAF003586C4 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDDB1D427CAF003586C4 /* PayViewController.swift */; };
 		D404DDDE1D434FA5003586C4 /* IndentCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDDD1D434FA5003586C4 /* IndentCellModel.swift */; };
 		D404DDE11D43C89F003586C4 /* NewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDE01D43C89F003586C4 /* NewAddressViewController.swift */; };
+		D404DDE31D446503003586C4 /* address.plist in Resources */ = {isa = PBXBuildFile; fileRef = D404DDE21D446503003586C4 /* address.plist */; };
+		D404DDE71D44AEF1003586C4 /* addressPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDE61D44AEF1003586C4 /* addressPlot.swift */; };
+		D404DDEA1D44FB5C003586C4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDE91D44FB5C003586C4 /* SignInViewController.swift */; };
+		D404DDEC1D44FB6B003586C4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDEB1D44FB6B003586C4 /* SignUpViewController.swift */; };
+		D404DDEF1D459CC0003586C4 /* form.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDEE1D459CC0003586C4 /* form.swift */; };
+		D404DDF11D459CF2003586C4 /* form.xib in Resources */ = {isa = PBXBuildFile; fileRef = D404DDF01D459CF2003586C4 /* form.xib */; };
+		D404DDF41D45C632003586C4 /* ClauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDF31D45C632003586C4 /* ClauseViewController.swift */; };
+		D404DDF61D4648F6003586C4 /* alertFrameS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDF51D4648F6003586C4 /* alertFrameS.swift */; };
+		D404DDF81D464910003586C4 /* alertFrameS.xib in Resources */ = {isa = PBXBuildFile; fileRef = D404DDF71D464910003586C4 /* alertFrameS.xib */; };
+		D404DDFA1D46575E003586C4 /* DealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404DDF91D46575E003586C4 /* DealViewController.swift */; };
 		D406F4821D3F1B9B00236EA6 /* OrderBtnTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F4811D3F1B9B00236EA6 /* OrderBtnTwo.swift */; };
 		D406F4841D3F1BFC00236EA6 /* OrderBtnTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406F4831D3F1BFC00236EA6 /* OrderBtnTwo.xib */; };
 		D406F4871D3F22AD00236EA6 /* alertFrame.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406F4861D3F22AD00236EA6 /* alertFrame.xib */; };
@@ -99,6 +109,16 @@
 		D404DDDB1D427CAF003586C4 /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		D404DDDD1D434FA5003586C4 /* IndentCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndentCellModel.swift; sourceTree = "<group>"; };
 		D404DDE01D43C89F003586C4 /* NewAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAddressViewController.swift; sourceTree = "<group>"; };
+		D404DDE21D446503003586C4 /* address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = address.plist; sourceTree = "<group>"; };
+		D404DDE61D44AEF1003586C4 /* addressPlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addressPlot.swift; sourceTree = "<group>"; };
+		D404DDE91D44FB5C003586C4 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D404DDEB1D44FB6B003586C4 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D404DDEE1D459CC0003586C4 /* form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = form.swift; sourceTree = "<group>"; };
+		D404DDF01D459CF2003586C4 /* form.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = form.xib; sourceTree = "<group>"; };
+		D404DDF31D45C632003586C4 /* ClauseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClauseViewController.swift; sourceTree = "<group>"; };
+		D404DDF51D4648F6003586C4 /* alertFrameS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alertFrameS.swift; sourceTree = "<group>"; };
+		D404DDF71D464910003586C4 /* alertFrameS.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = alertFrameS.xib; sourceTree = "<group>"; };
+		D404DDF91D46575E003586C4 /* DealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealViewController.swift; sourceTree = "<group>"; };
 		D406F4811D3F1B9B00236EA6 /* OrderBtnTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBtnTwo.swift; sourceTree = "<group>"; };
 		D406F4831D3F1BFC00236EA6 /* OrderBtnTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderBtnTwo.xib; sourceTree = "<group>"; };
 		D406F4861D3F22AD00236EA6 /* alertFrame.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = alertFrame.xib; sourceTree = "<group>"; };
@@ -221,6 +241,7 @@
 		D404DDD81D426B5B003586C4 /* AddressCell */ = {
 			isa = PBXGroup;
 			children = (
+				D404DDE61D44AEF1003586C4 /* addressPlot.swift */,
 			);
 			name = AddressCell;
 			sourceTree = "<group>";
@@ -248,11 +269,40 @@
 			name = NewAddressViewController;
 			sourceTree = "<group>";
 		};
+		D404DDE81D44FB41003586C4 /* SignView */ = {
+			isa = PBXGroup;
+			children = (
+				D404DDE91D44FB5C003586C4 /* SignInViewController.swift */,
+				D404DDEB1D44FB6B003586C4 /* SignUpViewController.swift */,
+				D404DDF91D46575E003586C4 /* DealViewController.swift */,
+			);
+			name = SignView;
+			sourceTree = "<group>";
+		};
+		D404DDED1D459C9B003586C4 /* FormView */ = {
+			isa = PBXGroup;
+			children = (
+				D404DDEE1D459CC0003586C4 /* form.swift */,
+				D404DDF01D459CF2003586C4 /* form.xib */,
+			);
+			name = FormView;
+			sourceTree = "<group>";
+		};
+		D404DDF21D45C5FB003586C4 /* Clause */ = {
+			isa = PBXGroup;
+			children = (
+				D404DDF31D45C632003586C4 /* ClauseViewController.swift */,
+			);
+			name = Clause;
+			sourceTree = "<group>";
+		};
 		D406F4851D3F225F00236EA6 /* AlertFrame */ = {
 			isa = PBXGroup;
 			children = (
 				D406F4861D3F22AD00236EA6 /* alertFrame.xib */,
 				D406F4881D3F22C500236EA6 /* alertFrame.swift */,
+				D404DDF51D4648F6003586C4 /* alertFrameS.swift */,
+				D404DDF71D464910003586C4 /* alertFrameS.xib */,
 			);
 			name = AlertFrame;
 			sourceTree = "<group>";
@@ -476,6 +526,7 @@
 				D4F55D361D0E5D8A0017638B /* Main.storyboard */,
 				D4F55D391D0E5D8A0017638B /* Assets.xcassets */,
 				D4F55D3B1D0E5D8A0017638B /* LaunchScreen.storyboard */,
+				D404DDE21D446503003586C4 /* address.plist */,
 				D4F55D3E1D0E5D8A0017638B /* Info.plist */,
 			);
 			path = smart_life;
@@ -540,6 +591,8 @@
 		D4F55D4F1D0E97DA0017638B /* View(控制器和视图) */ = {
 			isa = PBXGroup;
 			children = (
+				D404DDF21D45C5FB003586C4 /* Clause */,
+				D404DDE81D44FB41003586C4 /* SignView */,
 				D404DDDF1D43C870003586C4 /* NewAddressViewController */,
 				D44135DC1D19250400072099 /* ShoppingMode */,
 				D404DDDA1D427C96003586C4 /* Pay */,
@@ -558,6 +611,7 @@
 		D4F55D501D0E97FC0017638B /* ViewMode(视图模型) */ = {
 			isa = PBXGroup;
 			children = (
+				D404DDED1D459C9B003586C4 /* FormView */,
 				D404DDD91D426B75003586C4 /* IndentCell */,
 				D404DDD81D426B5B003586C4 /* AddressCell */,
 				D406F4851D3F225F00236EA6 /* AlertFrame */,
@@ -658,6 +712,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D404DDF81D464910003586C4 /* alertFrameS.xib in Resources */,
 				D46DBB1B1D2B819C009519A0 /* HomeTabCollectionViewCell4.xib in Resources */,
 				D4F55D3D1D0E5D8A0017638B /* LaunchScreen.storyboard in Resources */,
 				D406F4871D3F22AD00236EA6 /* alertFrame.xib in Resources */,
@@ -672,6 +727,8 @@
 				D4C128461D13E1C800561CB3 /* HomeTabCollectionViewCell.xib in Resources */,
 				D4F852151D37EA81003888A4 /* IconBtn.xib in Resources */,
 				D41ADD9F1D38146600534E6A /* MyCell.xib in Resources */,
+				D404DDE31D446503003586C4 /* address.plist in Resources */,
+				D404DDF11D459CF2003586C4 /* form.xib in Resources */,
 				D4F55D3A1D0E5D8A0017638B /* Assets.xcassets in Resources */,
 				D4F55D381D0E5D8A0017638B /* Main.storyboard in Resources */,
 			);
@@ -732,6 +789,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D404DDEC1D44FB6B003586C4 /* SignUpViewController.swift in Sources */,
 				D4F852171D380184003888A4 /* HomeServerViewController.swift in Sources */,
 				D4B43AB61D35D6F80023887E /* HealthPart2ViewController.swift in Sources */,
 				D46DBB0E1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift in Sources */,
@@ -750,6 +808,7 @@
 				D417C4271D2108BB00955C30 /* WaterFlowViewController.swift in Sources */,
 				D49CEADB1D240C59003D2737 /* Helpers.swift in Sources */,
 				D4B43ABD1D3645490023887E /* HealthPart2TableViewCell.swift in Sources */,
+				D404DDEA1D44FB5C003586C4 /* SignInViewController.swift in Sources */,
 				D4486ECE1D3899FF00BB8984 /* MyOrderTableViewCell.swift in Sources */,
 				D406F4891D3F22C500236EA6 /* alertFrame.swift in Sources */,
 				D4B43AD51D373BD00023887E /* FitnessTableViewCell.swift in Sources */,
@@ -761,12 +820,14 @@
 				D4F8520C1D37975D003888A4 /* HomeFurnishingPart1ViewController.swift in Sources */,
 				D46DBB241D2B81C7009519A0 /* HomeTabCollectionViewCell7.swift in Sources */,
 				D4486ED31D389D6900BB8984 /* MyIndentTableViewCell.swift in Sources */,
+				D404DDEF1D459CC0003586C4 /* form.swift in Sources */,
 				D4B43ABF1D368B760023887E /* HealthPart3TableViewCell.swift in Sources */,
 				D46DBB2A1D2B8274009519A0 /* HomeTabCollectionViewCell6.swift in Sources */,
 				D46DBB1E1D2B81AB009519A0 /* HomeTabCollectionViewCell5.swift in Sources */,
 				D4B43AD91D374D900023887E /* ITPart2ViewController.swift in Sources */,
 				D48B2BFF1D405D34003208DB /* GoodsDetailViewController.swift in Sources */,
 				D4B43AC11D3695C20023887E /* FitnessTableViewController.swift in Sources */,
+				D404DDFA1D46575E003586C4 /* DealViewController.swift in Sources */,
 				D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */,
 				D46DBB2E1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift in Sources */,
 				D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */,
@@ -780,7 +841,10 @@
 				D4B43AD31D372BEC0023887E /* NibDesignable.swift in Sources */,
 				D44135E51D1A5C4500072099 /* UIView+BHBFreeBorder.swift in Sources */,
 				D4F8520E1D379779003888A4 /* HomeFurnishingPart2ViewController.swift in Sources */,
+				D404DDF61D4648F6003586C4 /* alertFrameS.swift in Sources */,
 				D491F1D51D3C6AE100D7FA11 /* MyDataTableViewController.swift in Sources */,
+				D404DDE71D44AEF1003586C4 /* addressPlot.swift in Sources */,
+				D404DDF41D45C632003586C4 /* ClauseViewController.swift in Sources */,
 				D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */,
 				D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */,
 				D404DDE11D43C89F003586C4 /* NewAddressViewController.swift in Sources */,

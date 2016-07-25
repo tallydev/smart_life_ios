@@ -9,8 +9,7 @@
 import UIKit
 
 class CommunityViewController: UIViewController {
-    
-    let alertView = alertFrame(frame: CGRect(x: 0.0, y: UIScreen.mainScreen().bounds.size.height-160, width: UIScreen.mainScreen().bounds.size.width, height: 160.0))
+    var scacle = 1.0
 
     @IBAction func backBtn(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -24,18 +23,67 @@ class CommunityViewController: UIViewController {
     
     func orderAction() {
         
-        self.alertView.descriptionLabel.text = "预约后由 < 慧生活 > 服务专员和您电话联系确认，请保持手机畅通。"
-        self.alertView.descriptionLabel.textColor = UIColor.whiteColor()
-        self.alertView.descriptionLabel.adjustsFontSizeToFitWidth = true
+        //设置动画属性
         
-        self.alertView.orderSureBtn.addTarget(self, action: #selector(close), forControlEvents: .TouchUpInside)
+        self.scacle = 0
+        //告诉self.view约束需要更新
+        self.view.setNeedsUpdateConstraints()
+        //动画
+        UIView.animateWithDuration(0.2) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func sure(){
+        orderView.orderBtn.enabled = false
+        orderView.orderBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
+        orderView.orderBtn.setTitle("申请成功", forState: .Disabled)
+        //设置动画属性
         
-        self.view.addSubview(alertView)
+        self.scacle = 1
+        //告诉self.view约束需要更新
+        self.view.setNeedsUpdateConstraints()
+        //动画
+        UIView.animateWithDuration(0.2) {
+            self.view.layoutIfNeeded()
+        }
+        
     }
     
     func close(){
-        self.alertView.removeFromSuperview()
-        self.orderView.orderBtn.setTitle("预约成功", forState: .Disabled)
+        //设置动画属性
+        
+        self.scacle = 1
+        //告诉self.view约束需要更新
+        self.view.setNeedsUpdateConstraints()
+        //动画
+        UIView.animateWithDuration(0.2) {
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // 布局UI
+        layoutUI()
+    }
+    
+    func layoutUI(){
+        alertView.snp_makeConstraints { (make) in
+            make.left.right.equalTo(0)
+            make.bottom.equalTo(160*self.scacle).priorityLow()
+            make.height.equalTo(160)
+        }
+    }
+    //视图约束更新
+    override func updateViewConstraints() {
+        self.alertView.snp_updateConstraints{ (make) -> Void in
+            //放大尺寸（优先级低）
+            make.bottom.equalTo(200 * self.scacle).priorityLow();
+        }
+        
+        super.updateViewConstraints()
     }
 
     override func viewDidLoad() {
@@ -46,6 +94,16 @@ class CommunityViewController: UIViewController {
         let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
         view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
         self.navigationController?.view.addSubview(view)
+        
+        
+        alertView.descriptionLabel.text = "预约后由 < 慧生活 > 服务专员和您电话联系确认，请保持手机畅通。"
+        alertView.descriptionLabel.textColor = UIColor.whiteColor()
+        alertView.descriptionLabel.adjustsFontSizeToFitWidth = true
+        
+        alertView.orderSureBtn.addTarget(self, action: #selector(sure), forControlEvents: .TouchUpInside)
+        alertView.deleteOrderBtn.addTarget(self, action: #selector(close), forControlEvents: .TouchUpInside)
+        
+        self.view.addSubview(alertView)
 
         // Do any additional setup after loading the view.
     }
@@ -62,6 +120,12 @@ class CommunityViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    lazy var alertView:alertFrame = {
+        let alertView = alertFrame()
+        
+        return alertView
+    }()
 
     /*
     // MARK: - Navigation

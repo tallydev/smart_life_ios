@@ -36,7 +36,6 @@ class PayViewController: UIViewController {
         // 导航栏左边返回
         navigationItem.leftBarButtonItem?.tintColor = UIColor.orangeColor()
 
-        priceLabel.text = "RMB 180.00"
         orderNumberLabel.text = "20160615"
             
         buyButton.addTarget(self, action: #selector(PayViewController.payBtn(_:)), forControlEvents: .TouchUpInside)
@@ -255,6 +254,10 @@ class PayViewController: UIViewController {
 }
 
 extension PayViewController {
+    
+    func setValue(total: String){
+        priceLabel.text = total
+    }
     
     /**
      当点击了地址按钮

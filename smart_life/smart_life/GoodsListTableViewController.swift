@@ -176,13 +176,14 @@ extension GoodsListTableViewController: GoodListCellDelegate {
             return
         }
         
-        let GoodsDetailVc = GoodsDetailViewController()
-        
-        // 传递商品模型数组
-        GoodsDetailVc.goodCell = [goodArray[indexPath.row]]
-        
-        // 模态出一个购物车控制器
-        presentViewController(UINavigationController(rootViewController: GoodsDetailVc), animated: true, completion: nil)
-        
+//        let GoodsDetailVc = GoodsDetailViewController()
+//        
+//        // 传递商品模型数组
+//        GoodsDetailVc.goodCell = [goodArray[indexPath.row]]
+//        
+//        // 模态出一个购物车控制器
+//        presentViewController(UINavigationController(rootViewController: GoodsDetailVc), animated: true, completion: nil)
+        let signUpVc = SignInViewController()
+        presentViewController(UINavigationController(rootViewController: signUpVc), animated: true, completion: nil)
     }
 }

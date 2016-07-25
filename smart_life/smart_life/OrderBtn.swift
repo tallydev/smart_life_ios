@@ -13,11 +13,18 @@ class OrderBtn: NibDesignable {
 
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var orderBtn: UIButton!
+    @IBOutlet weak var numberlabelname: UILabel!
     
     var member:Int = 1
     @IBAction func addBtnAction(sender: AnyObject) {
         member = member+1
         numberLabel.text = String(member)
+    }
+    
+    @IBInspectable public var name: String = "" {
+        didSet {
+            self.numberlabelname.text = name
+        }
     }
     
     @IBAction func delBtnAction(sender: AnyObject) {

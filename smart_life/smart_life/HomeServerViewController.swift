@@ -28,7 +28,7 @@ class HomeServerViewController: UIViewController {
     }
     
     func close(){
-        orderBtn.setTitle("预约成功", forState: .Disabled)
+        orderBtn.setTitle("申请成功", forState: .Disabled)
         alertView.removeFromSuperview()
         
     }

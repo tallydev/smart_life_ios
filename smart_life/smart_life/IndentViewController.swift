@@ -13,7 +13,7 @@ class IndentViewController: UIViewController {
     // MARK: - 属性
     
     /// 商品模型数组，初始化
-    private var indentArray = [IndentCellModel]()
+    private var indentArray = [GoodModel]()
     
     /// 商品列表cell的重用标识符
     private let indentCellIdentifier = "IndentCell"
@@ -23,22 +23,22 @@ class IndentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let picname = ["限量销售-22","限量销售-21","限量销售-21"]
-        let pictitle = ["西双版纳生态无眼凤梨","天然放养土鸡蛋","西双版纳野生蜂蜜"]
-        let picdesc = ["¥66.00","¥50.00","¥150.00"]
-        let picNumber = ["X 1","X 3","X 5"]
-        
-        // 初始化模型数组，也就是搞点假数据。这里整10个模型
-        for i in 0..<3 {
-            var dict = [String : AnyObject]()
-            dict["indentCellPic"] = picname[i]
-            dict["indentGoodName"] = pictitle[i]
-            dict["indentGoodPrice"] = picdesc[i]
-            dict["indentGoodsNumber"] = picNumber[i]
-            
-            // 字典转模型并将模型添加到模型数组中
-            indentArray.append(IndentCellModel(dict: dict))
-        }
+//        let picname = ["限量销售-22","限量销售-21","限量销售-21"]
+//        let pictitle = ["西双版纳生态无眼凤梨","天然放养土鸡蛋","西双版纳野生蜂蜜"]
+//        let picdesc = ["¥66.00","¥50.00","¥150.00"]
+//        let picNumber = ["X 1","X 3","X 5"]
+//        
+//        // 初始化模型数组，也就是搞点假数据。这里整10个模型
+//        for i in 0..<3 {
+//            var dict = [String : AnyObject]()
+//            dict["indentCellPic"] = picname[i]
+//            dict["indentGoodName"] = pictitle[i]
+//            dict["indentGoodPrice"] = picdesc[i]
+//            dict["indentGoodsNumber"] = picNumber[i]
+//            
+//            // 字典转模型并将模型添加到模型数组中
+//            indentArray.append(GoodModel(dict: dict))
+//        }
         
         // 准备UI
         prepareUI()
@@ -63,8 +63,6 @@ class IndentViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor.orangeColor()
         // cell行高
         tableView.rowHeight = 100
-        
-        priceLabel.text = "合计: ¥ 180.00"
         
         userNameLabel.text = "Leo"
         userNumberLabel.text = "15216666666"
@@ -299,13 +297,18 @@ extension IndentViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension IndentViewController {
     
+    func setValue(array: [GoodModel], total: String){
+        indentArray = array
+        priceLabel.text = total
+    }
+    
     /**
      当点击了提交订单按钮
      */
     @objc private func payBtn(button: UIButton) {
         
         let PayVc = PayViewController()
-        
+        PayVc.setValue(priceLabel.text!)
         // 模态出一个地址控制器
         navigationController?.pushViewController(PayVc, animated: true);
     }
@@ -313,7 +316,6 @@ extension IndentViewController {
     @objc private func toAddress() {
         
         let AddressVc = AddressTableViewController()
-        
         // 模态出一个地址控制器
         navigationController?.pushViewController(AddressVc, animated: true);
     }

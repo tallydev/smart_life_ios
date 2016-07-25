@@ -12,23 +12,23 @@ class IndentCell: UITableViewCell {
 
     // MARK: - 属性
     /// 商品模型
-    var indentModel: IndentCellModel? {
+    var indentModel: GoodModel? {
         didSet {
             
-            if let indentCellPic = indentModel?.indentCellPic {
+            if let indentCellPic = indentModel?.iconName {
                 indentCellPicView.image = UIImage(named: indentCellPic)
             }
             
-            if let indentGoodName = indentModel?.indentGoodName {
+            if let indentGoodName = indentModel?.title {
                 indentGoodNameLabel.text = indentGoodName
             }
             
-            if let indentGoodPrice = indentModel?.indentGoodPrice {
-                indentGoodPriceLabel.text = indentGoodPrice
+            if let indentGoodPrice = indentModel?.newPrice {
+                indentGoodPriceLabel.text = "¥"+indentGoodPrice
             }
             
-            if let indentGoodsNumber = indentModel?.indentGoodsNumber {
-                indentGoodsNumberLabel.text = indentGoodsNumber
+            if let indentGoodsNumber = indentModel?.count {
+                indentGoodsNumberLabel.text = "X"+String(indentGoodsNumber)
             }
             
             // 重新布局，会更新frame

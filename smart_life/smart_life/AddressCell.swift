@@ -20,6 +20,8 @@ class AddressCell: UITableViewCell {
             // 选中状态
             selectButton.selected = addressModel!.selected
             
+            setBtn.selected = addressModel!.isdefault
+            
             if let userName = addressModel?.userName {
                 namedLabel.text = userName
             }
@@ -113,11 +115,10 @@ class AddressCell: UITableViewCell {
         
         // 选中
         button.selected = !button.selected
-        addressModel?.selected = button.selected
         
-//        for model in addressModel! {
-//            model.selected = selectButton.selected
-//        }
+        addressModel?.selected = button.selected
+        addressModel?.isdefault = button.selected
+        
     }
     
     // MARK: - 懒加载

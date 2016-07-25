@@ -161,6 +161,8 @@ class GoodsDetailViewController: UIViewController, CirCleViewDelegate {
     /// 购买按钮视图
     lazy var buyBtnView: OrderBtn = {
         let buyBtnView = OrderBtn()
+        buyBtnView.name = "数量:"
+        buyBtnView.orderBtn.setTitle("加入购物车", forState: .Normal)
         return buyBtnView
     }()
     
@@ -219,8 +221,12 @@ extension GoodsDetailViewController {
         
         // 获取当前模型，添加到购物车模型数组
         let model = goodCell.first
+        if addGoodArray.contains(model!) {
+            model?.count = model!.count + buyBtnView.member
+        }else{
+            model?.count = buyBtnView.member
             addGoodArray.append(model!)
-        
+        }
         
         // 如果商品数大于0，显示购物车里的商品数量
         if addGoodArray.count > 0 {

@@ -22,6 +22,9 @@ class AddressModel: NSObject {
     // 是否选中，默认没有选中
     var selected: Bool = false
     
+    // 是否选中，默认没有选中
+    var isdefault: Bool = false
+    
     // 字典转模型
     init(dict: [String : AnyObject]) {
         super.init()

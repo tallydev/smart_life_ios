@@ -1,20 +1,16 @@
 //
-//  NewAddressViewController.swift
+//  SignUpViewController.swift
 //  smart_life
 //
-//  Created by 张留刚 on 16/7/23.
+//  Created by 张留刚 on 16/7/24.
 //  Copyright © 2016年 张留刚. All rights reserved.
 //
 
 import UIKit
+import Spring
 
-protocol SendMessageDelegate{
-    func sendWord(message : AddressModel)
-}
+class SignUpViewController: UIViewController {
 
-class NewAddressViewController: UIViewController {
-    var delegate : SendMessageDelegate?
-    
     //选择器
     var pickerView:UIPickerView!
     
@@ -29,7 +25,7 @@ class NewAddressViewController: UIViewController {
     var areaIndex = 0
     
     var scacle = 1.0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,19 +61,19 @@ class NewAddressViewController: UIViewController {
     private func prepareUI() {
         
         // 标题
-        navigationItem.title = "新建地址"
-        
-        // 导航栏左边返回
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.orangeColor()
-        navigationItem.setRightBarButtonItem(UIBarButtonItem.init(title: "确认", style: UIBarButtonItemStyle.Bordered, target: self, action: #selector(NewAddressViewController.returnAddressView)), animated: true)
-        
-        // 导航栏右边确认
+        navigationItem.title = "注册"
+
         
         view.backgroundColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
         
+//        pickerViewContent.hidden = true
         // 添加子控件
         self.view.addSubview(addressView)
+        self.view.addSubview(dealBtn)
+        self.view.addSubview(signInBtn)
         self.view.addSubview(pickerViewContent)
+        
+        
         pickerViewContent.addSubview(pickerView)
         pickerViewContent.addSubview(addressPicBtn)
         pickerViewContent.addSubview(addressNoPicBtn)
@@ -87,15 +83,31 @@ class NewAddressViewController: UIViewController {
         addressView.addSubview(cellView2)
         addressView.addSubview(cellView3)
         addressView.addSubview(cellView4)
+        addressView.addSubview(cellView5)
+        addressView.addSubview(cellView6)
         
-        cellView1.addSubview(orderNameLabel)
+        cellView1.addSubview(orderNameView)
         cellView1.addSubview(orderTexeField)
-        cellView2.addSubview(phoneNameLabel)
+        cellView2.addSubview(phoneNameView)
         cellView2.addSubview(phoneNumberTexeField)
-        cellView3.addSubview(plotNameLabel)
+        phoneNumberTexeField.addSubview(lineView)
+        cellView2.addSubview(verifyBtn)
+        //        cellView3.addSubview(plotBtn)
+        cellView3.addSubview(plotNameView)
         cellView3.addSubview(plotTexeField)
-        cellView4.addSubview(addressNameLabel)
+        cellView4.addSubview(addressNameView)
         cellView4.addSubview(addressTextFiled)
+        cellView5.addSubview(soloNameView)
+        cellView5.addSubview(soloTextFiled)
+        cellView6.addSubview(dealNameView)
+        cellView6.addSubview(dealTextFiled)
+        
+        orderNameView.addSubview(orderNameLabel)
+        phoneNameView.addSubview(phoneNameLabel)
+        plotNameView.addSubview(plotNameLabel)
+        addressNameView.addSubview(addressNameLabel)
+        soloNameView.addSubview(soloNameLabel)
+        dealNameView.addSubview(dealNameLabel)
         
     }
     
@@ -108,7 +120,7 @@ class NewAddressViewController: UIViewController {
             make.top.equalTo(68)
             make.left.equalTo(4)
             make.right.equalTo(-4)
-            make.height.equalTo(202)
+            make.height.equalTo(303)
         }
         
         cellView1.snp_makeConstraints { (make) in
@@ -123,22 +135,41 @@ class NewAddressViewController: UIViewController {
             make.right.equalTo(-16)
             make.height.equalTo(50.5)
         }
-        cellView3.snp_makeConstraints { (make) in
+        cellView4.snp_makeConstraints { (make) in
             make.top.equalTo(101)
             make.left.equalTo(16)
             make.right.equalTo(-16)
             make.height.equalTo(50.5)
         }
-        cellView4.snp_makeConstraints { (make) in
+        cellView5.snp_makeConstraints { (make) in
             make.top.equalTo(151.5)
             make.left.equalTo(16)
             make.right.equalTo(-16)
             make.height.equalTo(50.5)
         }
-        orderNameLabel.snp_makeConstraints { (make) in
+        cellView3.snp_makeConstraints { (make) in
+            make.top.equalTo(202)
+            make.left.equalTo(16)
+            make.right.equalTo(-16)
+            make.height.equalTo(50.5)
+        }
+        cellView6.snp_makeConstraints { (make) in
+            make.top.equalTo(252.5)
+            make.left.equalTo(16)
+            make.right.equalTo(-16)
+            make.height.equalTo(50.5)
+        }
+        
+        orderNameView.snp_makeConstraints { (make) in
             make.top.left.equalTo(0)
             make.height.equalTo(50)
             make.width.equalTo(60)
+        }
+        orderNameLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(20)
+            make.top.equalTo(10)
+            make.width.equalTo(14)
+            make.height.equalTo(20)
         }
         orderTexeField.snp_makeConstraints { (make) in
             make.top.right.equalTo(0)
@@ -146,37 +177,119 @@ class NewAddressViewController: UIViewController {
             make.height.equalTo(50)
         }
         
-        phoneNameLabel.snp_makeConstraints { (make) in
+        phoneNameView.snp_makeConstraints { (make) in
             make.top.left.equalTo(0)
             make.height.equalTo(50)
             make.width.equalTo(60)
         }
+        phoneNameLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(18)
+            make.top.equalTo(16)
+            make.width.equalTo(20)
+            make.height.equalTo(12)
+        }
         phoneNumberTexeField.snp_makeConstraints { (make) in
-            make.top.right.equalTo(0)
+            make.top.equalTo(0)
+            make.right.equalTo(-100)
             make.left.equalTo(60)
             make.height.equalTo(50)
         }
-
-        plotNameLabel.snp_makeConstraints { (make) in
+        lineView.snp_makeConstraints { (make) in
+            make.centerY.equalTo(phoneNumberTexeField.snp_centerY)
+            make.right.equalTo(0)
+            make.width.equalTo(1)
+            make.height.equalTo(30)
+        }
+        
+        plotNameView.snp_makeConstraints { (make) in
             make.top.left.equalTo(0)
             make.height.equalTo(50)
             make.width.equalTo(60)
+        }
+        plotNameLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(18)
+            make.top.equalTo(16)
+            make.width.equalTo(20)
+            make.height.equalTo(16)
         }
         plotTexeField.snp_makeConstraints { (make) in
             make.top.right.equalTo(0)
             make.left.equalTo(60)
             make.height.equalTo(50)
         }
-        addressNameLabel.snp_makeConstraints { (make) in
+        
+        addressNameView.snp_makeConstraints { (make) in
             make.top.left.equalTo(0)
             make.height.equalTo(50)
             make.width.equalTo(60)
+        }
+        addressNameLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(18)
+            make.top.equalTo(16)
+            make.width.equalTo(20)
+            make.height.equalTo(16)
         }
         addressTextFiled.snp_makeConstraints { (make) in
             make.top.right.equalTo(0)
             make.left.equalTo(60)
             make.height.equalTo(50)
         }
+        
+        soloNameView.snp_makeConstraints { (make) in
+            make.top.left.equalTo(0)
+            make.height.equalTo(50)
+            make.width.equalTo(60)
+        }
+        soloNameLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(18)
+            make.top.equalTo(16)
+            make.width.equalTo(20)
+            make.height.equalTo(18)
+        }
+        soloTextFiled.snp_makeConstraints { (make) in
+            make.top.right.equalTo(0)
+            make.left.equalTo(60)
+            make.height.equalTo(50)
+        }
+        
+        
+        dealNameView.snp_makeConstraints { (make) in
+            make.top.left.equalTo(0)
+            make.height.equalTo(50)
+            make.width.equalTo(60)
+        }
+        dealNameLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(18)
+            make.top.equalTo(16)
+            make.width.equalTo(20)
+            make.height.equalTo(16)
+        }
+        dealTextFiled.snp_makeConstraints { (make) in
+            make.top.right.equalTo(0)
+            make.left.equalTo(60)
+            make.height.equalTo(50)
+        }
+        
+        
+        verifyBtn.snp_makeConstraints { (make) in
+            make.right.top.equalTo(0)
+            make.width.equalTo(100)
+            make.bottom.equalTo(-0.5)
+        }
+        signInBtn.snp_makeConstraints { (make) in
+            make.top.equalTo(cellView6.snp_bottom).offset(25)
+            make.left.equalTo(20)
+            make.right.equalTo(-20)
+            make.height.equalTo(45)
+        }
+        dealBtn.snp_makeConstraints { (make) in
+            make.bottom.equalTo(-50)
+            make.centerX.equalTo(signInBtn.snp_centerX)
+            make.width.equalTo(100)
+            make.height.equalTo(50)
+        }
+        
+        
         pickerViewContent.snp_makeConstraints { (make) in
             make.height.equalTo(200)
             make.left.right.equalTo(0)
@@ -208,8 +321,8 @@ class NewAddressViewController: UIViewController {
         return addressView
     }()
     
-    lazy var pickerViewContent: UIView = {
-        let pickerViewContent = UIView()
+    lazy var pickerViewContent: SpringView = {
+        let pickerViewContent = SpringView()
         pickerViewContent.backgroundColor = UIColor.whiteColor()
         
         return pickerViewContent
@@ -239,89 +352,192 @@ class NewAddressViewController: UIViewController {
         
         return cellView4
     }()
-    
-    lazy var orderNameLabel: UILabel = {
-        let orderNameLabel = UILabel()
-        orderNameLabel.text = "收货人"
-        orderNameLabel.font = UIFont(name:"Helvetica", size:14)
-        orderNameLabel.textAlignment = NSTextAlignment.Left
+    lazy var cellView5: UIView = {
+        let cellView5 = UIView()
+        cellView5.backgroundColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
         
-        orderNameLabel.backgroundColor = UIColor.whiteColor()
+        return cellView5
+    }()
+    lazy var cellView6: UIView = {
+        let cellView6 = UIView()
+        cellView6.backgroundColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
+        
+        return cellView6
+    }()
+    
+    
+    lazy var orderNameView: UIView = {
+        let orderNameView = UIView()
+        orderNameView.backgroundColor = UIColor.whiteColor()
+        return orderNameView
+    }()
+    lazy var orderNameLabel: UIImageView = {
+        let orderNameLabel = UIImageView()
+        orderNameLabel.image = UIImage(named: "注册-3")
         
         return orderNameLabel
     }()
     lazy var orderTexeField: UITextField = {
         let orderTexeField = UITextField()
-        orderTexeField.placeholder = "请填写收货人姓名"
+        orderTexeField.placeholder = "请输入您的手机号"
         orderTexeField.delegate = self
         orderTexeField.clearButtonMode = UITextFieldViewMode.WhileEditing
         orderTexeField.font = UIFont(name:"Helvetica", size:14)
-        orderTexeField.textAlignment = NSTextAlignment.Right
+        orderTexeField.textAlignment = NSTextAlignment.Left
+        
         orderTexeField.backgroundColor = UIColor.whiteColor()
         return orderTexeField
     }()
     
-    lazy var phoneNameLabel: UILabel = {
-        let phoneNameLabel = UILabel()
-        phoneNameLabel.text = "联系电话"
-        phoneNameLabel.font = UIFont(name:"Helvetica", size:14)
-        phoneNameLabel.textAlignment = NSTextAlignment.Left
-        
-        phoneNameLabel.backgroundColor = UIColor.whiteColor()
-        
+    lazy var phoneNameView: UIView = {
+        let phoneNameView = UIView()
+        phoneNameView.backgroundColor = UIColor.whiteColor()
+        return phoneNameView
+    }()
+    lazy var phoneNameLabel: UIImageView = {
+        let phoneNameLabel = UIImageView()
+        phoneNameLabel.image = UIImage(named: "注册-4")
         return phoneNameLabel
     }()
     lazy var phoneNumberTexeField: UITextField = {
         let phoneNumberTexeField = UITextField()
-        phoneNumberTexeField.placeholder = "请填写收货人手机"
+        phoneNumberTexeField.placeholder = "请输入验证码"
         phoneNumberTexeField.delegate = self
         phoneNumberTexeField.clearButtonMode = UITextFieldViewMode.WhileEditing
         phoneNumberTexeField.font = UIFont(name:"Helvetica", size:14)
-        phoneNumberTexeField.textAlignment = NSTextAlignment.Right
+        phoneNumberTexeField.textAlignment = NSTextAlignment.Left
         phoneNumberTexeField.backgroundColor = UIColor.whiteColor()
         return phoneNumberTexeField
     }()
     
-    lazy var plotNameLabel: UILabel = {
-        let plotNameLabel = UILabel()
-        plotNameLabel.text = "选择地区"
-        plotNameLabel.font = UIFont(name:"Helvetica", size:14)
-        plotNameLabel.textAlignment = NSTextAlignment.Left
-        
-        plotNameLabel.backgroundColor = UIColor.whiteColor()
-        
-        return plotNameLabel
+    lazy var addressNameView: UIView = {
+        let addressNameView = UIView()
+        addressNameView.backgroundColor = UIColor.whiteColor()
+        return addressNameView
     }()
-    lazy var plotTexeField: UITextField = {
-        let plotTexeField = UITextField()
-        plotTexeField.tag = 1001
-        plotTexeField.placeholder = "请选择所在物业小区"
-        plotTexeField.delegate = self
-        plotTexeField.font = UIFont(name:"Helvetica", size:14)
-        plotTexeField.textAlignment = NSTextAlignment.Right
-        plotTexeField.backgroundColor = UIColor.whiteColor()
-        return plotTexeField
-    }()
-    
-    lazy var addressNameLabel: UILabel = {
-        let addressNameLabel = UILabel()
-        addressNameLabel.text = "详细地址"
-        addressNameLabel.font = UIFont(name:"Helvetica", size:14)
-        addressNameLabel.textAlignment = NSTextAlignment.Left
-        
-        addressNameLabel.backgroundColor = UIColor.whiteColor()
+    lazy var addressNameLabel: UIImageView = {
+        let addressNameLabel = UIImageView()
+        addressNameLabel.image = UIImage(named: "注册-5")
         
         return addressNameLabel
     }()
     lazy var addressTextFiled: UITextField = {
         let addressTextFiled = UITextField()
-        addressTextFiled.placeholder = "请详细门牌号xx幢xx单元xx室"
+        addressTextFiled.placeholder = "5-8位数字或字母"
         addressTextFiled.clearButtonMode = UITextFieldViewMode.WhileEditing
         addressTextFiled.delegate = self
         addressTextFiled.font = UIFont(name:"Helvetica", size:14)
-        addressTextFiled.textAlignment = NSTextAlignment.Right
+        addressTextFiled.textAlignment = NSTextAlignment.Left
         addressTextFiled.backgroundColor = UIColor.whiteColor()
         return addressTextFiled
+    }()
+    
+    lazy var soloNameView: UIView = {
+        let soloNameView = UIView()
+        soloNameView.backgroundColor = UIColor.whiteColor()
+        return soloNameView
+    }()
+    lazy var soloNameLabel: UIImageView = {
+        let soloNameLabel = UIImageView()
+        soloNameLabel.image = UIImage(named: "注册-6")
+        
+        return soloNameLabel
+    }()
+    lazy var soloTextFiled: UITextField = {
+        let soloTextFiled = UITextField()
+        soloTextFiled.placeholder = "昵称"
+        soloTextFiled.clearButtonMode = UITextFieldViewMode.WhileEditing
+        soloTextFiled.delegate = self
+        soloTextFiled.font = UIFont(name:"Helvetica", size:14)
+        soloTextFiled.textAlignment = NSTextAlignment.Left
+        soloTextFiled.backgroundColor = UIColor.whiteColor()
+        return soloTextFiled
+    }()
+    
+    
+    lazy var plotNameView: UIView = {
+        let plotNameView = UIView()
+        plotNameView.backgroundColor = UIColor.whiteColor()
+        return plotNameView
+    }()
+    lazy var plotNameLabel: UIImageView = {
+        let plotNameLabel = UIImageView()
+        plotNameLabel.image = UIImage(named: "注册-7")
+        return plotNameLabel
+    }()
+    lazy var plotTexeField: UITextField = {
+        let plotTexeField = UITextField()
+        plotTexeField.tag = 1001
+        plotTexeField.placeholder = "所在小区选择"
+        plotTexeField.delegate = self
+        plotTexeField.font = UIFont(name:"Helvetica", size:14)
+        plotTexeField.textAlignment = NSTextAlignment.Left
+        plotTexeField.backgroundColor = UIColor.whiteColor()
+        return plotTexeField
+    }()
+    
+    
+    lazy var dealNameView: UIView = {
+        let dealNameView = UIView()
+        dealNameView.backgroundColor = UIColor.whiteColor()
+        return dealNameView
+    }()
+    lazy var dealNameLabel: UIImageView = {
+        let dealNameLabel = UIImageView()
+        dealNameLabel.image = UIImage(named: "注册-8")
+        
+        return dealNameLabel
+    }()
+    lazy var dealTextFiled: UITextField = {
+        let dealTextFiled = UITextField()
+        dealTextFiled.placeholder = "请详细门牌号xx幢xx单元xx室"
+        dealTextFiled.clearButtonMode = UITextFieldViewMode.WhileEditing
+        dealTextFiled.delegate = self
+        dealTextFiled.font = UIFont(name:"Helvetica", size:14)
+        dealTextFiled.textAlignment = NSTextAlignment.Left
+        dealTextFiled.backgroundColor = UIColor.whiteColor()
+        return dealTextFiled
+    }()
+    
+    lazy var lineView:UIView = {
+        let lineView = UIView()
+        lineView.backgroundColor = UIColor.init(red: 0.89, green: 0.89, blue: 0.89, alpha: 1)
+        return lineView
+    }()
+    
+    lazy var verifyBtn:UIButton = {
+        let verifyBtn = UIButton(type:.System)
+        
+        //建立一个按钮，触摸按钮时获得选择框被选择的索引
+        verifyBtn.setTitle("获取验证码",forState:.Normal)
+        verifyBtn.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        verifyBtn.backgroundColor = UIColor.whiteColor()
+        //        signInBtn.addTarget(self, action:#selector(SignUpViewController.getPickerViewValue),forControlEvents: UIControlEvents.TouchUpInside)
+        return verifyBtn
+    }()
+    
+    
+    lazy var signInBtn:UIButton = {
+        let signInBtn = UIButton(type:.System)
+        
+        //建立一个按钮，触摸按钮时获得选择框被选择的索引
+        signInBtn.setTitle("注 册",forState:.Normal)
+        signInBtn.titleLabel?.font = UIFont(name:"Helvetica", size:20)
+        signInBtn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        signInBtn.backgroundColor = UIColor.orangeColor()
+//        signInBtn.addTarget(self, action:#selector(SignUpViewController.getPickerViewValue),forControlEvents: UIControlEvents.TouchUpInside)
+        return signInBtn
+    }()
+    
+    lazy var dealBtn:UIButton = {
+        let dealBtn = UIButton(type:.System)
+        
+        //建立一个按钮，触摸按钮时获得选择框被选择的索引
+        dealBtn.setTitle("服务条款",forState:.Normal)
+        dealBtn.titleLabel?.font = UIFont(name:"Helvetica", size:12)
+        dealBtn.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        dealBtn.addTarget(self, action:#selector(SignUpViewController.getDealView),forControlEvents: UIControlEvents.TouchUpInside)
+        return dealBtn
     }()
     
     lazy var addressPicBtn: UIButton = {
@@ -330,8 +546,8 @@ class NewAddressViewController: UIViewController {
         //建立一个按钮，触摸按钮时获得选择框被选择的索引
         addressPicBtn.setTitle("确定",forState:.Normal)
         addressPicBtn.setTitleColor(UIColor.orangeColor(), forState: .Normal)
-        addressPicBtn.addTarget(self, action:#selector(NewAddressViewController.getPickerViewValue),
-                         forControlEvents: UIControlEvents.TouchUpInside)
+        addressPicBtn.addTarget(self, action:#selector(SignUpViewController.getPickerViewValue),
+                                forControlEvents: UIControlEvents.TouchUpInside)
         return addressPicBtn
     }()
     lazy var addressNoPicBtn: UIButton = {
@@ -340,13 +556,13 @@ class NewAddressViewController: UIViewController {
         //建立一个按钮，触摸按钮时获得选择框被选择的索引
         addressNoPicBtn.setTitle("取消",forState:.Normal)
         addressNoPicBtn.setTitleColor(UIColor.grayColor(), forState: .Normal)
-        addressNoPicBtn.addTarget(self, action:#selector(NewAddressViewController.closePickerViewValue),
-                                forControlEvents: UIControlEvents.TouchUpInside)
+        addressNoPicBtn.addTarget(self, action:#selector(SignUpViewController.closePickerViewValue),
+                                  forControlEvents: UIControlEvents.TouchUpInside)
         return addressNoPicBtn
     }()
 }
 
-extension NewAddressViewController: UITextFieldDelegate {
+extension SignUpViewController: UITextFieldDelegate {
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         NSLog("textField")
@@ -356,6 +572,7 @@ extension NewAddressViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         
         if textField.tag == 1001 {
+//            pickerViewContent.hidden = false
             //设置动画属性
             
             self.scacle = 0
@@ -391,7 +608,6 @@ extension NewAddressViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField.tag == 1001 {
-            //设置动画属性
             
             self.scacle = 0
             //告诉self.view约束需要更新
@@ -413,7 +629,7 @@ extension NewAddressViewController: UITextFieldDelegate {
             }
         }
     }
-
+    
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         addressTextFiled.resignFirstResponder()
         orderTexeField.resignFirstResponder()
@@ -431,9 +647,7 @@ extension NewAddressViewController: UITextFieldDelegate {
         super.updateViewConstraints()
     }
     
-    /**
-     当点击了地址按钮
-     */
+    
     @objc private func payBtn(button: UIButton) {
         let urlString1 = "weixin://"
         let urlString = "alipay://"
@@ -442,24 +656,10 @@ extension NewAddressViewController: UITextFieldDelegate {
     }
     
     @objc private func returnAddressView(){
-        
-        var dict = [String : AnyObject]()
-        dict["userName"] = "\(orderTexeField.text)"
-        dict["address"] = "\(plotTexeField.text)" +  "\(addressTextFiled.text)"
-        dict["phone"] = "\(phoneNumberTexeField.text)"
-        
-        var addressM = AddressModel(dict:dict)
-        // 字典转模型并将模型添加到模型数组中
-         self.delegate?.sendWord(addressM)
-        
-        print(dict)
-        
         navigationController?.popViewControllerAnimated(true)
     }
     
     func closePickerViewValue(){
-        //设置动画属性
-        
         self.scacle = 1
         //告诉self.view约束需要更新
         self.view.setNeedsUpdateConstraints()
@@ -468,9 +668,17 @@ extension NewAddressViewController: UITextFieldDelegate {
             self.view.layoutIfNeeded()
         }
     }
+    
+    func getDealView(){
+        
+        let DealViewVc = DealViewController()
+        
+        // 模态出一个购物车控制器
+        navigationController?.pushViewController(DealViewVc, animated: true);
+    }
 }
 
-extension NewAddressViewController:UIPickerViewDelegate, UIPickerViewDataSource{
+extension SignUpViewController:UIPickerViewDelegate, UIPickerViewDataSource{
     //设置选择框的列数为3列,继承于UIPickerViewDataSource协议
     func numberOfComponentsInPickerView( pickerView: UIPickerView) -> Int{
         return 3
@@ -552,7 +760,6 @@ extension NewAddressViewController:UIPickerViewDelegate, UIPickerViewDataSource{
         let message = "\(province) - \(city) - \(area)"
         
         plotTexeField.text = message
-        //设置动画属性
         
         self.scacle = 1
         //告诉self.view约束需要更新
@@ -561,12 +768,11 @@ extension NewAddressViewController:UIPickerViewDelegate, UIPickerViewDataSource{
         UIView.animateWithDuration(0.2) {
             self.view.layoutIfNeeded()
         }
-        
         //消息显示
-//        let alertController = UIAlertController(title: "您选择了",
-//                                                message: message, preferredStyle: .Alert)
-//        let cancelAction = UIAlertAction(title: "确定", style: .Cancel, handler: nil)
-//        alertController.addAction(cancelAction)
-//        self.presentViewController(alertController, animated: true, completion: nil)
+        //        let alertController = UIAlertController(title: "您选择了",
+        //                                                message: message, preferredStyle: .Alert)
+        //        let cancelAction = UIAlertAction(title: "确定", style: .Cancel, handler: nil)
+        //        alertController.addAction(cancelAction)
+        //        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }

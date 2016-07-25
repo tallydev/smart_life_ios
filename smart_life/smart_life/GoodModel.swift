@@ -34,7 +34,7 @@ class GoodModel: NSObject {
     // 老价格
     var oldPrice: String?
     
-    // 是否选中，默认没有选中
+    // 是否选中，默认选中
     var selected: Bool = true
     
     // 字典转模型
