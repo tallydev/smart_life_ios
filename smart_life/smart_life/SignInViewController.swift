@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class SignInViewController: UIViewController {
     
@@ -203,7 +204,7 @@ class SignInViewController: UIViewController {
         signInBtn.titleLabel?.font = UIFont(name:"Helvetica", size:20)
         signInBtn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         signInBtn.backgroundColor = UIColor.orangeColor()
-        //        signInBtn.addTarget(self, action:#selector(SignUpViewController.getPickerViewValue),forControlEvents: UIControlEvents.TouchUpInside)
+        signInBtn.addTarget(self, action:#selector(SignInViewController.getMainPage),forControlEvents: UIControlEvents.TouchUpInside)
         return signInBtn
     }()
     lazy var signUpBtn:UIButton = {
@@ -249,6 +250,23 @@ extension SignInViewController {
     func getsigninViewValue(){
         let signUpVc = SignUpViewController()
         presentViewController(UINavigationController(rootViewController: signUpVc), animated: true, completion: nil)
+    }
+    
+    func getMainPage(){
+        let tempResult = orderTexeField.text
+        let passWord = phoneNumberTexeField.text
+        
+        if tempResult == "123456789" && passWord == "123456" {
+            self.performSegueWithIdentifier("login", sender: self)
+        }else{
+            var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            hud.mode = MBProgressHUDMode.Text
+            hud.labelText = "登录提示"
+            hud.detailsLabelText = "您输入的手机或用户密码有误，请重新输入！"
+            
+            //延迟隐藏
+            hud.hide(true, afterDelay: 0.8)
+        }
     }
 }
 

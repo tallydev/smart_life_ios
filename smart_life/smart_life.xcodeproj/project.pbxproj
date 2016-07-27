@@ -39,22 +39,7 @@
 		D4486ECE1D3899FF00BB8984 /* MyOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ECD1D3899FF00BB8984 /* MyOrderTableViewCell.swift */; };
 		D4486ED01D389D4D00BB8984 /* MyIndentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ECF1D389D4D00BB8984 /* MyIndentTableViewController.swift */; };
 		D4486ED31D389D6900BB8984 /* MyIndentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ED21D389D6900BB8984 /* MyIndentTableViewCell.swift */; };
-		D46DBB0E1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB0C1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift */; };
-		D46DBB0F1D2B8135009519A0 /* HomeTabCollectionViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB0D1D2B8135009519A0 /* HomeTabCollectionViewCell2.xib */; };
-		D46DBB141D2B8174009519A0 /* HomeTabCollectionViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB121D2B8174009519A0 /* HomeTabCollectionViewCell3.swift */; };
-		D46DBB151D2B8174009519A0 /* HomeTabCollectionViewCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB131D2B8174009519A0 /* HomeTabCollectionViewCell3.xib */; };
-		D46DBB1A1D2B819C009519A0 /* HomeTabCollectionViewCell4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB181D2B819C009519A0 /* HomeTabCollectionViewCell4.swift */; };
-		D46DBB1B1D2B819C009519A0 /* HomeTabCollectionViewCell4.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB191D2B819C009519A0 /* HomeTabCollectionViewCell4.xib */; };
-		D46DBB1E1D2B81AB009519A0 /* HomeTabCollectionViewCell5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB1C1D2B81AB009519A0 /* HomeTabCollectionViewCell5.swift */; };
-		D46DBB1F1D2B81AB009519A0 /* HomeTabCollectionViewCell5.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB1D1D2B81AB009519A0 /* HomeTabCollectionViewCell5.xib */; };
-		D46DBB241D2B81C7009519A0 /* HomeTabCollectionViewCell7.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB221D2B81C7009519A0 /* HomeTabCollectionViewCell7.swift */; };
-		D46DBB251D2B81C7009519A0 /* HomeTabCollectionViewCell7.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB231D2B81C7009519A0 /* HomeTabCollectionViewCell7.xib */; };
-		D46DBB2A1D2B8274009519A0 /* HomeTabCollectionViewCell6.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB281D2B8274009519A0 /* HomeTabCollectionViewCell6.swift */; };
-		D46DBB2B1D2B8274009519A0 /* HomeTabCollectionViewCell6.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB291D2B8274009519A0 /* HomeTabCollectionViewCell6.xib */; };
-		D46DBB2E1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB2C1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift */; };
-		D46DBB2F1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib in Resources */ = {isa = PBXBuildFile; fileRef = D46DBB2D1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib */; };
-		D46DBB371D2BA0C7009519A0 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB361D2BA0C7009519A0 /* HomeCollectionViewController.swift */; };
-		D4748B211D30A103002B9179 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4748B201D30A103002B9179 /* HomeController.swift */; };
+		D46DBB371D2BA0C7009519A0 /* HomeTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB361D2BA0C7009519A0 /* HomeTController.swift */; };
 		D48B2BFF1D405D34003208DB /* GoodsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B2BFE1D405D34003208DB /* GoodsDetailViewController.swift */; };
 		D491F1D51D3C6AE100D7FA11 /* MyDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */; };
 		D49CEADB1D240C59003D2737 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49CEADA1D240C59003D2737 /* Helpers.swift */; };
@@ -72,10 +57,9 @@
 		D4B43AD71D374D090023887E /* ITPart1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AD61D374D090023887E /* ITPart1ViewController.swift */; };
 		D4B43AD91D374D900023887E /* ITPart2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43AD81D374D900023887E /* ITPart2ViewController.swift */; };
 		D4B43ADB1D374DA00023887E /* ITPart3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B43ADA1D374DA00023887E /* ITPart3ViewController.swift */; };
+		D4BF20D21D48957E00BCE810 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BF20D11D48957E00BCE810 /* Model.swift */; };
 		D4C128381D113CCC00561CB3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C128371D113CCC00561CB3 /* CoreMotion.framework */; };
 		D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */; };
-		D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128431D13E1C800561CB3 /* HomeTabCollectionViewCell.swift */; };
-		D4C128461D13E1C800561CB3 /* HomeTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C128441D13E1C800561CB3 /* HomeTabCollectionViewCell.xib */; };
 		D4C1284E1D15A4B100561CB3 /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1284D1D15A4B100561CB3 /* ShoppingCartCell.swift */; };
 		D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1284F1D178C1D00561CB3 /* GoodModel.swift */; };
 		D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */; };
@@ -135,22 +119,7 @@
 		D4486ECD1D3899FF00BB8984 /* MyOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderTableViewCell.swift; sourceTree = "<group>"; };
 		D4486ECF1D389D4D00BB8984 /* MyIndentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyIndentTableViewController.swift; sourceTree = "<group>"; };
 		D4486ED21D389D6900BB8984 /* MyIndentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyIndentTableViewCell.swift; sourceTree = "<group>"; };
-		D46DBB0C1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell2.swift; sourceTree = "<group>"; };
-		D46DBB0D1D2B8135009519A0 /* HomeTabCollectionViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell2.xib; sourceTree = "<group>"; };
-		D46DBB121D2B8174009519A0 /* HomeTabCollectionViewCell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell3.swift; sourceTree = "<group>"; };
-		D46DBB131D2B8174009519A0 /* HomeTabCollectionViewCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell3.xib; sourceTree = "<group>"; };
-		D46DBB181D2B819C009519A0 /* HomeTabCollectionViewCell4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell4.swift; sourceTree = "<group>"; };
-		D46DBB191D2B819C009519A0 /* HomeTabCollectionViewCell4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell4.xib; sourceTree = "<group>"; };
-		D46DBB1C1D2B81AB009519A0 /* HomeTabCollectionViewCell5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell5.swift; sourceTree = "<group>"; };
-		D46DBB1D1D2B81AB009519A0 /* HomeTabCollectionViewCell5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell5.xib; sourceTree = "<group>"; };
-		D46DBB221D2B81C7009519A0 /* HomeTabCollectionViewCell7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell7.swift; sourceTree = "<group>"; };
-		D46DBB231D2B81C7009519A0 /* HomeTabCollectionViewCell7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell7.xib; sourceTree = "<group>"; };
-		D46DBB281D2B8274009519A0 /* HomeTabCollectionViewCell6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell6.swift; sourceTree = "<group>"; };
-		D46DBB291D2B8274009519A0 /* HomeTabCollectionViewCell6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell6.xib; sourceTree = "<group>"; };
-		D46DBB2C1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell8.swift; sourceTree = "<group>"; };
-		D46DBB2D1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell8.xib; sourceTree = "<group>"; };
-		D46DBB361D2BA0C7009519A0 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
-		D4748B201D30A103002B9179 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		D46DBB361D2BA0C7009519A0 /* HomeTController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTController.swift; sourceTree = "<group>"; };
 		D48B2BFE1D405D34003208DB /* GoodsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsDetailViewController.swift; sourceTree = "<group>"; };
 		D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDataTableViewController.swift; sourceTree = "<group>"; };
 		D49CEADA1D240C59003D2737 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -168,11 +137,10 @@
 		D4B43AD61D374D090023887E /* ITPart1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITPart1ViewController.swift; sourceTree = "<group>"; };
 		D4B43AD81D374D900023887E /* ITPart2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITPart2ViewController.swift; sourceTree = "<group>"; };
 		D4B43ADA1D374DA00023887E /* ITPart3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITPart3ViewController.swift; sourceTree = "<group>"; };
+		D4BF20D11D48957E00BCE810 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D4C128371D113CCC00561CB3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D4C128391D113D5E00561CB3 /* Header_bradge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header_bradge.h; sourceTree = "<group>"; };
 		D4C1283B1D11843900561CB3 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
-		D4C128431D13E1C800561CB3 /* HomeTabCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabCollectionViewCell.swift; sourceTree = "<group>"; };
-		D4C128441D13E1C800561CB3 /* HomeTabCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTabCollectionViewCell.xib; sourceTree = "<group>"; };
 		D4C1284D1D15A4B100561CB3 /* ShoppingCartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartCell.swift; sourceTree = "<group>"; };
 		D4C1284F1D178C1D00561CB3 /* GoodModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodModel.swift; sourceTree = "<group>"; };
 		D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsListTableViewController.swift; sourceTree = "<group>"; };
@@ -330,29 +298,6 @@
 				D48B2BFE1D405D34003208DB /* GoodsDetailViewController.swift */,
 			);
 			name = Shopping;
-			sourceTree = "<group>";
-		};
-		D44135DB1D1924DF00072099 /* HomeViewMode */ = {
-			isa = PBXGroup;
-			children = (
-				D4C128431D13E1C800561CB3 /* HomeTabCollectionViewCell.swift */,
-				D4C128441D13E1C800561CB3 /* HomeTabCollectionViewCell.xib */,
-				D46DBB0C1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift */,
-				D46DBB0D1D2B8135009519A0 /* HomeTabCollectionViewCell2.xib */,
-				D46DBB121D2B8174009519A0 /* HomeTabCollectionViewCell3.swift */,
-				D46DBB131D2B8174009519A0 /* HomeTabCollectionViewCell3.xib */,
-				D46DBB181D2B819C009519A0 /* HomeTabCollectionViewCell4.swift */,
-				D46DBB191D2B819C009519A0 /* HomeTabCollectionViewCell4.xib */,
-				D46DBB1C1D2B81AB009519A0 /* HomeTabCollectionViewCell5.swift */,
-				D46DBB1D1D2B81AB009519A0 /* HomeTabCollectionViewCell5.xib */,
-				D46DBB221D2B81C7009519A0 /* HomeTabCollectionViewCell7.swift */,
-				D46DBB231D2B81C7009519A0 /* HomeTabCollectionViewCell7.xib */,
-				D46DBB281D2B8274009519A0 /* HomeTabCollectionViewCell6.swift */,
-				D46DBB291D2B8274009519A0 /* HomeTabCollectionViewCell6.xib */,
-				D46DBB2C1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift */,
-				D46DBB2D1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib */,
-			);
-			name = HomeViewMode;
 			sourceTree = "<group>";
 		};
 		D44135DC1D19250400072099 /* ShoppingMode */ = {
@@ -582,8 +527,7 @@
 				D4B43AAC1D35D5480023887E /* NewProduct */,
 				D44135DA1D19245A00072099 /* Shopping */,
 				D4F55D321D0E5D8A0017638B /* HomeViewController.swift */,
-				D46DBB361D2BA0C7009519A0 /* HomeCollectionViewController.swift */,
-				D4748B201D30A103002B9179 /* HomeController.swift */,
+				D46DBB361D2BA0C7009519A0 /* HomeTController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -623,7 +567,6 @@
 				D4B43ABB1D3645170023887E /* CellModel */,
 				D4B43AC21D3721670023887E /* OrderBtn */,
 				D417C4281D2235E600955C30 /* HomeBtn */,
-				D44135DB1D1924DF00072099 /* HomeViewMode */,
 				D4F55D541D0EE5040017638B /* CirCleView.swift */,
 				D44135E41D1A5C4500072099 /* UIView+BHBFreeBorder.swift */,
 			);
@@ -637,6 +580,7 @@
 				D44135E81D1A758700072099 /* AddressModel.swift */,
 				D49CEADA1D240C59003D2737 /* Helpers.swift */,
 				D404DDDD1D434FA5003586C4 /* IndentCellModel.swift */,
+				D4BF20D11D48957E00BCE810 /* Model.swift */,
 			);
 			name = "Mode(模型)";
 			sourceTree = "<group>";
@@ -713,18 +657,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D404DDF81D464910003586C4 /* alertFrameS.xib in Resources */,
-				D46DBB1B1D2B819C009519A0 /* HomeTabCollectionViewCell4.xib in Resources */,
 				D4F55D3D1D0E5D8A0017638B /* LaunchScreen.storyboard in Resources */,
 				D406F4871D3F22AD00236EA6 /* alertFrame.xib in Resources */,
-				D46DBB151D2B8174009519A0 /* HomeTabCollectionViewCell3.xib in Resources */,
-				D46DBB1F1D2B81AB009519A0 /* HomeTabCollectionViewCell5.xib in Resources */,
-				D46DBB2B1D2B8274009519A0 /* HomeTabCollectionViewCell6.xib in Resources */,
 				D4B43AD01D3725450023887E /* OrderBtn.xib in Resources */,
-				D46DBB0F1D2B8135009519A0 /* HomeTabCollectionViewCell2.xib in Resources */,
-				D46DBB251D2B81C7009519A0 /* HomeTabCollectionViewCell7.xib in Resources */,
-				D46DBB2F1D2B8288009519A0 /* HomeTabCollectionViewCell8.xib in Resources */,
 				D406F4841D3F1BFC00236EA6 /* OrderBtnTwo.xib in Resources */,
-				D4C128461D13E1C800561CB3 /* HomeTabCollectionViewCell.xib in Resources */,
 				D4F852151D37EA81003888A4 /* IconBtn.xib in Resources */,
 				D41ADD9F1D38146600534E6A /* MyCell.xib in Resources */,
 				D404DDE31D446503003586C4 /* address.plist in Resources */,
@@ -792,7 +728,6 @@
 				D404DDEC1D44FB6B003586C4 /* SignUpViewController.swift in Sources */,
 				D4F852171D380184003888A4 /* HomeServerViewController.swift in Sources */,
 				D4B43AB61D35D6F80023887E /* HealthPart2ViewController.swift in Sources */,
-				D46DBB0E1D2B8135009519A0 /* HomeTabCollectionViewCell2.swift in Sources */,
 				D4F852191D3802EF003888A4 /* MyInfoViewController.swift in Sources */,
 				D404DDDC1D427CAF003586C4 /* PayViewController.swift in Sources */,
 				D404DDDE1D434FA5003586C4 /* IndentCellModel.swift in Sources */,
@@ -803,7 +738,6 @@
 				D44135E71D1A749400072099 /* AddressTableViewController.swift in Sources */,
 				D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */,
 				D4B43ACC1D3724910023887E /* OrderBtn.swift in Sources */,
-				D4748B211D30A103002B9179 /* HomeController.swift in Sources */,
 				D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */,
 				D417C4271D2108BB00955C30 /* WaterFlowViewController.swift in Sources */,
 				D49CEADB1D240C59003D2737 /* Helpers.swift in Sources */,
@@ -817,24 +751,20 @@
 				D4EC0CA91D3DC6BB00E2464F /* UserAvatraTableViewCell.swift in Sources */,
 				D44135E91D1A758700072099 /* AddressModel.swift in Sources */,
 				D41ADD9D1D38145000534E6A /* MyCell.swift in Sources */,
+				D4BF20D21D48957E00BCE810 /* Model.swift in Sources */,
 				D4F8520C1D37975D003888A4 /* HomeFurnishingPart1ViewController.swift in Sources */,
-				D46DBB241D2B81C7009519A0 /* HomeTabCollectionViewCell7.swift in Sources */,
 				D4486ED31D389D6900BB8984 /* MyIndentTableViewCell.swift in Sources */,
 				D404DDEF1D459CC0003586C4 /* form.swift in Sources */,
 				D4B43ABF1D368B760023887E /* HealthPart3TableViewCell.swift in Sources */,
-				D46DBB2A1D2B8274009519A0 /* HomeTabCollectionViewCell6.swift in Sources */,
-				D46DBB1E1D2B81AB009519A0 /* HomeTabCollectionViewCell5.swift in Sources */,
 				D4B43AD91D374D900023887E /* ITPart2ViewController.swift in Sources */,
 				D48B2BFF1D405D34003208DB /* GoodsDetailViewController.swift in Sources */,
 				D4B43AC11D3695C20023887E /* FitnessTableViewController.swift in Sources */,
 				D404DDFA1D46575E003586C4 /* DealViewController.swift in Sources */,
 				D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */,
-				D46DBB2E1D2B8288009519A0 /* HomeTabCollectionViewCell8.swift in Sources */,
 				D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */,
 				D4C1283C1D11843900561CB3 /* ShoppingCartViewController.swift in Sources */,
 				D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */,
 				D4486ED01D389D4D00BB8984 /* MyIndentTableViewController.swift in Sources */,
-				D46DBB1A1D2B819C009519A0 /* HomeTabCollectionViewCell4.swift in Sources */,
 				D4B43ABA1D3615B70023887E /* CommunityViewController.swift in Sources */,
 				D406F4821D3F1B9B00236EA6 /* OrderBtnTwo.swift in Sources */,
 				D4B43ADB1D374DA00023887E /* ITPart3ViewController.swift in Sources */,
@@ -850,13 +780,11 @@
 				D404DDE11D43C89F003586C4 /* NewAddressViewController.swift in Sources */,
 				D404DDD71D4268BD003586C4 /* IndentCell.swift in Sources */,
 				D44135DE1D1927DB00072099 /* ListTableViewController.swift in Sources */,
-				D4C128451D13E1C800561CB3 /* HomeTabCollectionViewCell.swift in Sources */,
 				D4B43AB81D35D7090023887E /* HealthPart3ViewController.swift in Sources */,
 				D4F852131D37EA65003888A4 /* IconBtn.swift in Sources */,
 				D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */,
-				D46DBB141D2B8174009519A0 /* HomeTabCollectionViewCell3.swift in Sources */,
 				D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */,
-				D46DBB371D2BA0C7009519A0 /* HomeCollectionViewController.swift in Sources */,
+				D46DBB371D2BA0C7009519A0 /* HomeTController.swift in Sources */,
 				D44135E31D1A3A5400072099 /* AddressCell.swift in Sources */,
 				D4C1284E1D15A4B100561CB3 /* ShoppingCartCell.swift in Sources */,
 			);

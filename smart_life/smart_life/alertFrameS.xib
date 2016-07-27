@@ -69,6 +69,6 @@
     </objects>
     <resources>
         <image name="alertClose" width="175" height="175"/>
-        <image name="whiteLogo" width="592" height="692"/>
+        <image name="whiteLogo" width="59" height="69"/>
     </resources>
 </document>

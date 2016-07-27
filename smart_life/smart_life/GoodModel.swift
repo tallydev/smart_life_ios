@@ -22,9 +22,11 @@ class GoodModel: NSObject {
     // 商品标题
     var title: String?
     
-    // 商品描述
+    // 商品价格描述
     var desc: String?
     
+    //商品详情描述
+    var detailDesc: String?
     // 商品购买个数,默认0
     var count: Int = 1
     

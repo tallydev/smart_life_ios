@@ -356,8 +356,8 @@ extension NewAddressViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         
         if textField.tag == 1001 {
+            textField.resignFirstResponder() //这个隐藏(放弃)虚拟键盘
             //设置动画属性
-            
             self.scacle = 0
             //告诉self.view约束需要更新
             self.view.setNeedsUpdateConstraints()
@@ -365,7 +365,7 @@ extension NewAddressViewController: UITextFieldDelegate {
             UIView.animateWithDuration(0.2) {
                 self.view.layoutIfNeeded()
             }
-            textField.resignFirstResponder() //这个隐藏(放弃)虚拟键盘
+            
         }else{
             //设置动画属性
             
@@ -391,8 +391,8 @@ extension NewAddressViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField.tag == 1001 {
+            textField.resignFirstResponder() //这个隐藏(放弃)虚拟键盘
             //设置动画属性
-            
             self.scacle = 0
             //告诉self.view约束需要更新
             self.view.setNeedsUpdateConstraints()
@@ -400,7 +400,6 @@ extension NewAddressViewController: UITextFieldDelegate {
             UIView.animateWithDuration(0.2) {
                 self.view.layoutIfNeeded()
             }
-            textField.resignFirstResponder() //这个隐藏(放弃)虚拟键盘
         }else{
             //设置动画属性
             

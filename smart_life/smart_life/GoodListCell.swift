@@ -101,7 +101,7 @@ class GoodListCell: UITableViewCell {
     
     // MARK: - 响应事件
     /**
-     点击了购买按钮的事件
+     点击了查看详情按钮的事件
      
      - parameter button: 购买按钮
      */

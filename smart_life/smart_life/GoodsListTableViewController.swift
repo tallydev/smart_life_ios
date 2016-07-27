@@ -48,6 +48,9 @@ class GoodsListTableViewController: UIViewController {
         let name = ["限量销售-22","限量销售-21","限量销售-21"]
         let title = ["西双版纳生态无眼凤梨","天然放养土鸡蛋","西双版纳野生蜂蜜"]
         let desc = ["¥66.00（包邮）","¥50.00（包邮）","¥150.00（包邮）"]
+        let detailDesc = ["<p>新鲜直达，每件5kg（5-6个）</p><p>热带雨林气候，光照充足<br>版纳古朴民风，无激素和催熟</p><p>温馨提示<br>1.人工采摘，大小个头不        一，以重量为准；<br>2.发货时间待定，待新鲜采摘后即刻发货；<br>3.鉴于水果保质特性，请收货当日去皮食用或者冰箱冷藏72小时内食用完毕。</p>",
+                          "<p>儿童老人首选每件20枚</p><p>自然低密度农林散养，自由觅食，纯粮补喂<br>公母同林，保持好心情<br>蛋壳厚实，微量元素丰富</p><p>温馨提示：<br>1.土鸡蛋整体偏小，食量大小不一，产蛋大小不一；<br>2.散养鸡大多三五天才下一次蛋，供应商尽早发货；<br>3.冰箱冷藏30天内请食用完毕。</p>",
+                          "<p>（一年一季）每件500克</p><p>深山野生原蜜珍酿<br>清香浓郁，甜而不腻<br>采收季节：2016年春季</p><p>温馨提示：<br>1.存放于低于25℃的阴凉干燥处;<br>2.每日三次，每次1茶匙;<br>3.一周岁以下婴幼儿、糖尿病患者以及<br>4.蜂产品过敏者或其他禁忌者不建议食用；<br>5.忌与豆腐、韭菜同食，易导致腹泻。</p>"]
         let newPrice = ["66","50","150"]
         let oldPrice = ["80","70","180"]
         
@@ -56,6 +59,7 @@ class GoodsListTableViewController: UIViewController {
             dict["iconName"] = name[i]
             dict["title"] = title[i]
             dict["desc"] = desc[i]
+            dict["detailDesc"] = detailDesc[i]
             dict["newPrice"] = newPrice[i]
             dict["oldPrice"] = oldPrice[i]
             
@@ -176,14 +180,14 @@ extension GoodsListTableViewController: GoodListCellDelegate {
             return
         }
         
-//        let GoodsDetailVc = GoodsDetailViewController()
-//        
-//        // 传递商品模型数组
-//        GoodsDetailVc.goodCell = [goodArray[indexPath.row]]
-//        
-//        // 模态出一个购物车控制器
-//        presentViewController(UINavigationController(rootViewController: GoodsDetailVc), animated: true, completion: nil)
-        let signUpVc = SignInViewController()
-        presentViewController(UINavigationController(rootViewController: signUpVc), animated: true, completion: nil)
+        let GoodsDetailVc = GoodsDetailViewController()
+        
+        // 传递商品模型数组
+        GoodsDetailVc.goodCell = [goodArray[indexPath.row]]
+        
+        // 模态出一个购物车控制器
+        presentViewController(UINavigationController(rootViewController: GoodsDetailVc), animated: true, completion: nil)
+//        let signUpVc = SignInViewController()
+//        presentViewController(UINavigationController(rootViewController: signUpVc), animated: true, completion: nil)
     }
 }

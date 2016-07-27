@@ -57,8 +57,6 @@ class DealViewController: UIViewController, UITextViewDelegate {
         
         var textatrr1 = try! NSMutableAttributedString(data: data!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil )
         
-//        var textatrr1 = NSMutableAttributedString(data: data!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil, error: nil)
-        
         textView.attributedText = textatrr1
         
         textView.editable = false

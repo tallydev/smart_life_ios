@@ -30,10 +30,7 @@ class GoodsDetailViewController: UIViewController, CirCleViewDelegate {
         circleView.backgroundColor = UIColor.orangeColor()
         circleView.delegate = self
         cicleContentView.addSubview(circleView)
-        
-        print("==============================")
-         print(goodCell.first?.title)
-        
+
         // 准备UI
         prepareUI()
         
@@ -77,6 +74,11 @@ class GoodsDetailViewController: UIViewController, CirCleViewDelegate {
         titleLabel.text = goodCell.first?.title
         totalPriceLabel.text = goodCell.first?.desc
         
+        let Data = goodCell.first?.detailDesc
+        var data = Data!.dataUsingEncoding(NSUTF32StringEncoding, allowLossyConversion: true)
+        var textatrr1 = try! NSMutableAttributedString(data: data!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil )
+        detailLabel.attributedText = textatrr1
+        
         // 添加子控件
         self.view.addSubview(detailView)
         self.view.addSubview(cicleContentView)
@@ -113,6 +115,10 @@ class GoodsDetailViewController: UIViewController, CirCleViewDelegate {
         totalPriceLabel.snp_makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp_bottom).offset(10)
             make.left.right.equalTo(10)
+        }
+        detailLabel.snp_makeConstraints { (make) in
+            make.left.bottom.right.equalTo(0)
+            make.top.equalTo(totalPriceLabel.snp_bottom).offset(10)
         }
         
         buyBtnView.snp_makeConstraints { (make) in
@@ -152,9 +158,11 @@ class GoodsDetailViewController: UIViewController, CirCleViewDelegate {
     }()
     
     /// 描述Label
-    lazy var detailLabel: UILabel = {
-        let detailLabel = UILabel()
-        
+    lazy var detailLabel: UITextView = {
+        let detailLabel = UITextView()
+        detailLabel.allowsEditingTextAttributes = false
+        //行缩进距离
+        detailLabel.editable = false
         return detailLabel
     }()
     
