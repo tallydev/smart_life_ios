@@ -75,13 +75,13 @@ class GoodListCell: UITableViewCell {
         // 约束子控件
         iconView.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(20)
-            make.top.equalTo(10)
-            make.width.equalTo(60)
-            make.height.equalTo(60)
+            make.centerY.equalTo(contentView.snp_centerY)
+            make.width.equalTo(70)
+            make.height.equalTo(70)
         }
         
         titleLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView.snp_top).offset(10)
+            make.top.equalTo(iconView.snp_top).offset(0)
             make.left.equalTo(iconView.snp_right).offset(12)
         }
         
@@ -93,8 +93,8 @@ class GoodListCell: UITableViewCell {
         addCartButton.snp_makeConstraints { (make) -> Void in
             make.right.equalTo(-20)
             make.bottom.equalTo(-15)
-            make.width.equalTo(70)
-            make.height.equalTo(25)
+            make.width.equalTo(80)
+            make.height.equalTo(30)
         }
         
     }
@@ -145,7 +145,7 @@ class GoodListCell: UITableViewCell {
     private lazy var addCartButton: UIButton = {
         let addCartButton = UIButton(type:.System)
         addCartButton.backgroundColor = UIColor.orangeColor()
-        addCartButton.layer.cornerRadius = 6
+        addCartButton.layer.cornerRadius = 4
         addCartButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         addCartButton.titleLabel!.font = UIFont(name:"Helvetica", size:14)
         addCartButton.setTitle("查看详情", forState: UIControlState.Normal)

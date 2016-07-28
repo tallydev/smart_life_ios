@@ -64,7 +64,7 @@ class GoodsDetailViewController: UIViewController, CirCleViewDelegate {
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WaresDetailViewController.didTappedBackButton))
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "left"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(GoodsDetailViewController.didTappedBackButton))
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.orangeColor()
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
         
         
         // 添加按钮点击事件
@@ -99,7 +99,7 @@ class GoodsDetailViewController: UIViewController, CirCleViewDelegate {
             make.top.equalTo(292)
             make.left.equalTo(4)
             make.right.equalTo(-4)
-            make.bottom.equalTo(-64)
+            make.bottom.equalTo(-52)
         }
         
         cicleContentView.snp_makeConstraints { (make) in
@@ -117,13 +117,14 @@ class GoodsDetailViewController: UIViewController, CirCleViewDelegate {
             make.left.right.equalTo(10)
         }
         detailLabel.snp_makeConstraints { (make) in
-            make.left.bottom.right.equalTo(0)
+            make.bottom.right.equalTo(0)
+            make.left.equalTo(detailView.snp_left).offset(10)
             make.top.equalTo(totalPriceLabel.snp_bottom).offset(10)
         }
         
         buyBtnView.snp_makeConstraints { (make) in
             make.bottom.left.right.equalTo(0)
-            make.height.equalTo(60)
+            make.height.equalTo(48)
         }
     }
     

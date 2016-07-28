@@ -126,7 +126,7 @@ class GoodsListTableViewController: UIViewController {
     /// tableView
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 120
         // 指定数据源和代理
         tableView.dataSource = self
         tableView.delegate = self

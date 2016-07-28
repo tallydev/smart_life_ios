@@ -26,8 +26,9 @@ class MyCell: NibDesignable {
             let size = self.profileImage.size
             let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
             UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-            let path = UIBezierPath(ovalInRect: rect)
-            path.addClip()
+            //显示圆形边界
+//            let path = UIBezierPath(ovalInRect: rect)
+//            path.addClip()
             self.profileImage.drawInRect(rect)
             
             let image = UIGraphicsGetImageFromCurrentImageContext()

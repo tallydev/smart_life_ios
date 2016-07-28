@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="个人中心-20" translatesAutoresizingMaskIntoConstraints="NO" id="8Ca-3A-aUN">
-                    <rect key="frame" x="10" y="14" width="28" height="28"/>
+                    <rect key="frame" x="10" y="15" width="26" height="26"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8Ca-3A-aUN" secondAttribute="height" multiplier="1:1" id="3x3-vD-Kbd"/>
                         <constraint firstAttribute="width" constant="25" id="keH-Wo-djd"/>
@@ -30,13 +30,13 @@
                     </variation>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LI3-Cl-kCB">
-                    <rect key="frame" x="55" y="8" width="270" height="38"/>
+                    <rect key="frame" x="53" y="8" width="274" height="38"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Mgs-3p-mb7">
-                    <rect key="frame" x="326" y="14" width="14" height="28"/>
+                    <rect key="frame" x="328" y="16" width="12" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Mgs-3p-mb7" secondAttribute="height" multiplier="1:2" id="2pk-sX-tfi"/>
                     </constraints>
@@ -50,10 +50,10 @@
                 <constraint firstItem="8Ca-3A-aUN" firstAttribute="centerY" secondItem="LI3-Cl-kCB" secondAttribute="centerY" constant="1" id="b7h-I8-3Be"/>
                 <constraint firstItem="LI3-Cl-kCB" firstAttribute="leading" secondItem="8Ca-3A-aUN" secondAttribute="trailing" constant="17" id="dgR-px-1xh"/>
                 <constraint firstItem="LI3-Cl-kCB" firstAttribute="top" secondItem="ajh-Fo-74U" secondAttribute="topMargin" id="foA-fY-b4f"/>
-                <constraint firstItem="8Ca-3A-aUN" firstAttribute="top" secondItem="ajh-Fo-74U" secondAttribute="top" constant="14" id="hlJ-rM-1v9"/>
+                <constraint firstItem="8Ca-3A-aUN" firstAttribute="top" secondItem="ajh-Fo-74U" secondAttribute="top" constant="15" id="hlJ-rM-1v9"/>
                 <constraint firstItem="Mgs-3p-mb7" firstAttribute="leading" secondItem="LI3-Cl-kCB" secondAttribute="trailing" constant="1" id="lOx-Vr-XeC"/>
                 <constraint firstItem="8Ca-3A-aUN" firstAttribute="leading" secondItem="ajh-Fo-74U" secondAttribute="leading" constant="10" id="uPT-6U-Iix"/>
-                <constraint firstItem="Mgs-3p-mb7" firstAttribute="top" secondItem="ajh-Fo-74U" secondAttribute="top" constant="14" id="vCn-63-cd4"/>
+                <constraint firstItem="Mgs-3p-mb7" firstAttribute="top" secondItem="ajh-Fo-74U" secondAttribute="top" constant="16" id="vCn-63-cd4"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

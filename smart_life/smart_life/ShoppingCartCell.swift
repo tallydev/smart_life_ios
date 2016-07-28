@@ -86,13 +86,13 @@ class ShoppingCartCell: UITableViewCell {
         
         iconView.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(50)
-            make.top.equalTo(15)
-            make.width.equalTo(60)
-            make.height.equalTo(60)
+            make.top.equalTo(25)
+            make.width.equalTo(70)
+            make.height.equalTo(70)
         }
         
         titleLabel.snp_makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView.snp_top).offset(15)
+            make.top.equalTo(contentView.snp_top).offset(25)
             make.left.equalTo(iconView.snp_right).offset(12)
         }
         
@@ -107,8 +107,8 @@ class ShoppingCartCell: UITableViewCell {
 //        }
         
         addAndsubtraction.snp_makeConstraints { (make) -> Void in
-            make.left.equalTo(120)
-            make.top.equalTo(45)
+            make.left.equalTo(iconView.snp_right).offset(12)
+            make.top.equalTo(titleLabel.snp_bottom).offset(15)
             make.width.equalTo(100)
             make.height.equalTo(30)
         }

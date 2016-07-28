@@ -70,10 +70,10 @@ class ShoppingCartViewController: UIViewController {
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ShoppingCartViewController.didTappedBackButton))
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(named: "left"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ShoppingCartViewController.didTappedBackButton))
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.orangeColor()
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
         
         // cell行高
-        tableView.rowHeight = 100
+        tableView.rowHeight = 120
         
         // 注册cell
         tableView.registerClass(ShoppingCartCell.self, forCellReuseIdentifier: shoppingCarCellIdentifier)

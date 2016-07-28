@@ -20,9 +20,22 @@ class FitnessTableViewController: UITableViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    let LineChart = PNLineChart(frame: CGRectMake(-20, 50, UIScreen.mainScreen().bounds.width+20, UIScreen.mainScreen().bounds.width/3))
-    var dataArray = [0,22,390,523,812,202,950,520,345,123,712]
+    let LineChart = PNLineChart(frame: CGRectMake(-20, 120, UIScreen.mainScreen().bounds.width+20, UIScreen.mainScreen().bounds.width/3))
+    let LineChart0 = PNLineChart(frame: CGRectMake(-20, 120, UIScreen.mainScreen().bounds.width+20, UIScreen.mainScreen().bounds.width/3))
+    let LineChart1 = PNLineChart(frame: CGRectMake(-20, 120, UIScreen.mainScreen().bounds.width+20, UIScreen.mainScreen().bounds.width/3))
+    let LineChart2 = PNLineChart(frame: CGRectMake(-20, 120, UIScreen.mainScreen().bounds.width+20, UIScreen.mainScreen().bounds.width/3))
+    
+    var dataArray = [0.00,22.00,390.00,523.00,812.00,202.00,950.00,520.00,345.00,123.00,712.00]
     var timeLine = ["","2016.4","","","","2016.5","","","","2016.6",""]
+    
+    var dataArray0 = [0.00,22.00,90.00,53.00,812.00,202.00,90.00,520.00,345.00,123.00,72.00]
+    var timeLine0 = ["","16.4","","","","16.5","","","","16.6",""]
+    
+    var dataArray1 = [0.00,22.00,30.00,523.00,12.00,22.00,950.00,20.00,345.00,23.00,712.00]
+    var timeLine1 = ["","216.4","","","","216.5","","","","216.6",""]
+    
+    var dataArray2 = [0.00,22.00,0.00,23.00,812.00,202.00,90.00,52.00,35.00,13.00,712.00]
+    var timeLine2 = ["","2.4","","","","2.5","","","","2.6",""]
     
     var ranking = ["5","1","2","3","4","6","7","8","9","10"]
     var username = ["Loda","Saber","Dendi","Jhon","Ending","Jason","Ema","Jacbo","May","Ken"]
@@ -43,10 +56,16 @@ class FitnessTableViewController: UITableViewController {
         //隐藏滚动条
         self.tableView.showsVerticalScrollIndicator = false
         
-        alphaColor()
-        LineChart(LineChart)
+        segmentedControl.selectedSegmentIndex = 0 //默认选中第二项
+        segmentedControl.tintColor = UIColor.init(red: 1.00, green: 0.55, blue: 0.00, alpha: 1.00)
         
+        alphaColor()
+        LineChart(LineChart,dataArray: dataArray, timeLine: timeLine)
+        
+        segmentedControl.addTarget(self, action: #selector(FitnessTableViewController.segmentChange(_:)),
+                                forControlEvents: UIControlEvents.ValueChanged)  //添加值改变监听
         // Do any additional setup after loading the view.
+        
     }
     
     // MARK: - Table view data source
@@ -118,18 +137,17 @@ class FitnessTableViewController: UITableViewController {
         gradientLayer.frame = chartview.bounds
         
         chartview.layer.insertSublayer(gradientLayer, atIndex: 0)
-        
     }
     
     //运用PNChart绘制折线图
-    func LineChart(LineChart: PNLineChart) {
+    func LineChart(LineChart: PNLineChart, dataArray:NSArray, timeLine:NSArray) {
         let LineData = PNLineChartData()
         LineData.color = UIColor.whiteColor()
         //        LineData.inflexionPointStyle = PNLineChartData.PNLineChartPointStyle.PNLineChartPointStyleCycle
         //        LineData.inflexionPointWidth = 0
         LineData.itemCount = (Int)(dataArray.count)
         LineData.getData = ({(index:Int) ->PNLineChartDataItem in
-            let y:CGFloat = (CGFloat)(self.dataArray[(Int)(index)] as NSNumber)
+            let y:CGFloat = (CGFloat)(dataArray[(Int)(index)] as! NSNumber)
             return PNLineChartDataItem(y: y)
         })
         
@@ -137,7 +155,7 @@ class FitnessTableViewController: UITableViewController {
         LineChart.yLabelHeight = 0
         LineChart.axisWidth = 0
         LineChart.backgroundColor = UIColor.clearColor()
-        LineChart.xLabels = timeLine
+        LineChart.xLabels = timeLine 
         LineChart.showCoordinateAxis = true
         
         LineChart.chartData = [LineData]
@@ -145,6 +163,31 @@ class FitnessTableViewController: UITableViewController {
         
         chartview.addSubview(LineChart)
         
+    }
+    
+    func segmentChange(segmentedControl: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0 :
+            LineChart0.removeFromSuperview()
+            LineChart1.removeFromSuperview()
+            LineChart2.removeFromSuperview()
+            LineChart(LineChart,dataArray: dataArray, timeLine: timeLine)
+        case 1 :
+            LineChart.removeFromSuperview()
+            LineChart1.removeFromSuperview()
+            LineChart2.removeFromSuperview()
+            LineChart(LineChart0,dataArray: dataArray0, timeLine: timeLine0)
+        case 2 :
+            LineChart0.removeFromSuperview()
+            LineChart.removeFromSuperview()
+            LineChart2.removeFromSuperview()
+            LineChart(LineChart1,dataArray: dataArray1, timeLine: timeLine1)
+        default:
+            LineChart0.removeFromSuperview()
+            LineChart1.removeFromSuperview()
+            LineChart.removeFromSuperview()
+            LineChart(LineChart2,dataArray: dataArray2, timeLine: timeLine2)
+        }
     }
     
     
