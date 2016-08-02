@@ -8,9 +8,13 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import MBProgressHUD
 
 class MyInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var loginOut: UIButton!
+    
     @IBOutlet weak var userAvatar: UIButton!
     
     @IBAction func setAvatar(sender: AnyObject) {
@@ -29,6 +33,17 @@ class MyInfoViewController: UIViewController, UIImagePickerControllerDelegate, U
         }else{
             print("读取相册错误")
         }
+    }
+    @IBAction func goOutBtnAction(sender: AnyObject) {
+        //返回登陆页
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        self.view.window?.rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("signInNavViewController")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("passWord")
+        
+//        let signinVc = SignInViewController()
+//        presentViewController(UINavigationController(rootViewController: signinVc), animated: true, completion: nil)
+//        NSUserDefaults.standardUserDefaults().removeObjectForKey("passWord")
     }
     @IBAction func myHealth(sender: AnyObject) {
         let sb = UIStoryboard(name: "Main", bundle:nil)
@@ -66,11 +81,8 @@ class MyInfoViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        loginOut.layer.borderWidth = 1
+        loginOut.layer.borderColor = UIColor.orangeColor().CGColor
     }
     
     
@@ -79,28 +91,59 @@ class MyInfoViewController: UIViewController, UIImagePickerControllerDelegate, U
                                didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         //获取选择的原图
         let pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        //等比例压缩图片大小／并剪切为圆形
+        let width = 96 * UIScreen.mainScreen().scale
+        let height = 96 * UIScreen.mainScreen().scale
+        let pig = pickedImage.resize(CGSize(width: width, height: height))
+        let pigc = pig?.roundCornersToCircle()
         
         //将选择的图片保存到Document目录下
         let fileManager = NSFileManager.defaultManager()
         let rootPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
                                                            .UserDomainMask, true)[0] as String
-        let filePath = "\(rootPath)/pickedimage.jpg"
-        let imageData = UIImageJPEGRepresentation(pickedImage, 1.0)
+        let filePath = "\(rootPath)/news.png"
+        let imageData = UIImageJPEGRepresentation(pigc!, 1.0)
         fileManager.createFileAtPath(filePath, contents: imageData, attributes: nil)
         
         //上传图片
         if (fileManager.fileExistsAtPath(filePath)){
             //取得NSURL
             let imageNSURL:NSURL = NSURL.init(fileURLWithPath: filePath)
-            self.userAvatar.setImage(UIImage(contentsOfFile:filePath), forState: .Normal)
+            self.userAvatar.setImage(UIImage(contentsOfFile:filePath)?.roundCornersToCircle(border: 10, color: UIColor.clearColor()), forState: .Normal)
+            
+//            print(imageData)
+            
+            let token:String = NSUserDefaults.standardUserDefaults().valueForKey("userToken") as! String
+            let phone:String = NSUserDefaults.standardUserDefaults().valueForKey("userphone") as! String
+            
+            let headers = ["Accept":"application/json",
+                            "X-User-Phone": phone,
+                            "X-User-Token": token]
+            
+            Alamofire.upload(.PUT, "http://220.163.125.158:8081/user_info",
+                             // define your headers here
+                headers: headers,
+                multipartFormData: { multipartFormData in
+                    
+                    // import image to request
+                    if let imageData = UIImageJPEGRepresentation(pigc!, 1.0) {
+                        multipartFormData.appendBodyPart(data: imageData, name: "user_info[avatar_attributes][photo]", fileName: "news.png", mimeType: "image/png")
+                    }
+                }, // you can customise Threshold if you wish. This is the alamofire's default value
+                encodingMemoryThreshold: Manager.MultipartFormDataEncodingMemoryThreshold,
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .Success(let upload, _, _):
+                        upload.responseJSON { response in
+                            print("++++++++++++++++++++++++")
+                            debugPrint(response)
+                        }
+                    case .Failure(let encodingError):
+                        print("============================")
+                        print(encodingError)
+                    }
+            })
 
-            //使用Alamofire上传
-//            Alamofire.upload(.POST, "http://www.hangge.com/upload.php", file: imageNSURL)
-//                .responseString { response in
-//                    print("Success: \(response.result.isSuccess)")
-//                    print("Response String: \(response.result.value)")
-//                    
-//            }
         }
         
         //图片控制器退出

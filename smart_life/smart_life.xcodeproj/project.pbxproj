@@ -39,6 +39,7 @@
 		D4486ECE1D3899FF00BB8984 /* MyOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ECD1D3899FF00BB8984 /* MyOrderTableViewCell.swift */; };
 		D4486ED01D389D4D00BB8984 /* MyIndentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ECF1D389D4D00BB8984 /* MyIndentTableViewController.swift */; };
 		D4486ED31D389D6900BB8984 /* MyIndentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ED21D389D6900BB8984 /* MyIndentTableViewCell.swift */; };
+		D46D53B01D4F2E960017C8C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D53AF1D4F2E960017C8C9 /* User.swift */; };
 		D46DBB371D2BA0C7009519A0 /* HomeTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB361D2BA0C7009519A0 /* HomeTController.swift */; };
 		D48B2BFF1D405D34003208DB /* GoodsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B2BFE1D405D34003208DB /* GoodsDetailViewController.swift */; };
 		D491F1D51D3C6AE100D7FA11 /* MyDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */; };
@@ -64,6 +65,10 @@
 		D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1284F1D178C1D00561CB3 /* GoodModel.swift */; };
 		D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */; };
 		D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128551D1794A100561CB3 /* GoodListCell.swift */; };
+		D4CE67D41D505FB1007C95AF /* subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE67D31D505FB1007C95AF /* subscribe.swift */; };
+		D4CE67D61D509503007C95AF /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE67D51D509503007C95AF /* Match.swift */; };
+		D4CE67DB1D50CEBC007C95AF /* AFImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE67DA1D50CEBC007C95AF /* AFImageExtension.swift */; };
+		D4CE67DD1D50CF28007C95AF /* AFImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE67DC1D50CF28007C95AF /* AFImageViewExtension.swift */; };
 		D4EC0CA91D3DC6BB00E2464F /* UserAvatraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EC0CA81D3DC6BB00E2464F /* UserAvatraTableViewCell.swift */; };
 		D4F55D311D0E5D8A0017638B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D301D0E5D8A0017638B /* AppDelegate.swift */; };
 		D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F55D321D0E5D8A0017638B /* HomeViewController.swift */; };
@@ -119,6 +124,7 @@
 		D4486ECD1D3899FF00BB8984 /* MyOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderTableViewCell.swift; sourceTree = "<group>"; };
 		D4486ECF1D389D4D00BB8984 /* MyIndentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyIndentTableViewController.swift; sourceTree = "<group>"; };
 		D4486ED21D389D6900BB8984 /* MyIndentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyIndentTableViewCell.swift; sourceTree = "<group>"; };
+		D46D53AF1D4F2E960017C8C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D46DBB361D2BA0C7009519A0 /* HomeTController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTController.swift; sourceTree = "<group>"; };
 		D48B2BFE1D405D34003208DB /* GoodsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsDetailViewController.swift; sourceTree = "<group>"; };
 		D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDataTableViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +151,10 @@
 		D4C1284F1D178C1D00561CB3 /* GoodModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodModel.swift; sourceTree = "<group>"; };
 		D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsListTableViewController.swift; sourceTree = "<group>"; };
 		D4C128551D1794A100561CB3 /* GoodListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListCell.swift; sourceTree = "<group>"; };
+		D4CE67D31D505FB1007C95AF /* subscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subscribe.swift; sourceTree = "<group>"; };
+		D4CE67D51D509503007C95AF /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		D4CE67DA1D50CEBC007C95AF /* AFImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFImageExtension.swift; sourceTree = "<group>"; };
+		D4CE67DC1D50CF28007C95AF /* AFImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFImageViewExtension.swift; sourceTree = "<group>"; };
 		D4EC0CA81D3DC6BB00E2464F /* UserAvatraTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAvatraTableViewCell.swift; sourceTree = "<group>"; };
 		D4F55D2D1D0E5D8A0017638B /* smart_life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smart_life.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F55D301D0E5D8A0017638B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -432,6 +442,15 @@
 			name = ShoppingCart;
 			sourceTree = "<group>";
 		};
+		D4CE67D91D50CE95007C95AF /* AFImageHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D4CE67DA1D50CEBC007C95AF /* AFImageExtension.swift */,
+				D4CE67DC1D50CF28007C95AF /* AFImageViewExtension.swift */,
+			);
+			name = AFImageHelper;
+			sourceTree = "<group>";
+		};
 		D4EC0CA71D3DC68800E2464F /* UserAvatra */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +482,7 @@
 		D4F55D2F1D0E5D8A0017638B /* smart_life */ = {
 			isa = PBXGroup;
 			children = (
+				D4CE67D91D50CE95007C95AF /* AFImageHelper */,
 				D4B43AD11D372BC40023887E /* NibDesignable */,
 				D4F55D511D0E98250017638B /* Mode(模型) */,
 				D4F55D501D0E97FC0017638B /* ViewMode(视图模型) */,
@@ -581,6 +601,9 @@
 				D49CEADA1D240C59003D2737 /* Helpers.swift */,
 				D404DDDD1D434FA5003586C4 /* IndentCellModel.swift */,
 				D4BF20D11D48957E00BCE810 /* Model.swift */,
+				D46D53AF1D4F2E960017C8C9 /* User.swift */,
+				D4CE67D31D505FB1007C95AF /* subscribe.swift */,
+				D4CE67D51D509503007C95AF /* Match.swift */,
 			);
 			name = "Mode(模型)";
 			sourceTree = "<group>";
@@ -766,11 +789,15 @@
 				D4F55D331D0E5D8A0017638B /* HomeViewController.swift in Sources */,
 				D4486ED01D389D4D00BB8984 /* MyIndentTableViewController.swift in Sources */,
 				D4B43ABA1D3615B70023887E /* CommunityViewController.swift in Sources */,
+				D46D53B01D4F2E960017C8C9 /* User.swift in Sources */,
 				D406F4821D3F1B9B00236EA6 /* OrderBtnTwo.swift in Sources */,
 				D4B43ADB1D374DA00023887E /* ITPart3ViewController.swift in Sources */,
+				D4CE67D41D505FB1007C95AF /* subscribe.swift in Sources */,
 				D4B43AD31D372BEC0023887E /* NibDesignable.swift in Sources */,
 				D44135E51D1A5C4500072099 /* UIView+BHBFreeBorder.swift in Sources */,
 				D4F8520E1D379779003888A4 /* HomeFurnishingPart2ViewController.swift in Sources */,
+				D4CE67D61D509503007C95AF /* Match.swift in Sources */,
+				D4CE67DD1D50CF28007C95AF /* AFImageViewExtension.swift in Sources */,
 				D404DDF61D4648F6003586C4 /* alertFrameS.swift in Sources */,
 				D491F1D51D3C6AE100D7FA11 /* MyDataTableViewController.swift in Sources */,
 				D404DDE71D44AEF1003586C4 /* addressPlot.swift in Sources */,
@@ -778,6 +805,7 @@
 				D4F55D451D0E93C70017638B /* MainViewController.swift in Sources */,
 				D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */,
 				D404DDE11D43C89F003586C4 /* NewAddressViewController.swift in Sources */,
+				D4CE67DB1D50CEBC007C95AF /* AFImageExtension.swift in Sources */,
 				D404DDD71D4268BD003586C4 /* IndentCell.swift in Sources */,
 				D44135DE1D1927DB00072099 /* ListTableViewController.swift in Sources */,
 				D4B43AB81D35D7090023887E /* HealthPart3ViewController.swift in Sources */,

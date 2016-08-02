@@ -157,6 +157,7 @@ class FitnessTableViewController: UITableViewController {
         LineChart.backgroundColor = UIColor.clearColor()
         LineChart.xLabels = timeLine 
         LineChart.showCoordinateAxis = true
+        LineChart.exclusiveTouch = false
         
         LineChart.chartData = [LineData]
         LineChart.strokeChart()

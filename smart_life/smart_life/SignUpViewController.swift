@@ -7,7 +7,10 @@
 //
 
 import UIKit
-import Spring
+import Alamofire
+import SwiftyJSON
+import MBProgressHUD
+var userInfo:User?
 
 class SignUpViewController: UIViewController {
 
@@ -26,10 +29,15 @@ class SignUpViewController: UIViewController {
     
     var scacle = 1.0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        
+        let nickname = soloTextFiled.text
+        let community = plotTexeField.text
+
         //初始化数据
         let path = NSBundle.mainBundle().pathForResource("address", ofType:"plist")
         self.addressArray = NSArray(contentsOfFile: path!) as! Array
@@ -44,6 +52,9 @@ class SignUpViewController: UIViewController {
         pickerView.backgroundColor = UIColor.whiteColor()
         pickerView.tintColor = UIColor.orangeColor()
         
+        
+        verifyBtn.addTarget(self, action:#selector(SignUpViewController.getSecurityCode),forControlEvents:.TouchUpInside)
+        
         // Do any additional setup after loading the view.
         // 准备UI
         prepareUI()
@@ -51,6 +62,7 @@ class SignUpViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         // 布局UI
         layoutUI()
     }
@@ -71,6 +83,7 @@ class SignUpViewController: UIViewController {
         self.view.addSubview(addressView)
         self.view.addSubview(dealBtn)
         self.view.addSubview(signInBtn)
+        self.view.addSubview(signUpBtn)
         self.view.addSubview(pickerViewContent)
         
         
@@ -282,6 +295,11 @@ class SignUpViewController: UIViewController {
             make.right.equalTo(-20)
             make.height.equalTo(45)
         }
+        signUpBtn.snp_makeConstraints { (make) in
+            make.top.equalTo(signInBtn.snp_bottom).offset(20)
+            make.centerX.equalTo(signInBtn.snp_centerX)
+            make.width.equalTo(70)
+        }
         dealBtn.snp_makeConstraints { (make) in
             make.bottom.equalTo(-50)
             make.centerX.equalTo(signInBtn.snp_centerX)
@@ -321,8 +339,8 @@ class SignUpViewController: UIViewController {
         return addressView
     }()
     
-    lazy var pickerViewContent: SpringView = {
-        let pickerViewContent = SpringView()
+    lazy var pickerViewContent: UIView = {
+        let pickerViewContent = UIView()
         pickerViewContent.backgroundColor = UIColor.whiteColor()
         
         return pickerViewContent
@@ -423,7 +441,7 @@ class SignUpViewController: UIViewController {
     }()
     lazy var addressTextFiled: UITextField = {
         let addressTextFiled = UITextField()
-        addressTextFiled.placeholder = "5-8位数字或字母"
+        addressTextFiled.placeholder = "至少8位数字或字母"
         addressTextFiled.clearButtonMode = UITextFieldViewMode.WhileEditing
         addressTextFiled.delegate = self
         addressTextFiled.font = UIFont(name:"Helvetica", size:14)
@@ -512,7 +530,6 @@ class SignUpViewController: UIViewController {
         verifyBtn.setTitle("获取验证码",forState:.Normal)
         verifyBtn.setTitleColor(UIColor.blackColor(), forState: .Normal)
         verifyBtn.backgroundColor = UIColor.whiteColor()
-        //        signInBtn.addTarget(self, action:#selector(SignUpViewController.getPickerViewValue),forControlEvents: UIControlEvents.TouchUpInside)
         return verifyBtn
     }()
     
@@ -525,8 +542,22 @@ class SignUpViewController: UIViewController {
         signInBtn.titleLabel?.font = UIFont(name:"Helvetica", size:20)
         signInBtn.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         signInBtn.backgroundColor = UIColor.orangeColor()
-//        signInBtn.addTarget(self, action:#selector(SignUpViewController.getPickerViewValue),forControlEvents: UIControlEvents.TouchUpInside)
+        signInBtn.addTarget(self, action:#selector(SignUpViewController.SignUpBtn),forControlEvents: UIControlEvents.TouchUpInside)
         return signInBtn
+    }()
+    
+    lazy var signUpBtn:UIButton = {
+        let signUpBtn = UIButton(type:.System)
+        
+        //建立一个按钮，触摸按钮时获得选择框被选择的索引
+        signUpBtn.setTitle("返回登录",forState:.Normal)
+        signUpBtn.titleLabel?.font = UIFont(name:"Helvetica", size:14)
+        signUpBtn.setTitleColor(UIColor.orangeColor(), forState: .Normal)
+        signUpBtn.layer.borderWidth = 1
+        signUpBtn.layer.borderColor = UIColor.orangeColor().CGColor
+        signUpBtn.layer.cornerRadius = 3
+        signUpBtn.addTarget(self, action:#selector(SignUpViewController.getsignInViewValue),forControlEvents: UIControlEvents.TouchUpInside)
+        return signUpBtn
     }()
     
     lazy var dealBtn:UIButton = {
@@ -673,8 +704,118 @@ extension SignUpViewController: UITextFieldDelegate {
         
         let DealViewVc = DealViewController()
         
-        // 模态出一个购物车控制器
+        // 模态出一个服务条款控制器
         navigationController?.pushViewController(DealViewVc, animated: true);
+    }
+    
+    //返回登陆页
+    func getsignInViewValue(){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        self.view.window?.rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("signInNavViewController")
+    }
+    
+    //处理获取验证码功能方法
+    @objc private func getSecurityCode() {
+        let phonePattern = "^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|70)\\d{8}$"
+        let matcher = MyRegex(phonePattern)
+        let phoneNumber:String = orderTexeField.text!
+        let headers = ["Accept":"application/json"]
+        let body = [
+            "sms_token[phone]": "\(phoneNumber)"
+        ]
+        if matcher.match(phoneNumber) {
+            Alamofire.request(.POST, "http://220.163.125.158:8081/sms_tokens/register", headers: headers, parameters: body)
+                .responseString { response in
+                var json = JSON(data: response.data!)
+                if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+                    
+                }else{
+                    var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                    hud.mode = MBProgressHUDMode.Text
+                    hud.labelText = "获取验证码失败"
+                    hud.detailsLabelText = "请稍后再试！"
+                    //延迟隐藏
+                    hud.hide(true, afterDelay: 0.8)
+                }
+            }
+        }else{
+            var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            hud.mode = MBProgressHUDMode.Text
+            hud.labelText = "手机格式不正确！"
+            //延迟隐藏
+            hud.hide(true, afterDelay: 0.8)
+        }
+    }
+    
+    //注册功能接口
+    @objc private func SignUpBtn() {
+        let phoneNumber:String = orderTexeField.text!
+        let verfiy:String = phoneNumberTexeField.text!
+        let password:String = addressTextFiled.text!
+        let nickName:String = soloTextFiled.text!
+        
+        let headers = ["Accept":"application/json"]
+        let body = [
+            "user[phone]": "\(phoneNumber)",
+            "user[password]": "\(password)",
+            "user[sms_token]": "\(verfiy)"
+        ]
+        let body2 = [
+            "user_info[nickname]": "\(nickName)"
+        ]
+
+        Alamofire.request(.POST, "http://220.163.125.158:8081/users", headers: headers, parameters: body)
+            .responseString { response in
+                var json = JSON(data: response.data!)
+                var errorMessage = [String]()
+                if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+                    /**进行跳转**/
+                    let token = json["authentication_token"].stringValue
+                    let phone = json["phone"].stringValue
+                    let id = json["id"].int
+                    userInfo = User(id:id!, phone: phone, token: token)
+                    
+                    NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+                    NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+                    NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+                    
+                    
+                    let headers1 = ["Accept":"application/json",
+                        "X-User-Phone":"\(phoneNumber)",
+                        "X-User-Token":"\(json["authentication_token"])"]
+                    
+                    Alamofire.request(.PUT, "http://220.163.125.158:8081/user_info", headers: headers1, parameters: body2)
+                        .responseString { response in
+                            var json = JSON(data: response.data!)
+                            if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+                                MBProgressHUD .showHUDAddedTo(self.view, animated: true)
+                                self.performSegueWithIdentifier("login", sender: self)
+                            }else{
+                                var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                                hud.mode = MBProgressHUDMode.Text
+                                hud.labelText = "添加昵称失败！"
+                                //延迟隐藏
+                                hud.hide(true, afterDelay: 0.8)
+                            }
+                            
+                    }
+
+                    
+                }else{
+                    for (type, mes) in json["errors"] {
+                        for (_, mess) in mes {
+                            let mess_name = mess.stringValue
+                            errorMessage.append(mess_name)
+                        }
+                    }
+                    let error_name:String = errorMessage.first!
+                    var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                    hud.mode = MBProgressHUDMode.Text
+                    hud.labelText = error_name
+                    //延迟隐藏
+                    hud.hide(true, afterDelay: 0.8)
+                }
+        }
     }
 }
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 import MBProgressHUD
 
 class SignInViewController: UIViewController {
@@ -253,19 +255,41 @@ extension SignInViewController {
     }
     
     func getMainPage(){
-        let tempResult = orderTexeField.text
-        let passWord = phoneNumberTexeField.text
-        
-        if tempResult == "123456789" && passWord == "123456" {
-            self.performSegueWithIdentifier("login", sender: self)
-        }else{
-            var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            hud.mode = MBProgressHUDMode.Text
-            hud.labelText = "登录提示"
-            hud.detailsLabelText = "您输入的手机或用户密码有误，请重新输入！"
+        let tempResult:String = orderTexeField.text!
+        let passWord:String = phoneNumberTexeField.text!
+        let headers1 = ["Accept":"application/json",]
+        let body = [
+            "user[phone]": tempResult,
+            "user[password]": passWord
             
-            //延迟隐藏
-            hud.hide(true, afterDelay: 0.8)
+        ]
+        Alamofire.request(.POST, "http://220.163.125.158:8081/users/sign_in", headers: headers1, parameters: body)
+            .responseString { response in
+                var json = JSON(data: response.data!)
+                if let userToken = json["authentication_token"].string {
+                    if userToken.isEmpty == false {
+                        let token = json["authentication_token"].stringValue
+                        let phone = json["phone"].stringValue
+                        let id = json["id"].int
+                        userInfo = User(id:id!, phone: phone, token: token)
+                        
+                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+                        
+                        MBProgressHUD .showHUDAddedTo(self.view, animated: true)
+                        self.performSegueWithIdentifier("login", sender: self)
+                    }
+                }else{
+                    var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                    hud.mode = MBProgressHUDMode.Text
+                    hud.labelText = "登录提示"
+                    hud.detailsLabelText = "您输入的手机或用户密码有误，请重新输入！"
+                    
+                    //延迟隐藏
+                    hud.hide(true, afterDelay: 0.8)
+                }
+                
         }
     }
 }

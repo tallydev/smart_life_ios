@@ -29,9 +29,7 @@ class HealthPart1ViewController: UIViewController {
     }
     
     func sure(){
-        orderBtn.enabled = false
-        orderBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
-        orderBtn.setTitle("申请成功", forState: .Disabled)
+        subscribe(self, type: "ZHJK", count: "", orderBtn: orderBtn)
         //设置动画属性
         
         self.scacle = 1

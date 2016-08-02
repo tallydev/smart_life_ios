@@ -33,6 +33,7 @@ class MyDataTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,7 +72,10 @@ class MyDataTableViewController: UITableViewController {
         if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCellWithIdentifier("myinfoCell1", forIndexPath: indexPath) as! UserAvatraTableViewCell
             cell.avatraLabel.text = cellName[indexPath.row]
-            cell.userImage.image = UIImage(named: detailtext[indexPath.row])
+            cell.userImage.imageFromURL("http://220.163.125.158:8081/system/images/photos/000/000/003/medium/news.png",
+                                        placeholder: (UIImage(named: detailtext[indexPath.row])?.roundCornersToCircle(border: 40,
+                                            color: UIColor.orangeColor())!)!)
+//            cell.userImage.image = UIImage(named: detailtext[indexPath.row])
             
             let indent_large_enought_to_hidden:CGFloat = 10000
             cell.separatorInset = UIEdgeInsetsMake(0, indent_large_enought_to_hidden, 0, 0) // indent large engough for separator(including cell' content) to hidden separator
