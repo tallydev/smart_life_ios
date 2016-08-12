@@ -8,10 +8,23 @@
 
 import UIKit
 import PNChartSwift
+import Alamofire
+import SwiftyJSON
+import MBProgressHUD
+import SwiftDate
 
 class FitnessTableViewController: UITableViewController {
-    var chartname = String()
+    let Center = NSNotificationCenter.defaultCenter()
     
+    var dataArray = [Float]()
+    var timeLine = [String]()
+    var chartname = String()
+    @IBOutlet weak var averagelabel: UILabel!
+    @IBOutlet weak var stepnumber: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var stepNumberLabel: UILabel!
+    @IBOutlet weak var persentLabel: UILabel!
+
     @IBOutlet weak var chartview: UIView!
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -25,24 +38,23 @@ class FitnessTableViewController: UITableViewController {
     let LineChart1 = PNLineChart(frame: CGRectMake(-20, 120, UIScreen.mainScreen().bounds.width+20, UIScreen.mainScreen().bounds.width/3))
     let LineChart2 = PNLineChart(frame: CGRectMake(-20, 120, UIScreen.mainScreen().bounds.width+20, UIScreen.mainScreen().bounds.width/3))
     
-    var dataArray = [0.00,22.00,390.00,523.00,812.00,202.00,950.00,520.00,345.00,123.00,712.00]
-    var timeLine = ["","2016.4","","","","2016.5","","","","2016.6",""]
+    var ranking = [String]()
+    var username = [String]()
+    var userimage = [String]()
+    var step = [String]()
     
-    var dataArray0 = [0.00,22.00,90.00,53.00,812.00,202.00,90.00,520.00,345.00,123.00,72.00]
-    var timeLine0 = ["","16.4","","","","16.5","","","","16.6",""]
+    override func viewWillAppear(animated: Bool) {
+        Center.addObserver(self, selector: Selector("Command:"), name: String(classForCoder), object: nil)
+    }
     
-    var dataArray1 = [0.00,22.00,30.00,523.00,12.00,22.00,950.00,20.00,345.00,23.00,712.00]
-    var timeLine1 = ["","216.4","","","","216.5","","","","216.6",""]
+    deinit {
+        Center.removeObserver(self)
+    }
     
-    var dataArray2 = [0.00,22.00,0.00,23.00,812.00,202.00,90.00,52.00,35.00,13.00,712.00]
-    var timeLine2 = ["","2.4","","","","2.5","","","","2.6",""]
-    
-    var ranking = ["5","1","2","3","4","6","7","8","9","10"]
-    var username = ["Loda","Saber","Dendi","Jhon","Ending","Jason","Ema","Jacbo","May","Ken"]
-    var userimage = ["健步达人-4","健步达人-5","健步达人-6","健步达人-7","健步达人-8","健步达人-4","健步达人-5","健步达人-6","健步达人-7","健步达人-8"]
-    var step = ["9030","11000","10980","10000","9603","8900","8820","5032","4890","2000"]
-    var support = ["59","10","22","0","34","10","11","0","2","9"]
-    
+    func Command(notification:NSNotification){
+        self.LineChart(self.LineChart,dataArray: dataArray, timeLine: timeLine)
+        print(dataArray)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +63,8 @@ class FitnessTableViewController: UITableViewController {
         view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
         self.navigationController?.view.addSubview(view)
         
+        stepDayly("daily")
+        Rank("daily")
         //去除cell下划线
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         //隐藏滚动条
@@ -60,7 +74,7 @@ class FitnessTableViewController: UITableViewController {
         segmentedControl.tintColor = UIColor.init(red: 1.00, green: 0.55, blue: 0.00, alpha: 1.00)
         
         alphaColor()
-        LineChart(LineChart,dataArray: dataArray, timeLine: timeLine)
+//        LineChart(LineChart,dataArray: dataArray, timeLine: timeLine)
         
         segmentedControl.addTarget(self, action: #selector(FitnessTableViewController.segmentChange(_:)),
                                 forControlEvents: UIControlEvents.ValueChanged)  //添加值改变监听
@@ -89,15 +103,18 @@ class FitnessTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Fitness", forIndexPath: indexPath) as! FitnessTableViewCell
         cell.rankingLabel.text = ranking[indexPath.row]
-        cell.userImage.image = UIImage(named: userimage[indexPath.row])
-        cell.userNameLabel.text = username[indexPath.row]
-        cell.stepLabel.text = step[indexPath.row]
-        if Int(support[indexPath.row]) > 0 {
-            cell.supportIcon.image = UIImage(named: "健步达人-1")
+        if userimage[indexPath.row].isEmpty == true {
+            cell.userImage.image = UIImage(named: "个人中心-29")
         }else{
-            cell.supportIcon.image = UIImage(named: "健步达人-3")
+            cell.userImage.imageFromURL((userimage[indexPath.row]),placeholder: (UIImage(named:"个人中心-29")?.roundCornersToCircle(border: 40,
+            color: UIColor.orangeColor())!)!)
         }
-        cell.supportNumber.text = support[indexPath.row]
+        if username[indexPath.row].isEmpty == true {
+            cell.userNameLabel.text = "昵称为空"
+        }else{
+            cell.userNameLabel.text = username[indexPath.row]
+        }
+        cell.stepLabel.text = step[indexPath.row]
         return cell
     }
     
@@ -172,22 +189,26 @@ class FitnessTableViewController: UITableViewController {
             LineChart0.removeFromSuperview()
             LineChart1.removeFromSuperview()
             LineChart2.removeFromSuperview()
-            LineChart(LineChart,dataArray: dataArray, timeLine: timeLine)
+            self.stepDayly("daily")
+            self.Rank("daily")
         case 1 :
             LineChart.removeFromSuperview()
             LineChart1.removeFromSuperview()
             LineChart2.removeFromSuperview()
-            LineChart(LineChart0,dataArray: dataArray0, timeLine: timeLine0)
+            self.stepDayly("weekly")
+            self.Rank("weekly")
         case 2 :
             LineChart0.removeFromSuperview()
             LineChart.removeFromSuperview()
             LineChart2.removeFromSuperview()
-            LineChart(LineChart1,dataArray: dataArray1, timeLine: timeLine1)
+            self.stepDayly("monthly")
+            self.Rank("monthly")
         default:
             LineChart0.removeFromSuperview()
             LineChart1.removeFromSuperview()
             LineChart.removeFromSuperview()
-            LineChart(LineChart2,dataArray: dataArray2, timeLine: timeLine2)
+            self.stepDayly("yearly")
+            self.Rank("yearly")
         }
     }
     
@@ -209,3 +230,186 @@ class FitnessTableViewController: UITableViewController {
      */
     
 }
+
+extension FitnessTableViewController {
+    func Rank(name:String) {
+        
+        let token:String = NSUserDefaults.standardUserDefaults().valueForKey("userToken") as! String
+        let phone:String = NSUserDefaults.standardUserDefaults().valueForKey("userphone") as! String
+        
+        print(phone)
+        print(token)
+        
+        let headers = ["Accept":"application/json",
+                       "X-User-Phone": phone,
+                       "X-User-Token": token]
+        let url = "http://220.163.125.158:8081/ranks/" + name
+        
+        Alamofire.request(.GET, url, headers: headers)
+            .responseString { response in
+                var json = JSON(data: response.data!)
+                var info = json["top"]
+                
+                if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+                    self.ranking = []
+                    self.username = []
+                    self.userimage = []
+                    self.step = []
+                    for (_, value1) in info {
+                        self.ranking.append(value1["index"].stringValue)
+                        self.username.append(value1["nickname"].stringValue)
+                        self.userimage.append(value1["avatar"].stringValue)
+                        self.step.append("\(value1["count"])")
+                    }
+                    dispatch_async(dispatch_get_main_queue(), {
+                        print(self.userimage)
+                        self.tableView?.reloadData()
+                        return
+                    })
+                }else{
+                    
+                    let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                    hud.mode = MBProgressHUDMode.Text
+                    hud.labelText = "添加昵称失败！"
+                    //延迟隐藏
+                    hud.hide(true, afterDelay: 0.8)
+                    
+                }
+                
+        }
+    }
+    
+    func stepDayly(name:String) {
+        let token:String = NSUserDefaults.standardUserDefaults().valueForKey("userToken") as! String
+        let phone:String = NSUserDefaults.standardUserDefaults().valueForKey("userphone") as! String
+        
+        print(phone)
+        print(token)
+        
+        let headers = ["Accept":"application/json",
+                       "X-User-Phone": phone,
+                       "X-User-Token": token]
+        let url = "http://220.163.125.158:8081/sports/" + name
+        
+        Alamofire.request(.GET, url, headers: headers)
+            .responseString { response in
+                var json = JSON(data: response.data!)
+                var stepSelf = json["self"]
+                var dataArray1 = [Float]()
+                var timeLine1 = [String]()
+                if json["errors"].isEmpty == true && json["error"].isEmpty == true {
+                    for (_, value) in json["detail"] {
+                        dataArray1.append(value["count"].floatValue)
+                        timeLine1.append("")
+                    
+                    }
+                    self.averagelabel.text = "日平均值:" + json["self"]["avg_count"].stringValue + "步"
+                    self.stepnumber.text = json["self"]["today_count"].stringValue + "步"
+                    let datef = NSDateFormatter()
+                    datef.dateFormat = "HH:mm:ss"
+                    self.time.text = datef.stringFromDate(NSDate())
+                    self.stepNumberLabel.text = json["self"]["count"].stringValue
+                    var persent = json["self"]["rank_percent"]
+                    self.persentLabel.text = "\(persent.float!*100)%"
+                    if name == "daily" {
+                        self.getStepsNumber()
+                    }else if name == "weekly" {
+                        self.LineChart(self.LineChart0,dataArray: dataArray1, timeLine: timeLine1)
+                    }else if name == "monthly" {
+                        self.LineChart(self.LineChart1,dataArray: dataArray1, timeLine: timeLine1)
+                    }else{
+                        self.LineChart(self.LineChart2,dataArray: dataArray1, timeLine: timeLine1)
+                    }
+                }else{
+                    
+                    let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                    hud.mode = MBProgressHUDMode.Text
+                    hud.labelText = "获取信息失败！"
+                    //延迟隐藏
+                    hud.hide(true, afterDelay: 0.8)
+                    
+                }
+                
+        }
+    }
+}
+
+extension FitnessTableViewController {
+    func getStepsNumber() {
+        //判断该设备是否支持计步功能
+        if CMPedometer.isStepCountingAvailable(){
+
+            let datef = NSDateFormatter()
+            datef.dateFormat = "yyyy-MM-dd"
+            let stringdate = datef.stringFromDate(getEndTime())
+            //获取指定开始时间到当前时间的数据  参数 开始时间, 一个闭包
+            //开始时间
+            var startTime = getStartTime()
+            //结束时间
+            let endT = NSDate()
+            let number = endT.hour
+            self.dataArray = []
+            self.timeLine = []
+                for i in 0...number {
+                  var endTime = startTime + 1.hours
+                    pedonmeter.queryPedometerDataFromDate(_: startTime, toDate: endTime, withHandler: { (pedometerData:CMPedometerData?, error:NSError?) -> Void in
+                        if error != nil{
+                            print("error:\(error)")
+                        }else{
+                            print("============+++++++==============")
+                            self.dataArray.append(pedometerData!.numberOfSteps.floatValue)
+                            let datef = NSDateFormatter()
+                            datef.dateFormat = "HH"
+                            self.timeLine.append("")
+                            print("\(pedometerData!.numberOfSteps)")
+                            if i == number {
+                                self.Center.postNotificationName(String(self.classForCoder), object: true)
+                            }
+                        }
+                    })
+                    startTime = endTime
+                }
+            
+        } else {
+            print("there has something with CMPedometer")
+        }
+    }
+    
+    /**
+     获取当前时区的时间
+     */
+    func getEndTime() -> NSDate
+    {
+        let date = NSDate()
+        //转换成本地时区
+        let numberOfDays = -8
+        let calculatedDate = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Hour, value: numberOfDays, toDate: date, options: NSCalendarOptions.init(rawValue: 0))
+        
+        let zone = NSTimeZone.systemTimeZone()
+        let interval = zone.secondsFromGMTForDate(calculatedDate!)
+        let nowDate = calculatedDate!.dateByAddingTimeInterval(Double(interval))
+        return nowDate
+    }
+    
+    
+    /**
+     获取开始时间 当天0时0分0秒
+     */
+    func getStartTime() -> NSDate
+    {
+        let datef = NSDateFormatter()
+        datef.dateFormat = "yyyy-MM-dd"
+        let stringdate = datef.stringFromDate(getEndTime())
+        let tdate = datef.dateFromString(stringdate)
+        //获取本地时区的当天0时0分0秒
+        let numberOfDays = -8
+        let calculatedDate = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Hour, value: numberOfDays, toDate: tdate!, options: NSCalendarOptions.init(rawValue: 0))
+        
+        let zone = NSTimeZone.systemTimeZone()
+        let interval = zone.secondsFromGMTForDate(calculatedDate!)
+        let nowday = calculatedDate!.dateByAddingTimeInterval(Double(interval))
+        return nowday
+    }
+    
+}
+

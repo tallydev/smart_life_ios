@@ -9,9 +9,15 @@
 import UIKit
 import CountdownLabel
 import MBProgressHUD
+import Alamofire
+import SwiftyJSON
+
+
+//定义个全局变量  如果不是全局变量会报错
+let pedonmeter:CMPedometer = CMPedometer()
 
 class HomeTController: UIViewController, CirCleViewDelegate , CountdownLabelDelegate, LTMorphingLabelDelegate{
-    
+    var timer:NSTimer!
     var scacle = 1.0
     
     var circleView: CirCleView!
@@ -80,6 +86,12 @@ class HomeTController: UIViewController, CirCleViewDelegate , CountdownLabelDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
+        view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
+        self.navigationController?.view.addSubview(view)
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(15,target:self,selector:#selector(HomeTController.getStepsNumber),userInfo:nil,repeats:true)
+        
         alertView.descriptionLabel.text = "即将上线，敬请期待！"
         alertView.descriptionLabel.textColor = UIColor.whiteColor()
         alertView.descriptionLabel.adjustsFontSizeToFitWidth = true
@@ -88,14 +100,14 @@ class HomeTController: UIViewController, CirCleViewDelegate , CountdownLabelDele
         super.view.addSubview(alertView)
         
         //轮播图加载
-        let imageArray: [UIImage!] = [UIImage(named: "banner1.png"), UIImage(named: "banner.png")]
-        self.circleView = CirCleView(frame: CGRectMake(0, 20, self.view.frame.size.width, 220), imageArray: imageArray)
+        let imageArray: [UIImage!] = [UIImage(named: "banner_one.jpg"), UIImage(named: "banner_two.jpg")]
+        self.circleView = CirCleView(frame: CGRectMake(0, 0, self.view.frame.size.width, 220), imageArray: imageArray)
         circleView.backgroundColor = UIColor.orangeColor()
         circleView.delegate = self
         self.HomePageScrollView.addSubview(circleView)
         
         //倒计时组件设置
-        let fromDate   = NSDate().dateByAddingTimeInterval(0)
+        let fromDate   = NSDate()
         countdownLabel.setCountDownTime(fromDate, minutes:1440)
         
         countdownLabel.addTime(60*60)
@@ -129,16 +141,13 @@ class HomeTController: UIViewController, CirCleViewDelegate , CountdownLabelDele
         print(currentIndxe, terminator: "");
     }
     
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func viewDidAppear(animated: Bool) {
-        HomePageScrollView.contentSize = CGSize.init(width: self.view.frame.width, height: 1868)
+        HomePageScrollView.contentSize = CGSize.init(width: self.view.frame.width, height: 1848)
         HomePageScrollView.showsVerticalScrollIndicator = false;
         HomePageScrollView.showsHorizontalScrollIndicator = false;
         HomePageScrollView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
@@ -168,7 +177,7 @@ class HomeTController: UIViewController, CirCleViewDelegate , CountdownLabelDele
 extension HomeTController {
     
     func orderAction() {
-        var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         hud.mode = MBProgressHUDMode.CustomView
         hud.customView = UIImageView(image: UIImage(named:"whiteLogo")!)
         
@@ -201,6 +210,7 @@ extension HomeTController {
         
         View31.set(image: UIImage(named: "home-8"), title: "更多数据  ", titlePosition: .Right, additionalSpacing: 15.0, state: .Normal)
         View31.tintColor = UIColor.init(patternImage: UIImage(named: "home-8")!)
+        
         View41.set(image: UIImage(named: "home-9"), title: "活动详情  ", titlePosition: .Right, additionalSpacing: 15.0, state: .Normal)
         View41.tintColor = UIColor.init(patternImage: UIImage(named: "home-9")!)
         
@@ -298,6 +308,7 @@ extension HomeTController {
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("NAV21")
         self.presentViewController(vc, animated: true, completion: nil)
+        
     }
     //    社区活动
     func tapSingleDid6(){
@@ -463,4 +474,139 @@ extension UIButton {
         self.titleEdgeInsets = titleInsets
         self.imageEdgeInsets = imageInsets
     }
+}
+
+extension HomeTController {
+    func getHome() {
+        let token:String = NSUserDefaults.standardUserDefaults().valueForKey("userToken") as! String
+        let phone:String = NSUserDefaults.standardUserDefaults().valueForKey("userphone") as! String
+        
+        print(phone)
+        print(token)
+        
+        let headers = ["Accept":"application/json",
+                       "X-User-Phone": phone,
+                       "X-User-Token": token]
+        
+        Alamofire.request(.GET, "http://220.163.125.158:8081/home", headers: headers)
+            .responseString { response in
+                var json = JSON(data: response.data!)
+                var info = json["newer"]
+                
+                if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+                    var endtime:String = info["end_time"].stringValue
+                    dispatch_async(dispatch_get_main_queue(), {
+//                        self.LineCharts(self.LineChart, dataArray: self.dataArray, timeLine: self.timeLine)
+                    })
+                }else{
+                    
+                    let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                    hud.mode = MBProgressHUDMode.Text
+                    hud.labelText = "添加昵称失败！"
+                    //延迟隐藏
+                    hud.hide(true, afterDelay: 0.8)
+                    
+                }
+                
+        }
+    }
+    func getStepsNumber() {
+        //判断该设备是否支持计步功能
+        if CMPedometer.isStepCountingAvailable(){
+            //开始时间
+            let startTime = getStartTime()
+            
+            let datef = NSDateFormatter()
+            datef.dateFormat = "yyyy-MM-dd"
+            let stringdate = datef.stringFromDate(getEndTime())
+            //获取指定开始时间到当前时间的数据  参数 开始时间, 一个闭包
+                        pedonmeter.startPedometerUpdatesFromDate(startTime, withHandler: { (pedometerData:CMPedometerData?, error:NSError?) -> Void in
+                            if error != nil{
+                                print("error:\(error)")
+                            }
+                            else{
+                                print("步数===\(pedometerData!.numberOfSteps)")
+                                print("距离===\(pedometerData!.distance)")
+                                
+                                let token:String = NSUserDefaults.standardUserDefaults().valueForKey("userToken") as! String
+                                let phone:String = NSUserDefaults.standardUserDefaults().valueForKey("userphone") as! String
+                                
+                                print(phone)
+                                print(token)
+                                
+                                let headers = ["Accept":"application/json",
+                                    "X-User-Phone": phone,
+                                    "X-User-Token": token]
+                                
+                                let body = ["sport[date]":stringdate,
+                                    "sport[count]":"\(pedometerData!.numberOfSteps)"]
+                                
+                                Alamofire.request(.POST, "http://220.163.125.158:8081/sports", headers: headers, parameters: body)
+                                    .responseString { response in
+                                        var json = JSON(data: response.data!)
+                                        var info = json["items"]
+                                        
+                                        if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+                                            print("数据推送成功")
+                                            
+                                        }else{
+                                            
+                                            let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                                            hud.mode = MBProgressHUDMode.Text
+                                            hud.labelText = "添加昵称失败！"
+                                            //延迟隐藏
+                                            hud.hide(true, afterDelay: 0.8)
+                                            
+                                        }
+                                        
+                                }
+
+                            }
+                        })
+            
+        } else {
+            print("there has something with CMPedometer")
+        }
+    }
+    
+    /**
+     获取当前时区的时间
+     */
+    func getEndTime() -> NSDate
+    {
+        let date = NSDate()
+        //转换成本地时区
+        let numberOfDays = -8
+        let calculatedDate = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Hour, value: numberOfDays, toDate: date, options: NSCalendarOptions.init(rawValue: 0))
+        
+        let zone = NSTimeZone.systemTimeZone()
+        let interval = zone.secondsFromGMTForDate(calculatedDate!)
+        let nowDate = calculatedDate!.dateByAddingTimeInterval(Double(interval))
+        print("获取当前时区的时间:\(nowDate)")
+        return nowDate
+    }
+
+    
+    /**
+     获取开始时间 当天0时0分0秒
+     */
+    func getStartTime() -> NSDate
+    {
+        let datef = NSDateFormatter()
+        datef.dateFormat = "yyyy-MM-dd"
+        let stringdate = datef.stringFromDate(getEndTime())
+        print("当天日期:\(stringdate)")
+        let tdate = datef.dateFromString(stringdate)
+        //获取本地时区的当天0时0分0秒
+        let numberOfDays = -8
+        let calculatedDate = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Hour, value: numberOfDays, toDate: tdate!, options: NSCalendarOptions.init(rawValue: 0))
+        
+        let zone = NSTimeZone.systemTimeZone()
+        let interval = zone.secondsFromGMTForDate(calculatedDate!)
+        let nowday = calculatedDate!.dateByAddingTimeInterval(Double(interval))
+        
+        print("当天开始时间:\(nowday)")
+        return nowday
+    }
+
 }

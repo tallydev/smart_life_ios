@@ -31,6 +31,7 @@ class HomeFurnishingPart1ViewController: UIViewController {
     }
     
     func sure(){
+        subscribe(self, type: "ZNJJ", count: "", orderBtn: orderBtn.orderBtnTwo)
         orderBtn.orderBtnTwo.enabled = false
         orderBtn.orderBtnTwo.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
         orderBtn.orderBtnTwo.setTitle("申请成功", forState: .Disabled)

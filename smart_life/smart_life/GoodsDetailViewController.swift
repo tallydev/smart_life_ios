@@ -25,7 +25,7 @@ class GoodsDetailViewController: UIViewController, CirCleViewDelegate {
         self.navigationController?.view.addSubview(view)
         
         //轮播图加载
-        let imageArray: [UIImage!] = [UIImage(named: "banner1.png"), UIImage(named: "banner.png")]
+        let imageArray: [UIImage!] = [UIImage(named: (goodCell.first?.goodsPic?[0])!), UIImage(named: (goodCell.first?.goodsPic?[1])!), UIImage(named: (goodCell.first?.goodsPic?[2])!)]
         self.circleView = CirCleView(frame: CGRectMake(0, 0, self.view.frame.size.width, 220), imageArray: imageArray)
         circleView.backgroundColor = UIColor.orangeColor()
         circleView.delegate = self

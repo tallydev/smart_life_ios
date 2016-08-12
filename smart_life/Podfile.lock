@@ -7,6 +7,7 @@ PODS:
   - PNChartSwift (0.0.2)
   - SnapKit (0.15.0)
   - Spring (1.0.3)
+  - SwiftDate (3.0.8)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - PNChartSwift (from `https://github.com/kevinzhow/PNChart-Swift.git`)
   - SnapKit (~> 0.15.0)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
+  - SwiftDate
   - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -41,8 +43,9 @@ SPEC CHECKSUMS:
   PNChartSwift: bcdfbffd65920072463eff42d0dfb46189bf4495
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftDate: 971f8b9394f664f2226b9c3ab64e801a7291c612
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 1c7f2164c87991642071c1e8432824ea9288e236
+PODFILE CHECKSUM: 553863533b31d338ecc95b5a9d255c339df92727
 
 COCOAPODS: 1.0.1

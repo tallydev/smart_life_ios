@@ -257,13 +257,13 @@ extension SignInViewController {
     func getMainPage(){
         let tempResult:String = orderTexeField.text!
         let passWord:String = phoneNumberTexeField.text!
-        let headers1 = ["Accept":"application/json",]
+        let headers = ["Accept":"application/json",]
         let body = [
             "user[phone]": tempResult,
             "user[password]": passWord
             
         ]
-        Alamofire.request(.POST, "http://220.163.125.158:8081/users/sign_in", headers: headers1, parameters: body)
+        Alamofire.request(.POST, "http://220.163.125.158:8081/users/sign_in", headers: headers, parameters: body)
             .responseString { response in
                 var json = JSON(data: response.data!)
                 if let userToken = json["authentication_token"].string {
@@ -271,11 +271,62 @@ extension SignInViewController {
                         let token = json["authentication_token"].stringValue
                         let phone = json["phone"].stringValue
                         let id = json["id"].int
-                        userInfo = User(id:id!, phone: phone, token: token)
                         
-                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
-                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
-                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+                        
+                        let headers1 = ["Accept":"application/json",
+                                        "X-User-Token":token,
+                                        "X-User-Phone":phone]
+                        Alamofire.request(.GET, "http://220.163.125.158:8081/user_info", headers: headers1)
+                            .responseString { response in
+                                var json = JSON(data: response.data!)
+                                if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+                                    
+                                    let nick = json["nickname"].stringValue
+                                    let id_card = json["identity_card"].stringValue
+                                    let avatar = json["avatar"].stringValue
+                                    let birth = json["birth"].stringValue
+                                    let sexy = json["sex"].stringValue
+                                    let slogan = json["slogan"].stringValue
+                                    let address = json["address"].stringValue
+                                    let pay_password = json["pay_password"].stringValue
+                                    if sexy == "male" {
+                                        let sex = "男"
+                                        userInfo = User(id: id!, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+                                        
+                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
+                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+                                        
+                                    }else{
+                                        let sex = "女"
+                                        userInfo = User(id: id!, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+                                        
+                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
+                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+                                        
+                                    }
+                                    
+                                    
+                                    MBProgressHUD .showHUDAddedTo(self.view, animated: true)
+                                    self.performSegueWithIdentifier("login", sender: self)
+                                    
+                                }else{
+                                    
+                                    var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                                    hud.mode = MBProgressHUDMode.Text
+                                    hud.labelText = "添加昵称失败！"
+                                    //延迟隐藏
+                                    hud.hide(true, afterDelay: 0.8)
+                                    
+                                }
+                                
+                        }
+
                         
                         MBProgressHUD .showHUDAddedTo(self.view, animated: true)
                         self.performSegueWithIdentifier("login", sender: self)

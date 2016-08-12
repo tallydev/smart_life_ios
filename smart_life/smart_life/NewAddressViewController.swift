@@ -535,14 +535,14 @@ extension NewAddressViewController:UIPickerViewDelegate, UIPickerViewDataSource{
     func getPickerViewValue(){
         //获取选中的省
         let p = self.addressArray[provinceIndex]
-        let province = p["state"] as! String
+        let province:String = p["state"] as! String
         
         //获取选中的市
         let c = (p["cities"] as! NSArray)[cityIndex]
-        let city = c["street"] as! String
+        let city:String = c["street"] as! String
         
         //获取选中的县（地区）
-        var area = ""
+        var area:String = ""
         if (c["areas"] as! [String]).count > 0 {
             area = (c["areas"] as! [String])[areaIndex]
         }

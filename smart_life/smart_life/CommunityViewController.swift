@@ -35,6 +35,7 @@ class CommunityViewController: UIViewController {
     }
     
     func sure(){
+        subscribe(self, type: "SQHD", count: "", orderBtn: orderView.orderBtn)
         orderView.orderBtn.enabled = false
         orderView.orderBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
         orderView.orderBtn.setTitle("申请成功", forState: .Disabled)

@@ -108,6 +108,7 @@ class SignUpViewController: UIViewController {
         //        cellView3.addSubview(plotBtn)
         cellView3.addSubview(plotNameView)
         cellView3.addSubview(plotTexeField)
+        cellView3.addSubview(plotBtn)
         cellView4.addSubview(addressNameView)
         cellView4.addSubview(addressTextFiled)
         cellView5.addSubview(soloNameView)
@@ -213,7 +214,11 @@ class SignUpViewController: UIViewController {
             make.width.equalTo(1)
             make.height.equalTo(30)
         }
-        
+        plotBtn.snp_makeConstraints { (make) in
+            make.top.right.equalTo(0)
+            make.left.equalTo(60)
+            make.height.equalTo(50)
+        }
         plotNameView.snp_makeConstraints { (make) in
             make.top.left.equalTo(0)
             make.height.equalTo(50)
@@ -400,6 +405,7 @@ class SignUpViewController: UIViewController {
         orderTexeField.placeholder = "请输入您的手机号"
         orderTexeField.delegate = self
         orderTexeField.clearButtonMode = UITextFieldViewMode.WhileEditing
+        orderTexeField.keyboardType = UIKeyboardType.PhonePad
         orderTexeField.font = UIFont(name:"Helvetica", size:14)
         orderTexeField.textAlignment = NSTextAlignment.Left
         
@@ -422,6 +428,7 @@ class SignUpViewController: UIViewController {
         phoneNumberTexeField.placeholder = "请输入验证码"
         phoneNumberTexeField.delegate = self
         phoneNumberTexeField.clearButtonMode = UITextFieldViewMode.WhileEditing
+        phoneNumberTexeField.keyboardType = UIKeyboardType.NumberPad
         phoneNumberTexeField.font = UIFont(name:"Helvetica", size:14)
         phoneNumberTexeField.textAlignment = NSTextAlignment.Left
         phoneNumberTexeField.backgroundColor = UIColor.whiteColor()
@@ -487,11 +494,17 @@ class SignUpViewController: UIViewController {
         let plotTexeField = UITextField()
         plotTexeField.tag = 1001
         plotTexeField.placeholder = "所在小区选择"
+        plotTexeField.enabled = false
         plotTexeField.delegate = self
         plotTexeField.font = UIFont(name:"Helvetica", size:14)
         plotTexeField.textAlignment = NSTextAlignment.Left
         plotTexeField.backgroundColor = UIColor.whiteColor()
         return plotTexeField
+    }()
+    lazy var plotBtn:UIButton = {
+        let plotBtn = UIButton()
+            plotBtn.addTarget(self, action:#selector(SignUpViewController.plotChose),forControlEvents: UIControlEvents.TouchUpInside)
+        return plotBtn
     }()
     
     
@@ -508,8 +521,9 @@ class SignUpViewController: UIViewController {
     }()
     lazy var dealTextFiled: UITextField = {
         let dealTextFiled = UITextField()
-        dealTextFiled.placeholder = "请详细门牌号xx幢xx单元xx室"
+        dealTextFiled.placeholder = "我已接受登录服务条款"
         dealTextFiled.clearButtonMode = UITextFieldViewMode.WhileEditing
+        dealTextFiled.enabled = false
         dealTextFiled.delegate = self
         dealTextFiled.font = UIFont(name:"Helvetica", size:14)
         dealTextFiled.textAlignment = NSTextAlignment.Left
@@ -601,8 +615,8 @@ extension SignUpViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        
         if textField.tag == 1001 {
+            plotTexeField.resignFirstResponder()
 //            pickerViewContent.hidden = false
             //设置动画属性
             
@@ -613,7 +627,7 @@ extension SignUpViewController: UITextFieldDelegate {
             UIView.animateWithDuration(0.2) {
                 self.view.layoutIfNeeded()
             }
-            textField.resignFirstResponder() //这个隐藏(放弃)虚拟键盘
+            return false
         }else{
             //设置动画属性
             
@@ -624,22 +638,27 @@ extension SignUpViewController: UITextFieldDelegate {
             UIView.animateWithDuration(0.2) {
                 self.view.layoutIfNeeded()
             }
+            return true
         }
-        
-        return true
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
+        plotTexeField.resignFirstResponder()
         textField.resignFirstResponder() //这个隐藏(放弃)虚拟键盘
         
         return true
         
     }
     
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        plotTexeField.resignFirstResponder()
+        textField.resignFirstResponder() //这个隐藏(放弃)虚拟键盘
+        return true
+    }
+    
     func textFieldDidBeginEditing(textField: UITextField) {
+        plotTexeField.resignFirstResponder()
         if textField.tag == 1001 {
-            
             self.scacle = 0
             //告诉self.view约束需要更新
             self.view.setNeedsUpdateConstraints()
@@ -647,7 +666,6 @@ extension SignUpViewController: UITextFieldDelegate {
             UIView.animateWithDuration(0.2) {
                 self.view.layoutIfNeeded()
             }
-            textField.resignFirstResponder() //这个隐藏(放弃)虚拟键盘
         }else{
             //设置动画属性
             
@@ -661,11 +679,35 @@ extension SignUpViewController: UITextFieldDelegate {
         }
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        plotTexeField.resignFirstResponder()
+        textField.resignFirstResponder() //这个隐藏(放弃)虚拟键盘
+    }
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        plotTexeField.resignFirstResponder()
         addressTextFiled.resignFirstResponder()
         orderTexeField.resignFirstResponder()
         plotTexeField.resignFirstResponder()
         phoneNumberTexeField.resignFirstResponder()
+        soloTextFiled.resignFirstResponder()
+    }
+    
+    func plotChose() {
+        
+        plotTexeField.resignFirstResponder()
+        addressTextFiled.resignFirstResponder()
+        orderTexeField.resignFirstResponder()
+        plotTexeField.resignFirstResponder()
+        phoneNumberTexeField.resignFirstResponder()
+        soloTextFiled.resignFirstResponder()
+        
+        self.scacle = 0
+        //告诉self.view约束需要更新
+        self.view.setNeedsUpdateConstraints()
+        //动画
+        UIView.animateWithDuration(0.2) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     //视图约束更新
@@ -773,12 +815,6 @@ extension SignUpViewController: UITextFieldDelegate {
                     let token = json["authentication_token"].stringValue
                     let phone = json["phone"].stringValue
                     let id = json["id"].int
-                    userInfo = User(id:id!, phone: phone, token: token)
-                    
-                    NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
-                    NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
-                    NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
-                    
                     
                     let headers1 = ["Accept":"application/json",
                         "X-User-Phone":"\(phoneNumber)",
@@ -788,14 +824,28 @@ extension SignUpViewController: UITextFieldDelegate {
                         .responseString { response in
                             var json = JSON(data: response.data!)
                             if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+                                
+                                let nick = json["nickname"].stringValue
+                                userInfo = User(id: id!, phone: phone, nickname: nick, avatar: "", birth: "", sex: "", slogan: "", address: "", identity_card: "", pay_password: "", token: token)
+                                
+                                NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+                                NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+                                NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+                                NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
+                                NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+                                
                                 MBProgressHUD .showHUDAddedTo(self.view, animated: true)
-                                self.performSegueWithIdentifier("login", sender: self)
+                                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+                                self.view.window?.rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("Main")
+                                
                             }else{
+                                
                                 var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
                                 hud.mode = MBProgressHUDMode.Text
                                 hud.labelText = "添加昵称失败！"
                                 //延迟隐藏
                                 hud.hide(true, afterDelay: 0.8)
+                                
                             }
                             
                     }

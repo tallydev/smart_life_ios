@@ -179,6 +179,7 @@ extension AddressTableViewController: UITableViewDataSource, UITableViewDelegate
 extension AddressTableViewController: SendMessageDelegate {
     
     func sendWord(message: AddressModel) {
+        print(message)
         addressArray.append(message)
         tableView.reloadData()
     }

@@ -4,6 +4,21 @@
 <array>
 	<dict>
 		<key>state</key>
+		<string>西山区</string>
+		<key>cities</key>
+		<array>
+			<dict>
+				<key>street</key>
+				<string>前卫街道</string>
+				<key>areas</key>
+				<array>
+					<string>广福城</string>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>state</key>
 		<string>五华区</string>
 		<key>cities</key>
 		<array>

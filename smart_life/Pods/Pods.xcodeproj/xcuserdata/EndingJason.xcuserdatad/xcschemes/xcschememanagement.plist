@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftDate.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,17 +57,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>19F0447F1C7D5CE515A331BE15842071</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>21F981AD46ADBAC65D4E226026B11D0A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>315623CB345F887D3C7A8B1E44D8C934</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B98525B57597A119546005A86AB5E7B</key>
+		<key>38FAB8317ABC79829364FAB934AE32A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>422F8CD229ECEA3115CA76D2A2F0514A</key>
+		<key>5C89081D02283D489FA1325D0E55A519</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77A66A71AA1C54326DFEDF02A149202A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BA13CB6306514784A94430897ACD1721</key>
+		<key>DDA1064C61E1F573BEA0422E1A4F6D75</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -10,7 +10,7 @@ import UIKit
 
 class HealthPart2TableViewCell: UITableViewCell {
     @IBOutlet weak var itemlabel: UILabel!
-
+    @IBOutlet weak var rangepic: UIImageView!
     @IBOutlet weak var resultlabel: UILabel!
     @IBOutlet weak var rangelabel: UILabel!
     override func awakeFromNib() {

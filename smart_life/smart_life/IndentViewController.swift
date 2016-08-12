@@ -23,23 +23,6 @@ class IndentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let picname = ["限量销售-22","限量销售-21","限量销售-21"]
-//        let pictitle = ["西双版纳生态无眼凤梨","天然放养土鸡蛋","西双版纳野生蜂蜜"]
-//        let picdesc = ["¥66.00","¥50.00","¥150.00"]
-//        let picNumber = ["X 1","X 3","X 5"]
-//        
-//        // 初始化模型数组，也就是搞点假数据。这里整10个模型
-//        for i in 0..<3 {
-//            var dict = [String : AnyObject]()
-//            dict["indentCellPic"] = picname[i]
-//            dict["indentGoodName"] = pictitle[i]
-//            dict["indentGoodPrice"] = picdesc[i]
-//            dict["indentGoodsNumber"] = picNumber[i]
-//            
-//            // 字典转模型并将模型添加到模型数组中
-//            indentArray.append(GoodModel(dict: dict))
-//        }
-        
         // 准备UI
         prepareUI()
     }

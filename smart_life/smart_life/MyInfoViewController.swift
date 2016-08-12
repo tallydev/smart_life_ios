@@ -11,35 +11,22 @@ import Alamofire
 import SwiftyJSON
 import MBProgressHUD
 
-class MyInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MyInfoViewController: UIViewController {
+    
+    let Center = NSNotificationCenter.defaultCenter()
 
     @IBOutlet weak var loginOut: UIButton!
     
-    @IBOutlet weak var userAvatar: UIButton!
+    @IBOutlet weak var nickNameLabel: UILabel!
     
-    @IBAction func setAvatar(sender: AnyObject) {
-        //判断设置是否支持图片库
-        if UIImagePickerController.isSourceTypeAvailable(.PhotoLibrary){
-            //初始化图片控制器
-            let picker = UIImagePickerController()
-            //设置代理
-            picker.delegate = self
-            //指定图片控制器类型
-            picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-            //弹出控制器，显示界面
-            self.presentViewController(picker, animated: true, completion: {
-                () -> Void in
-            })
-        }else{
-            print("读取相册错误")
-        }
-    }
+    @IBOutlet weak var userAvatar: UIImageView!
     @IBAction func goOutBtnAction(sender: AnyObject) {
         //返回登陆页
-        
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("passWord")
+//        NSUserDefaults.standardUserDefaults().removeObjectForKey("userToken")
+//        NSUserDefaults.standardUserDefaults().removeObjectForKey("userphone")
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         self.view.window?.rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("signInNavViewController")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("passWord")
         
 //        let signinVc = SignInViewController()
 //        presentViewController(UINavigationController(rootViewController: signinVc), animated: true, completion: nil)
@@ -65,6 +52,7 @@ class MyInfoViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func mydata(sender: AnyObject) {
         let sb = UIStoryboard(name: "Main", bundle:nil)
         let vc = sb.instantiateViewControllerWithIdentifier("MyData")
+        ModifyViewController().delegate = self
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -78,78 +66,46 @@ class MyInfoViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBAction func service(sender: AnyObject) {
         UIApplication.sharedApplication().openURL(NSURL(string :"tel://087164589208")!)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        Center.addObserver(self, selector: Selector("Command:"), name: String(classForCoder), object: nil)
+        super.viewWillAppear(animated)
+    }
+    
+    deinit {
+        Center.removeObserver(self)
+    }
+    
+    func Command(notification:NSNotification){
+        if userInfo?.avatar.isEmpty == true {
+            userAvatar.image = UIImage(named: "个人中心-29")
+        }else{
+            userAvatar.imageFromURL((userInfo?.avatar)!,placeholder: (UIImage(named:"个人中心-29")?.roundCornersToCircle(border: 40,
+                color: UIColor.orangeColor())!)!)
+        }
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
+        view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
+        self.navigationController?.view.addSubview(view)
+        if userInfo?.avatar.isEmpty == true {
+            userAvatar.image = UIImage(named: "个人中心-29")
+        }else{
+            userAvatar.imageFromURL((userInfo?.avatar)!,placeholder: (UIImage(named:"个人中心-29")?.roundCornersToCircle(border: 40,
+                color: UIColor.orangeColor())!)!)
+        }
+        nickNameLabel.text = userInfo?.nickname
         
         loginOut.layer.borderWidth = 1
         loginOut.layer.borderColor = UIColor.orangeColor().CGColor
     }
     
     
-    //选择图片成功后代理
-    func imagePickerController(picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        //获取选择的原图
-        let pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        //等比例压缩图片大小／并剪切为圆形
-        let width = 96 * UIScreen.mainScreen().scale
-        let height = 96 * UIScreen.mainScreen().scale
-        let pig = pickedImage.resize(CGSize(width: width, height: height))
-        let pigc = pig?.roundCornersToCircle()
-        
-        //将选择的图片保存到Document目录下
-        let fileManager = NSFileManager.defaultManager()
-        let rootPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
-                                                           .UserDomainMask, true)[0] as String
-        let filePath = "\(rootPath)/news.png"
-        let imageData = UIImageJPEGRepresentation(pigc!, 1.0)
-        fileManager.createFileAtPath(filePath, contents: imageData, attributes: nil)
-        
-        //上传图片
-        if (fileManager.fileExistsAtPath(filePath)){
-            //取得NSURL
-            let imageNSURL:NSURL = NSURL.init(fileURLWithPath: filePath)
-            self.userAvatar.setImage(UIImage(contentsOfFile:filePath)?.roundCornersToCircle(border: 10, color: UIColor.clearColor()), forState: .Normal)
-            
-//            print(imageData)
-            
-            let token:String = NSUserDefaults.standardUserDefaults().valueForKey("userToken") as! String
-            let phone:String = NSUserDefaults.standardUserDefaults().valueForKey("userphone") as! String
-            
-            let headers = ["Accept":"application/json",
-                            "X-User-Phone": phone,
-                            "X-User-Token": token]
-            
-            Alamofire.upload(.PUT, "http://220.163.125.158:8081/user_info",
-                             // define your headers here
-                headers: headers,
-                multipartFormData: { multipartFormData in
-                    
-                    // import image to request
-                    if let imageData = UIImageJPEGRepresentation(pigc!, 1.0) {
-                        multipartFormData.appendBodyPart(data: imageData, name: "user_info[avatar_attributes][photo]", fileName: "news.png", mimeType: "image/png")
-                    }
-                }, // you can customise Threshold if you wish. This is the alamofire's default value
-                encodingMemoryThreshold: Manager.MultipartFormDataEncodingMemoryThreshold,
-                encodingCompletion: { encodingResult in
-                    switch encodingResult {
-                    case .Success(let upload, _, _):
-                        upload.responseJSON { response in
-                            print("++++++++++++++++++++++++")
-                            debugPrint(response)
-                        }
-                    case .Failure(let encodingError):
-                        print("============================")
-                        print(encodingError)
-                    }
-            })
-
-        }
-        
-        //图片控制器退出
-        picker.dismissViewControllerAnimated(true, completion:nil)
-    }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -165,4 +121,15 @@ class MyInfoViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     */
 
+}
+
+extension MyInfoViewController: SendDelegate {
+    
+    func sendUserinfo(message:String, kek:String) {
+        userInfo?.setValue(message, forKey: kek)
+        userAvatar.imageFromURL((userInfo?.avatar)!,placeholder: (UIImage(named:"个人中心-29")?.roundCornersToCircle(border: 40,
+            color: UIColor.orangeColor())!)!)
+        nickNameLabel.text = userInfo?.nickname
+        print(nickNameLabel.text)
+    }
 }

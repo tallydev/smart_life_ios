@@ -18,6 +18,10 @@ class GroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
+        view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
+        self.navigationController?.view.addSubview(view)
+        
 //        let btn:UIButton = UIButton(type:.System)
 //        let fromDate   = NSDate().dateByAddingTimeInterval(0)
 //        let targetDate = fromDate.dateByAddingTimeInterval(50)

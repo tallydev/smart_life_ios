@@ -10,6 +10,7 @@ import UIKit
 
 class HealthPart3TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var rangepic: UIImageView!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     override func awakeFromNib() {

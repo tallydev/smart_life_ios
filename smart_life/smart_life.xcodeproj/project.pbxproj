@@ -27,7 +27,7 @@
 		D406F4841D3F1BFC00236EA6 /* OrderBtnTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406F4831D3F1BFC00236EA6 /* OrderBtnTwo.xib */; };
 		D406F4871D3F22AD00236EA6 /* alertFrame.xib in Resources */ = {isa = PBXBuildFile; fileRef = D406F4861D3F22AD00236EA6 /* alertFrame.xib */; };
 		D406F4891D3F22C500236EA6 /* alertFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D406F4881D3F22C500236EA6 /* alertFrame.swift */; };
-		D417C4271D2108BB00955C30 /* WaterFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D417C4261D2108BB00955C30 /* WaterFlowViewController.swift */; };
+		D407CC711D5193550025D01E /* ModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D407CC701D5193550025D01E /* ModifyViewController.swift */; };
 		D41ADD9D1D38145000534E6A /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41ADD9C1D38145000534E6A /* MyCell.swift */; };
 		D41ADD9F1D38146600534E6A /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D41ADD9E1D38146600534E6A /* MyCell.xib */; };
 		D44135DE1D1927DB00072099 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44135DD1D1927DB00072099 /* ListTableViewController.swift */; };
@@ -41,6 +41,11 @@
 		D4486ED31D389D6900BB8984 /* MyIndentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486ED21D389D6900BB8984 /* MyIndentTableViewCell.swift */; };
 		D46D53B01D4F2E960017C8C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D53AF1D4F2E960017C8C9 /* User.swift */; };
 		D46DBB371D2BA0C7009519A0 /* HomeTController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46DBB361D2BA0C7009519A0 /* HomeTController.swift */; };
+		D4804A271D55C66600076BF8 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4804A261D55C66600076BF8 /* SwiftDate.framework */; };
+		D4804A291D55EAEA00076BF8 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4804A281D55EAEA00076BF8 /* Sport.swift */; };
+		D4804A2E1D5B0A7500076BF8 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4804A2D1D5B0A7500076BF8 /* Report.swift */; };
+		D4804A301D5B0B9800076BF8 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4804A2F1D5B0B9800076BF8 /* Rank.swift */; };
+		D4804A321D5B252A00076BF8 /* ReportHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4804A311D5B252A00076BF8 /* ReportHistory.swift */; };
 		D48B2BFF1D405D34003208DB /* GoodsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48B2BFE1D405D34003208DB /* GoodsDetailViewController.swift */; };
 		D491F1D51D3C6AE100D7FA11 /* MyDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */; };
 		D49CEADB1D240C59003D2737 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49CEADA1D240C59003D2737 /* Helpers.swift */; };
@@ -65,7 +70,7 @@
 		D4C128501D178C1D00561CB3 /* GoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1284F1D178C1D00561CB3 /* GoodModel.swift */; };
 		D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */; };
 		D4C128561D1794A100561CB3 /* GoodListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C128551D1794A100561CB3 /* GoodListCell.swift */; };
-		D4CE67D41D505FB1007C95AF /* subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE67D31D505FB1007C95AF /* subscribe.swift */; };
+		D4CE67D41D505FB1007C95AF /* Port_Invoking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE67D31D505FB1007C95AF /* Port_Invoking.swift */; };
 		D4CE67D61D509503007C95AF /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE67D51D509503007C95AF /* Match.swift */; };
 		D4CE67DB1D50CEBC007C95AF /* AFImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE67DA1D50CEBC007C95AF /* AFImageExtension.swift */; };
 		D4CE67DD1D50CF28007C95AF /* AFImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CE67DC1D50CF28007C95AF /* AFImageViewExtension.swift */; };
@@ -112,7 +117,7 @@
 		D406F4831D3F1BFC00236EA6 /* OrderBtnTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderBtnTwo.xib; sourceTree = "<group>"; };
 		D406F4861D3F22AD00236EA6 /* alertFrame.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = alertFrame.xib; sourceTree = "<group>"; };
 		D406F4881D3F22C500236EA6 /* alertFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alertFrame.swift; sourceTree = "<group>"; };
-		D417C4261D2108BB00955C30 /* WaterFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFlowViewController.swift; sourceTree = "<group>"; };
+		D407CC701D5193550025D01E /* ModifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyViewController.swift; sourceTree = "<group>"; };
 		D41ADD9C1D38145000534E6A /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		D41ADD9E1D38146600534E6A /* MyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		D44135DD1D1927DB00072099 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
@@ -126,9 +131,16 @@
 		D4486ED21D389D6900BB8984 /* MyIndentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyIndentTableViewCell.swift; sourceTree = "<group>"; };
 		D46D53AF1D4F2E960017C8C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D46DBB361D2BA0C7009519A0 /* HomeTController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTController.swift; sourceTree = "<group>"; };
+		D4804A241D54CEBF00076BF8 /* Timepiece.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timepiece.framework; path = "../../../../Library/Developer/Xcode/DerivedData/smart_life-fmhwnsfqdzjeigaciancavmfqsrs/Build/Products/Debug-iphoneos/Timepiece/Timepiece.framework"; sourceTree = "<group>"; };
+		D4804A261D55C66600076BF8 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = "../../../../Library/Developer/Xcode/DerivedData/smart_life-fmhwnsfqdzjeigaciancavmfqsrs/Build/Products/Debug-iphoneos/SwiftDate/SwiftDate.framework"; sourceTree = "<group>"; };
+		D4804A281D55EAEA00076BF8 /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
+		D4804A2D1D5B0A7500076BF8 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		D4804A2F1D5B0B9800076BF8 /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
+		D4804A311D5B252A00076BF8 /* ReportHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportHistory.swift; sourceTree = "<group>"; };
 		D48B2BFE1D405D34003208DB /* GoodsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsDetailViewController.swift; sourceTree = "<group>"; };
 		D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDataTableViewController.swift; sourceTree = "<group>"; };
 		D49CEADA1D240C59003D2737 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		D49EE62C1D5DD8150086A0B3 /* smart_life.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = smart_life.entitlements; sourceTree = "<group>"; };
 		D4B43AB31D35D6E60023887E /* HealthPart1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart1ViewController.swift; sourceTree = "<group>"; };
 		D4B43AB51D35D6F80023887E /* HealthPart2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart2ViewController.swift; sourceTree = "<group>"; };
 		D4B43AB71D35D7090023887E /* HealthPart3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthPart3ViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +163,7 @@
 		D4C1284F1D178C1D00561CB3 /* GoodModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodModel.swift; sourceTree = "<group>"; };
 		D4C128531D17909B00561CB3 /* GoodsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsListTableViewController.swift; sourceTree = "<group>"; };
 		D4C128551D1794A100561CB3 /* GoodListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListCell.swift; sourceTree = "<group>"; };
-		D4CE67D31D505FB1007C95AF /* subscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subscribe.swift; sourceTree = "<group>"; };
+		D4CE67D31D505FB1007C95AF /* Port_Invoking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Port_Invoking.swift; sourceTree = "<group>"; };
 		D4CE67D51D509503007C95AF /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		D4CE67DA1D50CEBC007C95AF /* AFImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFImageExtension.swift; sourceTree = "<group>"; };
 		D4CE67DC1D50CF28007C95AF /* AFImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFImageViewExtension.swift; sourceTree = "<group>"; };
@@ -182,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4804A271D55C66600076BF8 /* SwiftDate.framework in Frameworks */,
 				D4C128381D113CCC00561CB3 /* CoreMotion.framework in Frameworks */,
 				306646CA6EB2B1749D360B82 /* Pods_smart_life.framework in Frameworks */,
 			);
@@ -193,6 +206,8 @@
 		73A1EB48E9D9027EDF00166B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4804A261D55C66600076BF8 /* SwiftDate.framework */,
+				D4804A241D54CEBF00076BF8 /* Timepiece.framework */,
 				37C4FB042CD31E153FBEC1B7 /* Pods_smart_life.framework */,
 			);
 			name = Frameworks;
@@ -344,6 +359,14 @@
 			name = MyIndented;
 			sourceTree = "<group>";
 		};
+		D4804A2C1D5ACC8000076BF8 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				D4CE67D31D505FB1007C95AF /* Port_Invoking.swift */,
+			);
+			name = Method;
+			sourceTree = "<group>";
+		};
 		D4B43AAC1D35D5480023887E /* NewProduct */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +505,8 @@
 		D4F55D2F1D0E5D8A0017638B /* smart_life */ = {
 			isa = PBXGroup;
 			children = (
+				D49EE62C1D5DD8150086A0B3 /* smart_life.entitlements */,
+				D4804A2C1D5ACC8000076BF8 /* Method */,
 				D4CE67D91D50CE95007C95AF /* AFImageHelper */,
 				D4B43AD11D372BC40023887E /* NibDesignable */,
 				D4F55D511D0E98250017638B /* Mode(模型) */,
@@ -509,7 +534,6 @@
 			isa = PBXGroup;
 			children = (
 				D4F55D341D0E5D8A0017638B /* HeartBitViewController.swift */,
-				D417C4261D2108BB00955C30 /* WaterFlowViewController.swift */,
 			);
 			name = HeartBit;
 			sourceTree = "<group>";
@@ -531,6 +555,7 @@
 				D4486ECA1D38965500BB8984 /* MyOrderTableViewController.swift */,
 				D4486ECF1D389D4D00BB8984 /* MyIndentTableViewController.swift */,
 				D491F1D41D3C6AE100D7FA11 /* MyDataTableViewController.swift */,
+				D407CC701D5193550025D01E /* ModifyViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -602,8 +627,11 @@
 				D404DDDD1D434FA5003586C4 /* IndentCellModel.swift */,
 				D4BF20D11D48957E00BCE810 /* Model.swift */,
 				D46D53AF1D4F2E960017C8C9 /* User.swift */,
-				D4CE67D31D505FB1007C95AF /* subscribe.swift */,
 				D4CE67D51D509503007C95AF /* Match.swift */,
+				D4804A281D55EAEA00076BF8 /* Sport.swift */,
+				D4804A2D1D5B0A7500076BF8 /* Report.swift */,
+				D4804A2F1D5B0B9800076BF8 /* Rank.swift */,
+				D4804A311D5B252A00076BF8 /* ReportHistory.swift */,
 			);
 			name = "Mode(模型)";
 			sourceTree = "<group>";
@@ -653,6 +681,14 @@
 					D4F55D2C1D0E5D8A0017638B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 94947R3XUQ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -762,7 +798,6 @@
 				D4F55D551D0EE5040017638B /* CirCleView.swift in Sources */,
 				D4B43ACC1D3724910023887E /* OrderBtn.swift in Sources */,
 				D4F55D4E1D0E97CF0017638B /* ProfileViewController.swift in Sources */,
-				D417C4271D2108BB00955C30 /* WaterFlowViewController.swift in Sources */,
 				D49CEADB1D240C59003D2737 /* Helpers.swift in Sources */,
 				D4B43ABD1D3645490023887E /* HealthPart2TableViewCell.swift in Sources */,
 				D404DDEA1D44FB5C003586C4 /* SignInViewController.swift in Sources */,
@@ -770,6 +805,7 @@
 				D406F4891D3F22C500236EA6 /* alertFrame.swift in Sources */,
 				D4B43AD51D373BD00023887E /* FitnessTableViewCell.swift in Sources */,
 				D4F55D351D0E5D8A0017638B /* HeartBitViewController.swift in Sources */,
+				D4804A301D5B0B9800076BF8 /* Rank.swift in Sources */,
 				D404DDD51D4263E9003586C4 /* IndentViewController.swift in Sources */,
 				D4EC0CA91D3DC6BB00E2464F /* UserAvatraTableViewCell.swift in Sources */,
 				D44135E91D1A758700072099 /* AddressModel.swift in Sources */,
@@ -792,11 +828,14 @@
 				D46D53B01D4F2E960017C8C9 /* User.swift in Sources */,
 				D406F4821D3F1B9B00236EA6 /* OrderBtnTwo.swift in Sources */,
 				D4B43ADB1D374DA00023887E /* ITPart3ViewController.swift in Sources */,
-				D4CE67D41D505FB1007C95AF /* subscribe.swift in Sources */,
+				D4CE67D41D505FB1007C95AF /* Port_Invoking.swift in Sources */,
 				D4B43AD31D372BEC0023887E /* NibDesignable.swift in Sources */,
 				D44135E51D1A5C4500072099 /* UIView+BHBFreeBorder.swift in Sources */,
 				D4F8520E1D379779003888A4 /* HomeFurnishingPart2ViewController.swift in Sources */,
+				D407CC711D5193550025D01E /* ModifyViewController.swift in Sources */,
+				D4804A291D55EAEA00076BF8 /* Sport.swift in Sources */,
 				D4CE67D61D509503007C95AF /* Match.swift in Sources */,
+				D4804A2E1D5B0A7500076BF8 /* Report.swift in Sources */,
 				D4CE67DD1D50CF28007C95AF /* AFImageViewExtension.swift in Sources */,
 				D404DDF61D4648F6003586C4 /* alertFrameS.swift in Sources */,
 				D491F1D51D3C6AE100D7FA11 /* MyDataTableViewController.swift in Sources */,
@@ -812,6 +851,7 @@
 				D4F852131D37EA65003888A4 /* IconBtn.swift in Sources */,
 				D4C128541D17909B00561CB3 /* GoodsListTableViewController.swift in Sources */,
 				D4F55D4C1D0E97AD0017638B /* GroupViewController.swift in Sources */,
+				D4804A321D5B252A00076BF8 /* ReportHistory.swift in Sources */,
 				D46DBB371D2BA0C7009519A0 /* HomeTController.swift in Sources */,
 				D44135E31D1A3A5400072099 /* AddressCell.swift in Sources */,
 				D4C1284E1D15A4B100561CB3 /* ShoppingCartCell.swift in Sources */,
@@ -928,8 +968,8 @@
 			baseConfigurationReference = 9886A503F36A9D70E0E98C37 /* Pods-smart_life.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing ZhenYuZhiCheng Electronics Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing ZhenYuZhiCheng Electronics Co., Ltd.";
 				INFOPLIST_FILE = smart_life/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -945,8 +985,8 @@
 			baseConfigurationReference = 23E2D602F7284D3BAFD02378 /* Pods-smart_life.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing ZhenYuZhiCheng Electronics Co., Ltd.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing ZhenYuZhiCheng Electronics Co., Ltd.";
 				INFOPLIST_FILE = smart_life/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

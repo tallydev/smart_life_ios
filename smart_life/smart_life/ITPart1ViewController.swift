@@ -30,6 +30,7 @@ class ITPart1ViewController: UIViewController {
     }
     
     func sure(){
+        subscribe(self, type: "ITXT", count: "", orderBtn: orderBtn)
         orderBtn.enabled = false
         orderBtn.setTitleColor(UIColor.grayColor(), forState: UIControlState.Disabled)
         orderBtn.setTitle("报名成功", forState: .Disabled)
