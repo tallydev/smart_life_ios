@@ -276,6 +276,8 @@ extension SignInViewController {
                             let phone = json["phone"].stringValue
                             let id = json["id"].int
                             
+                            print("000000000\(token)")
+                            print("000000000\(phone)")
                             
                             let headers1 = ["Accept":"application/json",
                                 "X-User-Token":token,
@@ -293,9 +295,15 @@ extension SignInViewController {
                                         let slogan = json["slogan"].stringValue
                                         let address = json["address"].stringValue
                                         let pay_password = json["pay_password"].stringValue
+                                        
+                                        print("000000000\(nick)")
+                                        print("----------\(sexy)")
+                                        
                                         if sexy == "male" {
                                             let sex = "男"
                                             userInfo = User(id: id!, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+                                            
+                                            print("1111111\(userInfo?.nickname)")
                                             
                                             NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
                                             NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
@@ -311,6 +319,8 @@ extension SignInViewController {
                                         }else{
                                             let sex = "女"
                                             userInfo = User(id: id!, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+                                            
+                                            print("2222222\(userInfo?.nickname)")
                                             
                                             NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
                                             NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
@@ -337,6 +347,7 @@ extension SignInViewController {
                                     
                             }
                             
+                            print("333333\(userInfo?.nickname)")
                             
                             MBProgressHUD .showHUDAddedTo(self.view, animated: true)
                             self.performSegueWithIdentifier("login", sender: self)
