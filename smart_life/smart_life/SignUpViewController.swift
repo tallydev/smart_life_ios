@@ -766,7 +766,7 @@ extension SignUpViewController: UITextFieldDelegate {
             "sms_token[phone]": "\(phoneNumber)"
         ]
         if matcher.match(phoneNumber) {
-            Alamofire.request(.POST, "http://220.163.125.158:8081/sms_tokens/register", headers: headers, parameters: body)
+            Alamofire.request(.POST, "http://elive.clfsj.com:8081/sms_tokens/register", headers: headers, parameters: body)
                 .responseString { response in
                 var json = JSON(data: response.data!)
                 if json["errors"].isEmpty == true && json["error"].isEmpty == true{
@@ -806,7 +806,7 @@ extension SignUpViewController: UITextFieldDelegate {
             "user_info[nickname]": "\(nickName)"
         ]
 
-        Alamofire.request(.POST, "http://220.163.125.158:8081/users", headers: headers, parameters: body)
+        Alamofire.request(.POST, "http://elive.clfsj.com:8081/users", headers: headers, parameters: body)
             .responseString { response in
                 var json = JSON(data: response.data!)
                 var errorMessage = [String]()
@@ -820,7 +820,7 @@ extension SignUpViewController: UITextFieldDelegate {
                         "X-User-Phone":"\(phoneNumber)",
                         "X-User-Token":"\(json["authentication_token"])"]
                     
-                    Alamofire.request(.PUT, "http://220.163.125.158:8081/user_info", headers: headers1, parameters: body2)
+                    Alamofire.request(.PUT, "http://elive.clfsj.com:8081/user_info", headers: headers1, parameters: body2)
                         .responseString { response in
                             var json = JSON(data: response.data!)
                             if json["errors"].isEmpty == true && json["error"].isEmpty == true{
@@ -833,6 +833,11 @@ extension SignUpViewController: UITextFieldDelegate {
                                 NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
                                 NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
                                 NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+                                
+                                NSUserDefaults.standardUserDefaults().setObject(userInfo!.birth, forKey: "birth")
+                                NSUserDefaults.standardUserDefaults().setObject(userInfo!.sex, forKey: "sex")
+                                NSUserDefaults.standardUserDefaults().setObject(userInfo!.slogan, forKey: "slogan")
+                                NSUserDefaults.standardUserDefaults().setObject(userInfo!.identity_card, forKey: "identity_card")
                                 
                                 MBProgressHUD .showHUDAddedTo(self.view, animated: true)
                                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)

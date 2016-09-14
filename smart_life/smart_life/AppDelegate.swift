@@ -24,6 +24,73 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        if (NSUserDefaults.standardUserDefaults().valueForKey("userToken") == nil) {
+            print("没有密码")
+        }else{
+            let token:String = NSUserDefaults.standardUserDefaults().valueForKey("userToken") as! String
+            let phone:String = NSUserDefaults.standardUserDefaults().valueForKey("userphone") as! String
+            let id:Int = NSUserDefaults.standardUserDefaults().valueForKey("userId") as! Int
+            
+            let headers1 = ["Accept":"application/json",
+                            "X-User-Token":token,
+                            "X-User-Phone":phone]
+            Alamofire.request(.GET, "http://elive.clfsj.com:8081/user_info", headers: headers1)
+                .responseString { response in
+                    var json = JSON(data: response.data!)
+                    if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+                        
+                        let nick = json["nickname"].stringValue
+                        let id_card = json["identity_card"].stringValue
+                        let avatar = json["avatar"].stringValue
+                        let birth = json["birth"].stringValue
+                        let sexy = json["sex"].stringValue
+                        let slogan = json["slogan"].stringValue
+                        let address = json["address"].stringValue
+                        let pay_password = json["pay_password"].stringValue
+                        if sexy == "male" {
+                            let sex = "男"
+                            userInfo = User(id: id, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+                            
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+                            
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.birth, forKey: "birth")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.sex, forKey: "sex")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.slogan, forKey: "slogan")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.identity_card, forKey: "identity_card")
+                            
+                        }else{
+                            let sex = "女"
+                            userInfo = User(id: id, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+                            
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+                            
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.birth, forKey: "birth")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.sex, forKey: "sex")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.slogan, forKey: "slogan")
+                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.identity_card, forKey: "identity_card")
+                            
+                        }
+                        
+                        
+                    }else{
+                        print("自动登录失败！")
+                        
+                    }
+                    
+            }
+
+            print("有密码")
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+            self.window?.rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("Main")
+        }
         //开启通知
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound],categories: nil)
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound, UIUserNotificationType.Alert,UIUserNotificationType.Badge], categories: nil))

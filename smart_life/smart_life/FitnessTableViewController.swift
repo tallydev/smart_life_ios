@@ -16,6 +16,12 @@ import SwiftDate
 class FitnessTableViewController: UITableViewController {
     let Center = NSNotificationCenter.defaultCenter()
     
+    var page = 1//下拉加载后的页数
+    var rank_num = 0
+    var named:String = "daily"
+    var loadMoreText = UILabel()
+    var tableFooterView = UIView()//列表的底部，用于显示“上拉查看更多”的提示，当上拉后显示类容为“松开加载更多”。
+    
     var dataArray = [Float]()
     var timeLine = [String]()
     var chartname = String()
@@ -58,6 +64,10 @@ class FitnessTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let refreshControl = UIRefreshControl()
+//        refreshControl.addTarget(self, action: Selector(self.Rank("daily")), forControlEvents: UIControlEvents.ValueChanged)
+//        self.refreshControl = refreshControl
         
         let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
         view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
@@ -189,24 +199,57 @@ class FitnessTableViewController: UITableViewController {
             LineChart0.removeFromSuperview()
             LineChart1.removeFromSuperview()
             LineChart2.removeFromSuperview()
+            
+            page = 1
+            rank_num = 0
+            named = "daily"
+            self.ranking = []
+            self.username = []
+            self.userimage = []
+            self.step = []
+            
             self.stepDayly("daily")
             self.Rank("daily")
         case 1 :
             LineChart.removeFromSuperview()
             LineChart1.removeFromSuperview()
             LineChart2.removeFromSuperview()
+            
+            page = 1
+            rank_num = 0
+            named = "weekly"
+            self.ranking = []
+            self.username = []
+            self.userimage = []
+            self.step = []
             self.stepDayly("weekly")
             self.Rank("weekly")
         case 2 :
             LineChart0.removeFromSuperview()
             LineChart.removeFromSuperview()
             LineChart2.removeFromSuperview()
+            
+            page = 1
+            rank_num = 0
+            named = "monthly"
+            self.ranking = []
+            self.username = []
+            self.userimage = []
+            self.step = []
             self.stepDayly("monthly")
             self.Rank("monthly")
         default:
             LineChart0.removeFromSuperview()
             LineChart1.removeFromSuperview()
             LineChart.removeFromSuperview()
+            
+            page = 1
+            rank_num = 0
+            named = "yearly"
+            self.ranking = []
+            self.username = []
+            self.userimage = []
+            self.step = []
             self.stepDayly("yearly")
             self.Rank("yearly")
         }
@@ -243,20 +286,23 @@ extension FitnessTableViewController {
         let headers = ["Accept":"application/json",
                        "X-User-Phone": phone,
                        "X-User-Token": token]
-        let url = "http://220.163.125.158:8081/ranks/" + name
+        let body = [
+            "page": page,
+            "per_page": "10"
+        ]
+        let url = "http://elive.clfsj.com:8081/ranks/" + name
         
-        Alamofire.request(.GET, url, headers: headers)
+        Alamofire.request(.GET, url, headers: headers, parameters: body as! [String : AnyObject])
             .responseString { response in
                 var json = JSON(data: response.data!)
                 var info = json["top"]
                 
+//                print(json)
+                
                 if json["errors"].isEmpty == true && json["error"].isEmpty == true{
-                    self.ranking = []
-                    self.username = []
-                    self.userimage = []
-                    self.step = []
                     for (_, value1) in info {
-                        self.ranking.append(value1["index"].stringValue)
+                        self.rank_num += 1
+                        self.ranking.append("\(self.rank_num)")
                         self.username.append(value1["nickname"].stringValue)
                         self.userimage.append(value1["avatar"].stringValue)
                         self.step.append("\(value1["count"])")
@@ -264,6 +310,7 @@ extension FitnessTableViewController {
                     dispatch_async(dispatch_get_main_queue(), {
                         print(self.userimage)
                         self.tableView?.reloadData()
+//                        self.refreshControl?.endRefreshing()
                         return
                     })
                 }else{
@@ -289,11 +336,14 @@ extension FitnessTableViewController {
         let headers = ["Accept":"application/json",
                        "X-User-Phone": phone,
                        "X-User-Token": token]
-        let url = "http://220.163.125.158:8081/sports/" + name
-        
+        let url = "http://elive.clfsj.com:8081/sports/" + name
+        print(url)
         Alamofire.request(.GET, url, headers: headers)
             .responseString { response in
                 var json = JSON(data: response.data!)
+                
+                print(json)
+                
                 var stepSelf = json["self"]
                 var dataArray1 = [Float]()
                 var timeLine1 = [String]()
@@ -410,6 +460,20 @@ extension FitnessTableViewController {
         let nowday = calculatedDate!.dateByAddingTimeInterval(Double(interval))
         return nowday
     }
+    
+    
+    /*上拉到一定程度松开后开始加载更多*/
+    
+    override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool){
+        loadMoreText.text = "加载。。。。。。"
+        if scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height + 30){
+            page += 1
+            self.Rank(named)
+            self.tableView.reloadData()
+        }
+    }
+    
+
     
 }
 

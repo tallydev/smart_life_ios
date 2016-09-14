@@ -157,8 +157,7 @@ class MyDataTableViewController: UITableViewController, UIImagePickerControllerD
         if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCellWithIdentifier("myinfoCell1", forIndexPath: indexPath) as! UserAvatraTableViewCell
             cell.avatraLabel.text = cellName[indexPath.row]
-            cell.userImage.imageFromURL((userInfo?.avatar)!,placeholder: (UIImage(named:"个人中心-29")?.roundCornersToCircle(border: 40,
-                                            color: UIColor.orangeColor())!)!)
+            cell.userImage.imageFromURL((userInfo?.avatar)!,placeholder: (UIImage(named:"个人中心-29")?.roundCornersToCircle(border: 40,color: UIColor.orangeColor())!)!)
             
             let indent_large_enought_to_hidden:CGFloat = 10000
             cell.separatorInset = UIEdgeInsetsMake(0, indent_large_enought_to_hidden, 0, 0) // indent large engough for separator(including cell' content) to hidden separator
@@ -342,7 +341,7 @@ class MyDataTableViewController: UITableViewController, UIImagePickerControllerD
                            "X-User-Phone": phone,
                            "X-User-Token": token]
             
-            Alamofire.upload(.PUT, "http://220.163.125.158:8081/user_info",
+            Alamofire.upload(.PUT, "http://elive.clfsj.com:8081/user_info",
                              // define your headers here
                 headers: headers,
                 multipartFormData: { multipartFormData in

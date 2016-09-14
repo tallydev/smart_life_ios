@@ -137,6 +137,7 @@ extension ModifyViewController: UITextFieldDelegate {
         userInfoChange(ModifyViewController(), bodyKey: keyString, bodyValue: modifyTextField.text!, forkey1: keyone)
         self.delegate?.sendUserinfo(modifyTextField.text!, kek: keyone)
         navigationController?.popViewControllerAnimated(true)
+        MyInfoViewController().Center.postNotificationName(String(MyInfoViewController().classForCoder), object: true)
     }
     
 }

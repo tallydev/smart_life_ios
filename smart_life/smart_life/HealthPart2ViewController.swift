@@ -162,7 +162,7 @@ class HealthPart2ViewController: UITableViewController {
                        "X-User-Phone": phone,
                        "X-User-Token": token]
         
-        Alamofire.request(.GET, "http://220.163.125.158:8081/reports", headers: headers)
+        Alamofire.request(.GET, "http://elive.clfsj.com:8081/reports", headers: headers)
             .responseString { response in
                 var json = JSON(data: response.data!)
                 var info = json["items"]

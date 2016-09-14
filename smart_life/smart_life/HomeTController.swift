@@ -488,7 +488,7 @@ extension HomeTController {
                        "X-User-Phone": phone,
                        "X-User-Token": token]
         
-        Alamofire.request(.GET, "http://220.163.125.158:8081/home", headers: headers)
+        Alamofire.request(.GET, "http://elive.clfsj.com/home", headers: headers)
             .responseString { response in
                 var json = JSON(data: response.data!)
                 var info = json["newer"]
@@ -541,7 +541,7 @@ extension HomeTController {
                                 let body = ["sport[date]":stringdate,
                                     "sport[count]":"\(pedometerData!.numberOfSteps)"]
                                 
-                                Alamofire.request(.POST, "http://220.163.125.158:8081/sports", headers: headers, parameters: body)
+                                Alamofire.request(.POST, "http://elive.clfsj.com:8081/sports", headers: headers, parameters: body)
                                     .responseString { response in
                                         var json = JSON(data: response.data!)
                                         var info = json["items"]

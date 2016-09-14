@@ -24,6 +24,8 @@ class SignInViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        getMainPage()
         // 布局UI
         layoutUI()
     }
@@ -255,93 +257,209 @@ extension SignInViewController {
     }
     
     func getMainPage(){
-        let tempResult:String = orderTexeField.text!
-        let passWord:String = phoneNumberTexeField.text!
-        let headers = ["Accept":"application/json",]
-        let body = [
-            "user[phone]": tempResult,
-            "user[password]": passWord
+//        if (NSUserDefaults.standardUserDefaults().valueForKey("userToken") == nil) {
+            let tempResult:String = orderTexeField.text!
+            let passWord:String = phoneNumberTexeField.text!
+            NSUserDefaults.standardUserDefaults().setObject(self.phoneNumberTexeField.text, forKey: "passWord")
             
-        ]
-        Alamofire.request(.POST, "http://220.163.125.158:8081/users/sign_in", headers: headers, parameters: body)
-            .responseString { response in
-                var json = JSON(data: response.data!)
-                if let userToken = json["authentication_token"].string {
-                    if userToken.isEmpty == false {
-                        let token = json["authentication_token"].stringValue
-                        let phone = json["phone"].stringValue
-                        let id = json["id"].int
-                        
-                        
-                        let headers1 = ["Accept":"application/json",
-                                        "X-User-Token":token,
-                                        "X-User-Phone":phone]
-                        Alamofire.request(.GET, "http://220.163.125.158:8081/user_info", headers: headers1)
-                            .responseString { response in
-                                var json = JSON(data: response.data!)
-                                if json["errors"].isEmpty == true && json["error"].isEmpty == true{
-                                    
-                                    let nick = json["nickname"].stringValue
-                                    let id_card = json["identity_card"].stringValue
-                                    let avatar = json["avatar"].stringValue
-                                    let birth = json["birth"].stringValue
-                                    let sexy = json["sex"].stringValue
-                                    let slogan = json["slogan"].stringValue
-                                    let address = json["address"].stringValue
-                                    let pay_password = json["pay_password"].stringValue
-                                    if sexy == "male" {
-                                        let sex = "男"
-                                        userInfo = User(id: id!, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+            let headers = ["Accept":"application/json",]
+            let body = [
+                "user[phone]": tempResult,
+                "user[password]": passWord
+                
+            ]
+            Alamofire.request(.POST, "http://elive.clfsj.com:8081/users/sign_in", headers: headers, parameters: body)
+                .responseString { response in
+                    var json = JSON(data: response.data!)
+                    if let userToken = json["authentication_token"].string {
+                        if userToken.isEmpty == false {
+                            let token = json["authentication_token"].stringValue
+                            let phone = json["phone"].stringValue
+                            let id = json["id"].int
+                            
+                            
+                            let headers1 = ["Accept":"application/json",
+                                "X-User-Token":token,
+                                "X-User-Phone":phone]
+                            Alamofire.request(.GET, "http://elive.clfsj.com:8081/user_info", headers: headers1)
+                                .responseString { response in
+                                    var json = JSON(data: response.data!)
+                                    if json["errors"].isEmpty == true && json["error"].isEmpty == true{
                                         
-                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
-                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
-                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
-                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
-                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+                                        let nick = json["nickname"].stringValue
+                                        let id_card = json["identity_card"].stringValue
+                                        let avatar = json["avatar"].stringValue
+                                        let birth = json["birth"].stringValue
+                                        let sexy = json["sex"].stringValue
+                                        let slogan = json["slogan"].stringValue
+                                        let address = json["address"].stringValue
+                                        let pay_password = json["pay_password"].stringValue
+                                        if sexy == "male" {
+                                            let sex = "男"
+                                            userInfo = User(id: id!, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+                                            
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+                                            
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.birth, forKey: "birth")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.sex, forKey: "sex")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.slogan, forKey: "slogan")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.identity_card, forKey: "identity_card")
+                                            
+                                        }else{
+                                            let sex = "女"
+                                            userInfo = User(id: id!, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+                                            
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+                                            
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.birth, forKey: "birth")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.sex, forKey: "sex")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.slogan, forKey: "slogan")
+                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.identity_card, forKey: "identity_card")
+                                            
+                                        }
+                                        
+                                        
+                                        MBProgressHUD .showHUDAddedTo(self.view, animated: true)
+                                        self.performSegueWithIdentifier("login", sender: self)
                                         
                                     }else{
-                                        let sex = "女"
-                                        userInfo = User(id: id!, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
                                         
-                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
-                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
-                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
-                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
-                                        NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+                                        var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                                        hud.mode = MBProgressHUDMode.Text
+                                        hud.labelText = "添加昵称失败！"
+                                        //延迟隐藏
+                                        hud.hide(true, afterDelay: 0.8)
                                         
                                     }
                                     
-                                    
-                                    MBProgressHUD .showHUDAddedTo(self.view, animated: true)
-                                    self.performSegueWithIdentifier("login", sender: self)
-                                    
-                                }else{
-                                    
-                                    var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                                    hud.mode = MBProgressHUDMode.Text
-                                    hud.labelText = "添加昵称失败！"
-                                    //延迟隐藏
-                                    hud.hide(true, afterDelay: 0.8)
-                                    
-                                }
-                                
+                            }
+                            
+                            
+                            MBProgressHUD .showHUDAddedTo(self.view, animated: true)
+                            self.performSegueWithIdentifier("login", sender: self)
                         }
-
+                    }else{
+                        var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                        hud.mode = MBProgressHUDMode.Text
+                        hud.labelText = "登录提示"
+                        hud.detailsLabelText = "您输入的手机或用户密码有误，请重新输入！"
                         
-                        MBProgressHUD .showHUDAddedTo(self.view, animated: true)
-                        self.performSegueWithIdentifier("login", sender: self)
+                        //延迟隐藏
+                        hud.hide(true, afterDelay: 0.8)
                     }
-                }else{
-                    var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                    hud.mode = MBProgressHUDMode.Text
-                    hud.labelText = "登录提示"
-                    hud.detailsLabelText = "您输入的手机或用户密码有误，请重新输入！"
                     
-                    //延迟隐藏
-                    hud.hide(true, afterDelay: 0.8)
-                }
-                
-        }
+            }
+
+            
+//        }else{
+//            let tempResult:String = (NSUserDefaults.standardUserDefaults().valueForKey("userphone") as? String)!
+//            let passWord:String = (NSUserDefaults.standardUserDefaults().valueForKey("passWord") as? String)!
+//            
+//            let headers = ["Accept":"application/json",]
+//            let body = [
+//                "user[phone]": tempResult,
+//                "user[password]": passWord
+//                
+//            ]
+//            Alamofire.request(.POST, "http://elive.clfsj.com:8081/users/sign_in", headers: headers, parameters: body)
+//                .responseString { response in
+//                    var json = JSON(data: response.data!)
+//                    if let userToken = json["authentication_token"].string {
+//                        if userToken.isEmpty == false {
+//                            let token = json["authentication_token"].stringValue
+//                            let phone = json["phone"].stringValue
+//                            let id = json["id"].int
+//                            
+//                            
+//                            let headers1 = ["Accept":"application/json",
+//                                "X-User-Token":token,
+//                                "X-User-Phone":phone]
+//                            Alamofire.request(.GET, "http://elive.clfsj.com:8081/user_info", headers: headers1)
+//                                .responseString { response in
+//                                    var json = JSON(data: response.data!)
+//                                    if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+//                                        
+//                                        let nick = json["nickname"].stringValue
+//                                        let id_card = json["identity_card"].stringValue
+//                                        let avatar = json["avatar"].stringValue
+//                                        let birth = json["birth"].stringValue
+//                                        let sexy = json["sex"].stringValue
+//                                        let slogan = json["slogan"].stringValue
+//                                        let address = json["address"].stringValue
+//                                        let pay_password = json["pay_password"].stringValue
+//                                        if sexy == "male" {
+//                                            let sex = "男"
+//                                            userInfo = User(id: id!, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+//                                            
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+//                                            
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.birth, forKey: "birth")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.sex, forKey: "sex")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.slogan, forKey: "slogan")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.identity_card, forKey: "identity_card")
+//                                            
+//                                        }else{
+//                                            let sex = "女"
+//                                            userInfo = User(id: id!, phone: phone, nickname: nick, avatar: avatar, birth: birth, sex: sex, slogan: slogan, address: address, identity_card: id_card, pay_password:pay_password, token: token)
+//                                            
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.token, forKey: "userToken")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.phone, forKey: "userphone")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.id, forKey: "userId")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.nickname, forKey: "nickName")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.avatar, forKey: "avatarPic")
+//                                            
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.birth, forKey: "birth")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.sex, forKey: "sex")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.slogan, forKey: "slogan")
+//                                            NSUserDefaults.standardUserDefaults().setObject(userInfo!.identity_card, forKey: "identity_card")
+//                                            
+//                                        }
+//                                        
+//                                        
+//                                        MBProgressHUD .showHUDAddedTo(self.view, animated: true)
+//                                        self.performSegueWithIdentifier("login", sender: self)
+//                                        
+//                                    }else{
+//                                        
+//                                        var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+//                                        hud.mode = MBProgressHUDMode.Text
+//                                        hud.labelText = "添加昵称失败！"
+//                                        //延迟隐藏
+//                                        hud.hide(true, afterDelay: 0.8)
+//                                        
+//                                    }
+//                                    
+//                            }
+//                            
+//                            
+//                            MBProgressHUD .showHUDAddedTo(self.view, animated: true)
+//                            self.performSegueWithIdentifier("login", sender: self)
+//                        }
+//                    }else{
+//                        var hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+//                        hud.mode = MBProgressHUDMode.Text
+//                        hud.labelText = "登录提示"
+//                        hud.detailsLabelText = "您输入的手机或用户密码有误，请重新输入！"
+//                        
+//                        //延迟隐藏
+//                        hud.hide(true, afterDelay: 0.8)
+//                    }
+//                    
+//            }
+//
+//        }
     }
 }
 

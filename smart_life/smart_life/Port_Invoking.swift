@@ -25,7 +25,7 @@ func subscribe(viewController:UIViewController,type:String, count:String, orderB
     let body = ["appointment[type]":type,
                 "appointment[count]":count]
     
-    Alamofire.request(.POST, "http://220.163.125.158:8081/appointments", headers: headers, parameters: body)
+    Alamofire.request(.POST, "http://elive.clfsj.com:8081/appointments", headers: headers, parameters: body)
         .responseString { response in
             var json = JSON(data: response.data!)
             print(json)
@@ -58,7 +58,7 @@ func userInfoChange(viewController:UIViewController, bodyKey:String, bodyValue:S
                    "X-User-Phone": phone,
                    "X-User-Token": token]
     let body = [bodyKey:bodyValue]
-    Alamofire.request(.PUT, "http://220.163.125.158:8081/user_info", headers: headers, parameters: body)
+    Alamofire.request(.PUT, "http://elive.clfsj.com:8081/user_info", headers: headers, parameters: body)
         .responseString { response in
             var json = JSON(data: response.data!)
             if json["errors"].isEmpty == true && json["error"].isEmpty == true{
@@ -168,7 +168,7 @@ func getStepRanks(viewController:UIViewController, ranking:[String], username:[S
     var image = [String]()
     var stp = [String]()
     
-    Alamofire.request(.GET, "http://220.163.125.158:8081/ranks/weekly", headers: headers)
+    Alamofire.request(.GET, "http://elive.clfsj.com:8081/ranks/weekly", headers: headers)
         .responseString { response in
             var json = JSON(data: response.data!)
             print(json)

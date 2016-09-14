@@ -190,7 +190,7 @@ class HealthPart3ViewController: UITableViewController {
                        "X-User-Phone": phone,
                        "X-User-Token": token]
         
-        let url = "http://220.163.125.158:8081/reports/" + "\(name)"
+        let url = "http://elive.clfsj.com:8081/reports/" + "\(name)"
         print(url)
         Alamofire.request(.GET, url, headers: headers)
             .responseString { response in
