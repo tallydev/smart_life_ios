@@ -25,7 +25,6 @@ class SignInViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        getMainPage()
         // 布局UI
         layoutUI()
     }
@@ -325,10 +324,6 @@ extension SignInViewController {
                                             NSUserDefaults.standardUserDefaults().setObject(userInfo!.identity_card, forKey: "identity_card")
                                             
                                         }
-                                        
-                                        
-                                        MBProgressHUD .showHUDAddedTo(self.view, animated: true)
-                                        self.performSegueWithIdentifier("login", sender: self)
                                         
                                     }else{
                                         

@@ -23,8 +23,12 @@ class MyInfoViewController: UIViewController {
     @IBAction func goOutBtnAction(sender: AnyObject) {
         //返回登陆页
         NSUserDefaults.standardUserDefaults().removeObjectForKey("passWord")
-//        NSUserDefaults.standardUserDefaults().removeObjectForKey("userToken")
-//        NSUserDefaults.standardUserDefaults().removeObjectForKey("userphone")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("userToken")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("userphone")
+        
+        public_timer.invalidate()
+        public_timer = nil
+        
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         self.view.window?.rootViewController = mainStoryboard.instantiateViewControllerWithIdentifier("signInNavViewController")
         

@@ -14,15 +14,15 @@ class MyIndentTableViewController: UITableViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    var Indentnumber = ["订单号：20160529213124","订单号：20160223210124","订单号：20160129234120"]
-    var Indenttime = ["2016-05-29","2016-02-23","2016-01-29"]
-    var Indentstatus = ["待发货","已发货","待付款"]
-    var Indentimg = ["","",""]
-    var Indentname = ["特优级蜂蜜","西双版纳生态无眼凤梨新鲜直达","《从你的全世界路过》  张嘉佳 著"]
-    var Unitcost = ["¥48.00","¥66.00","¥30.50"]
-    var Quantity = ["x1","x2","x1"]
-    var Payway = ["支付方式：支付宝","支付方式：微信","支付方式：微信"]
-    var Totalvalue = ["应付总额：¥48.00","应付总额：¥132.00","应付总额：¥30.50"]
+    var Indentnumber = ["订单号：20160529213124","订单号：20160223210124"]
+    var Indenttime = ["2016-05-29","2016-02-23"]
+    var Indentstatus = ["待发货","已发货"]
+    var Indentimg = ["product_honey_one.jpg","product_pineapple_one.sjpg"]
+    var Indentname = ["特优级蜂蜜","西双版纳生态无眼凤梨新鲜直达"]
+    var Unitcost = ["¥48.00","¥66.00"]
+    var Quantity = ["x1","x2"]
+    var Payway = ["支付方式：支付宝","支付方式：微信"]
+    var Totalvalue = ["应付总额：¥48.00","应付总额：¥132.00"]
     
 
     override func viewDidLoad() {
@@ -78,6 +78,7 @@ class MyIndentTableViewController: UITableViewController {
         cell.quantity.text = Quantity[indexPath.row]
         cell.payway.text = Payway[indexPath.row]
         cell.totalvalue.text = Totalvalue[indexPath.row]
+        cell.indentimg.image = UIImage(named: "\(Indentimg[indexPath.row])")
         
         cell.totalvalue.textColor = UIColor.orangeColor()
         

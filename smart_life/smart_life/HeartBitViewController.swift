@@ -17,7 +17,7 @@ import SwiftDate
 
 class HeartBitViewController: UIViewController {
     
-    var timer:NSTimer!
+//    var timer:NSTimer!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +25,7 @@ class HeartBitViewController: UIViewController {
         view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
         self.navigationController?.view.addSubview(view)
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(5,target:self,selector:#selector(HeartBitViewController.getStepsNumber),userInfo:nil,repeats:true)
+//        timer = NSTimer.scheduledTimerWithTimeInterval(5,target:self,selector:#selector(HeartBitViewController.getStepsNumber),userInfo:nil,repeats:true)
 //        segmentedControl.selectedSegmentIndex = 0
 //        paintPge()
     }

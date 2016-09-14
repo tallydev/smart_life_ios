@@ -15,9 +15,10 @@ import SwiftyJSON
 
 //定义个全局变量  如果不是全局变量会报错
 let pedonmeter:CMPedometer = CMPedometer()
+var public_timer:NSTimer!
 
 class HomeTController: UIViewController, CirCleViewDelegate , CountdownLabelDelegate, LTMorphingLabelDelegate{
-    var timer:NSTimer!
+    
     var scacle = 1.0
     
     var circleView: CirCleView!
@@ -90,7 +91,7 @@ class HomeTController: UIViewController, CirCleViewDelegate , CountdownLabelDele
         view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
         self.navigationController?.view.addSubview(view)
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(15,target:self,selector:#selector(HomeTController.getStepsNumber),userInfo:nil,repeats:true)
+        public_timer = NSTimer.scheduledTimerWithTimeInterval(15,target:self,selector:#selector(HomeTController.getStepsNumber),userInfo:nil,repeats:true)
         
         alertView.descriptionLabel.text = "即将上线，敬请期待！"
         alertView.descriptionLabel.textColor = UIColor.whiteColor()

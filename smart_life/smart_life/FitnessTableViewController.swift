@@ -50,6 +50,7 @@ class FitnessTableViewController: UITableViewController {
     var step = [String]()
     
     override func viewWillAppear(animated: Bool) {
+        PushStepsNumber()
         Center.addObserver(self, selector: Selector("Command:"), name: String(classForCoder), object: nil)
     }
     
@@ -308,7 +309,7 @@ extension FitnessTableViewController {
                         self.step.append("\(value1["count"])")
                     }
                     dispatch_async(dispatch_get_main_queue(), {
-                        print(self.userimage)
+//                        print(self.userimage)
                         self.tableView?.reloadData()
 //                        self.refreshControl?.endRefreshing()
                         return
@@ -330,19 +331,19 @@ extension FitnessTableViewController {
         let token:String = NSUserDefaults.standardUserDefaults().valueForKey("userToken") as! String
         let phone:String = NSUserDefaults.standardUserDefaults().valueForKey("userphone") as! String
         
-        print(phone)
-        print(token)
+//        print(phone)
+//        print(token)
         
         let headers = ["Accept":"application/json",
                        "X-User-Phone": phone,
                        "X-User-Token": token]
         let url = "http://elive.clfsj.com:8081/sports/" + name
-        print(url)
+//        print(url)
         Alamofire.request(.GET, url, headers: headers)
             .responseString { response in
                 var json = JSON(data: response.data!)
                 
-                print(json)
+//                print(json)
                 
                 var stepSelf = json["self"]
                 var dataArray1 = [Float]()
@@ -406,12 +407,12 @@ extension FitnessTableViewController {
                         if error != nil{
                             print("error:\(error)")
                         }else{
-                            print("============+++++++==============")
+//                            print("============+++++++==============")
                             self.dataArray.append(pedometerData!.numberOfSteps.floatValue)
                             let datef = NSDateFormatter()
                             datef.dateFormat = "HH"
                             self.timeLine.append("")
-                            print("\(pedometerData!.numberOfSteps)")
+//                            print("\(pedometerData!.numberOfSteps)")
                             if i == number {
                                 self.Center.postNotificationName(String(self.classForCoder), object: true)
                             }
@@ -424,6 +425,66 @@ extension FitnessTableViewController {
             print("there has something with CMPedometer")
         }
     }
+    
+    func PushStepsNumber() {
+        //判断该设备是否支持计步功能
+        if CMPedometer.isStepCountingAvailable(){
+            //开始时间
+            let startTime = getStartTime()
+            
+            let datef = NSDateFormatter()
+            datef.dateFormat = "yyyy-MM-dd"
+            let stringdate = datef.stringFromDate(getEndTime())
+            //获取指定开始时间到当前时间的数据  参数 开始时间, 一个闭包
+            pedonmeter.startPedometerUpdatesFromDate(startTime, withHandler: { (pedometerData:CMPedometerData?, error:NSError?) -> Void in
+                if error != nil{
+                    print("error:\(error)")
+                }
+                else{
+                    print("步数===\(pedometerData!.numberOfSteps)")
+                    print("距离===\(pedometerData!.distance)")
+                    
+                    let token:String = NSUserDefaults.standardUserDefaults().valueForKey("userToken") as! String
+                    let phone:String = NSUserDefaults.standardUserDefaults().valueForKey("userphone") as! String
+                    
+                    print(phone)
+                    print(token)
+                    
+                    let headers = ["Accept":"application/json",
+                        "X-User-Phone": phone,
+                        "X-User-Token": token]
+                    
+                    let body = ["sport[date]":stringdate,
+                        "sport[count]":"\(pedometerData!.numberOfSteps)"]
+                    
+                    Alamofire.request(.POST, "http://elive.clfsj.com:8081/sports", headers: headers, parameters: body)
+                        .responseString { response in
+                            var json = JSON(data: response.data!)
+                            var info = json["items"]
+                            
+                            if json["errors"].isEmpty == true && json["error"].isEmpty == true{
+                                print("数据推送成功")
+                                
+                            }else{
+                                
+                                let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                                hud.mode = MBProgressHUDMode.Text
+                                hud.labelText = "添加昵称失败！"
+                                //延迟隐藏
+                                hud.hide(true, afterDelay: 0.8)
+                                
+                            }
+                            
+                    }
+                    
+                }
+            })
+            
+        } else {
+            print("there has something with CMPedometer")
+        }
+    }
+
     
     /**
      获取当前时区的时间
