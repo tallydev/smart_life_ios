@@ -12,6 +12,8 @@ target 'smart_life' do
   pod 'Alamofire', '~> 3.4'
   pod 'SwiftDate'
   pod 'CountdownLabel'
+  pod 'Pgyer'
+  pod 'PgyUpdate'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift2'
   pod 'PNChartSwift',:git => 'https://github.com/kevinzhow/PNChart-Swift.git'
 end

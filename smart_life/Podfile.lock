@@ -4,6 +4,8 @@ PODS:
     - LTMorphingLabel (~> 0.1.1)
   - LTMorphingLabel (0.1.1)
   - MBProgressHUD (0.9.2)
+  - Pgyer (2.8.4)
+  - PgyUpdate (1.2)
   - PNChartSwift (0.0.2)
   - SnapKit (0.15.0)
   - Spring (1.0.3)
@@ -14,6 +16,8 @@ DEPENDENCIES:
   - Alamofire (~> 3.4)
   - CountdownLabel
   - MBProgressHUD (~> 0.9.2)
+  - Pgyer
+  - PgyUpdate
   - PNChartSwift (from `https://github.com/kevinzhow/PNChart-Swift.git`)
   - SnapKit (~> 0.15.0)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
@@ -40,12 +44,14 @@ SPEC CHECKSUMS:
   CountdownLabel: 06f96abd1f6e3a2dc6795ffb321c742ab5959b74
   LTMorphingLabel: dfc40f43a0dcf81867b1f29431f34e861a5f1b35
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  Pgyer: 26edfcc8da6da6383fabfdbccd2f77c623b9d6eb
+  PgyUpdate: a42e82cec5ad4e992af390e9d494f6fc62db65e4
   PNChartSwift: bcdfbffd65920072463eff42d0dfb46189bf4495
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftDate: 971f8b9394f664f2226b9c3ab64e801a7291c612
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 553863533b31d338ecc95b5a9d255c339df92727
+PODFILE CHECKSUM: a08349cffe82b78a9b0637e732e4cf489ac64007
 
 COCOAPODS: 1.0.1
