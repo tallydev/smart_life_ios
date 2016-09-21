@@ -304,7 +304,7 @@ extension HomeTController {
         var vc = sb.instantiateViewControllerWithIdentifier("NAV14")
         self.presentViewController(vc, animated: true, completion: nil)
     }
-    //    健身达人
+    //    健步达人
     func tapSingleDid5(){
         var sb = UIStoryboard(name: "Main", bundle:nil)
         var vc = sb.instantiateViewControllerWithIdentifier("NAV21")
