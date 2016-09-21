@@ -22,6 +22,16 @@ class HomeTController: UIViewController, CirCleViewDelegate , CountdownLabelDele
     var scacle = 1.0
     
     var circleView: CirCleView!
+    
+    @IBOutlet weak var image1: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
+    @IBOutlet weak var image3: UIImageView!
+    @IBOutlet weak var image4: UIImageView!
+    @IBOutlet weak var image5: UIImageView!
+    @IBOutlet weak var image6: UIImageView!
+    @IBOutlet weak var image7: UIImageView!
+    @IBOutlet weak var image8: UIImageView!
+    
     @IBOutlet weak var countdownLabel: CountdownLabel!
     
     @IBOutlet weak var HomePageScrollView: UIScrollView!
@@ -86,6 +96,8 @@ class HomeTController: UIViewController, CirCleViewDelegate , CountdownLabelDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIImageView.userInteractionEnabled = true
         
         let view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.mainScreen().bounds.size.width, height: 20.0))
         view.backgroundColor=UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.50)
@@ -248,6 +260,33 @@ extension HomeTController {
         View81.tintColor = UIColor.init(patternImage: UIImage(named: "home-20")!)
         View92.set(image: UIImage(named: "home-22"), title: "更多臻品  ", titlePosition: .Right, additionalSpacing: 15.0, state: .Normal)
         View92.tintColor = UIColor.init(patternImage: UIImage(named: "home-22")!)
+    }
+    
+    
+    func setImageAction(){
+        let tapStepGestureRecognizer1 = UITapGestureRecognizer(target: self, action:#selector(HomeTController().tapSingleDid1))
+        image1.addGestureRecognizer(tapStepGestureRecognizer1)
+        
+        let tapStepGestureRecognizer2 = UITapGestureRecognizer(target: self, action:#selector(HomeTController().tapSingleDid5))
+        image2.addGestureRecognizer(tapStepGestureRecognizer2)
+        
+        let tapStepGestureRecognizer3 = UITapGestureRecognizer(target: self, action:#selector(HomeTController().tapSingleDid6))
+        image3.addGestureRecognizer(tapStepGestureRecognizer3)
+        
+        let tapStepGestureRecognizer4 = UITapGestureRecognizer(target: self, action:#selector(HomeTController().tapSingleDid7))
+        image4.addGestureRecognizer(tapStepGestureRecognizer4)
+        
+        let tapStepGestureRecognizer5 = UITapGestureRecognizer(target: self, action:#selector(HomeTController().tapSingleDid13))
+        image5.addGestureRecognizer(tapStepGestureRecognizer5)
+        
+        let tapStepGestureRecognizer6 = UITapGestureRecognizer(target: self, action:#selector(HomeTController().tapSingleDid14))
+        image6.addGestureRecognizer(tapStepGestureRecognizer6)
+        
+        let tapStepGestureRecognizer7 = UITapGestureRecognizer(target: self, action:#selector(HomeTController().tapSingleDid18))
+        image7.addGestureRecognizer(tapStepGestureRecognizer7)
+        
+        let tapStepGestureRecognizer8 = UITapGestureRecognizer(target: self, action:#selector(HomeTController().tapSingleDid25))
+        image8.addGestureRecognizer(tapStepGestureRecognizer8)
     }
     
     
